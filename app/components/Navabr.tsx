@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowRight, } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -36,21 +36,23 @@ export default function Navbar() {
     >
       {/* Navbar Background */}
       <div
-        className={`bg-[#0A0A0A]/80 backdrop-blur-3xl border border-[#D4AF37]/15 shadow-[0_8px_30px_rgba(0,0,0,.35)] transition-all duration-700 ease-in-out ${
+        className={`bg-white/80 backdrop-blur-3xl border border-blue-100/80 shadow-[0_8px_30px_rgba(16,42,86,0.08)] transition-all duration-700 ease-in-out ${
           scrolled ? "rounded-none" : "mx-4 rounded-full"
         }`}
       >
         {/* Navbar Content */}
-        <div className="mx-auto flex h-20 max-w-337.5 items-center justify-between md:px-0 px-5">
+        <div className="mx-auto flex h-20 max-w-337.5 items-center justify-between md:px-5 px-5">
           <Link href="/" className="group flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/90 shadow-lg shadow-[#D4AF37]/20">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white font-bold shadow-lg shadow-blue-200">
               W
             </div>
 
             <div>
-              <h1 className="text-white">Wellranked</h1>
+              <h1 className="text-[#102A56] font-bold text-xl">Wellranked</h1>
 
-              <p className="text-gray-400 text-sm">Visibility • Growth • Authority</p>
+              <p className="text-gray-500 text-sm">
+                Visibility • Growth • Authority
+              </p>
             </div>
           </Link>
 
@@ -60,20 +62,20 @@ export default function Navbar() {
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="group relative text-[15px] font-medium text-zinc-300 transition-colors duration-300 hover:text-zinc-100"
+                className="group relative text-[15px] font-medium text-[#102A56] transition-colors duration-300 hover:text-blue-600"
               >
                 {link}
-                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-zinc-300 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-blue-600 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
 
           {/* CTA */}
           <Link
-            href="/free-growth-audit"
-            className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-white/90 px-7 py-3 lg:flex"
+            href="/#free-growth-audit"
+            className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-blue-600 px-7 py-3 shadow-blue-200 transition-all duration-300 hover:bg-blue-700 lg:flex"
           >
-            <span className="relative z-10 flex items-center gap-2 font-semibold text-gray-900">
+            <span className="relative z-10 flex items-center gap-2 font-semibold text-white">
               Book Free Growth Audit
               <ArrowRight
                 size={18}
@@ -86,7 +88,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             aria-label="mobile menu"
-            className="rounded-full p-2 text-zinc-300 transition hover:bg-orange-500/10 lg:hidden"
+            className="rounded-full p-2 text-[#102A56] transition hover:bg-blue-50 lg:hidden"
           >
             {open ? <X size={28} /> : <Menu size={28} aria-hidden="true" />}
           </button>
@@ -100,7 +102,7 @@ export default function Navbar() {
         }`}
       >
         <div
-          className={`bg-[#0A0A0A]/80 backdrop-blur-3xl border border-[#D4AF37]/15 shadow-[0_8px_30px_rgba(0,0,0,.35)] p-6 transition-all duration-700 ${
+          className={`bg-white/90 backdrop-blur-3xl border border-blue-100 shadow-[0_8px_30px_rgba(16,42,86,0.08)] p-6 transition-all duration-700 ${
             scrolled ? "rounded-none" : "mx-4 mt-4 rounded-3xl"
           }`}
         >
@@ -111,7 +113,7 @@ export default function Navbar() {
                   key={link}
                   href={`#${link.toLowerCase()}`}
                   onClick={() => setOpen(false)}
-                  className="text-lg font-medium text-zinc-300 transition-all duration-300 hover:translate-x-2 hover:text-zinc-100"
+                  className="text-lg font-medium text-[#102A56] transition-all duration-300 hover:translate-x-2 hover:text-blue-600"
                 >
                   {link}
                 </a>
@@ -119,7 +121,7 @@ export default function Navbar() {
 
               <a
                 href="#"
-                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-white/90 py-3 font-bold text-gray-900"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-blue-600 py-3 font-bold text-white shadow-sm shadow-blue-200"
               >
                 Book Free Growth Audit
                 <ArrowRight size={18} />
