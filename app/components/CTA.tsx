@@ -2,7 +2,7 @@ import { ArrowRight, CheckCircle2, CalendarDays } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section className="relative overflow-hidden md:py-28 py-10">
+    <section className="relative overflow-hidden py-28">
       {/* Background */}
       <div className="absolute inset-0 bg-linear-to-r from-[#1D4ED8] via-[#2563EB] to-[#1E40AF] md:mt-0 mt-20" />
 

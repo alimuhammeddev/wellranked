@@ -48,7 +48,7 @@ export default function Navbar() {
             </div>
 
             <div>
-              <h1 className="text-[#102A56] font-bold text-xl">Wellranked</h1>
+              <h1 className="text-[#102A56] font-bold">Wellranked</h1>
 
               <p className="text-gray-500 text-sm">
                 Visibility • Growth • Authority
