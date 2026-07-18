@@ -3,6 +3,8 @@ import Navbar from "./components/Navabr";
 import Hero from "./components/Hero";
 import PainSection from "./components/Pain";
 import SolutionSection from "./components/Solution";
+import PackagesPreview from "./components/Packages";
+import TrustSection from "./components/Trust";
 
 export default function Home() {
   return (
@@ -22,6 +24,12 @@ export default function Home() {
       <div>
         <SolutionSection />
       </div>
+
+      <div>
+        <PackagesPreview />
+      </div>
+
+      <TrustSection />
     </section>
   );
 }

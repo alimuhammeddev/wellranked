@@ -42,7 +42,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="text-3xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#102A56]">
+            <h1 className="text-2xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#102A56]">
               Your Outsourced
               <span className="block text-blue-600">Marketing Department</span>
               for Less Than the Cost of

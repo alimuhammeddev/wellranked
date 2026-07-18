@@ -49,7 +49,7 @@ export default function PainSection() {
               The Challenge
             </span>
 
-            <h2 className="mt-6 text-3xl lg:text-4xl font-bold leading-tight text-[#102A56]">
+            <h2 className="mt-6 text-2xl lg:text-4xl font-bold leading-tight text-[#102A56]">
               Running a business is already hard enough.
               <span className="block text-blue-600">
                 Marketing shouldn't be another full-time job.
@@ -81,12 +81,12 @@ export default function PainSection() {
                 key={title}
                 className="group flex items-start gap-5 rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:border-blue-200 hover:shadow-sm"
               >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition">
-                  <Icon size={26} />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition">
+                  <Icon size={22} />
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-[#102A56]">
+                  <h3 className="md:text-lg font-semibold text-[#102A56]">
                     {title}
                   </h3>
 

@@ -48,7 +48,7 @@ const solutions = [
 export default function SolutionSection() {
   return (
     <section className="md:py-24 py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-5">
+      <div className="max-w-7xl mx-auto md:px-0 px-5">
 
         <div className="grid lg:grid-cols-2 md:gap-20 gap-10 items-center">
 
@@ -60,7 +60,7 @@ export default function SolutionSection() {
               One Team. One Monthly Fee.
             </span>
 
-            <h2 className="mt-4 text-3xl lg:text-4xl font-bold leading-tight text-[#102A56]">
+            <h2 className="mt-4 text-2xl lg:text-4xl font-bold leading-tight text-[#102A56]">
               Everything handled.
             </h2>
 
@@ -107,21 +107,21 @@ export default function SolutionSection() {
 
           {/* Right */}
 
-          <div className="rounded-3xl border border-gray-200 bg-[#F8FAFF] p-8">
+          <div className="rounded-3xl border border-gray-200 bg-[#F8FAFF] md:p-8 p-4">
 
             <div className="grid sm:grid-cols-2 gap-4">
 
               {solutions.map(({ title, icon: Icon }) => (
                 <div
                   key={title}
-                  className="group rounded-2xl bg-white border border-gray-100 p-5 transition-all duration-300 hover:shadow-md"
+                  className="group rounded-2xl bg-white border border-gray-100 p-5"
                 >
 
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
                     <Icon size={22} />
                   </div>
 
-                  <h3 className="mt-4 font-semibold text-[#102A56]">
+                  <h3 className="mt-4 font-medium text-[#102A56]">
                     {title}
                   </h3>
 
