@@ -5,6 +5,7 @@ import PainSection from "./components/Pain";
 import SolutionSection from "./components/Solution";
 import PackagesPreview from "./components/Packages";
 import TrustSection from "./components/Trust";
+import FinalCTA from "./components/CTA";
 
 export default function Home() {
   return (
@@ -29,7 +30,13 @@ export default function Home() {
         <PackagesPreview />
       </div>
 
-      <TrustSection />
+      <div>
+        <TrustSection />
+      </div>
+
+      <div>
+        <FinalCTA />
+      </div>
     </section>
   );
 }

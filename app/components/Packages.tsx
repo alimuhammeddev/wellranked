@@ -52,11 +52,11 @@ const packages = [
 
 export default function PackagesPreview() {
   return (
-    <section className="bg-[#F8FAFC] py-20">
+    <section className="bg-[#F8FAFC] md:py-20 py-10">
       <div className="mx-auto max-w-7xl md:px-0 px-5">
         {/* Heading */}
 
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto md:mb-16 mb-10 max-w-3xl text-center">
           <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
             Pricing
           </span>
@@ -66,7 +66,7 @@ export default function PackagesPreview() {
             <span className="block text-blue-600">No hidden costs.</span>
           </h2>
 
-          <p className="mt-3 md:text-lg leading-8 text-gray-600">
+          <p className="mt-2 md:text-lg leading-7 text-gray-600">
             Choose the level of support your business needs today. Upgrade
             whenever you're ready to grow.
           </p>
