@@ -121,7 +121,7 @@ export default function SolutionSection() {
                     <Icon size={22} />
                   </div>
 
-                  <h3 className="mt-4 font-medium text-[#102A56]">
+                  <h3 className="mt-4 font-semibold text-[#102A56]">
                     {title}
                   </h3>
 
