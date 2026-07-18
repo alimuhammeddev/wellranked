@@ -2,15 +2,15 @@ import { ArrowRight, CheckCircle2, CalendarDays } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section className="relative overflow-hidden py-28">
+    <section className="relative overflow-hidden md:py-28 py-10">
       {/* Background */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#1D4ED8] via-[#2563EB] to-[#1E40AF]" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#1D4ED8] via-[#2563EB] to-[#1E40AF] md:mt-0 mt-20" />
 
       {/* Decorative Blobs */}
       <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
       <div className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 md:px-0 px-5 lg:grid-cols-2">
         {/* Left */}
 
         <div>
@@ -48,14 +48,14 @@ export default function FinalCTA() {
 
         {/* Right */}
 
-        <div className="rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/20 bg-white/10 md:p-8 p-5 backdrop-blur-xl">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-blue-600">
-              <CalendarDays size={22} />
+            <div className="flex h-12 w-14 items-center justify-center rounded-xl bg-white text-blue-600">
+              <CalendarDays size={26} />
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="md:text-xl text-lg font-bold text-white">
                 Your Free Audit Includes
               </h3>
 
