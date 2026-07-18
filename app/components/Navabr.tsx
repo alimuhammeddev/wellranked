@@ -50,7 +50,7 @@ export default function Navbar() {
             <div>
               <h1 className="text-white">Wellranked</h1>
 
-              <p className="text-gray-400">Visibility • Growth • Authority</p>
+              <p className="text-gray-400 text-sm">Visibility • Growth • Authority</p>
             </div>
           </Link>
 
