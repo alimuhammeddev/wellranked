@@ -119,7 +119,7 @@ export default function Navbar() {
 
               <a
                 href="#"
-                className="mt-4 flex items-center justify-center gap-2 rounded-full bg-white/90 py-3 font-medium text-gray-900"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-white/90 py-3 font-bold text-gray-900"
               >
                 Book Free Growth Audit
                 <ArrowRight size={18} />
