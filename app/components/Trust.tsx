@@ -25,7 +25,7 @@ const trustItems = [
   },
   {
     title: "Simple Reports",
-    description: "Easy-to-understand updates on your progress.",
+    description: "Easy to understand updates on your progress.",
     icon: BarChart3,
   },
   {
@@ -34,7 +34,7 @@ const trustItems = [
     icon: TrendingUp,
   },
   {
-    title: "Built for UK SMEs",
+    title: "Designed for Real SMEs, not Corporate Brands",
     description: "Designed specifically for small businesses and sole traders.",
     icon: Building2,
   },
@@ -43,7 +43,7 @@ const trustItems = [
 export default function TrustSection() {
   return (
     <section className="bg-[#F8FAFC] py-24">
-      <div className="mx-auto max-w-7xl px-5">
+      <div className="mx-auto max-w-7xl md:px-0 px-5">
 
         <div className="grid items-center gap-16 lg:grid-cols-2">
 
@@ -55,19 +55,19 @@ export default function TrustSection() {
               Why Businesses Choose Wellranked
             </span>
 
-            <h2 className="mt-6 text-4xl font-bold leading-tight text-[#102A56] md:text-5xl">
+            <h2 className="mt-3 text-2xl font-bold leading-tight text-[#102A56] md:text-4xl">
               Built for UK small businesses,
               <span className="block text-blue-600">
                 sole traders & independent companies.
               </span>
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-3 md:text-lg leading-8 text-gray-600">
               We understand that small businesses need practical marketing
               support, not complicated agency language.
             </p>
 
-            <p className="mt-5 text-lg leading-8 text-gray-600">
+            <p className="mt-2 md:text-lg leading-8 text-gray-600">
               Our packages are designed to be clear, affordable and useful
               from day one, helping you build visibility, generate enquiries
               and grow with confidence.
@@ -82,17 +82,17 @@ export default function TrustSection() {
             {trustItems.map(({ title, description, icon: Icon }) => (
               <div
                 key={title}
-                className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl"
+                className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
-                  <Icon size={26} />
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
+                  <Icon size={22} />
                 </div>
 
-                <h3 className="mt-5 text-lg font-semibold text-[#102A56]">
+                <h3 className="mt-2 md:text-lg font-semibold text-[#102A56]">
                   {title}
                 </h3>
 
-                <p className="mt-3 leading-7 text-gray-600">
+                <p className="mt-2 leading-7 text-gray-600">
                   {description}
                 </p>
 
