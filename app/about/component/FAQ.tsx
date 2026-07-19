@@ -119,7 +119,7 @@ export default function FAQSection() {
                   }
                   className="flex w-full items-center justify-between p-6 text-left"
                 >
-                  <h3 className="pr-4 md:text-lg font-semibold text-[#102A56]">
+                  <h3 className="pr-4 md:text-lg font-medium text-[#102A56]">
                     {faq.question}
                   </h3>
 

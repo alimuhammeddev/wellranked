@@ -3,7 +3,13 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Mail, MapPin } from "lucide-react";
 
-const links = ["Home", "Services", "Packages", "About", "Contact"];
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services-section" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
 
 export default function Footer() {
   return (
@@ -33,11 +39,11 @@ export default function Footer() {
           <nav className="flex flex-wrap items-center justify-center md:gap-8 gap-5">
             {links.map((link) => (
               <Link
-                key={link}
-                href={`/#${link.toLowerCase()}`}
+                key={link.href}
+                href={link.href}
                 className="text-gray-600 transition hover:text-blue-600"
               >
-                {link}
+                {link.label}
               </Link>
             ))}
           </nav>
