@@ -63,7 +63,7 @@ const services = [
     icon: Mail,
   },
   {
-    title: "Meta & Google Ads",
+    title: "Meta & Google Ads Management",
     description:
       "Launch targeted advertising campaigns designed to increase visibility, enquiries and return on investment.",
     cta: "Accelerate My Growth",
@@ -153,7 +153,7 @@ export default function ServicesGrid() {
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-10 rounded-3xl bg-linear-to-r from-[#102A56] to-blue-700 p-10 text-center text-white">
+        <div className="mt-10 rounded-3xl bg-linear-to-r from-[#102A56] to-blue-700 md:p-10 p-5 text-center text-white">
           <h3 className="md:text-3xl text-xl font-bold">
             Not Sure Which Service You Need?
           </h3>
@@ -166,7 +166,7 @@ export default function ServicesGrid() {
 
           <Link
             href="/contact"
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition hover:shadow-lg"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition"
           >
             Book Your Free Growth Audit
             <ArrowRight size={18} />
