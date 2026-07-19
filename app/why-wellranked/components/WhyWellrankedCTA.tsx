@@ -49,7 +49,7 @@ export default function WhyWellrankedCTA() {
         {/* CTA Buttons */}
         <div className="mt-5 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="/contact"
+            href="/growth-audit"
             className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition duration-300"
           >
             Book Your Free Growth Audit

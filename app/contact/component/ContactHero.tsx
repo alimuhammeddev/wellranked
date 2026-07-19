@@ -15,7 +15,7 @@ export default function ContactHero() {
       <div className="absolute -left-24 top-0 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
       <div className="absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-16 px-5 pb-24 pt-40 lg:grid-cols-2 lg:px-0">
+      <div className="relative mx-auto grid max-w-7xl md:gap-16 gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:px-0">
         {/* Left */}
 
         <div>

@@ -72,7 +72,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <Link
-            href="/#free-growth-audit"
+            href="/growth-audit"
             className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-blue-600 px-7 py-3 shadow-blue-200 transition-all duration-300 hover:bg-blue-700 lg:flex"
           >
             <span className="relative z-10 flex items-center gap-2 font-semibold text-white">
@@ -120,7 +120,7 @@ export default function Navbar() {
               ))}
 
               <Link
-                href="/#free-growth-audit"
+                href="/growth-audit"
                 className="mt-2 flex items-center justify-center gap-2 rounded-full bg-blue-600 py-3 font-bold text-white shadow-sm shadow-blue-200"
               >
                 Book Free Growth Audit

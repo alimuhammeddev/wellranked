@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, BadgeCheck, } from "lucide-react";
+import { ArrowRight, BadgeCheck, Check, } from "lucide-react";
 import Link from "next/link";
 
 const plans = [
@@ -57,7 +57,7 @@ export default function PackagesHero() {
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
 
             <Link
-              href="/contact"
+              href="/growth-audit"
               className="flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-blue-700"
             >
               Book Your Free Growth Audit
@@ -162,16 +162,16 @@ export default function PackagesHero() {
 
           <div className="mt-8 rounded-2xl bg-[#F8FAFC] p-5">
 
-            <p className="text-sm text-gray-500">
-              ✔ No hidden fees
+            <p className="text-sm text-gray-500 flex items-center gap-1">
+              <Check size={15} /> No hidden fees
             </p>
 
-            <p className="mt-2 text-sm text-gray-500">
-              ✔ Flexible monthly packages
+            <p className="mt-2 text-sm text-gray-500 flex items-center gap-1">
+              <Check size={15} /> Flexible monthly packages
             </p>
 
-            <p className="mt-2 text-sm text-gray-500">
-              ✔ Upgrade anytime as your business grows
+            <p className="mt-2 text-sm text-gray-500 flex items-center gap-1">
+              <Check size={15} /> Upgrade anytime as your business grows
             </p>
 
           </div>

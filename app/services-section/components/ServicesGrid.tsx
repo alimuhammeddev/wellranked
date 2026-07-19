@@ -19,7 +19,7 @@ const services = [
     description:
       "Professional websites that build trust, explain your services clearly and turn visitors into enquiries. We also provide ongoing updates, maintenance and improvements.",
     cta: "Improve My Website",
-    href: "/services/website-design",
+    href: "/growth-audit",
     icon: Globe,
   },
   {
@@ -27,7 +27,7 @@ const services = [
     description:
       "Improve your visibility in local search results with technical optimisation, service pages, citations and local SEO strategies that help customers find you.",
     cta: "Get My Free SEO Audit",
-    href: "/services/local-seo",
+    href: "/growth-audit",
     icon: Search,
   },
   {
@@ -35,7 +35,7 @@ const services = [
     description:
       "Optimise and manage your Google Business Profile with regular updates, posts, reviews and local visibility improvements.",
     cta: "Improve My Google Profile",
-    href: "/services/google-business-profile",
+    href: "/growth-audit",
     icon: MapPinned,
   },
   {
@@ -43,7 +43,7 @@ const services = [
     description:
       "Build trust before customers even contact you with review generation, monitoring and professional response management.",
     cta: "Grow My Reviews",
-    href: "/services/reputation-management",
+    href: "/growth-audit",
     icon: Star,
   },
   {
@@ -51,7 +51,7 @@ const services = [
     description:
       "Keep your business active online with professionally designed graphics and consistent social media content every week.",
     cta: "Get Content Support",
-    href: "/services/social-content",
+    href: "/growth-audit",
     icon: Palette,
   },
   {
@@ -59,7 +59,7 @@ const services = [
     description:
       "Stay connected with existing customers through newsletters, promotions and automated email campaigns that generate repeat business.",
     cta: "Start Email Campaigns",
-    href: "/services/email-marketing",
+    href: "/growth-audit",
     icon: Mail,
   },
   {
@@ -67,7 +67,7 @@ const services = [
     description:
       "Launch targeted advertising campaigns designed to increase visibility, enquiries and return on investment.",
     cta: "Accelerate My Growth",
-    href: "/services/paid-ads",
+    href: "/growth-audit",
     icon: Megaphone,
   },
   {
@@ -75,7 +75,7 @@ const services = [
     description:
       "Need a website update, flyer, campaign or promotion? Think of us as your outsourced marketing department.",
     cta: "Let Us Handle It",
-    href: "/services/marketing-concierge",
+    href: "/growth-audit",
     icon: BriefcaseBusiness,
   },
 ];
@@ -166,7 +166,7 @@ export default function ServicesGrid() {
         </p>
 
         <Link
-          href="/contact"
+          href="/growth-audit"
           className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition"
         >
           Book Your Free Growth Audit

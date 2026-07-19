@@ -198,7 +198,7 @@ export default function PricingCards() {
                   </div>
 
                   <Link
-                    href="/contact"
+                    href="/growth-audit"
                     className={`mt-10 flex items-center justify-center gap-2 rounded-full py-4 font-semibold transition ${
                       plan.featured
                         ? "bg-blue-600 text-white hover:bg-blue-700"

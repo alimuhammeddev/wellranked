@@ -33,13 +33,13 @@ export default function FinalCTA() {
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <button className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-blue-700">
+            <Link href="/growth-audit" className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-blue-700">
               Book Your Free Growth Audit
               <ArrowRight
                 size={18}
                 className="transition group-hover:translate-x-1"
               />
-            </button>
+            </Link>
 
             <Link href="/package-section" className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10">
               View Packages

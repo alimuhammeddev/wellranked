@@ -57,7 +57,7 @@ export default function WhyWellrankedHero() {
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="/growth-audit"
               className="flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
             >
               Book Your Free Growth Audit

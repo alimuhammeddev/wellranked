@@ -30,7 +30,7 @@ export default function PackagesCTA() {
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="/contact"
+            href="/growth-audit"
             className="flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-blue-700"
           >
             Book Your Free Growth Audit

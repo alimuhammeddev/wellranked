@@ -22,7 +22,7 @@ export default function IndustriesCTA() {
         </p>
 
         <Link
-          href="/contact"
+          href="/growth-audit"
           className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56]"
         >
           Book Your Free Growth Audit
