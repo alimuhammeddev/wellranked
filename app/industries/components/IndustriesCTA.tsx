@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function IndustriesCTA() {
   return (
-    <section className="bg-[#102A56] py-24">
+    <section className="relative overflow-hidden bg-linear-to-r from-[#102A56] via-blue-700 to-indigo-700 py-24">
       <div className="mx-auto max-w-4xl px-5 text-center">
-        <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-blue-200">
+        <span className="rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100">
           Ready to Grow?
         </span>
 
@@ -23,7 +23,7 @@ export default function IndustriesCTA() {
 
         <Link
           href="/contact"
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition hover:scale-105"
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56]"
         >
           Book Your Free Growth Audit
           <ArrowRight size={18} />

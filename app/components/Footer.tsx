@@ -7,7 +7,7 @@ const links = ["Home", "Services", "Packages", "About", "Contact"];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-white">
+    <footer className="bg-white">
       <div className="mx-auto max-w-7xl md:px-0 px-5 py-12">
         {/* Top */}
 

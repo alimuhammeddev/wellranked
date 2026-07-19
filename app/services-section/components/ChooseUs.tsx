@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
             </span>
           </h2>
 
-          <p className="mt-3 max-w-2xl text-lg leading-8 text-gray-600">
+          <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
             We don't just build websites or run marketing campaigns. We
             become an extension of your business, helping you attract more
             customers, build trust and create sustainable long-term growth.
@@ -96,9 +96,9 @@ export default function WhyChooseUs() {
                 key={feature.title}
                 className="group rounded-3xl border border-gray-200 bg-white md:p-7 p-5 transition-all duration-300 hover:border-blue-600"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
                   <Icon
-                    size={26}
+                    size={24}
                     className="text-blue-600 transition"
                   />
                 </div>

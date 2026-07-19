@@ -84,9 +84,9 @@ export default function GrowthProcess() {
                 </span>
 
                 {/* Icon */}
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 transition group-hover:bg-blue-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 transition group-hover:bg-blue-600">
                   <Icon
-                    size={26}
+                    size={24}
                     className="text-blue-600 transition group-hover:text-white"
                   />
                 </div>

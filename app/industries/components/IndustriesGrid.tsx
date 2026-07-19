@@ -89,7 +89,7 @@ export default function IndustriesGrid() {
           {industries.map(({ title, description, icon: Icon }) => (
             <div
               key={title}
-              className="group rounded-3xl border border-gray-200 bg-white md:p-7 p-5  shadow-sm transition-all duration-300 hover:border-blue-600"
+              className="group rounded-3xl border border-gray-200 bg-white md:p-7 p-5  transition-all duration-300 hover:border-blue-600"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
                 <Icon className="text-blue-600" size={24} />

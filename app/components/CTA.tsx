@@ -1,4 +1,5 @@
 import { ArrowRight, BadgeCheck, CalendarDays } from "lucide-react";
+import Link from "next/link";
 
 export default function FinalCTA() {
   return (
@@ -14,7 +15,7 @@ export default function FinalCTA() {
         {/* Left */}
 
         <div>
-          <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white backdrop-blur">
+          <span className="inline-flex items-center rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100">
             Free Growth Audit
           </span>
 
@@ -40,9 +41,9 @@ export default function FinalCTA() {
               />
             </button>
 
-            <button className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10">
+            <Link href="/package-section" className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10">
               View Packages
-            </button>
+            </Link>
           </div>
         </div>
 

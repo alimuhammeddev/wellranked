@@ -82,7 +82,7 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="relative overflow-hidden bg-white py-24">
+    <section id="services" className="relative overflow-hidden bg-white ">
       {/* Background Blur */}
       <div className="absolute -left-20 top-20 h-80 w-80 rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-indigo-100/40 blur-3xl" />
@@ -151,27 +151,27 @@ export default function ServicesGrid() {
             );
           })}
         </div>
+      </div>
 
-        {/* Bottom Banner */}
-        <div className="mt-10 rounded-3xl bg-linear-to-r from-[#102A56] to-blue-700 md:p-10 p-5 text-center text-white">
-          <h3 className="md:text-3xl text-xl font-bold">
-            Not Sure Which Service You Need?
-          </h3>
+      {/* Bottom Banner */}
+      <div className="mt-20 relative overflow-hidden bg-linear-to-r from-[#102A56] via-blue-700 to-indigo-700 md:p-20 p-5 text-center text-white">
+        <h3 className="md:text-3xl text-xl font-bold">
+          Not Sure Which Service You Need?
+        </h3>
 
-          <p className="mx-auto mt-3 max-w-2xl text-blue-100 leading-8">
-            Every business is different. Book a free Growth Audit and we'll
-            recommend the services that will have the biggest impact on your
-            business.
-          </p>
+        <p className="mx-auto mt-3 max-w-2xl text-blue-100 leading-8">
+          Every business is different. Book a free Growth Audit and we'll
+          recommend the services that will have the biggest impact on your
+          business.
+        </p>
 
-          <Link
-            href="/contact"
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition"
-          >
-            Book Your Free Growth Audit
-            <ArrowRight size={18} />
-          </Link>
-        </div>
+        <Link
+          href="/contact"
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition"
+        >
+          Book Your Free Growth Audit
+          <ArrowRight size={18} />
+        </Link>
       </div>
     </section>
   );
