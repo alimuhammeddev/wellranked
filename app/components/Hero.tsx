@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-7xl mx-auto py-24 lg:mt-40 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
+      <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* LEFT CONTENT */}
           <div>
@@ -43,14 +43,14 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="text-2xl md:text-5xl font-extrabold leading-tight tracking-tight text-[#102A56]">
+            <h1 className="text-2xl lg:text-4xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#102A56]">
               Your Outsourced
               <span className="block text-blue-600">Marketing Department</span>
               for Less Than the Cost of
               <span className="block">One Employee</span>
             </h1>
 
-            <p className="mt-5 md:text-lg text-gray-600 leading-8 max-w-xl">
+            <p className="mt-3 md:text-lg text-gray-600 leading-8 max-w-xl">
               Wellranked helps UK small businesses get found, trusted and chosen
               by managing your website, Google visibility, reviews, content,
               graphics, social posts and lead generation all under one simple

@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import Navbar from "../components/Navabar";
+import Navbar from "../components/Navbar";
 import PackageBreakdown from "./components/PackageBreakdown";
 import PackagesHero from "./components/PackageHero";
 import PackagesCTA from "./components/PackagesCTA";

@@ -2,8 +2,8 @@ import {
   BriefcaseBusiness,
   Rocket,
   Crown,
-  Check,
   ArrowRight,
+  Check,
 } from "lucide-react";
 import Link from "next/link";
 

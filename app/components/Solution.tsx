@@ -7,7 +7,7 @@ import {
   Image,
   Mail,
   Bot,
-  CheckCircle2,
+  BadgeCheck,
 } from "lucide-react";
 
 const solutions = [
@@ -90,7 +90,7 @@ export default function SolutionSection() {
                   key={item}
                   className="flex items-center gap-3"
                 >
-                  <CheckCircle2
+                  <BadgeCheck
                     size={22}
                     className="text-green-600"
                   />

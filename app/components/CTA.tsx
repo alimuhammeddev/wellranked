@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, CalendarDays } from "lucide-react";
+import { ArrowRight, BadgeCheck, CalendarDays } from "lucide-react";
 
 export default function FinalCTA() {
   return (
@@ -78,7 +78,7 @@ export default function FinalCTA() {
                 key={item}
                 className="flex items-center gap-4"
               >
-                <CheckCircle2
+                <BadgeCheck
                   className="text-green-300"
                   size={22}
                 />

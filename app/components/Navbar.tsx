@@ -21,7 +21,7 @@ export default function Navbar() {
   const links = [
     { name: "Home", href: "/" },
     { name: "Packages", href: "/package-section" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/services-section" },
     { name: "Industries", href: "/industries" },
     { name: "Why Wellranked", href: "/why-wellranked" },
     { name: "About", href: "/about" },

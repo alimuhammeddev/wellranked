@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BadgeCheck, CheckCircle2 } from "lucide-react";
 
 export default function PackagesCTA() {
   return (
@@ -47,17 +47,17 @@ export default function PackagesCTA() {
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 text-sm text-blue-100 md:flex-row md:gap-8">
           <div className="flex items-center gap-2">
-            <CheckCircle2 size={18} className="text-green-300" />
+            <BadgeCheck size={18} className="text-green-300" />
             No pressure or obligation
           </div>
 
           <div className="flex items-center gap-2">
-            <CheckCircle2 size={18} className="text-green-300" />
+            <BadgeCheck size={18} className="text-green-300" />
             Clear, practical advice
           </div>
 
           <div className="flex items-center gap-2">
-            <CheckCircle2 size={18} className="text-green-300" />
+            <BadgeCheck size={18} className="text-green-300" />
             Tailored to your business
           </div>
         </div>

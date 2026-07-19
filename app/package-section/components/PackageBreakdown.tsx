@@ -2,7 +2,7 @@ import {
   BriefcaseBusiness,
   Rocket,
   Crown,
-  CheckCircle2,
+  BadgeCheck,
 } from "lucide-react";
 
 const packages = [
@@ -71,7 +71,7 @@ const packages = [
 
 export default function PackageBreakdown() {
   return (
-    <section className="py-24 bg-white">
+    <section className="md:py-24 bg-white">
       <div className="max-w-7xl mx-auto lg:px-0 px-5">
 
         <div className="text-center max-w-3xl mx-auto mb-10">
@@ -151,7 +151,7 @@ export default function PackageBreakdown() {
                         key={feature}
                         className="flex items-start gap-4"
                       >
-                        <CheckCircle2
+                        <BadgeCheck
                           size={22}
                           className="text-green-600 mt-0.5"
                         />

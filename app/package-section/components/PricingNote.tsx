@@ -35,7 +35,7 @@ const notes = [
 export default function PricingNote() {
   return (
     <section className="bg-[#F8FAFC] py-24">
-      <div className="mx-auto max-w-7xl px-5">
+      <div className="mx-auto max-w-7xl lg:px-0 px-5">
 
         {/* Heading */}
 

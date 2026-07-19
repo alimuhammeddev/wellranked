@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BadgeCheck, } from "lucide-react";
 import Link from "next/link";
 
 const plans = [
@@ -30,7 +30,7 @@ export default function PackagesHero() {
       <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
       <div className="absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-20 lg:px-0 md:px-5 px-5 pb-24 pt-40 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl items-start gap-20 lg:px-0 md:px-5 px-5 pb-24 pt-40 lg:grid-cols-2">
 
         {/* Left */}
 
@@ -40,7 +40,7 @@ export default function PackagesHero() {
             Packages & Pricing
           </span>
 
-          <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] md:text-5xl">
+          <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Simple marketing packages
             <span className="block text-blue-600">
               built for busy business owners.
@@ -81,7 +81,7 @@ export default function PackagesHero() {
               "Clear monthly pricing",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <CheckCircle2
+                <BadgeCheck
                   size={22}
                   className="text-green-600"
                 />
