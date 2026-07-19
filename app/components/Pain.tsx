@@ -36,7 +36,7 @@ const painPoints = [
 
 export default function PainSection() {
   return (
-    <section className="bg-[#F8FAFC] md:py-24 py-10 md:px-0 px-5">
+    <section className="bg-[#F8FAFC] md:py-24 py-10 lg:px-0 md:px-5 px-5">
       <div className="max-w-7xl mx-auto ">
 
         <div className="grid lg:grid-cols-2 md:gap-16 gap-5 items-center">
@@ -45,11 +45,11 @@ export default function PainSection() {
 
           <div>
 
-            <span className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
               The Challenge
             </span>
 
-            <h2 className="mt-6 text-2xl lg:text-4xl font-bold leading-tight text-[#102A56]">
+            <h2 className="mt-6 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
               Running a business is already hard enough.
               <span className="block text-blue-600">
                 Marketing shouldn't be another full-time job.

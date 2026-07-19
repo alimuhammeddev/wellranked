@@ -53,15 +53,15 @@ const packages = [
 export default function PackagesPreview() {
   return (
     <section className="bg-[#F8FAFC] md:py-20 py-10">
-      <div className="mx-auto max-w-7xl md:px-0 px-5">
+      <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
         {/* Heading */}
 
         <div className="mx-auto md:mb-16 mb-10 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
             Pricing
           </span>
 
-          <h2 className="mt-4 text-2xl font-bold text-[#102A56] md:text-4xl">
+          <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
             Simple monthly packages.
             <span className="block text-blue-600">No hidden costs.</span>
           </h2>

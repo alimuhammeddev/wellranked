@@ -10,7 +10,7 @@ export default function FinalCTA() {
       <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
       <div className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 md:px-0 px-5 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:px-0 md:px-5 px-5 lg:grid-cols-2">
         {/* Left */}
 
         <div>
@@ -18,7 +18,7 @@ export default function FinalCTA() {
             Free Growth Audit
           </span>
 
-          <h2 className="mt-4 text-2xl font-bold leading-tight text-white md:text-4xl">
+          <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-white">
             Want to know what's stopping your business from getting
             <span className="block text-blue-200">
               more enquiries?

@@ -1,4 +1,5 @@
-import { Globe, Search, MapPinned, Star } from "lucide-react";
+import { Globe, Search, MapPinned, Star, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -30,7 +31,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-7xl mx-auto py-24 md:mt-40 mt-10 md:p-0 px-5">
+      <div className="relative max-w-7xl mx-auto py-24 lg:mt-40 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* LEFT CONTENT */}
           <div>
@@ -42,7 +43,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="text-2xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#102A56]">
+            <h1 className="text-2xl md:text-5xl font-extrabold leading-tight tracking-tight text-[#102A56]">
               Your Outsourced
               <span className="block text-blue-600">Marketing Department</span>
               for Less Than the Cost of
@@ -58,14 +59,21 @@ export default function Hero() {
 
             {/* Buttons */}
 
-            <div className="mt-7 flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 rounded-full bg-blue-600 text-white font-semibold shadow-lg hover:bg-blue-700 transition">
+            <div className="mt-5 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/contact"
+                className="flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-blue-700"
+              >
                 Book Your Free Growth Audit
-              </button>
+                <ArrowRight size={18} />
+              </Link>
 
-              <button className="px-8 py-4 rounded-full border border-gray-300 bg-white font-semibold hover:bg-gray-100 transition">
+              <Link
+                href="/package-section"
+                className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-blue-600 hover:text-blue-600"
+              >
                 View Packages
-              </button>
+              </Link>
             </div>
 
             <p className="mt-5 text-sm text-gray-500 max-w-lg">
@@ -102,9 +110,7 @@ export default function Hero() {
 
                     <h4 className="font-semibold text-[#102A56]">{title}</h4>
 
-                    <p className="mt-1 text-sm text-gray-500">
-                      {description}
-                    </p>
+                    <p className="mt-1 text-sm text-gray-500">{description}</p>
                   </div>
                 ))}
               </div>

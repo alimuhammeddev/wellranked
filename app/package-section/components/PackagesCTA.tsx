@@ -1,0 +1,68 @@
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+export default function PackagesCTA() {
+  return (
+    <section className="relative overflow-hidden bg-linear-to-r from-[#102A56] via-blue-700 to-indigo-700 py-24">
+      {/* Background Glow */}
+      <div className="absolute -left-20 top-0 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl" />
+
+      <div className="relative mx-auto max-w-5xl px-5 text-center">
+
+        <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white">
+          Free Growth Audit
+        </span>
+
+        <h2 className="mt-6 text-2xl font-extrabold leading-tight text-white lg:text-4xl md:text-3xl">
+          Ready to grow your business
+          <span className="block text-blue-200">
+            with less stress?
+          </span>
+        </h2>
+
+        <p className="mx-auto mt-8 max-w-3xl md:text-lg leading-8 text-blue-100">
+          Book your free Wellranked Growth Audit and we'll show you the
+          biggest opportunities to improve your website, Google visibility,
+          reviews and lead generation. You'll receive practical,
+          easy-to-understand recommendations with no pressure and no jargon.
+        </p>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link
+            href="/contact"
+            className="flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-blue-700"
+          >
+            Book Your Free Growth Audit
+            <ArrowRight size={18} />
+          </Link>
+
+          <Link
+            href="/contact"
+            className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white transition hover:bg-white/10"
+          >
+            Speak to Our Team
+          </Link>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 text-sm text-blue-100 md:flex-row md:gap-8">
+          <div className="flex items-center gap-2">
+            <CheckCircle2 size={18} className="text-green-300" />
+            No pressure or obligation
+          </div>
+
+          <div className="flex items-center gap-2">
+            <CheckCircle2 size={18} className="text-green-300" />
+            Clear, practical advice
+          </div>
+
+          <div className="flex items-center gap-2">
+            <CheckCircle2 size={18} className="text-green-300" />
+            Tailored to your business
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};

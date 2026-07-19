@@ -42,8 +42,8 @@ const trustItems = [
 
 export default function TrustSection() {
   return (
-    <section className="bg-[#F8FAFC] md:py-24">
-      <div className="mx-auto max-w-7xl md:px-0 px-5">
+    <section className="bg-[#F8FAFC] lg:py-24 md:py-10">
+      <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
 
         <div className="grid items-center md:gap-16 gap-10 lg:grid-cols-2">
 
@@ -51,11 +51,11 @@ export default function TrustSection() {
 
           <div>
 
-            <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
               Why Businesses Choose Wellranked
             </span>
 
-            <h2 className="mt-3 text-2xl font-bold leading-tight text-[#102A56] md:text-4xl">
+            <h2 className="mt-3 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
               Built for UK small businesses,
               <span className="block text-blue-600">
                 sole traders & independent companies.

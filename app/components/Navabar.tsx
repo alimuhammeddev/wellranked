@@ -19,13 +19,13 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    "Home",
-    "Packages",
-    "Services",
-    "Industries",
-    "Why Wellranked",
-    "About",
-    "Contact",
+    { name: "Home", href: "/" },
+    { name: "Packages", href: "/package-section" },
+    { name: "Services", href: "/services" },
+    { name: "Industries", href: "/industries" },
+    { name: "Why Wellranked", href: "/why-wellranked" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -59,14 +59,14 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-12 lg:flex">
             {links.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+              <Link
+                key={link.name}
+                href={link.href}
                 className="group relative text-[15px] font-medium text-[#102A56] transition-colors duration-300 hover:text-blue-600"
               >
-                {link}
+                {link.name}
                 <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-blue-600 transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -109,23 +109,23 @@ export default function Navbar() {
           <div className="mx-auto max-w-7xl">
             <nav className="flex flex-col gap-5">
               {links.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+                <Link
+                  key={link.name}
+                  href={link.href}
                   onClick={() => setOpen(false)}
                   className="text-lg font-medium text-[#102A56] transition-all duration-300 hover:translate-x-2 hover:text-blue-600"
                 >
-                  {link}
-                </a>
+                  {link.name}
+                </Link>
               ))}
 
-              <a
-                href="#"
+              <Link
+                href="/#free-growth-audit"
                 className="mt-2 flex items-center justify-center gap-2 rounded-full bg-blue-600 py-3 font-bold text-white shadow-sm shadow-blue-200"
               >
                 Book Free Growth Audit
                 <ArrowRight size={18} />
-              </a>
+              </Link>
             </nav>
           </div>
         </div>

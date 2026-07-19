@@ -48,7 +48,7 @@ const solutions = [
 export default function SolutionSection() {
   return (
     <section className="md:py-24 py-16 bg-white">
-      <div className="max-w-7xl mx-auto md:px-0 px-5">
+      <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
 
         <div className="grid lg:grid-cols-2 md:gap-20 gap-10 items-center">
 
@@ -56,11 +56,11 @@ export default function SolutionSection() {
 
           <div>
 
-            <span className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
               One Team. One Monthly Fee.
             </span>
 
-            <h2 className="mt-4 text-2xl lg:text-4xl font-bold leading-tight text-[#102A56]">
+            <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
               Everything handled.
             </h2>
 
