@@ -75,11 +75,11 @@ export default function WhyWellrankedGrid() {
                 <featured.icon size={24} className="text-blue-600"/>
               </div>
 
-              <h3 className="mt-3 text-2xl font-bold text-[#102A56]">
+              <h3 className="mt-3 md:text-2xl text-xl font-bold text-[#102A56]">
                 {featured.title}
               </h3>
 
-              <p className="mt-2 max-w-3xl text-lg leading-8 text-gray-600">
+              <p className="mt-2 max-w-3xl leading-8 text-gray-600">
                 {featured.description}
               </p>
             </div>

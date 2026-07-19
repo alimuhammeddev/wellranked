@@ -76,7 +76,7 @@ export default function GrowthProcess() {
             return (
               <div
                 key={step.number}
-                className="group relative rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-blue-600"
+                className="group relative rounded-3xl border border-gray-200 bg-white md:p-8 p-5 transition-all duration-300 hover:border-blue-600"
               >
                 {/* Number */}
                 <span className="absolute right-6 top-6 text-5xl font-extrabold text-blue-50 transition group-hover:text-blue-100">

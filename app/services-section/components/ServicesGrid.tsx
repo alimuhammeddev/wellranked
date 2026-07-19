@@ -87,7 +87,7 @@ export default function ServicesGrid() {
       <div className="absolute -left-20 top-20 h-80 w-80 rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-indigo-100/40 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-0 md:mt-20 mt-10">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
