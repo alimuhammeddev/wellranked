@@ -41,7 +41,7 @@ export default function FinalCTA() {
               />
             </Link>
 
-            <Link href="/package-section" className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10">
+            <Link href="/package-section" className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10 text-center">
               View Packages
             </Link>
           </div>
