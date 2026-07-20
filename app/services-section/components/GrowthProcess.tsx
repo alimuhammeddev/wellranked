@@ -50,13 +50,13 @@ export default function GrowthProcess() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Our Process
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            A Clear Process That
-            <span className="block text-blue-600">
+            A Clear Process That {" "}
+            <span className="text-[#244EB3]">
               Delivers Real Results.
             </span>
           </h2>
@@ -76,7 +76,7 @@ export default function GrowthProcess() {
             return (
               <div
                 key={step.number}
-                className="group relative rounded-3xl border border-gray-200 bg-white md:p-8 p-5 transition-all duration-300 hover:border-blue-600"
+                className="group relative rounded-3xl border border-gray-200 bg-white md:p-8 p-5 transition-all duration-300 hover:border-[#244EB3]"
               >
                 {/* Number */}
                 <span className="absolute right-6 top-6 text-5xl font-extrabold text-blue-50 transition group-hover:text-blue-100">
@@ -84,14 +84,14 @@ export default function GrowthProcess() {
                 </span>
 
                 {/* Icon */}
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 transition group-hover:bg-blue-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 transition group-hover:bg-[#244EB3]">
                   <Icon
                     size={24}
-                    className="text-blue-600 transition group-hover:text-white"
+                    className="text-[#244EB3] transition group-hover:text-white"
                   />
                 </div>
 
-                <h3 className="mt-6 text-xl font-bold text-[#102A56]">
+                <h3 className="mt-6 text-xl font-bold text-[#244EB3]">
                   {step.title}
                 </h3>
 

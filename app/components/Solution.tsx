@@ -81,7 +81,7 @@ export default function SolutionSection() {
                 "Everything working together",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <BadgeCheck size={22} className="text-green-600" />
+                  <BadgeCheck size={22} className="text-[#244EB3]" />
                   <span className="text-gray-700 font-medium">{item}</span>
                 </div>
               ))}

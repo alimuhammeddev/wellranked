@@ -80,9 +80,63 @@ const services = [
   },
 ];
 
+// Subtle dot-grid pattern, sits behind the top-right corner of each card.
+function DotGrid() {
+  const cols = 8;
+  const rows = 6;
+  const spacing = 18;
+
+  const dots = [];
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      dots.push({ x: c * spacing + 6, y: r * spacing + 6 });
+    }
+  }
+
+  return (
+    <svg
+      viewBox="0 0 150 110"
+      preserveAspectRatio="xMaxYMin meet"
+      className="pointer-events-none absolute -right-2 -top-2 h-32 w-40 opacity-[0.12] transition-all duration-500 ease-out group-hover:opacity-[0.22]"
+      aria-hidden="true"
+    >
+      {dots.map((d, i) => (
+        <circle key={i} cx={d.x} cy={d.y} r={1.6} fill="#244EB3" />
+      ))}
+    </svg>
+  );
+}
+
+function CornerRings() {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 transition-all duration-500 ease-out opacity-[0.25]"
+      aria-hidden="true"
+    >
+      <circle
+        cx="80"
+        cy="80"
+        r="78"
+        fill="none"
+        stroke="#244EB3"
+        strokeWidth="1.5"
+      />
+      <circle
+        cx="80"
+        cy="80"
+        r="54"
+        fill="none"
+        stroke="#244EB3"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
+
 export default function ServicesGrid() {
   return (
-    <section id="services" className="relative overflow-hidden bg-white ">
+    <section id="services" className="relative overflow-hidden bg-white">
       {/* Background Blur */}
       <div className="absolute -left-20 top-20 h-80 w-80 rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-indigo-100/40 blur-3xl" />
@@ -90,15 +144,13 @@ export default function ServicesGrid() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0 md:mt-20 mt-10">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Our Services
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            Everything You Need
-            <span className="block text-blue-600">
-              To Grow Your Business Online
-            </span>
+            Everything You Need{" "}
+            <span className="text-[#244EB3]">To Grow Your Business Online</span>
           </h2>
 
           <p className="mt-3 md:text-lg leading-8 text-gray-600">
@@ -116,29 +168,31 @@ export default function ServicesGrid() {
             return (
               <div
                 key={service.title}
-                className="group flex h-full flex-col rounded-3xl border border-gray-200 bg-white md:p-8 p-5 transition-all duration-300  hover:border-blue-600"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white md:p-8 p-5 shadow-[0_1px_2px_rgba(16,42,86,0.04)] transition-all duration-300 border-[#244EB3]/60"
               >
+                {/* Corner decoration: soft wash + rings + dot grid */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-blue-50 blur-2xl transition-opacity duration-500 opacity-80" />
+                <CornerRings />
+                <DotGrid />
+
                 {/* Icon */}
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 transition group-hover:bg-blue-600">
-                  <Icon
-                    size={24}
-                    className="text-blue-600 transition group-hover:text-white"
-                  />
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl ring-1 ring-inset transition-all duration-300 bg-[#244EB3] ring-[#244EB3]">
+                  <Icon size={24} className="text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="mt-3 text-xl font-bold text-[#102A56]">
+                <h3 className="relative mt-3 text-xl font-bold text-[#244EB3]">
                   {service.title}
                 </h3>
 
-                <p className="mt-3 grow leading-7 text-gray-600">
+                <p className="relative mt-3 grow leading-7 text-gray-600">
                   {service.description}
                 </p>
 
                 {/* CTA */}
                 <Link
                   href={service.href}
-                  className="mt-5 inline-flex items-center gap-2 font-semibold text-blue-600 transition-all group-hover:gap-3"
+                  className="relative mt-5 inline-flex items-center gap-2 font-semibold text-[#244EB3] transition-all group-hover:gap-3"
                 >
                   {service.cta}
 
@@ -151,27 +205,6 @@ export default function ServicesGrid() {
             );
           })}
         </div>
-      </div>
-
-      {/* Bottom Banner */}
-      <div className="mt-20 relative overflow-hidden bg-linear-to-r from-[#102A56] via-blue-700 to-indigo-700 md:p-20 p-5 text-center text-white">
-        <h3 className="md:text-3xl text-xl font-bold">
-          Not Sure Which Service You Need?
-        </h3>
-
-        <p className="mx-auto mt-3 max-w-2xl text-blue-100 leading-8">
-          Every business is different. Book a free Growth Audit and we'll
-          recommend the services that will have the biggest impact on your
-          business.
-        </p>
-
-        <Link
-          href="/growth-audit"
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition"
-        >
-          Book Your Free Growth Audit
-          <ArrowRight size={18} />
-        </Link>
       </div>
     </section>
   );

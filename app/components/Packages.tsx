@@ -141,8 +141,8 @@ export default function PackagesPreview() {
                   <div className="space-y-4">
                     {pkg.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-3">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100">
-                          <Check size={14} className="text-green-600" />
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">
+                          <Check size={14} className="text-[#244EB3]" />
                         </div>
 
                         <span className="text-gray-700">{feature}</span>

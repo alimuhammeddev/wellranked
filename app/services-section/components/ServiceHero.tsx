@@ -1,37 +1,65 @@
 "use client";
 
-import { ArrowRight, BadgeCheck, CheckCircle2, Globe2, Search, Star } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Globe2,
+  Headphones,
+  LayoutGrid,
+  Mail,
+  MapPin,
+  Megaphone,
+  Palette,
+  Search,
+  Sparkles,
+  Star,
+} from "lucide-react";
 import Link from "next/link";
 
 const services = [
-  "Website Design & Management",
-  "Local SEO",
-  "Google Business Profile",
-  "Review Management",
-  "Social Content",
-  "Email Marketing",
-  "Meta & Google Ads",
-  "Marketing Concierge",
+  { title: "Website Design & Management", icon: LayoutGrid },
+  { title: "Local SEO", icon: Search },
+  { title: "Google Business Profile", icon: MapPin },
+  { title: "Review & Reputation Management", icon: Star },
+  { title: "Graphics & Social Content", icon: Palette },
+  { title: "Email Marketing", icon: Mail },
+  { title: "Meta & Google Ads Management", icon: Megaphone },
+  { title: "Marketing Concierge", icon: Headphones },
 ];
 
 export default function ServicesHero() {
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-[#F7FAFF] via-white to-[#EEF4FF]">
+      {/* Dot grid background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+          maskImage:
+            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+        }}
+      />
+
       {/* Background Blur */}
       <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
       <div className="absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl items-start md:gap-20 gap-10 px-5 pb-24 pt-40 md:px-5 lg:grid-cols-2 lg:px-0">
+      <div className="relative z-10 mx-auto grid max-w-7xl items-start md:gap-20 gap-10 px-5 pb-24 pt-40 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             <Globe2 size={16} />
             Digital Growth Services
           </span>
 
           <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            Everything Your Business Needs
-            <span className="block text-blue-600">To Grow Online.</span>
+            Everything Your Business Needs{" "}
+            <span className="text-[#244EB3]">To Grow Online.</span>
           </h1>
 
           <p className="mt-2 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -44,7 +72,7 @@ export default function ServicesHero() {
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/growth-audit"
-              className="flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
             >
               Book Your Free Growth Audit
               <ArrowRight size={18} />
@@ -52,7 +80,7 @@ export default function ServicesHero() {
 
             <Link
               href="#services"
-              className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-blue-600 hover:text-blue-600"
+              className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-[#244EB3] hover:text-[#244EB3]"
             >
               See What We Can Improve
             </Link>
@@ -65,62 +93,69 @@ export default function ServicesHero() {
               "Marketing support from one trusted team",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck size={22} className="text-green-600" />
+                <BadgeCheck size={22} className="text-[#244EB3]" />
                 <span className="text-gray-700">{item}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right */}
-        <div className="rounded-3xl border border-gray-200 bg-white p-6 md:p-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
-            <CheckCircle2 size={16} />
-            Why Businesses Choose Wellranked
-          </span>
-
-          <h3 className="mt-4 md:text-2xl text-lg font-bold text-[#102A56]">
-            A Simple Partner for Your Digital Growth
-          </h3>
-
-          <p className="mt-3 text-gray-600 leading-7">
-            We help small businesses attract more customers with practical
-            digital marketing solutions that are easy to understand, affordable,
-            and focused on real business results.
-          </p>
-
-          <div className="mt-4 space-y-3">
-            {[
-              "Clear advice with no technical jargon",
-              "Tailored strategies for your business",
-              "Reliable support whenever you need it",
-              "Everything managed in one place",
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <BadgeCheck className="mt-1 text-green-600" size={20} />
-                <span className="text-gray-700">{item}</span>
-              </div>
-            ))}
+        {/* Right — hub & spoke services map */}
+        <div className="relative mx-auto w-full max-w-md">
+          {/* Hub */}
+          <div className="relative z-20 mx-auto mb-8 w-fit">
+            <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-blue-100 bg-white/90 px-7 py-5 text-center">
+              <span className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-[#244EB3] to-[#3D66D4] text-white shadow-md shadow-blue-900/20">
+                <Sparkles size={20} />
+              </span>
+              <h3 className="text-lg font-extrabold text-[#244EB3] sm:text-xl">
+                Services We Offer
+              </h3>
+              <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400">
+                One partner, every channel
+              </p>
+            </div>
           </div>
 
-          <div className="mt-4 grid grid-cols-3 gap-4 rounded-2xl bg-blue-50 md:p-5 p-3">
-            <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">1</p>
-              <p className="mt-1 text-xs text-gray-600">Trusted Partner</p>
-            </div>
+          {/* Bridge connecting hub to the two service columns */}
+          <div aria-hidden className="relative mx-auto h-8 w-full">
+            <span className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
+            <span className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed border-blue-200" />
+            <span className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
+            <span className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
+          </div>
 
-            <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">8+</p>
-              <p className="mt-1 text-xs text-gray-600">Core Services</p>
-            </div>
+          {/* Service cards */}
+          <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
+            <span
+              aria-hidden
+              className="absolute left-1/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200"
+            />
+            <span
+              aria-hidden
+              className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200"
+            />
 
-            <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">100%</p>
-              <p className="mt-1 text-xs text-gray-600">Business Focused</p>
-            </div>
+            {services.map(({ title, icon: Icon }) => (
+              <div
+                key={title}
+                className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border border-blue-100 bg-white/95 p-3 text-center  sm:p-4"
+              >
+                <span
+                  aria-hidden
+                  className="absolute -top-1.25 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-white bg-[#244EB3]"
+                />
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#244EB3]">
+                  <Icon size={17} />
+                </span>
+                <span className="text-[11px] font-semibold leading-tight text-[#15234a] sm:text-xs">
+                  {title}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
-}
+};

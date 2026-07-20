@@ -54,17 +54,17 @@ export default function PackagesCTA() {
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 text-sm text-blue-100 md:flex-row md:gap-8">
           <div className="flex items-center gap-2">
-            <BadgeCheck size={18} className="text-green-300" />
+            <BadgeCheck size={18} className="text-blue-100" />
             No pressure or obligation
           </div>
 
           <div className="flex items-center gap-2">
-            <BadgeCheck size={18} className="text-green-300" />
+            <BadgeCheck size={18} className="text-blue-100" />
             Clear, practical advice
           </div>
 
           <div className="flex items-center gap-2">
-            <BadgeCheck size={18} className="text-green-300" />
+            <BadgeCheck size={18} className="text-blue-100" />
             Tailored to your business
           </div>
         </div>

@@ -58,19 +58,30 @@ const orbitItems = [
 export default function PackagesHero() {
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-[#F7FAFF] via-white to-[#EEF4FF]">
-      {/* Background Blur */}
+      {/* Dot grid background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+          maskImage:
+            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+        }}
+      />
 
+      {/* Background Blur */}
       <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
       <div className="absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
-
       <div className="relative mx-auto grid max-w-7xl items-start gap-20 lg:px-0 md:px-5 px-5 pb-24 pt-40 lg:grid-cols-2">
         {/* Left */}
-
         <div>
           <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Packages & Pricing
           </span>
-
           <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Simple marketing packages{" "}
             <span className="text-[#244EB3]">
@@ -108,7 +119,7 @@ export default function PackagesHero() {
               "Clear monthly pricing",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck size={22} className="text-green-600" />
+                <BadgeCheck size={22} className="text-[#244EB3]" />
 
                 <span className="text-gray-700">{item}</span>
               </div>
@@ -269,4 +280,4 @@ export default function PackagesHero() {
       </div>
     </section>
   );
-};
+}

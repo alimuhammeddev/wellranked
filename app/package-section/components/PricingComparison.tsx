@@ -131,7 +131,7 @@ const comparison = [
 
 const Cell = ({ value }: { value: boolean }) =>
   value ? (
-    <Check className="mx-auto text-green-600" size={22} />
+    <Check className="mx-auto text-[#244EB3]" size={22} />
   ) : (
     <Minus className="mx-auto text-gray-300" size={22} />
   );

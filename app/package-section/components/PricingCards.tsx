@@ -183,10 +183,10 @@ export default function PricingCards() {
                         key={feature}
                         className="flex items-start gap-3"
                       >
-                        <div className="mt-0.5 rounded-full bg-green-100 p-1">
+                        <div className="mt-0.5 rounded-full bg-blue-100 p-1">
                           <Check
                             size={12}
-                            className="text-green-600"
+                            className="text-[#244EB3]"
                           />
                         </div>
 

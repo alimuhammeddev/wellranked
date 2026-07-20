@@ -87,7 +87,7 @@ export default function FinalCTA() {
               "Simple action plan with no obligation",
             ].map((item) => (
               <div key={item} className="flex items-center gap-4">
-                <BadgeCheck className="text-green-300" size={22} />
+                <BadgeCheck className="text-white" size={22} />
 
                 <span className="text-white">{item}</span>
               </div>

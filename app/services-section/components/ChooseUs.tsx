@@ -46,13 +46,13 @@ export default function WhyChooseUs() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Why Choose Wellranked
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            A Digital Partner That
-            <span className="block text-blue-600">
+            A Digital Partner That {" "}
+            <span className="text-[#244EB3]">
               Helps Your Business Grow.
             </span>
           </h2>
@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
               "Long-term support as your business grows",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck size={22} className="text-green-600" />
+                <BadgeCheck size={22} className="text-[#244EB3]" />
                 <span className="text-gray-700">{item}</span>
               </div>
             ))}
@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
 
           <Link
             href="/contact"
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
           >
             Talk To Wellranked
             <ArrowRight size={18} />
@@ -94,16 +94,16 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={feature.title}
-                className="group rounded-3xl border border-gray-200 bg-white md:p-7 p-5 transition-all duration-300 hover:border-blue-600"
+                className="group rounded-3xl border bg-white md:p-7 p-5 transition-all duration-300 border-[#244EB3]"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
                   <Icon
                     size={24}
-                    className="text-blue-600 transition"
+                    className="text-[#244EB3] transition"
                   />
                 </div>
 
-                <h3 className="mt-4 md:text-xl font-bold text-[#102A56]">
+                <h3 className="mt-4 md:text-xl font-bold text-[#244EB3]">
                   {feature.title}
                 </h3>
 
