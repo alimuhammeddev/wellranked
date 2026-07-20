@@ -88,7 +88,7 @@ export default function PackagesPreview() {
                 }`}
               >
                 {pkg.featured && (
-                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#244EB3] px-5 py-2 text-sm font-semibold text-white shadow-lg">
+                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#244EB3] px-5 py-2 text-sm font-semibold text-white">
                     Most Popular
                   </div>
                 )}

@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h2 className="font-bold text-[#102A56]">Wellranked</h2>
+              <h2 className="font-bold text-[#244EB3]">Wellranked</h2>
 
               <p className="text-sm text-gray-500">
                 Visibility • Growth • Authority
@@ -41,7 +41,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 transition hover:text-blue-600"
+                className="text-gray-600 transition hover:text-[#244EB3]"
               >
                 {link.label}
               </Link>
@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-2 text-sm">
             <Link
               href="mailto:hello@wellranked.co.uk"
-              className="flex items-center gap-2 text-gray-600 transition hover:text-blue-600"
+              className="flex items-center gap-2 text-gray-600 transition hover:text-[#244EB3]"
             >
               <Mail size={16} />
               hello@wellranked.co.uk
@@ -67,21 +67,21 @@ export default function Footer() {
             <div className="mt-1 flex items-center gap-3">
               <Link
                 href="#"
-                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-blue-600 hover:text-blue-600"
+                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
               >
                 <FaLinkedin size={16} />
               </Link>
 
               <Link
                 href="#"
-                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-blue-600 hover:text-blue-600"
+                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
               >
                 <FaInstagram size={16} />
               </Link>
 
               <Link
                 href="#"
-                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-blue-600 hover:text-blue-600"
+                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
               >
                 <FaXTwitter size={16} />
               </Link>
@@ -95,11 +95,11 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Wellranked. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-blue-600">
+            <Link href="#" className="hover:text-[#244EB3]">
               Privacy Policy
             </Link>
 
-            <Link href="#" className="hover:text-blue-600">
+            <Link href="#" className="hover:text-[#244EB3]">
               Terms
             </Link>
           </div>

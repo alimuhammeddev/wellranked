@@ -62,8 +62,8 @@ export default function FinalCTA() {
 
         <div className="rounded-3xl border border-white/20 bg-white/10 md:p-8 p-5 backdrop-blur-xl">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-14 items-center justify-center rounded-xl bg-white text-blue-600">
-              <CalendarDays size={26} />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#244EB3]">
+              <CalendarDays size={24} />
             </div>
 
             <div>
