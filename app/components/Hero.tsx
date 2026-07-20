@@ -228,27 +228,27 @@ export default function Hero() {
               {[
                 {
                   ...services[0],
-                  className: "left-2/4 -translate-x-1/2",
+                  className: " -mt-2 left-2/4 -translate-x-1/2",
                 }, // Top
                 {
                   ...services[1],
-                  className: "top-[20%] right-[1%]",
+                  className: "top-[20%] -right-[1%]",
                 }, // Top Right
                 {
                   ...services[2],
-                  className: "bottom-[20%] right-[1%]",
+                  className: "bottom-[16%] right-[1%]",
                 }, // Bottom Right
                 {
                   ...services[3],
-                  className: "bottom-[1px] left-2/4 -translate-x-1/2",
+                  className: "-bottom-[10px] left-2/4 -translate-x-1/2",
                 }, // Bottom
                 {
                   ...services[4],
-                  className: "bottom-[20%] left-[1%]",
+                  className: "bottom-[16%] left-[1%]",
                 }, // Bottom Left
                 {
                   ...services[5],
-                  className: "top-[20%] left-[1%]",
+                  className: "top-[16%] left-[1%]",
                 }, // Top Left
               ].map(({ Icon, name, className }) => (
                 <div key={name} className={`absolute ${className}`}>
