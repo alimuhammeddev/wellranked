@@ -75,13 +75,13 @@ export default function PackageBreakdown() {
       <div className="max-w-7xl mx-auto lg:px-0 px-5">
 
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Find Your Perfect Fit
           </span>
 
           <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
             Every package is designed
-            <span className="block text-blue-600">
+            <span className="block text-[#244EB3]">
               to grow with your business.
             </span>
           </h2>
@@ -104,8 +104,8 @@ export default function PackageBreakdown() {
 
                   <div className="flex items-center gap-4">
 
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-blue-600">
-                      <Icon size={28} />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#244EB3]">
+                      <Icon size={24} />
                     </div>
 
                     <div>
@@ -113,7 +113,7 @@ export default function PackageBreakdown() {
                         {pkg.title}
                       </h3>
 
-                      <p className="text-blue-600 font-medium mt-1">
+                      <p className="text-[#244EB3] font-medium mt-1">
                         {pkg.subtitle}
                       </p>
                     </div>
@@ -125,7 +125,7 @@ export default function PackageBreakdown() {
                   </p>
 
                   <div className="mt-4 rounded-2xl bg-blue-50 p-6">
-                    <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-[#244EB3]">
                       Best For
                     </p>
 

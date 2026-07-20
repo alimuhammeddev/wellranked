@@ -40,7 +40,7 @@ export default function PricingNote() {
         {/* Heading */}
 
         <div className="mx-auto mb-10 max-w-3xl text-center">
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Before You Choose
           </span>
 
@@ -62,11 +62,11 @@ export default function PricingNote() {
               key={title}
               className="rounded-3xl border border-gray-200 bg-white md:p-8 p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#244EB3]">
                 <Icon size={24} />
               </div>
 
-              <h3 className="mt-4 md:text-xl text-lg font-bold text-[#102A56]">
+              <h3 className="mt-4 md:text-xl text-lg font-bold text-[#244EB3]">
                 {title}
               </h3>
 
@@ -80,7 +80,7 @@ export default function PricingNote() {
         {/* Bottom Notice */}
 
         <div className="mt-10 rounded-3xl border border-blue-200 bg-blue-50 p-8 text-center">
-          <h3 className="md:text-2xl text-xl font-bold text-[#102A56]">
+          <h3 className="md:text-2xl text-xl font-bold text-[#244EB3]">
             Not sure which package is right for you?
           </h3>
 

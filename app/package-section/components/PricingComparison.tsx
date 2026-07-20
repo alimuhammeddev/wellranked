@@ -168,7 +168,7 @@ export default function PricingComparison() {
                     Essential
                   </h3>
 
-                  <p className="mt-1 text-3xl font-bold text-blue-600">
+                  <p className="mt-1 text-3xl font-bold text-[#244EB3]">
                     £395
                   </p>
 
@@ -177,7 +177,7 @@ export default function PricingComparison() {
                   </span>
                 </th>
 
-                <th className="bg-blue-600 px-8 py-6 text-center text-white">
+                <th className="bg-[#244EB3] px-8 py-6 text-center text-white">
                   <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
                     MOST POPULAR
                   </span>
@@ -200,7 +200,7 @@ export default function PricingComparison() {
                     Accelerator
                   </h3>
 
-                  <p className="mt-1 text-3xl font-bold text-blue-600">
+                  <p className="mt-1 text-3xl font-bold text-[#244EB3]">
                     £995
                   </p>
 

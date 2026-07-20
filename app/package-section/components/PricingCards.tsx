@@ -76,13 +76,13 @@ export default function PricingCards() {
     <section id="pricing" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
         <div className="text-center max-w-3xl mx-auto md:mb-16 mb-5">
-          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Choose Your Plan
           </span>
 
           <h2 className="mt-3 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
             One monthly fee.
-            <span className="block text-blue-600">
+            <span className="block text-[#244EB3]">
               Everything working together.
             </span>
           </h2>
@@ -102,12 +102,12 @@ export default function PricingCards() {
                 key={plan.name}
                 className={`relative flex flex-col rounded-3xl border ${
                   plan.featured
-                    ? "border-blue-600 shadow-2xl lg:scale-105"
+                    ? "border-[#244EB3] shadow-2xl lg:scale-105"
                     : "border-gray-200"
                 }`}
               >
                 {plan.featured && (
-                  <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-lg">
+                  <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[#244EB3] px-5 py-2 text-sm font-semibold text-white">
                     MOST POPULAR
                   </div>
                 )}
@@ -115,18 +115,18 @@ export default function PricingCards() {
                 <div
                   className={`rounded-t-3xl md:p-8 p-5 ${
                     plan.featured
-                      ? "bg-linear-to-r from-blue-600 to-indigo-600 text-white"
+                      ? "bg-[#244EB3] text-white"
                       : "bg-[#F8FAFF]"
                   }`}
                 >
                   <div
-                    className={`flex h-14 w-14 items-center justify-center rounded-2xl ${
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
                       plan.featured
                         ? "bg-white/20"
-                        : "bg-blue-100 text-blue-600"
+                        : "bg-blue-100 text-[#244EB3]"
                     }`}
                   >
-                    <Icon size={28} />
+                    <Icon size={24} />
                   </div>
 
                   <h3 className="mt-3 text-xl font-bold">
@@ -137,7 +137,7 @@ export default function PricingCards() {
                     className={`mt-1 font-medium ${
                       plan.featured
                         ? "text-blue-100"
-                        : "text-blue-600"
+                        : "text-[#244EB3]"
                     }`}
                   >
                     {plan.tagline}
@@ -166,7 +166,7 @@ export default function PricingCards() {
                   </p>
 
                   <div className="mt-6 rounded-xl bg-blue-50 p-4">
-                    <p className="text-xs uppercase tracking-wide text-blue-700 font-semibold">
+                    <p className="text-xs uppercase tracking-wide text-[#244EB3] font-semibold">
                       Best For
                     </p>
 
@@ -201,8 +201,8 @@ export default function PricingCards() {
                     href="/growth-audit"
                     className={`mt-10 flex items-center justify-center gap-2 rounded-full py-4 font-semibold transition ${
                       plan.featured
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
-                        : "border border-blue-600 text-blue-600 hover:bg-blue-50"
+                        ? "bg-[#244EB3] text-white"
+                        : "border border-[#244EB3] text-[#244EB3] hover:bg-blue-50"
                     }`}
                   >
                     Get Started
