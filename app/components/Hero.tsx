@@ -150,9 +150,125 @@ export default function Hero() {
 
           <div className="relative flex items-center justify-center py-16 md:mt-0 -mt-10">
             {/* Center Circle */}
-            <div className="relative z-20 flex h-64 w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full bg-linear-to-br from-[#1F3064] to-[#2563EB] text-white shadow-[0_35px_90px_rgba(37,99,235,.35)]">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold">Wellranked</h2>
+            <div className="relative z-20 flex h-60 w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full overflow-hidden bg-linear-to-br from-[#1F3064] to-[#2563EB] shadow-[0_35px_90px_rgba(37,99,235,.35)]">
+              {/* Full background network */}
+              <svg
+                className="absolute inset-0 w-full h-full opacity-25"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                {/* Horizontal */}
+                <line
+                  x1="0"
+                  y1="20"
+                  x2="100"
+                  y2="20"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+                <line
+                  x1="0"
+                  y1="50"
+                  x2="100"
+                  y2="50"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+                <line
+                  x1="0"
+                  y1="80"
+                  x2="100"
+                  y2="80"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+
+                {/* Vertical */}
+                <line
+                  x1="20"
+                  y1="0"
+                  x2="20"
+                  y2="100"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+                <line
+                  x1="50"
+                  y1="0"
+                  x2="50"
+                  y2="100"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+                <line
+                  x1="80"
+                  y1="0"
+                  x2="80"
+                  y2="100"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+
+                {/* Diagonals */}
+                <line
+                  x1="0"
+                  y1="0"
+                  x2="100"
+                  y2="100"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+                <line
+                  x1="100"
+                  y1="0"
+                  x2="0"
+                  y2="100"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+                <line
+                  x1="0"
+                  y1="50"
+                  x2="50"
+                  y2="0"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+                <line
+                  x1="50"
+                  y1="100"
+                  x2="100"
+                  y2="50"
+                  stroke="white"
+                  strokeWidth=".3"
+                />
+
+                {/* Nodes */}
+                {[
+                  [20, 20],
+                  [50, 20],
+                  [80, 20],
+                  [20, 50],
+                  [50, 50],
+                  [80, 50],
+                  [20, 80],
+                  [50, 80],
+                  [80, 80],
+                  [10, 35],
+                  [90, 65],
+                  [35, 10],
+                  [65, 90],
+                ].map(([x, y], i) => (
+                  <circle key={i} cx={x} cy={y} r="1.2" fill="white" />
+                ))}
+              </svg>
+
+              {/* Optional glow */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]" />
+
+              {/* Content */}
+              <div className="relative z-10 text-center">
+                <h2 className="text-3xl font-bold text-white">Wellranked</h2>
                 <p className="mt-2 text-blue-100">Your Growth Partner</p>
               </div>
             </div>
@@ -240,7 +356,7 @@ export default function Hero() {
                 }, // Bottom Right
                 {
                   ...services[3],
-                  className: "-bottom-[10px] left-2/4 -translate-x-1/2",
+                  className: "-bottom-[8px] left-2/4 -translate-x-1/2",
                 }, // Bottom
                 {
                   ...services[4],
