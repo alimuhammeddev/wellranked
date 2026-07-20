@@ -52,7 +52,7 @@ export default function WhyWellrankedGrid() {
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Why Businesses Choose Wellranked
           </span>
 
@@ -70,12 +70,12 @@ export default function WhyWellrankedGrid() {
         {/* Featured Card */}
         {featured && (
           <div className="mt-8">
-            <div className="group rounded-3xl border border-gray-200 bg-white md:p-8 p-5 transition-all duration-300 hover:border-blue-600">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
-                <featured.icon size={24} className="text-blue-600"/>
+            <div className="group rounded-3xl border border-[#244EB3] bg-white md:p-8 p-5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
+                <featured.icon size={24} className="text-[#244EB3]"/>
               </div>
 
-              <h3 className="mt-3 md:text-2xl text-xl font-bold text-[#102A56]">
+              <h3 className="mt-3 md:text-2xl text-xl font-bold text-[#244EB3]">
                 {featured.title}
               </h3>
 
@@ -91,16 +91,16 @@ export default function WhyWellrankedGrid() {
           {others.map(({ title, description, icon: Icon }) => (
             <div
               key={title}
-              className="group rounded-3xl border border-gray-200 bg-white md:p-8 p-5 transition-all duration-300 hover:border-blue-600"
+              className="group rounded-3xl border border-[#244EB3] bg-white md:p-8 p-5"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 transition">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 transition">
                 <Icon
                   size={24}
-                  className="text-blue-600"
+                  className="text-[#244EB3]"
                 />
               </div>
 
-              <h3 className="mt-3 md:text-2xl text-xl font-bold text-[#102A56]">
+              <h3 className="mt-3 md:text-2xl text-xl font-bold text-[#244EB3]">
                 {title}
               </h3>
 

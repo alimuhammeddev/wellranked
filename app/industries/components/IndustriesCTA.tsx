@@ -30,7 +30,7 @@ export default function IndustriesCTA() {
 
         <Link
           href="/growth-audit"
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56]"
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#244EB3]"
         >
           Book Your Free Growth Audit
           <ArrowRight size={18} />

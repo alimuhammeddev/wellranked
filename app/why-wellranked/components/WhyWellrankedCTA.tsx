@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function WhyWellrankedCTA() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-r from-[#102A56] via-blue-700 to-indigo-700 py-24">
+    <section className="relative overflow-hidden bg-[#244EB3] py-24">
       {/* Background Glow */}
       <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
       <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
@@ -57,7 +57,7 @@ export default function WhyWellrankedCTA() {
         <div className="mt-5 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/growth-audit"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#102A56] transition duration-300"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#244EB3] transition duration-300"
           >
             Book Your Free Growth Audit
             <ArrowRight size={18} />
