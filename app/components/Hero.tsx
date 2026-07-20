@@ -38,6 +38,15 @@ const particles = Array.from({ length: 50 }, (_, i) => ({
   delay: Math.random() * 10,
 }));
 
+const services = [
+  { name: "Website", Icon: Monitor },
+  { name: "SEO", Icon: Search },
+  { name: "AI", Icon: Bot },
+  { name: "Google Ads", Icon: TrendingUp },
+  { name: "Social", Icon: MessageCircle },
+  { name: "Branding", Icon: PenTool },
+];
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-[#F7FAFF] via-white to-[#EEF4FF]">
@@ -139,12 +148,120 @@ export default function Hero() {
             </p>
           </div>
 
-          <div>
-            <div className="relative z-30 flex h-64 w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 flex-col items-center justify-center rounded-full bg-gradient-to-br from-[#1F3064] to-[#2563EB] text-white shadow-[0_35px_90px_rgba(37,99,235,.35)]">
-              <div className="text-3xl font-bold">Wellranked</div>
-              <p className="mt-1 text-center text-base text-blue-100">
-                Your Growth Partner
-              </p>
+          <div className="relative flex items-center justify-center py-16 md:mt-0 -mt-10">
+            {/* Center Circle */}
+            <div className="relative z-20 flex h-64 w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full bg-linear-to-br from-[#1F3064] to-[#2563EB] text-white shadow-[0_35px_90px_rgba(37,99,235,.35)]">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold">Wellranked</h2>
+                <p className="mt-2 text-blue-100">Your Growth Partner</p>
+              </div>
+            </div>
+
+            {/* Desktop Service Circles */}
+            <div className="hidden lg:block">
+              {[
+                {
+                  ...services[0],
+                  className: "top-6 right-10",
+                  line: "-rotate-12",
+                  side: "right",
+                }, // Website
+                {
+                  ...services[1],
+                  className: "top-1/2 right-0 -translate-y-1/2",
+                  line: "",
+                  side: "right",
+                }, // SEO
+                {
+                  ...services[2],
+                  className: "bottom-6 right-10",
+                  line: "rotate-12",
+                  side: "right",
+                }, // AI
+                {
+                  ...services[3],
+                  className: "top-6 left-10",
+                  line: "rotate-12",
+                  side: "left",
+                }, // Ads
+                {
+                  ...services[4],
+                  className: "top-1/2 left-0 -translate-y-1/2",
+                  line: "",
+                  side: "left",
+                }, // Social
+                {
+                  ...services[5],
+                  className: "bottom-6 left-10",
+                  line: "-rotate-12",
+                  side: "left",
+                }, // Branding
+              ].map(({ Icon, name, className, line, side }) => (
+                <div
+                  key={name}
+                  className={`absolute ${className} flex items-center`}
+                >
+                  {side === "left" && (
+                    <div
+                      className={`absolute left-full h-0.5 w-20 bg-blue-300 ${line} origin-left`}
+                    />
+                  )}
+
+                  {side === "right" && (
+                    <div
+                      className={`absolute right-full h-0.5 w-20 bg-blue-300 ${line} origin-right`}
+                    />
+                  )}
+
+                  <div className="relative z-30 flex h-24 w-24 flex-col items-center justify-center rounded-full border border-blue-100 bg-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                    <Icon size={24} className="text-[#244EB3]" />
+                    <span className="mt-1 text-[11px] font-semibold text-[#1F3064] text-center leading-tight px-1">
+                      {name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile / Tablet */}
+            <div className="absolute inset-0 lg:hidden">
+              {[
+                {
+                  ...services[0],
+                  className: "left-2/4 -translate-x-1/2",
+                }, // Top
+                {
+                  ...services[1],
+                  className: "top-[20%] right-[1%]",
+                }, // Top Right
+                {
+                  ...services[2],
+                  className: "bottom-[20%] right-[1%]",
+                }, // Bottom Right
+                {
+                  ...services[3],
+                  className: "bottom-[1px] left-2/4 -translate-x-1/2",
+                }, // Bottom
+                {
+                  ...services[4],
+                  className: "bottom-[20%] left-[1%]",
+                }, // Bottom Left
+                {
+                  ...services[5],
+                  className: "top-[20%] left-[1%]",
+                }, // Top Left
+              ].map(({ Icon, name, className }) => (
+                <div key={name} className={`absolute ${className}`}>
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-blue-100 shadow-xl">
+                    <div className="flex flex-col items-center">
+                      <Icon className="text-[#244EB3]" size={22} />
+                      <span className="mt-1 text-[10px] font-semibold text-[#1F3064] text-center leading-tight">
+                        {name}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
