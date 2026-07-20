@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function IndustriesCTA() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-r from-[#102A56] via-blue-700 to-indigo-700 py-24">
+    <section className="relative overflow-hidden bg-[#244EB3] py-24">
       {/* Wellranked Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/5 whitespace-nowrap">

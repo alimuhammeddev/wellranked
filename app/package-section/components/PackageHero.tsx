@@ -57,7 +57,7 @@ const orbitItems = [
 
 export default function PackagesHero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-[#F7FAFF] via-white to-[#EEF4FF]">
+    <section className="relative overflow-hidden">
       {/* Dot grid background */}
       <div
         aria-hidden
@@ -73,9 +73,6 @@ export default function PackagesHero() {
         }}
       />
 
-      {/* Background Blur */}
-      <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
-      <div className="absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
       <div className="relative mx-auto grid max-w-7xl items-start gap-20 lg:px-0 md:px-5 px-5 pb-24 pt-40 lg:grid-cols-2">
         {/* Left */}
         <div>

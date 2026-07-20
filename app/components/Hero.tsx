@@ -49,7 +49,7 @@ const services = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-[#F7FAFF] via-white to-[#EEF4FF]">
+    <section className="relative overflow-hidden">
       {/* Floating Background Icons */}
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -92,10 +92,6 @@ export default function Hero() {
           />
         ))}
       </div>
-
-      {/* Background Blur */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -150,7 +146,7 @@ export default function Hero() {
 
           <div className="relative flex items-center justify-center py-16 md:mt-0 -mt-10">
             {/* Center Circle */}
-            <div className="relative z-20 flex h-60 w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full overflow-hidden bg-linear-to-br from-[#1F3064] to-[#2563EB] shadow-[0_35px_90px_rgba(37,99,235,.35)]">
+            <div className="relative z-20 flex h-60 w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full overflow-hidden bg-linear-to-br from-[#1F3064] to-[#2563EB]">
               {/* Full background network */}
               <svg
                 className="absolute inset-0 w-full h-full opacity-25"

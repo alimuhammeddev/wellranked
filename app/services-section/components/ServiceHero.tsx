@@ -29,7 +29,7 @@ const services = [
 
 export default function ServicesHero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-[#F7FAFF] via-white to-[#EEF4FF]">
+    <section className="relative overflow-hidden ">
       {/* Dot grid background */}
       <div
         aria-hidden
@@ -44,10 +44,6 @@ export default function ServicesHero() {
             "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
         }}
       />
-
-      {/* Background Blur */}
-      <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
-      <div className="absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-start md:gap-20 gap-10 px-5 pb-24 pt-40 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}

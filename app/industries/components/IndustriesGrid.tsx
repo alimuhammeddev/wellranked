@@ -1,15 +1,16 @@
 "use client";
 
 import {
+  ArrowUpRight,
+  BrushCleaning,
+  Calculator,
+  Hammer,
+  Home,
+  Scale,
+  Sparkles,
+  Stethoscope,
   Wrench,
   Zap,
-  Hammer,
-  Stethoscope,
-  Sparkles,
-  Scale,
-  Calculator,
-  Home,
-  BrushCleaning,
 } from "lucide-react";
 
 const industries = [
@@ -71,17 +72,20 @@ const industries = [
 
 export default function IndustriesGrid() {
   return (
-    <section id="industries" className="md:py-24 py-10 bg-white">
-      <div className="mx-auto max-w-7xl px-5 lg:px-0">
+    <section
+      id="industries"
+      className="relative overflow-hidden md:py-24 py-10 bg-white"
+    >
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#102A56]">
             Industries We Help Grow
           </h2>
 
           <p className="mt-2 md:text-lg text-gray-600">
-            Every industry has different challenges. We tailor your website,
-            SEO and digital marketing strategy to attract more of the customers
-            you want.
+            Every industry has different challenges. We tailor your website, SEO
+            and digital marketing strategy to attract more of the customers you
+            want.
           </p>
         </div>
 
@@ -89,17 +93,28 @@ export default function IndustriesGrid() {
           {industries.map(({ title, description, icon: Icon }) => (
             <div
               key={title}
-              className="group rounded-3xl border border-gray-200 bg-white md:p-7 p-5  transition-all duration-300 hover:border-blue-600"
+              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#244EB3] p-5 md:p-7"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
-                <Icon className="text-blue-600" size={24} />
+              {/* oversized ghost icon watermark */}
+              <Icon
+                aria-hidden
+                size={120}
+                className="pointer-events-none absolute -bottom-6 -right-6 rotate-12 transition-colors duration-500 text-white/10"
+              />
+
+              <div className="relative flex items-start justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl text-[#244EB3] bg-blue-100">
+                  <Icon size={22} />
+                </div>
+
+                <ArrowUpRight size={18} className="mt-1 text-white" />
               </div>
 
-              <h3 className="mt-3 md:text-xl font-bold text-[#102A56]">
+              <h3 className="relative mt-4 md:text-xl font-bold text-white">
                 {title}
               </h3>
 
-              <p className="mt-2 leading-7 text-gray-600">
+              <p className="relative mt-2 leading-7 text-white">
                 {description}
               </p>
             </div>
@@ -108,4 +123,4 @@ export default function IndustriesGrid() {
       </div>
     </section>
   );
-};
+}
