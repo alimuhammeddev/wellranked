@@ -11,6 +11,13 @@ export default function FinalCTA() {
       <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
       <div className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl" />
 
+      {/* Wellranked Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/5 whitespace-nowrap">
+          Wellranked
+        </h1>
+      </div>
+
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:px-0 md:px-5 px-5 lg:grid-cols-2">
         {/* Left */}
 
@@ -21,19 +28,20 @@ export default function FinalCTA() {
 
           <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-white">
             Want to know what's stopping your business from getting
-            <span className="block text-blue-200">
-              more enquiries?
-            </span>
+            <span className="block text-blue-200">more enquiries?</span>
           </h2>
 
           <p className="mt-3 max-w-xl text-lg leading-8 text-blue-100">
-            Book a free Wellranked Growth Audit and we'll show you the
-            biggest improvements you can make across your website,
-            Google visibility, reviews and lead generation.
+            Book a free Wellranked Growth Audit and we'll show you the biggest
+            improvements you can make across your website, Google visibility,
+            reviews and lead generation.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link href="/growth-audit" className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-blue-700">
+            <Link
+              href="/growth-audit"
+              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-blue-700"
+            >
               Book Your Free Growth Audit
               <ArrowRight
                 size={18}
@@ -41,7 +49,10 @@ export default function FinalCTA() {
               />
             </Link>
 
-            <Link href="/package-section" className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10 text-center">
+            <Link
+              href="/package-section"
+              className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10 text-center"
+            >
               View Packages
             </Link>
           </div>
@@ -75,18 +86,10 @@ export default function FinalCTA() {
               "Lead generation opportunities",
               "Simple action plan with no obligation",
             ].map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-4"
-              >
-                <BadgeCheck
-                  className="text-green-300"
-                  size={22}
-                />
+              <div key={item} className="flex items-center gap-4">
+                <BadgeCheck className="text-green-300" size={22} />
 
-                <span className="text-white">
-                  {item}
-                </span>
+                <span className="text-white">{item}</span>
               </div>
             ))}
           </div>
@@ -104,4 +107,4 @@ export default function FinalCTA() {
       </div>
     </section>
   );
-};
+}

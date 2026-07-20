@@ -49,13 +49,9 @@ export default function SolutionSection() {
   return (
     <section className="md:py-24 py-16 bg-white">
       <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
-
         <div className="grid lg:grid-cols-2 md:gap-20 gap-10 items-center">
-
           {/* Left */}
-
           <div>
-
             <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
               One Team. One Monthly Fee.
             </span>
@@ -65,76 +61,61 @@ export default function SolutionSection() {
             </h2>
 
             <p className="mt-3 md:text-lg leading-8 text-gray-600">
-              Instead of hiring a website developer, SEO specialist,
-              designer, social media manager, ads expert and marketing
-              coordinator separately...
+              Instead of hiring a website developer, SEO specialist, designer,
+              social media manager, ads expert and marketing coordinator
+              separately...
             </p>
 
             <p className="mt-2 md:text-lg leading-8 text-gray-600">
               <span className="font-semibold text-[#102A56]">
                 Wellranked gives you one joined-up team
               </span>{" "}
-              working together to improve your online presence,
-              generate more enquiries and help your business grow.
+              working together to improve your online presence, generate more
+              enquiries and help your business grow.
             </p>
-
             <div className="mt-5 space-y-4">
-
               {[
                 "No freelancers to manage",
                 "No expensive in-house hires",
                 "One monthly payment",
                 "Everything working together",
               ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3"
-                >
-                  <BadgeCheck
-                    size={22}
-                    className="text-green-600"
-                  />
-
-                  <span className="text-gray-700 font-medium">
-                    {item}
-                  </span>
+                <div key={item} className="flex items-center gap-3">
+                  <BadgeCheck size={22} className="text-green-600" />
+                  <span className="text-gray-700 font-medium">{item}</span>
                 </div>
               ))}
-
             </div>
-
           </div>
 
           {/* Right */}
-
-          <div className="rounded-3xl border border-gray-200 bg-[#F8FAFF] md:p-8 p-4">
-
+          <div className="rounded-3xl border border-gray-200 bg-[#F8FAFF] md:p-8 p-5">
             <div className="grid sm:grid-cols-2 gap-4">
-
               {solutions.map(({ title, icon: Icon }) => (
                 <div
                   key={title}
-                  className="group rounded-2xl bg-white border border-gray-100 p-5"
+                  className="group relative overflow-hidden rounded-xl bg-white border border-blue-100 p-5 transition-all duration-300"
                 >
+                  {/* Decorative Curved Rings */}
+                  <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full border border-blue-100"></div>
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
-                    <Icon size={22} />
+                  <div className="absolute -top-4 -right-4 h-20 w-20 rounded-full border border-blue-100"></div>
+
+                  <div className="relative z-10">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
+                      <Icon size={22} />
+                    </div>
+
+                    <h3 className="mt-4 md:text-lg font-semibold text-[#102A56]">
+                      {title}
+                    </h3>
                   </div>
-
-                  <h3 className="mt-4 font-semibold text-[#102A56]">
-                    {title}
-                  </h3>
-
                 </div>
               ))}
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
-};
+}
