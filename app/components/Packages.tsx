@@ -57,13 +57,13 @@ export default function PackagesPreview() {
         {/* Heading */}
 
         <div className="mx-auto md:mb-16 mb-10 max-w-3xl text-center">
-          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Pricing
           </span>
 
           <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
             Simple monthly packages.
-            <span className="block text-blue-600">No hidden costs.</span>
+            <span className="block text-[#244EB3]">No hidden costs.</span>
           </h2>
 
           <p className="mt-2 md:text-lg leading-7 text-gray-600">
@@ -83,12 +83,12 @@ export default function PackagesPreview() {
                 key={pkg.name}
                 className={`relative flex flex-col rounded-3xl border bg-white ${
                   pkg.featured
-                    ? "border-blue-600 shadow-lg lg:-mt-4 lg:mb-4"
+                    ? "border-[#244EB3] shadow-lg lg:-mt-4 lg:mb-4"
                     : "border-gray-200 shadow-sm"
                 }`}
               >
                 {pkg.featured && (
-                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-lg">
+                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#244EB3] px-5 py-2 text-sm font-semibold text-white shadow-lg">
                     Most Popular
                   </div>
                 )}
@@ -98,13 +98,13 @@ export default function PackagesPreview() {
                 <div
                   className={`rounded-t-3xl md:p-8 p-5 ${
                     pkg.featured
-                      ? "bg-linear-to-r from-blue-600 to-indigo-600 text-white"
+                      ? "bg-[#244EB3] text-white"
                       : "bg-white"
                   }`}
                 >
                   <div
                     className={`flex h-14 w-14 items-center justify-center rounded-2xl ${
-                      pkg.featured ? "bg-white/20" : "bg-blue-100 text-blue-600"
+                      pkg.featured ? "bg-white/20" : "bg-blue-100 text-[#244EB3]"
                     }`}
                   >
                     <Icon size={28} />
@@ -153,8 +153,8 @@ export default function PackagesPreview() {
                   <button
                     className={`mt-10 w-full rounded-full py-4 font-medium transition ${
                       pkg.featured
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
-                        : "border border-blue-600 text-blue-600 hover:bg-blue-50"
+                        ? "bg-[#244EB3] text-white"
+                        : "border border-[#244EB3] text-[#244EB3] hover:bg-blue-50"
                     }`}
                   >
                     Choose Package

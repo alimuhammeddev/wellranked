@@ -52,7 +52,7 @@ export default function SolutionSection() {
         <div className="grid lg:grid-cols-2 md:gap-20 gap-10 items-center">
           {/* Left */}
           <div>
-            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
               One Team. One Monthly Fee.
             </span>
 
@@ -94,7 +94,7 @@ export default function SolutionSection() {
               {solutions.map(({ title, icon: Icon }) => (
                 <div
                   key={title}
-                  className="group relative overflow-hidden rounded-xl bg-white border border-blue-100 p-5 transition-all duration-300"
+                  className="group relative overflow-hidden rounded-xl bg-[#244EB3] border border-blue-100 p-5 transition-all duration-300"
                 >
                   {/* Decorative Curved Rings */}
                   <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full border border-blue-100"></div>
@@ -102,11 +102,11 @@ export default function SolutionSection() {
                   <div className="absolute -top-4 -right-4 h-20 w-20 rounded-full border border-blue-100"></div>
 
                   <div className="relative z-10">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#244EB3] transition">
                       <Icon size={22} />
                     </div>
 
-                    <h3 className="mt-4 md:text-lg font-semibold text-[#102A56]">
+                    <h3 className="mt-4 md:text-lg font-semibold text-white">
                       {title}
                     </h3>
                   </div>

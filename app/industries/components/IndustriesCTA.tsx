@@ -6,6 +6,13 @@ import Link from "next/link";
 export default function IndustriesCTA() {
   return (
     <section className="relative overflow-hidden bg-linear-to-r from-[#102A56] via-blue-700 to-indigo-700 py-24">
+      {/* Wellranked Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/5 whitespace-nowrap">
+          Wellranked
+        </h1>
+      </div>
+      
       <div className="mx-auto max-w-4xl px-5 text-center">
         <span className="rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100">
           Ready to Grow?
@@ -31,4 +38,4 @@ export default function IndustriesCTA() {
       </div>
     </section>
   );
-};
+}

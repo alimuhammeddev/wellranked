@@ -10,7 +10,9 @@ import {
   MessageCircle,
   Monitor,
   PenTool,
-  Rocket,
+  Bot,
+  Image,
+  TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -56,7 +58,7 @@ export default function Hero() {
             <div className="rounded-2xl bg-white/60 backdrop-blur-md border border-white/70 p-3">
               <Icon
                 size={24}
-                className="text-blue-400 opacity-70"
+                className="text-[#244EB3] opacity-70"
                 strokeWidth={1.8}
               />
             </div>
@@ -92,15 +94,15 @@ export default function Hero() {
           <div>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white border border-blue-100 shadow-sm rounded-full px-4 py-2 mb-8">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-bounce"></span>
-              <span className="text-sm font-medium text-gray-700">
+              <span className="w-2 h-2 rounded-full bg-[#244EB3] animate-bounce"></span>
+              <span className="text-sm font-medium text-[#1F3064]">
                 Helping UK Small Businesses Grow Online
               </span>
             </div>
 
-            <h1 className="text-2xl lg:text-4xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#102A56]">
+            <h1 className="text-2xl lg:text-4xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1F3064]">
               Your Outsourced
-              <span className="block text-blue-600">Marketing Department</span>
+              <span className="block text-[#244EB3]">Marketing Department</span>
               for Less Than the Cost of
               <span className="block">One Employee</span>
             </h1>
@@ -117,7 +119,7 @@ export default function Hero() {
             <div className="mt-5 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/growth-audit"
-                className="flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-blue-700"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white shadow-lg"
               >
                 Book Your Free Growth Audit
                 <ArrowRight size={18} />
@@ -125,7 +127,7 @@ export default function Hero() {
 
               <Link
                 href="/package-section"
-                className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-blue-600 hover:text-blue-600"
+                className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-[#244EB3] hover:text-[#244EB3]"
               >
                 View Packages
               </Link>
@@ -137,104 +139,12 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="relative flex justify-center mt-12 lg:mt-0">
-            <div className="relative w-full max-w-xl">
-              {/* Main Card */}
-              <div className="rounded-[30px] border border-gray-200/70 bg-white/90 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
-                {/* Header */}
-                <div className="flex items-center justify-between border-b border-gray-100 px-6 py-5">
-                  <div>
-                    <p className="text-sm text-gray-500">Monthly Performance</p>
-                    <h3 className="text-2xl font-bold text-[#102A56]">
-                      Your Business Growth
-                    </h3>
-                  </div>
-
-                  <div className="rounded-full bg-green-100 px-4 py-2">
-                    <span className="text-sm font-semibold text-green-600">
-                      +38%
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 p-6">
-                  <div className="rounded-2xl bg-[#F7FAFF] p-5">
-                    <p className="text-sm text-gray-500">Website Visitors</p>
-
-                    <h2 className="mt-2 text-2xl font-bold text-[#102A56]">
-                      12.8K
-                    </h2>
-
-                    <p className="mt-1 text-sm text-green-600">
-                      ↑ 21% this month
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl bg-[#F7FAFF] p-5">
-                    <p className="text-sm text-gray-500">New Leads</p>
-
-                    <h2 className="mt-2 text-2xl font-bold text-[#102A56]">
-                      86
-                    </h2>
-
-                    <p className="mt-1 text-sm text-blue-600">
-                      +14 from last month
-                    </p>
-                  </div>
-
-                  <div className="col-span-2 rounded-2xl bg-linear-to-r from-blue-600 to-indigo-600 p-6 text-white">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="text-blue-100 text-sm">Google Ranking</p>
-
-                        <h2 className="text-2xl font-bold mt-2">#1</h2>
-                      </div>
-
-                      <div className="h-14 w-14 rounded-full bg-white/20 flex items-center justify-center text-xl">
-                        <Rocket />
-                      </div>
-                    </div>
-
-                    <p className="mt-5 text-blue-100">
-                      Your business is appearing higher in local searches.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Card */}
-              <div className="absolute -top-16 -right-3 md:-right-8 rounded-2xl border border-gray-100 bg-white px-5 py-4">
-                <p className="text-xs text-gray-500">Google Reviews</p>
-
-                <div className="mt-1 flex items-center gap-2">
-                  <span className="text-2xl font-bold text-[#102A56]">4.9</span>
-
-                  <div className="flex items-center gap-0.5">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <Star
-                        key={index}
-                        size={16}
-                        className="fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Card */}
-              <div className="absolute -bottom-10 left-3 md:-left-8 rounded-2xl bg-white border border-gray-100 px-5 py-4">
-                <p className="text-xs text-gray-500">AI Assistant</p>
-
-                <div className="mt-2 flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-green-500 animate-bounce"></span>
-
-                  <span className="font-medium text-[#102A56]">
-                    Optimising Website...
-                  </span>
-                </div>
-              </div>
+          <div>
+            <div className="relative z-30 flex h-64 w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 flex-col items-center justify-center rounded-full bg-gradient-to-br from-[#1F3064] to-[#2563EB] text-white shadow-[0_35px_90px_rgba(37,99,235,.35)]">
+              <div className="text-3xl font-bold">Wellranked</div>
+              <p className="mt-1 text-center text-base text-blue-100">
+                Your Growth Partner
+              </p>
             </div>
           </div>
         </div>

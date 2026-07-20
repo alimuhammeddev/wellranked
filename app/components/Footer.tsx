@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Logo */}
 
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-lg font-bold text-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#244EB3] text-lg font-bold text-white">
               W
             </div>
 

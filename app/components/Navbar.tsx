@@ -43,7 +43,7 @@ export default function Navbar() {
         {/* Navbar Content */}
         <div className="mx-auto flex h-20 max-w-337.5 items-center justify-between md:px-5 px-5">
           <Link href="/" className="group flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white font-bold shadow-lg shadow-blue-200">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#244EB3] text-white font-bold shadow-lg shadow-blue-200">
               W
             </div>
 
@@ -62,10 +62,10 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="group relative text-[15px] font-medium text-[#102A56] transition-colors duration-300 hover:text-blue-600"
+                className="group relative text-[15px] font-medium text-[#102A56] transition-colors duration-300 hover:text-[#244EB3]"
               >
                 {link.name}
-                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-blue-600 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#244EB3] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </nav>
@@ -73,7 +73,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="/growth-audit"
-            className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-blue-600 px-7 py-3 shadow-blue-200 transition-all duration-300 hover:bg-blue-700 lg:flex"
+            className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-[#244EB3] px-7 py-3 shadow-blue-200 lg:flex"
           >
             <span className="relative z-10 flex items-center gap-2 font-semibold text-white">
               Book Free Growth Audit
@@ -113,7 +113,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-lg font-medium text-[#102A56] transition-all duration-300 hover:translate-x-2 hover:text-blue-600"
+                  className="text-lg font-medium text-[#102A56] transition-all duration-300 hover:translate-x-2 hover:text-[#244EB3]"
                 >
                   {link.name}
                 </Link>
@@ -121,7 +121,7 @@ export default function Navbar() {
 
               <Link
                 href="/growth-audit"
-                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-blue-600 py-3 font-bold text-white shadow-sm shadow-blue-200"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-[#244EB3] py-3 font-bold text-white shadow-sm shadow-blue-200"
               >
                 Book Free Growth Audit
                 <ArrowRight size={18} />

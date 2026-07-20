@@ -5,7 +5,7 @@ export default function FinalCTA() {
   return (
     <section className="relative overflow-hidden py-28">
       {/* Background */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#1D4ED8] via-[#2563EB] to-[#1E40AF] md:mt-0 mt-20" />
+      <div className="absolute inset-0 bg-[#244EB3] md:mt-0 mt-20" />
 
       {/* Decorative Blobs */}
       <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
@@ -40,7 +40,7 @@ export default function FinalCTA() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/growth-audit"
-              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-blue-700"
+              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#244EB3]"
             >
               Book Your Free Growth Audit
               <ArrowRight

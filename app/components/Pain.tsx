@@ -49,13 +49,13 @@ export default function PainSection() {
         <div className="grid lg:grid-cols-2 md:gap-16 gap-5 items-center">
           {/* Left */}
           <div>
-            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
               The Challenge
             </span>
 
             <h1 className="mt-6 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
               Running a business is already hard enough.{" "}
-              <span className="text-blue-600">
+              <span className="text-[#244EB3]">
                 Marketing shouldn't be another full time job.
               </span>
             </h1>
@@ -96,12 +96,12 @@ export default function PainSection() {
 
                 {/* Content */}
                 <div className="relative z-10 flex items-start gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-blue-100 to-sky-100 text-blue-600">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-blue-100 to-sky-100 text-[#244EB3]">
                     <Icon size={22} />
                   </div>
 
                   <div>
-                    <h2 className="md:text-lg font-semibold text-[#102A56]">
+                    <h2 className="md:text-lg font-semibold text-[#244EB3]">
                       {title}
                     </h2>
 
