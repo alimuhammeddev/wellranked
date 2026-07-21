@@ -112,14 +112,6 @@ export default function FAQSection() {
                     : "border-blue-200"
                 }`}
               >
-                {/* Accent Line */}
-
-                <div
-                  className={`absolute left-0 top-0 h-full w-1 rounded-full bg-[#244EB3] transition-all duration-500 ${
-                    isOpen ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="relative flex w-full items-center justify-between px-5 py-3 text-left"

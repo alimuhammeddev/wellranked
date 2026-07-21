@@ -111,7 +111,7 @@ function CornerRings() {
   return (
     <svg
       viewBox="0 0 160 160"
-      className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 transition-all duration-500 ease-out opacity-[0.25]"
+      className="pointer-events-none absolute -right-10 -top-10 h-30 w-30 transition-all duration-500 ease-out opacity-[0.25]"
       aria-hidden="true"
     >
       <circle
@@ -120,7 +120,7 @@ function CornerRings() {
         r="78"
         fill="none"
         stroke="#244EB3"
-        strokeWidth="1.5"
+        strokeWidth="1"
       />
       <circle
         cx="80"
@@ -128,7 +128,7 @@ function CornerRings() {
         r="54"
         fill="none"
         stroke="#244EB3"
-        strokeWidth="1.5"
+        strokeWidth="1"
       />
     </svg>
   );

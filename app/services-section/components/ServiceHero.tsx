@@ -101,7 +101,7 @@ export default function ServicesHero() {
           {/* Hub */}
           <div className="relative z-20 mx-auto mb-8 w-fit">
             <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-blue-100 bg-white/90 px-7 py-5 text-center">
-              <span className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-[#244EB3] to-[#3D66D4] text-white shadow-md shadow-blue-900/20">
+              <span className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#244EB3] text-white">
                 <Sparkles size={20} />
               </span>
               <h3 className="text-lg font-extrabold text-[#244EB3] sm:text-xl">
@@ -140,7 +140,7 @@ export default function ServicesHero() {
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#244EB3]">
                   <Icon size={17} />
                 </span>
-                <span className="text-[11px] font-semibold leading-tight text-[#15234a] sm:text-xs">
+                <span className="text-[11px] font-semibold leading-tight text-[#244EB3] sm:text-xs">
                   {title}
                 </span>
               </div>

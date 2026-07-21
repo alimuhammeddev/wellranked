@@ -13,13 +13,13 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const NODES = [
-  { label: "Website", icon: Globe, x: 50, y: 10 },
-  { label: "Local SEO", icon: Search, x: 84.6, y: 30 },
-  { label: "Google Business Profile", icon: MapPin, x: 84.6, y: 70 },
-  { label: "Reviews", icon: Star, x: 50, y: 90 },
-  { label: "Content", icon: FileText, x: 15.4, y: 70 },
-  { label: "Digital Marketing", icon: Megaphone, x: 15.4, y: 30 },
+const CARDS = [
+  { label: "Website", icon: Globe, x: 50, y: 10, lgX: 50, lgY: 20 },
+  { label: "Local SEO", icon: Search, x: 84.6, y: 30, lgX: 76, lgY: 35 },
+  { label: "Google Business Profile", icon: MapPin, x: 84.6, y: 70, lgX: 76, lgY: 65 },
+  { label: "Reviews", icon: Star, x: 50, y: 90, lgX: 50, lgY: 80 },
+  { label: "Content", icon: FileText, x: 15.4, y: 70, lgX: 24, lgY: 65 },
+  { label: "Digital Marketing", icon: Megaphone, x: 15.4, y: 30, lgX: 24, lgY: 35 },
 ] as const;
 
 export default function AboutHero() {
@@ -108,7 +108,7 @@ export default function AboutHero() {
             {/* Center Circle*/}
             <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
               <div className="relative h-24 w-24 lg:h-28 lg:w-28">
-                <div className="relative flex h-full w-full items-center justify-center rounded-full bg-[#244EB3] text-3xl font-extrabold text-white shadow-lg shadow-blue-600/20">
+                <div className="relative flex h-full w-full items-center justify-center rounded-full bg-[#244EB3] text-3xl font-extrabold text-white">
                   W
                 </div>
               </div>
@@ -117,14 +117,21 @@ export default function AboutHero() {
               </span>
             </div>
 
-            {/* Satellite nodes */}
-            {NODES.map((n) => {
+            {/* Cards */}
+            {CARDS.map((n) => {
               const Icon = n.icon;
               return (
                 <div
                   key={n.label}
-                  className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5"
-                  style={{ left: `${n.x}%`, top: `${n.y}%` }}
+                  className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5 left-[var(--x)] top-[var(--y)] lg:left-[var(--lg-x)] lg:top-[var(--lg-y)]"
+                  style={
+                    {
+                      "--x": `${n.x}%`,
+                      "--y": `${n.y}%`,
+                      "--lg-x": `${n.lgX}%`,
+                      "--lg-y": `${n.lgY}%`,
+                    } as React.CSSProperties
+                  }
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-100 bg-white text-[#244EB3]">
                     <Icon size={18} />

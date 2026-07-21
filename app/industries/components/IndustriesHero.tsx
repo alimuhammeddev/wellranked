@@ -176,7 +176,7 @@ export default function IndustriesHero() {
                   style={{ transform: `rotate(${angle}deg) translate(10rem)` }}
                 >
                   <div className="orbit-icon group absolute flex flex-col items-center">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-blue-100 bg-white text-[#244EB3] shadow-[0_6px_20px_-4px_rgba(16,42,86,0.25)] transition-transform duration-300 group-hover:scale-110">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-blue-100 bg-white text-[#244EB3]">
                       <Icon size={24} />
                     </span>
                     <div className="pointer-events-none absolute top-full z-30 mt-2 w-max max-w-44 scale-95 rounded-xl bg-[#102A56] px-3 py-2 text-center opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
