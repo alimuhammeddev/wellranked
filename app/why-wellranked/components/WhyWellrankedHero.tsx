@@ -131,9 +131,9 @@ export default function WhyWellrankedHero() {
             What Makes Us Different
           </span>
 
-          <h3 className="mt-4 md:text-2xl text-xl font-bold text-white">
+          <h1 className="mt-4 md:text-2xl text-xl font-bold text-white">
             One Strategy. One Team. One Goal.
-          </h3>
+          </h1>
 
           <p className="mt-3 leading-7 text-blue-100/90">
             Instead of hiring different people for websites, SEO, social media,
@@ -196,9 +196,9 @@ export default function WhyWellrankedHero() {
               <span className="why-icon-pop flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-white">
                 <ActiveIcon size={18} />
               </span>
-              <h4 className="font-semibold text-white">
+              <h1 className="font-semibold text-white">
                 {highlights[active].title}
-              </h4>
+              </h1>
             </div>
             <p className="mt-3 text-sm leading-6 text-blue-100/90">
               {highlights[active].description}
