@@ -60,12 +60,12 @@ export default function FAQSection() {
             Frequently Asked Questions
           </span>
 
-          <h2 className="mt-3 text-2xl font-bold leading-tight text-[#102A56] lg:text-4xl md:text-[3xl]">
+          <h2 className="mt-3 text-2xl font-bold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Everything You Need{" "}
             <span className="text-[#244EB3]">Before You Get Started</span>
           </h2>
 
-          <p className="mt-2 text-lg leading-8 text-slate-600">
+          <p className="mt-2 md:text-lg leading-8 text-slate-600">
             We've answered the questions we're asked most often by business
             owners. If you can't find what you're looking for, our team is
             always happy to help.
@@ -78,7 +78,7 @@ export default function FAQSection() {
             <div className="absolute -bottom-10 -left-10 h-36 w-36 rounded-full bg-cyan-300/10 blur-2xl" />
 
             <div className="relative">
-              <h3 className="text-2xl font-bold">Still Have Questions?</h3>
+              <h3 className="md:text-2xl text-xl font-bold">Still Have Questions?</h3>
 
               <p className="mt-2 leading-8 text-blue-100">
                 We'd be happy to discuss your business, recommend the right
