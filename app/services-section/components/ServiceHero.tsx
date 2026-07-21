@@ -4,8 +4,8 @@ import {
   ArrowRight,
   BadgeCheck,
   Globe2,
+  Globe,
   Headphones,
-  LayoutGrid,
   Mail,
   MapPin,
   Megaphone,
@@ -17,7 +17,7 @@ import {
 import Link from "next/link";
 
 const services = [
-  { title: "Website Design & Management", icon: LayoutGrid },
+  { title: "Website Design & Management", icon: Globe },
   { title: "Local SEO", icon: Search },
   { title: "Google Business Profile", icon: MapPin },
   { title: "Review & Reputation Management", icon: Star },
@@ -139,7 +139,7 @@ export default function ServicesHero() {
               >
                 <span
                   aria-hidden
-                  className="absolute -top-1.25 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-white bg-[#244EB3]"
+                  className="absolute -top-1.25 left-1/2 h-2.5 w-2.5 animate-pulse -translate-x-1/2 rounded-full border-2 border-white bg-[#244EB3]"
                 />
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#244EB3]">
                   <Icon size={17} />
