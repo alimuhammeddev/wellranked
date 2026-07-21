@@ -4,28 +4,26 @@ import {
   ArrowRight,
   BadgeCheck,
   Building2,
-  HeartHandshake,
-  Quote,
+  FileText,
+  Globe,
+  MapPin,
+  Megaphone,
+  Search,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 
-const missionPoints = [
-  {
-    title: "Affordable",
-    description:
-      "Professional marketing support designed for independent businesses and growing UK SMEs.",
-  },
-  {
-    title: "Practical",
-    description:
-      "Clear strategies focused on helping you attract more enquiries and grow with confidence.",
-  },
-  {
-    title: "Supportive",
-    description:
-      "An outsourced marketing team that works alongside your business every step of the way.",
-  },
-];
+// The six services orbiting the hub, laid out as points on a hexagon
+// (angles at 12, 2, 4, 6, 8, 10 o'clock) so the web reads as balanced,
+// not scattered.
+const NODES = [
+  { label: "Website", icon: Globe, x: 50, y: 10 },
+  { label: "Local SEO", icon: Search, x: 84.6, y: 30 },
+  { label: "Google Business Profile", icon: MapPin, x: 84.6, y: 70 },
+  { label: "Reviews", icon: Star, x: 50, y: 90 },
+  { label: "Content", icon: FileText, x: 15.4, y: 70 },
+  { label: "Digital Marketing", icon: Megaphone, x: 15.4, y: 30 },
+] as const;
 
 export default function AboutHero() {
   return (
@@ -44,21 +42,18 @@ export default function AboutHero() {
             "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
         }}
       />
-      {/* Background Blur */}
-      <div className="absolute -left-24 top-0 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
-      <div className="absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:gap-20 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             <Building2 size={16} />
             About Wellranked
           </span>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             We Built Wellranked for Business Owners Who Are{" "}
-            <span className="text-blue-600">
+            <span className="text-[#244EB3]">
               Tired of Doing Everything Themselves.
             </span>
           </h1>
@@ -81,7 +76,7 @@ export default function AboutHero() {
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/growth-audit"
-              className="flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
             >
               Book Your Free Growth Audit
               <ArrowRight size={18} />
@@ -89,7 +84,7 @@ export default function AboutHero() {
 
             <Link
               href="#our-values"
-              className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-blue-600 hover:text-blue-600"
+              className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-[#244EB3] hover:text-[#244EB3]"
             >
               Our Values
             </Link>
@@ -103,62 +98,88 @@ export default function AboutHero() {
               "Helping you focus on running your business",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck className="text-green-600" size={22} />
+                <BadgeCheck className="text-[#244EB3]" size={22} />
                 <span className="text-gray-700">{item}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right — editorial mission manifesto */}
-        <div className="relative rounded-[2rem] border border-gray-100 bg-white p-6 shadow-[0_30px_70px_-25px_rgba(16,42,86,0.2)] md:p-10">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
-            <HeartHandshake size={15} />
-            Our Mission
-          </span>
-
-          <h3 className="mt-4 md:text-2xl text-xl font-bold text-[#102A56]">
-            Marketing That Works for Small Businesses
-          </h3>
-
-          <p className="mt-3 leading-7 text-gray-600">
-            We believe every small business deserves affordable, practical
-            marketing support without the complexity, inflated costs or agency
-            jargon.
-          </p>
-
-          {/* Bold typographic list of mission pillars */}
-          <div className="mt-8 divide-y divide-gray-100 border-t border-gray-100">
-            {missionPoints.map((point) => (
-              <div key={point.title} className="group flex gap-5 py-6">
-                <span
-                  aria-hidden
-                  className="w-1 shrink-0 rounded-full bg-blue-100 transition-colors duration-300 group-hover:bg-blue-600"
+        {/* Right */}
+        <div className="relative mx-auto w-full max-w-110 py-4 lg:max-w-none lg:py-0">
+          <div className="relative aspect-square w-full">
+            {/* Connecting lines */}
+            <svg
+              viewBox="0 0 100 100"
+              className="absolute inset-0 h-full w-full overflow-visible"
+              aria-hidden
+            >
+              <defs>
+                <linearGradient id="wr-line" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#2563eb" stopOpacity="0.55" />
+                  <stop offset="100%" stopColor="#4338ca" stopOpacity="0.2" />
+                </linearGradient>
+              </defs>
+              {NODES.map((n) => (
+                <line
+                  key={n.label}
+                  x1="50"
+                  y1="50"
+                  x2={n.x}
+                  y2={n.y}
+                  stroke="url(#wr-line)"
+                  strokeWidth="0.5"
+                  strokeLinecap="round"
+                  strokeDasharray="3 3"
+                  className="wr-connector"
                 />
-                <div>
-                  <h4 className="text-2xl font-black tracking-tight text-[#102A56] transition-colors duration-300 group-hover:text-blue-600 md:text-3xl">
-                    {point.title}
-                  </h4>
-                  <p className="mt-2 max-w-sm leading-6 text-gray-600">
-                    {point.description}
-                  </p>
+              ))}
+            </svg>
+
+            {/* Hub */}
+            <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
+              <div className="relative h-24 w-24 lg:h-28 lg:w-28">
+                <span className="absolute inset-0 animate-ping rounded-full bg-blue-400/20 [animation-duration:3s] motion-reduce:hidden" />
+                <div className="relative flex h-full w-full items-center justify-center rounded-full bg-[#244EB3] text-3xl font-extrabold text-white shadow-lg shadow-blue-600/20">
+                  W
                 </div>
               </div>
-            ))}
+              <span className="mt-3 text-xs font-bold uppercase tracking-wide text-[#244EB3]">
+                Wellranked
+              </span>
+            </div>
+
+            {/* Satellite nodes */}
+            {NODES.map((n) => {
+              const Icon = n.icon;
+              return (
+                <div
+                  key={n.label}
+                  className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5"
+                  style={{ left: `${n.x}%`, top: `${n.y}%` }}
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-100 bg-white text-blue-600 shadow-sm">
+                    <Icon size={18} />
+                  </div>
+                  <span className="max-w-23 text-center text-xs font-semibold leading-tight text-gray-600">
+                    {n.label}
+                  </span>
+                </div>
+              );
+            })}
           </div>
 
-          {/* Promise, styled as a pull-quote rather than a boxed card */}
-          <div className="mt-8 border-l-4 border-blue-600 pl-5">
-            <Quote size={22} className="text-blue-200" />
-            <p className="mt-2 text-lg italic leading-7 text-[#102A56]">
-              Every recommendation we make is focused on one goal: helping
-              your business get found, earn trust and generate more customer
-              enquiries.
-            </p>
-            <p className="mt-3 text-sm font-semibold text-gray-500">
-              — Our Promise
-            </p>
-          </div>
+          <style>{`
+            .wr-connector {
+              animation: wr-flow 6s linear infinite;
+            }
+            @keyframes wr-flow {
+              to { stroke-dashoffset: -24; }
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .wr-connector { animation: none; }
+            }
+          `}</style>
         </div>
       </div>
     </section>

@@ -1,11 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ChevronDown,
-  MessageCircleQuestion,
-  ArrowRight,
-} from "lucide-react";
+import { ChevronDown, MessageCircleQuestion, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const faqs = [
@@ -55,54 +51,52 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>();
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FBFF] md:py-24 py-10">
-      {/* Background Blur */}
-      <div className="absolute -left-20 top-0 h-80 w-80 rounded-full bg-blue-200/20 blur-3xl" />
-      <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-indigo-200/20 blur-3xl" />
-
-      <div className="relative mx-auto grid max-w-7xl md:gap-16 gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-0">
-        {/* Left Side */}
-
-        <div className="h-fit lg:sticky">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+    <section className="relative overflow-hidden py-14 md:py-24">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-0">
+        {/* LEFT */}
+        <div className="h-fit lg:sticky lg:top-24">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             <MessageCircleQuestion size={16} />
             Frequently Asked Questions
           </span>
 
-          <h2 className="mt-5 text-2xl font-bold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            Everything You Need {" "}
-            <span className="text-blue-600">
-              Before You Get Started
-            </span>
+          <h2 className="mt-3 text-2xl font-bold leading-tight text-[#102A56] lg:text-4xl md:text-[3xl]">
+            Everything You Need{" "}
+            <span className="text-[#244EB3]">Before You Get Started</span>
           </h2>
 
-          <p className="mt-3 md:text-lg leading-8 text-gray-600">
+          <p className="mt-2 text-lg leading-8 text-slate-600">
             We've answered the questions we're asked most often by business
             owners. If you can't find what you're looking for, our team is
             always happy to help.
           </p>
 
-          <div className="mt-5 rounded-3xl border border-blue-100 bg-blue-50 md:p-6 p-5">
-            <h3 className="text-xl font-bold text-[#102A56]">
-              Still Have Questions?
-            </h3>
+          {/* CTA */}
 
-            <p className="mt-3 leading-7 text-gray-600">
-              We'd be happy to discuss your business, recommend the right
-              package and answer any questions before you get started.
-            </p>
+          <div className="relative mt-5 overflow-hidden rounded-3xl bg-[#244EB3] md:p-8 p-5 text-white">
+            <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-white/10 blur-2xl" />
+            <div className="absolute -bottom-10 -left-10 h-36 w-36 rounded-full bg-cyan-300/10 blur-2xl" />
 
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
-            >
-              Contact Our Team
-              <ArrowRight size={18} />
-            </Link>
+            <div className="relative">
+              <h3 className="text-2xl font-bold">Still Have Questions?</h3>
+
+              <p className="mt-2 leading-8 text-blue-100">
+                We'd be happy to discuss your business, recommend the right
+                package and answer any questions before you get started.
+              </p>
+
+              <Link
+                href="/contact"
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-[#244EB3]"
+              >
+                Contact Our Team
+                <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Right Side */}
+        {/* RIGHT */}
 
         <div className="space-y-5">
           {faqs.map((faq, index) => {
@@ -111,37 +105,64 @@ export default function FAQSection() {
             return (
               <div
                 key={faq.question}
-                className="overflow-hidden rounded-3xl border border-gray-200 bg-white transition-all duration-300 hover:border-blue-600"
+                className={`group relative overflow-hidden rounded-3xl border bg-white/90 border-blue-200
+                ${
+                  isOpen
+                    ? "border-blue-300"
+                    : "border-blue-200"
+                }`}
               >
-                <button
-                  onClick={() =>
-                    setOpenIndex(isOpen ? null : index)
-                  }
-                  className="flex w-full items-center justify-between p-6 text-left"
-                >
-                  <h3 className="pr-4 md:text-lg font-medium text-[#102A56]">
-                    {faq.question}
-                  </h3>
-
-                  <ChevronDown
-                    size={22}
-                    className={`shrink-0 text-blue-600 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
+                {/* Accent Line */}
 
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen
-                      ? "grid-rows-[1fr]"
-                      : "grid-rows-[0fr]"
+                  className={`absolute left-0 top-0 h-full w-1 rounded-full bg-[#244EB3] transition-all duration-500 ${
+                    isOpen ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="relative flex w-full items-center justify-between px-5 py-3 text-left"
+                >
+                  <div className="flex items-center gap-5">
+                    {/* Number */}
+                    <div
+                      className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
+                        isOpen
+                          ? "bg-[#244EB3] text-white"
+                          : "bg-blue-50 text-[#244EB3]"
+                      }`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </div>
+
+                    <h3 className="md:text-lg font-semibold tracking-tight text-[#244EB3]">
+                      {faq.question}
+                    </h3>
+                  </div>
+
+                  {/* Chevron */}
+
+                  <div
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+                      isOpen
+                        ? "rotate-180 bg-[#244EB3] text-white"
+                        : "bg-blue-50 text-[#244EB3]"
+                    }`}
+                  >
+                    <ChevronDown size={18} />
+                  </div>
+                </button>
+
+                {/* Content */}
+
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${
+                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="overflow-hidden">
-                    <div className="border-t border-gray-100 px-6 py-5 leading-8 text-gray-600">
-                      {faq.answer}
-                    </div>
+                  <div className="border-t border-slate-100 md:px-7 px-5 pb-7 pt-5 text-[15px] leading-8 text-slate-600">
+                    {faq.answer}
                   </div>
                 </div>
               </div>
@@ -151,4 +172,4 @@ export default function FAQSection() {
       </div>
     </section>
   );
-};
+}

@@ -8,10 +8,8 @@ import {
   BarChart3,
   MousePointerClick,
   MessageCircle,
-  Monitor,
   PenTool,
   Bot,
-  Image,
   TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
@@ -23,7 +21,7 @@ const floatingIcons = [
   { Icon: BarChart3, top: "70%", left: "12%", delay: "1s" },
   { Icon: MousePointerClick, top: "80%", right: "10%", delay: "3s" },
   { Icon: MessageCircle, top: "58%", right: "4%", delay: "5s" },
-  { Icon: Monitor, top: "25%", left: "48%", delay: "2.5s" },
+  { Icon: Globe, top: "25%", left: "48%", delay: "2.5s" },
   { Icon: PenTool, top: "88%", left: "42%", delay: "6s" },
   { Icon: MapPinned, top: "12%", left: "75%", delay: "1.5s" },
   { Icon: Star, top: "55%", left: "82%", delay: "4.5s" },
@@ -39,7 +37,7 @@ const particles = Array.from({ length: 50 }, (_, i) => ({
 }));
 
 const services = [
-  { name: "Website", Icon: Monitor },
+  { name: "Website", Icon: Globe },
   { name: "SEO", Icon: Search },
   { name: "AI", Icon: Bot },
   { name: "Google Ads", Icon: TrendingUp },

@@ -94,7 +94,7 @@ export default function SolutionSection() {
               {solutions.map(({ title, icon: Icon }) => (
                 <div
                   key={title}
-                  className="group relative overflow-hidden rounded-xl bg-[#244EB3] border border-blue-100 p-5 transition-all duration-300"
+                  className="group relative overflow-hidden rounded-2xl bg-[#244EB3] border border-blue-100 p-5 transition-all duration-300"
                 >
                   {/* Decorative Curved Rings */}
                   <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full border border-blue-100"></div>

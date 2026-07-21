@@ -36,6 +36,43 @@ const features = [
   },
 ];
 
+// Small decorative glow-dots scattered inside a card. Positions vary per
+// card so a row of cards doesn't look stamped from the same template.
+function Sparkles({ variant = 0 }: { variant?: number }) {
+  const layouts = [
+    "left-7 top-9 h-2 w-2 bg-blue-300/60",
+    "right-8 top-16 h-1.5 w-1.5 bg-indigo-300/60",
+    "right-14 bottom-10 h-1 w-1 bg-blue-400/50",
+  ];
+  const offsets = [0, 1, 2, 1, 0];
+  return (
+    <>
+      {layouts.map((pos, idx) => (
+        <span
+          key={pos}
+          aria-hidden
+          className={`pointer-events-none absolute rounded-full blur-[1.5px] motion-safe:animate-pulse motion-reduce:opacity-70 ${pos}`}
+          style={{
+            animationDuration: "3.2s",
+            animationDelay: `${(idx + offsets[variant % offsets.length]) * 0.6}s`,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+function GhostQuote() {
+  return (
+    <span
+      aria-hidden
+      className="pointer-events-none absolute -top-3 right-5 select-none font-serif text-7xl leading-none text-blue-50"
+    >
+      &rdquo;
+    </span>
+  );
+}
+
 export default function WhyChooseUs() {
   return (
     <section className="relative overflow-hidden bg-white py-24">
@@ -51,7 +88,7 @@ export default function WhyChooseUs() {
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            A Digital Partner That {" "}
+            A Digital Partner That{" "}
             <span className="text-[#244EB3]">
               Helps Your Business Grow.
             </span>
@@ -88,26 +125,26 @@ export default function WhyChooseUs() {
 
         {/* Right */}
         <div className="grid gap-6 sm:grid-cols-2">
-          {features.map((feature) => {
+          {features.map((feature, i) => {
             const Icon = feature.icon;
 
             return (
               <div
                 key={feature.title}
-                className="group rounded-3xl border bg-white md:p-7 p-5 transition-all duration-300 border-[#244EB3]"
+                className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-white md:p-7 p-5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
-                  <Icon
-                    size={24}
-                    className="text-[#244EB3] transition"
-                  />
+                <GhostQuote />
+                <Sparkles variant={i} />
+
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#244EB3]">
+                  <Icon size={24} className="text-white" />
                 </div>
 
-                <h3 className="mt-4 md:text-xl font-bold text-[#244EB3]">
+                <h3 className="relative mt-4 md:text-xl font-bold text-[#244EB3]">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 leading-7 text-gray-600">
+                <p className="relative mt-3 leading-7 text-gray-600">
                   {feature.description}
                 </p>
               </div>

@@ -8,6 +8,7 @@ import {
   TrendingUp,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const beliefs = [
   {
@@ -15,7 +16,6 @@ const beliefs = [
     description:
       "Every independent business should have access to clear, affordable marketing support without the complexity or cost typically associated with large agencies.",
     icon: Building2,
-    featured: true,
   },
   {
     title: "Marketing Should Reduce Stress",
@@ -44,27 +44,20 @@ const beliefs = [
 ];
 
 export default function AboutValues() {
-  const featured = beliefs.find((belief) => belief.featured);
-  const others = beliefs.filter((belief) => !belief.featured);
-
   return (
-    <section
-      id="our-values"
-      className="bg-white py-24"
-    >
+    <section id="our-values" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
-
         <div className="mx-auto max-w-3xl text-center">
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             What We Believe
           </span>
 
-          <h2 className="mt-5 text-2xl font-bold text-[#102A56] lg:text-4xl md:text-3xl">
+          <h2 className="mt-5 text-2xl font-bold text-[#102A56] md:text-3xl lg:text-4xl">
             The Principles Behind Everything We Do
           </h2>
 
-          <p className="mt-3 md:text-lg leading-8 text-gray-600">
+          <p className="mt-3 leading-8 text-gray-600 md:text-lg">
             Wellranked exists to make digital marketing simpler, more
             affordable and more effective for small businesses. These
             principles shape every recommendation we make and every service we
@@ -72,65 +65,61 @@ export default function AboutValues() {
           </p>
         </div>
 
-        {/* Featured Card */}
-
-        {featured && (
-          <div className="mt-10">
-            <div className="group rounded-3xl border border-gray-200 bg-white md:p-7 p-5 transition-all duration-300 hover:border-blue-600">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
-                <featured.icon size={24} className="text-blue-600"/>
-              </div>
-
-              <h3 className="mt-4 md:text-2xl text-xl font-bold text-[#102A56]">
-                {featured.title}
-              </h3>
-
-              <p className="mt-2 leading-8 text-gray-600">
-                {featured.description}
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Grid */}
-
-        <div className="mt-8 grid gap-7 md:grid-cols-2">
-          {others.map(({ title, description, icon: Icon }) => (
+        {/* Beliefs */}
+        <div className="mt-12 border-b border-blue-200">
+          {beliefs.map(({ title, description, icon: Icon }, i) => (
             <div
               key={title}
-              className="group rounded-3xl border border-gray-200 bg-white md:p-7 p-5 transition-all duration-300 hover:border-blue-600"
+              className="group grid gap-4 border-t border-blue-200 py-8 transition-all duration-300 sm:grid-cols-[3.5rem_2.75rem_1fr] sm:items-start sm:gap-8"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
-                <Icon
-                  size={24}
-                  className="text-blue-600"
-                />
+              <span className="font-serif text-2xl font-medium text-[#244EB3] lg:text-4xl md:text-3xl">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+
+              <div className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-blue-50 text-[#244EB3]">
+                <Icon size={20} />
               </div>
 
-              <h3 className="mt-4 md:text-2xl text-xl font-bold text-[#102A56]">
-                {title}
-              </h3>
+              <div>
+                <h1 className="text-lg font-bold text-[#244EB3] md:text-xl">
+                  {title}
+                </h1>
 
-              <p className="mt-2 leading-8 text-gray-600">
-                {description}
-              </p>
+                <p className="mt-2 max-w-2xl leading-7 text-gray-600">
+                  {description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Statement */}
+        {/* Bottom CTA */}
+        <div className="relative mt-16 overflow-hidden rounded-4xl border border-blue-100 bg-blue-50 p-8 text-center sm:p-14">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-16 -right-10 h-56 w-56 rounded-full bg-blue-200/40 blur-3xl"
+          />
 
-        <div className="mt-16 rounded-3xl border border-blue-100 bg-blue-50 p-5 text-center md:p-10">
-          <h3 className="md:text-2xl text-xl font-bold text-[#102A56]">
-            Our Goal Is Simple
-          </h3>
+          <div className="relative">
+            <h3 className="text-xl font-bold text-[#244EB3] sm:text-2xl">
+              Our Goal Is Simple
+            </h3>
 
-          <p className="mx-auto mt-2 max-w-3xl md:text-lg leading-8 text-gray-600">
-            We want every small business to have access to professional
-            marketing support without the cost, confusion or complexity of
-            traditional agencies. When your business succeeds, we've done our
-            job.
-          </p>
+            <p className="mx-auto mt-3 max-w-3xl text-base leading-8 text-gray-600 sm:text-lg">
+              We want every small business to have access to professional
+              marketing support without the cost, confusion or complexity of
+              traditional agencies. When your business succeeds, we&apos;ve done
+              our job.
+            </p>
+
+            <Link
+              href="/growth-audit"
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#244EB3] px-7 py-3.5 font-semibold text-white"
+            >
+              Book Your Free Growth Audit
+              <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
