@@ -68,6 +68,7 @@ export default function Footer() {
               <Link
                 href="#"
                 className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
+                aria-label="LinkedIn"
               >
                 <FaLinkedin size={16} />
               </Link>
@@ -75,6 +76,7 @@ export default function Footer() {
               <Link
                 href="#"
                 className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
+                aria-label="Instagram"
               >
                 <FaInstagram size={16} />
               </Link>
@@ -82,6 +84,7 @@ export default function Footer() {
               <Link
                 href="#"
                 className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
+                aria-label="X / Twitter"
               >
                 <FaXTwitter size={16} />
               </Link>

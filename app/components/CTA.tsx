@@ -5,7 +5,7 @@ export default function FinalCTA() {
   return (
     <section className="relative overflow-hidden py-28">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#244EB3] md:mt-0 mt-20" />
+      <div className="absolute inset-0 bg-[#244EB3]/95 md:mt-0 mt-20" />
 
       {/* Decorative Blobs */}
       <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
@@ -28,10 +28,10 @@ export default function FinalCTA() {
 
           <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-white">
             Want to know what's stopping your business from getting
-            <span className="block text-blue-200">more enquiries?</span>
+            <span className="block text-white">more enquiries?</span>
           </h2>
 
-          <p className="mt-3 max-w-xl text-lg leading-8 text-blue-100">
+          <p className="mt-3 max-w-xl text-lg leading-8 text-white">
             Book a free Wellranked Growth Audit and we'll show you the biggest
             improvements you can make across your website, Google visibility,
             reviews and lead generation.
@@ -60,7 +60,7 @@ export default function FinalCTA() {
 
         {/* Right */}
 
-        <div className="rounded-3xl border border-white/20 bg-white/10 md:p-8 p-5 backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/20 bg-white/20 md:p-8 p-5 backdrop-blur-xl">
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#244EB3]">
               <CalendarDays size={24} />
@@ -94,8 +94,8 @@ export default function FinalCTA() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl bg-white/10 p-5 text-center">
-            <p className="text-sm uppercase tracking-wider text-blue-200">
+          <div className="mt-8 rounded-2xl bg-white/20 p-5 text-center">
+            <p className="text-sm uppercase tracking-wider text-white">
               No pressure. No jargon.
             </p>
 
