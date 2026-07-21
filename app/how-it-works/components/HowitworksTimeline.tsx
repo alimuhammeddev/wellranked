@@ -110,7 +110,7 @@ export default function HowItWorksTimeline() {
           {steps.map(({ number, title, description, icon: Icon }) => (
             <div
               key={number}
-              className="rounded-3xl border border-blue-200 bg-white p-5 shadow-sm"
+              className="rounded-3xl border border-blue-200 bg-white p-5"
             >
               <div className="flex items-start gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-50">
