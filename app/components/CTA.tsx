@@ -60,7 +60,7 @@ export default function FinalCTA() {
 
         {/* Right */}
 
-        <div className="rounded-3xl border border-white/20 bg-white/20 md:p-8 p-5 backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/20 bg-[#244EB3] md:p-8 p-5 backdrop-blur-xl">
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#244EB3]">
               <CalendarDays size={24} />
@@ -71,7 +71,7 @@ export default function FinalCTA() {
                 Your Free Audit Includes
               </h3>
 
-              <p className="text-blue-100">
+              <p className="text-white">
                 A practical review of your online presence.
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function FinalCTA() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl bg-white/20 p-5 text-center">
+          <div className="mt-8 rounded-2xl bg-white/10 p-5 text-center">
             <p className="text-sm uppercase tracking-wider text-white">
               No pressure. No jargon.
             </p>
