@@ -104,9 +104,9 @@ export default function ServicesHero() {
               <span className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#244EB3] text-white">
                 <Sparkles size={20} />
               </span>
-              <h3 className="text-lg font-extrabold text-[#244EB3] sm:text-xl">
+              <h1 className="text-lg font-extrabold text-[#244EB3] sm:text-xl">
                 Services We Offer
-              </h3>
+              </h1>
               <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400">
                 One partner, every channel
               </p>
