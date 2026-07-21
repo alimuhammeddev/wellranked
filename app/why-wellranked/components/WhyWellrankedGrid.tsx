@@ -1,12 +1,11 @@
 "use client";
 
 import {
-  BriefcaseBusiness,
-  TrendingUp,
-  Building2,
-  Layers3,
   BarChart3,
-  ArrowRight,
+  Building2,
+  BriefcaseBusiness,
+  Layers3,
+  TrendingUp,
 } from "lucide-react";
 
 const features = [
@@ -69,42 +68,73 @@ export default function WhyWellrankedGrid() {
 
         {/* Featured Card */}
         {featured && (
-          <div className="mt-8">
-            <div className="group rounded-3xl border border-[#244EB3] bg-white md:p-8 p-5">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                <featured.icon size={24} className="text-[#244EB3]"/>
+          <div className="mt-10">
+            <div className="group relative overflow-hidden rounded-3xl bg-[#244EB3] md:p-10 p-5">
+              {/* decorative glows + ghost icon */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-indigo-400/10 blur-3xl"
+              />
+              <featured.icon
+                aria-hidden
+                size={150}
+                className="pointer-events-none absolute -bottom-10 -right-10 rotate-12 text-white/5"
+              />
+
+              <div className="relative flex flex-col gap-6 md:grid md:grid-cols-[auto,1fr] md:items-center md:gap-10">
+                <div className="flex items-start justify-between">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-200 text-[#244EB3] backdrop-blur-sm">
+                    <featured.icon size={24} />
+                  </span>
+                  <span className="text-xs font-bold tracking-widest text-blue-200">
+                    01
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-white md:text-2xl">
+                    {featured.title}
+                  </h3>
+                  <p className="mt-3 max-w-3xl leading-8 text-white">
+                    {featured.description}
+                  </p>
+                </div>
               </div>
-
-              <h3 className="mt-3 md:text-2xl text-xl font-bold text-[#244EB3]">
-                {featured.title}
-              </h3>
-
-              <p className="mt-2 max-w-3xl leading-8 text-gray-600">
-                {featured.description}
-              </p>
             </div>
           </div>
         )}
 
         {/* Remaining Cards */}
-        <div className="mt-8 grid gap-7 md:grid-cols-2">
-          {others.map(({ title, description, icon: Icon }) => (
+        <div className="mt-7 grid gap-6 sm:grid-cols-2">
+          {others.map(({ title, description, icon: Icon }, i) => (
             <div
               key={title}
-              className="group rounded-3xl border border-[#244EB3] bg-white md:p-8 p-5"
+              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#244EB3] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_45px_-15px_rgba(36,78,179,0.25)] md:p-8"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 transition">
-                <Icon
-                  size={24}
-                  className="text-[#244EB3]"
-                />
+              <Icon
+                aria-hidden
+                size={100}
+                className="pointer-events-none absolute -bottom-4 -right-4 rotate-12 text-white/5"
+              />
+
+              <div className="relative flex items-start justify-between">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-200 text-[#244EB3]">
+                  <Icon size={22} />
+                </span>
+                <span className="text-xs font-bold tracking-widest text-blue-200">
+                  0{i + 2}
+                </span>
               </div>
 
-              <h3 className="mt-3 md:text-2xl text-xl font-bold text-[#244EB3]">
+              <h3 className="relative mt-4 text-lg font-bold text-white md:text-xl">
                 {title}
               </h3>
 
-              <p className="mt-2 leading-8 text-gray-600">
+              <p className="relative mt-2 leading-7 text-white md:leading-8">
                 {description}
               </p>
             </div>

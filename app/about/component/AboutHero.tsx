@@ -3,8 +3,9 @@
 import {
   ArrowRight,
   BadgeCheck,
-  HeartHandshake,
   Building2,
+  HeartHandshake,
+  Quote,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -28,7 +29,21 @@ const missionPoints = [
 
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-[#F7FAFF] via-white to-[#EEF4FF]">
+    <section className="relative overflow-hidden">
+      {/* Dot grid background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+          maskImage:
+            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+        }}
+      />
       {/* Background Blur */}
       <div className="absolute -left-24 top-0 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
       <div className="absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
@@ -42,7 +57,7 @@ export default function AboutHero() {
           </span>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            We Built Wellranked for Business Owners Who Are {" "}
+            We Built Wellranked for Business Owners Who Are{" "}
             <span className="text-blue-600">
               Tired of Doing Everything Themselves.
             </span>
@@ -50,8 +65,8 @@ export default function AboutHero() {
 
           <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
             Wellranked was created to give UK small businesses access to the
-            kind of joined-up marketing support that's usually only available
-            to larger companies. We help businesses stay visible, trusted and
+            kind of joined-up marketing support that's usually only available to
+            larger companies. We help businesses stay visible, trusted and
             active online, without the stress of managing everything yourself.
           </p>
 
@@ -95,8 +110,8 @@ export default function AboutHero() {
           </div>
         </div>
 
-        {/* Right */}
-        <div className="rounded-3xl border border-gray-200 bg-white p-5 md:p-7">
+        {/* Right — editorial mission manifesto */}
+        <div className="relative rounded-[2rem] border border-gray-100 bg-white p-6 shadow-[0_30px_70px_-25px_rgba(16,42,86,0.2)] md:p-10">
           <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
             <HeartHandshake size={15} />
             Our Mission
@@ -112,33 +127,36 @@ export default function AboutHero() {
             jargon.
           </p>
 
-          <div className="mt-5 space-y-5">
+          {/* Bold typographic list of mission pillars */}
+          <div className="mt-8 divide-y divide-gray-100 border-t border-gray-100">
             {missionPoints.map((point) => (
-              <div
-                key={point.title}
-                className="rounded-2xl border border-gray-200 p-5 transition hover:border-blue-600 hover:bg-blue-50"
-              >
-                <h4 className="font-semibold text-[#102A56]">
-                  {point.title}
-                </h4>
-
-                <p className="mt-2 text-sm leading-6 text-gray-600">
-                  {point.description}
-                </p>
+              <div key={point.title} className="group flex gap-5 py-6">
+                <span
+                  aria-hidden
+                  className="w-1 shrink-0 rounded-full bg-blue-100 transition-colors duration-300 group-hover:bg-blue-600"
+                />
+                <div>
+                  <h4 className="text-2xl font-black tracking-tight text-[#102A56] transition-colors duration-300 group-hover:text-blue-600 md:text-3xl">
+                    {point.title}
+                  </h4>
+                  <p className="mt-2 max-w-sm leading-6 text-gray-600">
+                    {point.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Bottom Card */}
-          <div className="mt-8 rounded-2xl bg-[#F8FAFC] p-5">
-            <p className="text-sm font-semibold text-[#102A56]">
-              Our Promise
-            </p>
-
-            <p className="mt-2 text-sm leading-6 text-gray-600">
-              Every recommendation we make is focused on one goal: helping your
-              business get found, earn trust and generate more customer
+          {/* Promise, styled as a pull-quote rather than a boxed card */}
+          <div className="mt-8 border-l-4 border-blue-600 pl-5">
+            <Quote size={22} className="text-blue-200" />
+            <p className="mt-2 text-lg italic leading-7 text-[#102A56]">
+              Every recommendation we make is focused on one goal: helping
+              your business get found, earn trust and generate more customer
               enquiries.
+            </p>
+            <p className="mt-3 text-sm font-semibold text-gray-500">
+              — Our Promise
             </p>
           </div>
         </div>
