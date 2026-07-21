@@ -41,7 +41,7 @@ export default function Hero() {
           {/* LEFT CONTENT */}
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white border border-blue-100 shadow-sm rounded-full px-4 py-2 mb-8">
+            <div className="inline-flex items-center gap-2 bg-white border border-blue-100 rounded-full px-4 py-2 mb-8">
               <span className="w-2 h-2 rounded-full bg-[#244EB3]"></span>
               <span className="text-sm font-medium text-[#1F3064]">
                 Helping UK Small Businesses Grow Online
