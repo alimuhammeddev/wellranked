@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import PackageBreakdown from "./components/PackageBreakdown";
 import PackagesHero from "./components/PackageHero";
 import PackagesCTA from "./components/PackagesCTA";
@@ -10,9 +8,6 @@ import PricingNote from "./components/PricingNote";
 export default function Packages() {
   return (
     <section>
-      <div>
-        <Navbar />
-      </div>
       <div>
         <PackagesHero />
       </div>
@@ -30,9 +25,6 @@ export default function Packages() {
       </div>
       <div>
         <PackagesCTA />
-      </div>
-      <div>
-        <Footer />
       </div>
     </section>
   );
