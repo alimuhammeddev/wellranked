@@ -121,7 +121,7 @@ export default function Navbar() {
 
               <Link
                 href="/growth-audit"
-                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-[#244EB3] py-3 font-bold text-white shadow-sm shadow-blue-200"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-[#244EB3] py-3 font-bold text-white"
               >
                 Book Free Growth Audit
                 <ArrowRight size={18} />
