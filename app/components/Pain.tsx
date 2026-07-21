@@ -30,21 +30,7 @@ const painPoints = [
 
 export default function PainSection() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-[#F8FAFC] via-[#F4F8FF] to-[#EEF6FF] md:py-24 py-10 lg:px-0 md:px-5 px-5">
-      {/* Decorative Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 -left-20 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl"></div>
-
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-sky-100/40 blur-3xl"></div>
-
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage: "radial-gradient(#1F3064 1px, transparent 1px)",
-            backgroundSize: "26px 26px",
-          }}
-        />
-      </div>
+    <section className="relative overflow-hidden bg-blue-50 md:py-24 py-10 lg:px-0 md:px-5 px-5">
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 md:gap-16 gap-5 items-center">
           {/* Left */}
@@ -82,7 +68,7 @@ export default function PainSection() {
             {painPoints.map(({ icon: Icon, title, description }) => (
               <div
                 key={title}
-                className="group relative overflow-hidden rounded-2xl border border-blue-100 bg-linear-to-br from-white via-[#F8FBFF] to-[#EEF6FF] p-5 transition-all duration-300 hover:border-blue-200"
+                className="group relative overflow-hidden rounded-2xl border border-blue-200 bg-white p-5"
               >
                 {/* Center Watermark Circle */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

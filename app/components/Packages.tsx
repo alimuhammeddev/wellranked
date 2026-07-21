@@ -83,8 +83,8 @@ export default function PackagesPreview() {
                 key={pkg.name}
                 className={`relative flex flex-col rounded-3xl border bg-white ${
                   pkg.featured
-                    ? "border-[#244EB3] shadow-lg lg:-mt-4 lg:mb-4"
-                    : "border-gray-200 shadow-sm"
+                    ? "border-blue-200 lg:-mt-4 lg:mb-4"
+                    : "border-blue-200"
                 }`}
               >
                 {pkg.featured && (

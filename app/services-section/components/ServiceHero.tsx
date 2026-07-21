@@ -137,10 +137,6 @@ export default function ServicesHero() {
                 key={title}
                 className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border border-blue-100 bg-white/95 p-3 text-center  sm:p-4"
               >
-                <span
-                  aria-hidden
-                  className="absolute -top-1.25 left-1/2 h-2.5 w-2.5 animate-pulse -translate-x-1/2 rounded-full border-2 border-white bg-[#244EB3]"
-                />
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#244EB3]">
                   <Icon size={17} />
                 </span>

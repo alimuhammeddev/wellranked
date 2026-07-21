@@ -137,10 +137,6 @@ function CornerRings() {
 export default function ServicesGrid() {
   return (
     <section id="services" className="relative overflow-hidden bg-white">
-      {/* Background Blur */}
-      <div className="absolute -left-20 top-20 h-80 w-80 rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-indigo-100/40 blur-3xl" />
-
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0 md:mt-20 mt-10">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
@@ -168,12 +164,9 @@ export default function ServicesGrid() {
             return (
               <div
                 key={service.title}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white md:p-8 p-5 shadow-[0_1px_2px_rgba(16,42,86,0.04)] transition-all duration-300 border-[#244EB3]/60"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-blue-200"
               >
-                {/* Corner decoration: soft wash + rings + dot grid */}
-                <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-blue-50 blur-2xl transition-opacity duration-500 opacity-80" />
                 <CornerRings />
-                <DotGrid />
 
                 {/* Icon */}
                 <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl ring-1 ring-inset transition-all duration-300 bg-[#244EB3] ring-[#244EB3]">

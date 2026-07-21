@@ -145,12 +145,6 @@ export default function IndustriesHero() {
             }
           `}</style>
 
-          {/* soft pulsing glow */}
-          <div
-            aria-hidden
-            className="orbit-halo absolute h-64 w-64 rounded-full bg-blue-400/30 blur-2xl"
-          />
-
           {/* dashed orbit guide rings */}
           <div
             aria-hidden

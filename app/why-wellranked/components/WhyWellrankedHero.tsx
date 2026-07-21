@@ -126,16 +126,6 @@ export default function WhyWellrankedHero() {
             }
           `}</style>
 
-          {/* decorative glows */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-blue-400/20 blur-3xl"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-indigo-400/10 blur-3xl"
-          />
-
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
             <Layers3 size={15} />
             What Makes Us Different

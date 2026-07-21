@@ -102,8 +102,8 @@ export default function PricingCards() {
                 key={plan.name}
                 className={`relative flex flex-col rounded-3xl border ${
                   plan.featured
-                    ? "border-[#244EB3] shadow-2xl lg:scale-105"
-                    : "border-gray-200"
+                    ? "border-blue-200"
+                    : "border-blue-200"
                 }`}
               >
                 {plan.featured && (

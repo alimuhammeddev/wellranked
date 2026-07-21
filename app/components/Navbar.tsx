@@ -43,7 +43,7 @@ export default function Navbar() {
         {/* Navbar Content */}
         <div className="mx-auto flex h-20 max-w-337.5 items-center justify-between md:px-5 px-5">
           <Link href="/" className="group flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#244EB3] text-white font-bold shadow-lg shadow-blue-200">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#244EB3] text-white font-bold">
               W
             </div>
 
@@ -73,7 +73,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="/growth-audit"
-            className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-[#244EB3] px-7 py-3 shadow-blue-200 lg:flex"
+            className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-[#244EB3] px-7 py-3 lg:flex"
           >
             <span className="relative z-10 flex items-center gap-2 font-semibold text-white">
               Book Free Growth Audit

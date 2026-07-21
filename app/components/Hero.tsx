@@ -1,40 +1,13 @@
 import {
   Globe,
   Search,
-  MapPinned,
-  Star,
   ArrowRight,
-  Sparkles,
-  BarChart3,
-  MousePointerClick,
   MessageCircle,
   PenTool,
   Bot,
   TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
-
-const floatingIcons = [
-  { Icon: Globe, top: "8%", left: "5%", delay: "0s" },
-  { Icon: Search, top: "18%", right: "8%", delay: "2s" },
-  { Icon: Sparkles, top: "40%", left: "3%", delay: "4s" },
-  { Icon: BarChart3, top: "70%", left: "12%", delay: "1s" },
-  { Icon: MousePointerClick, top: "80%", right: "10%", delay: "3s" },
-  { Icon: MessageCircle, top: "58%", right: "4%", delay: "5s" },
-  { Icon: Globe, top: "25%", left: "48%", delay: "2.5s" },
-  { Icon: PenTool, top: "88%", left: "42%", delay: "6s" },
-  { Icon: MapPinned, top: "12%", left: "75%", delay: "1.5s" },
-  { Icon: Star, top: "55%", left: "82%", delay: "4.5s" },
-];
-
-const particles = Array.from({ length: 50 }, (_, i) => ({
-  id: i,
-  size: Math.random() * 8 + 4, // was 2-7px, now 4-12px
-  top: Math.random() * 100,
-  left: Math.random() * 100,
-  duration: Math.random() * 18 + 12,
-  delay: Math.random() * 10,
-}));
 
 const services = [
   { name: "Website", Icon: Globe },
@@ -48,48 +21,20 @@ const services = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Floating Background Icons */}
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {floatingIcons.map(({ Icon, ...item }, index) => (
-          <div
-            key={index}
-            className="absolute animate-float"
-            style={{
-              top: item.top,
-              left: item.left,
-              right: item.right,
-              animationDelay: item.delay,
-            }}
-          >
-            <div className="rounded-2xl bg-white/60 backdrop-blur-md border border-white/70 p-3">
-              <Icon
-                size={24}
-                className="text-[#244EB3] opacity-70"
-                strokeWidth={1.8}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {particles.map((particle) => (
-          <span
-            key={particle.id}
-            className="particle"
-            style={{
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              top: `${particle.top}%`,
-              left: `${particle.left}%`,
-              animationDuration: `${particle.duration}s`,
-              animationDelay: `${particle.delay}s`,
-            }}
-          />
-        ))}
-      </div>
+      {/* Dot grid background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+          maskImage:
+            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+        }}
+      />
 
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -97,7 +42,7 @@ export default function Hero() {
           <div>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white border border-blue-100 shadow-sm rounded-full px-4 py-2 mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#244EB3] animate-bounce"></span>
+              <span className="w-2 h-2 rounded-full bg-[#244EB3]"></span>
               <span className="text-sm font-medium text-[#1F3064]">
                 Helping UK Small Businesses Grow Online
               </span>
@@ -144,7 +89,7 @@ export default function Hero() {
 
           <div className="relative flex items-center justify-center py-16 md:mt-0 -mt-10">
             {/* Center Circle */}
-            <div className="relative z-20 flex h-60 w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full overflow-hidden bg-linear-to-br from-[#1F3064] to-[#2563EB]">
+            <div className="relative z-20 flex h-60 w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full overflow-hidden bg-[#2563EB]">
               {/* Full background network */}
               <svg
                 className="absolute inset-0 w-full h-full opacity-25"
@@ -257,9 +202,6 @@ export default function Hero() {
                 ))}
               </svg>
 
-              {/* Optional glow */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]" />
-
               {/* Content */}
               <div className="relative z-10 text-center">
                 <h2 className="text-3xl font-bold text-white">Wellranked</h2>
@@ -306,24 +248,12 @@ export default function Hero() {
                   line: "-rotate-12",
                   side: "left",
                 }, // Branding
-              ].map(({ Icon, name, className, line, side }) => (
+              ].map(({ Icon, name, className }) => (
                 <div
                   key={name}
                   className={`absolute ${className} flex items-center`}
                 >
-                  {side === "left" && (
-                    <div
-                      className={`absolute left-full h-0.5 w-20 bg-blue-300 ${line} origin-left`}
-                    />
-                  )}
-
-                  {side === "right" && (
-                    <div
-                      className={`absolute right-full h-0.5 w-20 bg-blue-300 ${line} origin-right`}
-                    />
-                  )}
-
-                  <div className="relative z-30 flex h-24 w-24 flex-col items-center justify-center rounded-full border border-blue-100 bg-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                  <div className="relative z-30 flex h-24 w-24 flex-col items-center justify-center rounded-full border border-blue-200 bg-white">
                     <Icon size={24} className="text-[#244EB3]" />
                     <span className="mt-1 text-[11px] font-semibold text-[#1F3064] text-center leading-tight px-1">
                       {name}
@@ -362,7 +292,7 @@ export default function Hero() {
                 }, // Top Left
               ].map(({ Icon, name, className }) => (
                 <div key={name} className={`absolute ${className}`}>
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-blue-100 shadow-xl">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
                     <div className="flex flex-col items-center">
                       <Icon className="text-[#244EB3]" size={22} />
                       <span className="mt-1 text-[10px] font-semibold text-[#1F3064] text-center leading-tight">

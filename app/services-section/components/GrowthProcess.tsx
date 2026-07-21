@@ -42,11 +42,7 @@ const steps = [
 
 export default function GrowthProcess() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-[#F7FAFF] via-white to-[#EEF4FF] md:py-24 py-10">
-      {/* Background Blur */}
-      <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-blue-200/30 blur-3xl" />
-      <div className="absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-indigo-200/30 blur-3xl" />
-
+    <section className="relative overflow-hidden md:py-24 py-10">
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">

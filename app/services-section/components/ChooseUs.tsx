@@ -36,32 +36,6 @@ const features = [
   },
 ];
 
-// Small decorative glow-dots scattered inside a card. Positions vary per
-// card so a row of cards doesn't look stamped from the same template.
-function Sparkles({ variant = 0 }: { variant?: number }) {
-  const layouts = [
-    "left-7 top-9 h-2 w-2 bg-blue-300/60",
-    "right-8 top-16 h-1.5 w-1.5 bg-indigo-300/60",
-    "right-14 bottom-10 h-1 w-1 bg-blue-400/50",
-  ];
-  const offsets = [0, 1, 2, 1, 0];
-  return (
-    <>
-      {layouts.map((pos, idx) => (
-        <span
-          key={pos}
-          aria-hidden
-          className={`pointer-events-none absolute rounded-full blur-[1.5px] motion-safe:animate-pulse motion-reduce:opacity-70 ${pos}`}
-          style={{
-            animationDuration: "3.2s",
-            animationDelay: `${(idx + offsets[variant % offsets.length]) * 0.6}s`,
-          }}
-        />
-      ))}
-    </>
-  );
-}
-
 function GhostQuote() {
   return (
     <span
@@ -76,10 +50,6 @@ function GhostQuote() {
 export default function WhyChooseUs() {
   return (
     <section className="relative overflow-hidden bg-white md:py-24">
-      {/* Background Blur */}
-      <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-indigo-100/40 blur-3xl" />
-
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
@@ -134,7 +104,6 @@ export default function WhyChooseUs() {
                 className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-white md:p-7 p-5"
               >
                 <GhostQuote />
-                <Sparkles variant={i} />
 
                 <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#244EB3]">
                   <Icon size={24} className="text-white" />

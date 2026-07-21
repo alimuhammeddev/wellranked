@@ -13,9 +13,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-// The six services orbiting the hub, laid out as points on a hexagon
-// (angles at 12, 2, 4, 6, 8, 10 o'clock) so the web reads as balanced,
-// not scattered.
 const NODES = [
   { label: "Website", icon: Globe, x: 50, y: 10 },
   { label: "Local SEO", icon: Search, x: 84.6, y: 30 },
@@ -108,38 +105,9 @@ export default function AboutHero() {
         {/* Right */}
         <div className="relative mx-auto w-full max-w-110 py-4 lg:max-w-none lg:py-0">
           <div className="relative aspect-square w-full">
-            {/* Connecting lines */}
-            <svg
-              viewBox="0 0 100 100"
-              className="absolute inset-0 h-full w-full overflow-visible"
-              aria-hidden
-            >
-              <defs>
-                <linearGradient id="wr-line" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#2563eb" stopOpacity="0.55" />
-                  <stop offset="100%" stopColor="#4338ca" stopOpacity="0.2" />
-                </linearGradient>
-              </defs>
-              {NODES.map((n) => (
-                <line
-                  key={n.label}
-                  x1="50"
-                  y1="50"
-                  x2={n.x}
-                  y2={n.y}
-                  stroke="url(#wr-line)"
-                  strokeWidth="0.5"
-                  strokeLinecap="round"
-                  strokeDasharray="3 3"
-                  className="wr-connector"
-                />
-              ))}
-            </svg>
-
-            {/* Hub */}
+            {/* Center Circle*/}
             <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
               <div className="relative h-24 w-24 lg:h-28 lg:w-28">
-                <span className="absolute inset-0 animate-ping rounded-full bg-blue-400/20 [animation-duration:3s] motion-reduce:hidden" />
                 <div className="relative flex h-full w-full items-center justify-center rounded-full bg-[#244EB3] text-3xl font-extrabold text-white shadow-lg shadow-blue-600/20">
                   W
                 </div>
@@ -158,7 +126,7 @@ export default function AboutHero() {
                   className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5"
                   style={{ left: `${n.x}%`, top: `${n.y}%` }}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-100 bg-white text-[#244EB3] shadow-sm">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-100 bg-white text-[#244EB3]">
                     <Icon size={18} />
                   </div>
                   <span className="max-w-23 text-center text-xs font-semibold leading-tight text-gray-600">
@@ -168,18 +136,6 @@ export default function AboutHero() {
               );
             })}
           </div>
-
-          <style>{`
-            .wr-connector {
-              animation: wr-flow 6s linear infinite;
-            }
-            @keyframes wr-flow {
-              to { stroke-dashoffset: -24; }
-            }
-            @media (prefers-reduced-motion: reduce) {
-              .wr-connector { animation: none; }
-            }
-          `}</style>
         </div>
       </div>
     </section>

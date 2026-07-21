@@ -32,32 +32,6 @@ const notes = [
   },
 ];
 
-// Small decorative glow-dots scattered inside a card. Positions vary per
-// card so a row of cards doesn't look stamped from the same template.
-function Sparkles({ variant = 0 }: { variant?: number }) {
-  const layouts = [
-    "left-7 top-9 h-2 w-2 bg-blue-300/60",
-    "right-8 top-16 h-1.5 w-1.5 bg-indigo-300/60",
-    "right-14 bottom-10 h-1 w-1 bg-blue-400/50",
-  ];
-  const offsets = [0, 1, 2, 1, 0];
-  return (
-    <>
-      {layouts.map((pos, idx) => (
-        <span
-          key={pos}
-          aria-hidden
-          className={`pointer-events-none absolute rounded-full blur-[1.5px] motion-safe:animate-pulse motion-reduce:opacity-70 ${pos}`}
-          style={{
-            animationDuration: "3.2s",
-            animationDelay: `${(idx + offsets[variant % offsets.length]) * 0.6}s`,
-          }}
-        />
-      ))}
-    </>
-  );
-}
-
 function GhostQuote() {
   return (
     <span
@@ -96,10 +70,9 @@ export default function PricingNote() {
           {notes.map(({ icon: Icon, title, description }, i) => (
             <div
               key={title}
-              className="group relative overflow-hidden rounded-3xl border bg-white md:p-8 p-5 shadow-sm border-blue-200"
+              className="group relative overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-blue-200"
             >
               <GhostQuote />
-              <Sparkles variant={i} />
 
               <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#244EB3]">
                 <Icon size={24} className="text-white" />
@@ -117,10 +90,8 @@ export default function PricingNote() {
         </div>
 
         {/* Bottom Notice */}
-
         <div className="relative mt-10 overflow-hidden rounded-3xl border border-blue-200 bg-blue-50 p-8 text-center">
           <GhostQuote />
-          <Sparkles variant={3} />
 
           <h3 className="relative md:text-2xl text-xl font-bold text-[#244EB3]">
             Not sure which package is right for you?

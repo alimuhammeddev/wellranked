@@ -46,7 +46,6 @@ export default function TrustSection() {
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
         <div className="grid items-center md:gap-16 gap-10 lg:grid-cols-2">
           {/* Left */}
-
           <div>
             <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
               Why Businesses Choose Wellranked
@@ -76,11 +75,11 @@ export default function TrustSection() {
             {trustItems.map(({ title, description, icon: Icon }) => (
               <div
                 key={title}
-                className="group relative overflow-hidden rounded-2xl border border-blue-100 bg-white p-5 shadow-sm transition-all duration-300 hover:border-blue-200"
+                className="group relative overflow-hidden rounded-2xl border border-blue-200 bg-white p-5"
               >
                 {/* Network Background */}
                 <svg
-                  className="absolute inset-0 h-full w-full opacity-[0.13] group-hover:opacity-[0.08] transition-opacity duration-500"
+                  className="absolute inset-0 h-full w-full opacity-[0.08]"
                   viewBox="0 0 400 300"
                   preserveAspectRatio="none"
                   fill="none"

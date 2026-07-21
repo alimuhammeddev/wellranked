@@ -126,115 +126,14 @@ export default function PackagesHero() {
 
         {/* Right */}
         <div className="relative flex items-center justify-center md:min-h-140 min-h-96 rounded-[40px] overflow-hidden">
-          {/* Constellation mesh, recolored for the premium navy/gold palette */}
-          <svg
-            className="absolute inset-0 h-full w-full opacity-[0.35]"
-            viewBox="0 0 100 100"
-          >
-            {/* Outer Ring */}
-            {nodes.slice(0, 12).map((node, i) => {
-              const next = nodes[(i + 1) % 12];
-              return (
-                <line
-                  key={`outer-${i}`}
-                  x1={node.x}
-                  y1={node.y}
-                  x2={next.x}
-                  y2={next.y}
-                  stroke="#244EB3"
-                  strokeWidth=".3"
-                />
-              );
-            })}
-
-            {/* Outer -> Inner */}
-            {[
-              [0, 12],
-              [1, 13],
-              [2, 13],
-              [3, 14],
-              [4, 14],
-              [5, 15],
-              [6, 15],
-              [7, 16],
-              [8, 16],
-              [9, 17],
-              [10, 17],
-              [11, 12],
-            ].map(([a, b], i) => (
-              <line
-                key={`spoke-${i}`}
-                x1={nodes[a].x}
-                y1={nodes[a].y}
-                x2={nodes[b].x}
-                y2={nodes[b].y}
-                stroke="#244EB3 "
-                strokeWidth=".3"
-              />
-            ))}
-
-            {/* Inner Ring */}
-            {[12, 13, 14, 15, 16, 17].map((index, i) => {
-              const next = [12, 13, 14, 15, 16, 17][(i + 1) % 6];
-              return (
-                <line
-                  key={`inner-${i}`}
-                  x1={nodes[index].x}
-                  y1={nodes[index].y}
-                  x2={nodes[next].x}
-                  y2={nodes[next].y}
-                  stroke="#244EB3"
-                  strokeWidth=".3"
-                />
-              );
-            })}
-
-            {/* Mesh Cross Connections */}
-            {[
-              [12, 14],
-              [14, 16],
-              [16, 12],
-              [13, 15],
-              [15, 17],
-              [17, 13],
-              [12, 15],
-              [13, 16],
-              [14, 17],
-            ].map(([a, b], i) => (
-              <line
-                key={`mesh-${i}`}
-                x1={nodes[a].x}
-                y1={nodes[a].y}
-                x2={nodes[b].x}
-                y2={nodes[b].y}
-                stroke="#244EB3"
-                strokeWidth=".25"
-              />
-            ))}
-
-            {/* Nodes */}
-            {nodes.map((node, i) => (
-              <circle key={i} cx={node.x} cy={node.y} r="1" fill="#244EB3" />
-            ))}
-          </svg>
-
           {/* Slow rotating gilded ring behind the centerpiece */}
-          <div
-            className="absolute h-65 w-65 rounded-full"
-            style={{
-              background:
-                "conic-gradient(from 0deg, transparent 0deg, #244EB3 40deg, transparent 90deg, transparent 270deg, #6E8CFF 320deg, transparent 360deg)",
-              filter: "blur(1px)",
-              animation: "packages-orbit-spin 14s linear infinite",
-            }}
-          />
+          <div className="absolute h-65 w-65 rounded-full" />
           <div className="absolute h-59 w-59 rounded-full bg-[#244EB3]" />
-
           {/* Centerpiece: layered package cards */}
           <div className="relative z-10 flex h-47.5 w-47.5 items-center justify-center">
-            <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm" />
-            <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-white/10 bg-white/10 backdrop-blur-sm" />
-            <div className="relative flex h-39.5 w-34.5 flex-col items-center justify-center rounded-2xl border border-white/20 bg-linear-to-b from-white/95 to-white/85 shadow-2xl">
+            <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-blue-200 bg-white" />
+            <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-blue-200 bg-white" />
+            <div className="relative flex h-39.5 w-34.5 flex-col items-center justify-center rounded-2xl border border-blue-200 bg-white">
               <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#244EB3]">
                 Most Popular
               </span>
@@ -252,7 +151,7 @@ export default function PackagesHero() {
           {orbitItems.map((item) => (
             <div
               key={item.text}
-              className="absolute z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-blue-100 bg-white/95 backdrop-blur-sm transition-transform duration-300 hover:scale-110"
+              className="absolute z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-blue-200 bg-white"
               style={{ left: `${item.x}%`, top: `${item.y}%` }}
             >
               <div className="rounded-full bg-[#EEF4FF] p-2 text-[#244EB3]">
