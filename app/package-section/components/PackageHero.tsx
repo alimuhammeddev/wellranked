@@ -126,11 +126,9 @@ export default function PackagesHero() {
 
         {/* Right */}
         <div className="relative flex items-center justify-center md:min-h-140 min-h-96 rounded-[40px] overflow-hidden">
-          {/* Slow rotating gilded ring behind the centerpiece */}
-          <div className="absolute h-65 w-65 rounded-full" />
-          <div className="absolute h-59 w-59 rounded-full bg-[#244EB3]" />
+          <div className="absolute h-59 w-59 rounded-full bg-[#244EB3] z-20" />
           {/* Centerpiece: layered package cards */}
-          <div className="relative z-10 flex h-47.5 w-47.5 items-center justify-center">
+          <div className="relative z-20 flex h-47.5 w-47.5 items-center justify-center">
             <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-blue-200 bg-white" />
             <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-blue-200 bg-white" />
             <div className="relative flex h-39.5 w-34.5 flex-col items-center justify-center rounded-2xl border border-blue-200 bg-white">
@@ -151,7 +149,7 @@ export default function PackagesHero() {
           {orbitItems.map((item) => (
             <div
               key={item.text}
-              className="absolute z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-blue-200 bg-white"
+              className="absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full md:border md:border-blue-200 bg-white"
               style={{ left: `${item.x}%`, top: `${item.y}%` }}
             >
               <div className="rounded-full bg-[#EEF4FF] p-2 text-[#244EB3]">
