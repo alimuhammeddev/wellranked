@@ -94,7 +94,7 @@ export default function AboutValues() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="relative mt-16 overflow-hidden rounded-4xl border border-blue-100 bg-blue-50 p-8 text-center sm:p-14">
+        <div className="relative mt-16 overflow-hidden rounded-4xl border border-blue-100 bg-blue-50 p-6 text-center md:p-14">
           <div
             aria-hidden
             className="pointer-events-none absolute -bottom-16 -right-10 h-56 w-56 rounded-full bg-blue-200/40 blur-3xl"
