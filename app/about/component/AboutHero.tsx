@@ -158,7 +158,7 @@ export default function AboutHero() {
                   className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5"
                   style={{ left: `${n.x}%`, top: `${n.y}%` }}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-100 bg-white text-blue-600 shadow-sm">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-100 bg-white text-[#244EB3] shadow-sm">
                     <Icon size={18} />
                   </div>
                   <span className="max-w-23 text-center text-xs font-semibold leading-tight text-gray-600">

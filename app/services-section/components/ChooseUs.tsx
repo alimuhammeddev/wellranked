@@ -75,7 +75,7 @@ function GhostQuote() {
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-white py-24">
+    <section className="relative overflow-hidden bg-white md:py-24">
       {/* Background Blur */}
       <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-indigo-100/40 blur-3xl" />

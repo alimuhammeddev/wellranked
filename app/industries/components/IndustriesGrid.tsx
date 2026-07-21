@@ -74,7 +74,7 @@ export default function IndustriesGrid() {
   return (
     <section
       id="industries"
-      className="relative overflow-hidden md:py-24 py-10 bg-white"
+      className="relative overflow-hidden md:py-24 bg-white"
     >
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
         <div className="text-center max-w-3xl mx-auto">

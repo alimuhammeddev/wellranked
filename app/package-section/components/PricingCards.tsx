@@ -73,7 +73,7 @@ const packages = [
 
 export default function PricingCards() {
   return (
-    <section id="pricing" className="py-24 bg-white">
+    <section id="pricing" className="md:py-24 bg-white">
       <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
         <div className="text-center max-w-3xl mx-auto md:mb-16 mb-5">
           <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">

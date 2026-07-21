@@ -45,7 +45,7 @@ const beliefs = [
 
 export default function AboutValues() {
   return (
-    <section id="our-values" className="bg-white py-24">
+    <section id="our-values" className="bg-white md:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">

@@ -47,7 +47,7 @@ export default function WhyWellrankedGrid() {
   const others = features.filter((item) => !item.featured);
 
   return (
-    <section id="why-grid" className="bg-white py-24">
+    <section id="why-grid" className="bg-white md:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
