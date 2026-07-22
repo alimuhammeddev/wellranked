@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, MessageCircleQuestion, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -54,7 +55,28 @@ export default function FAQSection() {
     <section className="relative overflow-hidden py-14 md:py-24">
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-0">
         {/* LEFT */}
-        <div className="h-fit lg:sticky lg:top-24">
+        <motion.div
+          className="h-fit lg:sticky lg:top-24"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             <MessageCircleQuestion size={16} />
             Frequently Asked Questions
@@ -78,7 +100,9 @@ export default function FAQSection() {
             <div className="absolute -bottom-10 -left-10 h-36 w-36 rounded-full bg-cyan-300/10 blur-2xl" />
 
             <div className="relative">
-              <h3 className="md:text-2xl text-xl font-bold">Still Have Questions?</h3>
+              <h3 className="md:text-2xl text-xl font-bold">
+                Still Have Questions?
+              </h3>
 
               <p className="mt-2 leading-8 text-blue-100">
                 We'd be happy to discuss your business, recommend the right
@@ -94,7 +118,7 @@ export default function FAQSection() {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* RIGHT */}
 
@@ -106,11 +130,7 @@ export default function FAQSection() {
               <div
                 key={faq.question}
                 className={`group relative overflow-hidden rounded-3xl border bg-white/90 border-blue-200
-                ${
-                  isOpen
-                    ? "border-blue-300"
-                    : "border-blue-200"
-                }`}
+                ${isOpen ? "border-blue-300" : "border-blue-200"}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}

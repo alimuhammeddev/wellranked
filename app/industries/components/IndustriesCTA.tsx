@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function IndustriesCTA() {
   return (
@@ -12,8 +13,29 @@ export default function IndustriesCTA() {
           Wellranked
         </h1>
       </div>
-      
-      <div className="mx-auto max-w-4xl px-5 text-center">
+
+      <motion.div
+        className="mx-auto max-w-4xl px-5 text-center"
+        initial={{
+          opacity: 0,
+          y: 40,
+          scale: 0.95,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.25,
+        }}
+        transition={{
+          duration: 0.6,
+          delay: 0.15,
+          ease: "easeOut",
+        }}
+      >
         <span className="rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100">
           Ready to Grow?
         </span>
@@ -35,7 +57,7 @@ export default function IndustriesCTA() {
           Book Your Free Growth Audit
           <ArrowRight size={18} />
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 }

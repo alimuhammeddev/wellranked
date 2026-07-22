@@ -7,6 +7,7 @@ import {
   Layers3,
   TrendingUp,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -50,7 +51,28 @@ export default function WhyWellrankedGrid() {
     <section id="why-grid" className="bg-white md:py-24 md:mb-0 mb-20">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div
+          className="mx-auto max-w-3xl text-center"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Why Businesses Choose Wellranked
           </span>
@@ -64,12 +86,33 @@ export default function WhyWellrankedGrid() {
             your business, making sure every part of your online presence works
             together to generate more enquiries.
           </p>
-        </div>
+        </motion.div>
 
         {/* Featured Card */}
         {featured && (
           <div className="mt-10">
-            <div className="group relative overflow-hidden rounded-3xl bg-[#244EB3] md:p-10 p-5">
+            <motion.div
+              className="group relative overflow-hidden rounded-3xl bg-[#244EB3] md:p-10 p-5"
+              initial={{
+                opacity: 0,
+                y: 40,
+                scale: 0.95,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.15,
+                ease: "easeOut",
+              }}
+            >
               {/* decorative glows + ghost icon */}
               <div
                 aria-hidden
@@ -104,16 +147,35 @@ export default function WhyWellrankedGrid() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         )}
 
         {/* Remaining Cards */}
         <div className="mt-7 grid gap-6 sm:grid-cols-2">
-          {others.map(({ title, description, icon: Icon }, i) => (
-            <div
+          {others.map(({ title, description, icon: Icon, }, i, index) => (
+            <motion.div
               key={title}
               className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#244EB3] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_45px_-15px_rgba(36,78,179,0.25)] md:p-8"
+              initial={{
+                opacity: 0,
+                y: 40,
+                scale: 0.95,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
             >
               <Icon
                 aria-hidden
@@ -137,10 +199,10 @@ export default function WhyWellrankedGrid() {
               <p className="relative mt-2 leading-7 text-white md:leading-8">
                 {description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-};
+}

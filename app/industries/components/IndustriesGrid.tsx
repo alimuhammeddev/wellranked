@@ -12,6 +12,7 @@ import {
   Wrench,
   Zap,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const industries = [
   {
@@ -77,7 +78,28 @@ export default function IndustriesGrid() {
       className="relative overflow-hidden md:py-24 bg-white md:mb-0 mb-20"
     >
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
-        <div className="text-center max-w-3xl mx-auto">
+        <motion.div
+          className="text-center max-w-3xl mx-auto"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#102A56]">
             Industries We Help Grow
           </h2>
@@ -87,13 +109,32 @@ export default function IndustriesGrid() {
             and digital marketing strategy to attract more of the customers you
             want.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mt-10 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-          {industries.map(({ title, description, icon: Icon }) => (
-            <div
+          {industries.map(({ title, description, icon: Icon }, index ) => (
+            <motion.div
               key={title}
               className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#244EB3] p-5 md:p-7"
+              initial={{
+                opacity: 0,
+                y: 40,
+                scale: 0.95,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
             >
               {/* oversized ghost icon watermark */}
               <Icon
@@ -117,7 +158,7 @@ export default function IndustriesGrid() {
               <p className="relative mt-2 leading-7 text-white">
                 {description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

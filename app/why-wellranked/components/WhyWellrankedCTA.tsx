@@ -2,6 +2,7 @@
 
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function WhyWellrankedCTA() {
   return (
@@ -17,7 +18,28 @@ export default function WhyWellrankedCTA() {
         </h1>
       </div>
 
-      <div className="relative mx-auto max-w-5xl px-5 text-center">
+      <motion.div
+        className="relative mx-auto max-w-5xl px-5 text-center"
+        initial={{
+          opacity: 0,
+          y: 40,
+          scale: 0.95,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.25,
+        }}
+        transition={{
+          duration: 0.6,
+          delay: 0.15,
+          ease: "easeOut",
+        }}
+      >
         <span className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100">
           <BadgeCheck size={16} />
           Ready to Grow Your Business?
@@ -31,10 +53,9 @@ export default function WhyWellrankedCTA() {
         </h2>
 
         <p className="mx-auto mt-3 max-w-3xl text-lg leading-8 text-blue-100">
-          Whether you need a better website, stronger Google rankings,
-          more customer enquiries or ongoing marketing support,
-          Wellranked gives you one dedicated team focused on helping your
-          business succeed online.
+          Whether you need a better website, stronger Google rankings, more
+          customer enquiries or ongoing marketing support, Wellranked gives you
+          one dedicated team focused on helping your business succeed online.
         </p>
 
         {/* Benefits */}
@@ -76,7 +97,7 @@ export default function WhyWellrankedCTA() {
           No long-term contracts. Just practical digital marketing that helps
           your business attract more customers.
         </p>
-      </div>
+      </motion.div>
     </section>
   );
-};
+}

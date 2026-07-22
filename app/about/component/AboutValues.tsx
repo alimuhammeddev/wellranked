@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const beliefs = [
   {
@@ -48,7 +49,28 @@ export default function AboutValues() {
     <section id="our-values" className="bg-white md:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div
+          className="mx-auto max-w-3xl text-center"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             What We Believe
           </span>
@@ -58,19 +80,37 @@ export default function AboutValues() {
           </h1>
 
           <p className="mt-3 leading-8 text-gray-600 md:text-lg">
-            Wellranked exists to make digital marketing simpler, more
-            affordable and more effective for small businesses. These
-            principles shape every recommendation we make and every service we
-            deliver.
+            Wellranked exists to make digital marketing simpler, more affordable
+            and more effective for small businesses. These principles shape
+            every recommendation we make and every service we deliver.
           </p>
-        </div>
+        </motion.div>
 
         {/* Beliefs */}
         <div className="mt-12 border-b border-blue-200">
-          {beliefs.map(({ title, description, icon: Icon }, i) => (
-            <div
+          {beliefs.map(( { title, description, icon: Icon }, i, index) => (
+            <motion.div
               key={title}
               className="group grid gap-4 border-t border-blue-200 py-8 transition-all duration-300 sm:grid-cols-[3.5rem_2.75rem_1fr] sm:items-start sm:gap-8"
+              initial={{
+                opacity: 0,
+                y: 40,
+                scale: 0.95,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
             >
               <span className="font-serif text-2xl font-medium text-[#244EB3] lg:text-4xl md:text-3xl">
                 {String(i + 1).padStart(2, "0")}
@@ -89,12 +129,33 @@ export default function AboutValues() {
                   {description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="relative mt-16 overflow-hidden rounded-4xl border border-blue-100 bg-blue-50 p-6 text-center md:p-14">
+        <motion.div
+          className="relative mt-16 overflow-hidden rounded-4xl border border-blue-100 bg-blue-50 p-6 text-center md:p-14"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <div
             aria-hidden
             className="pointer-events-none absolute -bottom-16 -right-10 h-56 w-56 rounded-full bg-blue-200/40 blur-3xl"
@@ -120,8 +181,8 @@ export default function AboutValues() {
               <ArrowRight size={18} />
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
-};
+}
