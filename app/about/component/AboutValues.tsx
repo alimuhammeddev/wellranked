@@ -88,7 +88,7 @@ export default function AboutValues() {
 
         {/* Beliefs */}
         <div className="mt-12 border-b border-blue-200">
-          {beliefs.map(( { title, description, icon: Icon }, i, index) => (
+          {beliefs.map(( { title, description, icon: Icon }, i) => (
             <motion.div
               key={title}
               className="group grid gap-4 border-t border-blue-200 py-8 transition-all duration-300 sm:grid-cols-[3.5rem_2.75rem_1fr] sm:items-start sm:gap-8"
@@ -108,7 +108,7 @@ export default function AboutValues() {
               }}
               transition={{
                 duration: 0.6,
-                delay: index * 0.15,
+                delay: i * 0.15,
                 ease: "easeOut",
               }}
             >

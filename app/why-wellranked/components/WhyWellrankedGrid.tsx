@@ -153,7 +153,7 @@ export default function WhyWellrankedGrid() {
 
         {/* Remaining Cards */}
         <div className="mt-7 grid gap-6 sm:grid-cols-2">
-          {others.map(({ title, description, icon: Icon, }, i, index) => (
+          {others.map(({ title, description, icon: Icon, }, i) => (
             <motion.div
               key={title}
               className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#244EB3] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_45px_-15px_rgba(36,78,179,0.25)] md:p-8"
@@ -173,7 +173,7 @@ export default function WhyWellrankedGrid() {
               }}
               transition={{
                 duration: 0.6,
-                delay: index * 0.15,
+                delay: i * 0.15,
                 ease: "easeOut",
               }}
             >
