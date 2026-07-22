@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Globe,
   Search,
@@ -8,6 +10,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const services = [
   { name: "Website", Icon: Globe },
@@ -49,10 +52,9 @@ export default function Hero() {
             </div>
 
             <h1 className="text-2xl lg:text-4xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1F3064]">
-              Your Outsourced {" "}
+              Your Outsourced{" "}
               <span className="text-[#244EB3]">Marketing Department</span>
-               {""} for Less Than the Cost of {" "}
-              <span>One Employee.</span>
+              {""} for Less Than the Cost of <span>One Employee.</span>
             </h1>
 
             <p className="mt-3 md:text-lg text-gray-600 leading-8 max-w-xl">
@@ -248,18 +250,39 @@ export default function Hero() {
                   line: "-rotate-12",
                   side: "left",
                 }, // Branding
-              ].map(({ Icon, name, className }) => (
-                <div
+              ].map(({ Icon, name, className }, index) => (
+                <motion.div
                   key={name}
-                  className={`absolute ${className} flex items-center`}
+                  className={`absolute ${className}`}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.6,
+                    y: 30,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.4,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.12,
+                    ease: "easeOut",
+                  }}
                 >
-                  <div className="relative z-30 flex h-24 w-24 flex-col items-center justify-center rounded-full border border-blue-200 bg-white">
-                    <Icon size={24} className="text-[#244EB3]" />
-                    <span className="mt-1 text-[11px] font-semibold text-[#1F3064] text-center leading-tight px-1">
-                      {name}
-                    </span>
+                  <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white border border-blue-200">
+                    <div className="flex flex-col items-center">
+                      <Icon className="text-[#244EB3]" size={24} />
+                      <span className="mt-1 text-[11px] font-semibold text-[#1F3064] text-center leading-tight">
+                        {name}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
@@ -290,9 +313,31 @@ export default function Hero() {
                   ...services[5],
                   className: "top-[16%] left-[1%]",
                 }, // Top Left
-              ].map(({ Icon, name, className }) => (
-                <div key={name} className={`absolute ${className}`}>
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
+              ].map(({ Icon, name, className }, index) => (
+                <motion.div
+                  key={name}
+                  className={`absolute ${className}`}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.6,
+                    y: 30,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.4,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
+                >
+                  <div className="flex h-20 w-20 items-center justify-center">
                     <div className="flex flex-col items-center">
                       <Icon className="text-[#244EB3]" size={22} />
                       <span className="mt-1 text-[10px] font-semibold text-[#1F3064] text-center leading-tight">
@@ -300,7 +345,7 @@ export default function Hero() {
                       </span>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
