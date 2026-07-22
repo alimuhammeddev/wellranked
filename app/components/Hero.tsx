@@ -49,10 +49,10 @@ export default function Hero() {
             </div>
 
             <h1 className="text-2xl lg:text-4xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1F3064]">
-              Your Outsourced
-              <span className="block text-[#244EB3]">Marketing Department</span>
-              for Less Than the Cost of
-              <span className="block">One Employee</span>
+              Your Outsourced {" "}
+              <span className="text-[#244EB3]">Marketing Department</span>
+               {""} for Less Than the Cost of {" "}
+              <span>One Employee.</span>
             </h1>
 
             <p className="mt-3 md:text-lg text-gray-600 leading-8 max-w-xl">
@@ -67,7 +67,7 @@ export default function Hero() {
             <div className="mt-5 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/growth-audit"
-                className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white shadow-lg"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
               >
                 Book Your Free Growth Audit
                 <ArrowRight size={18} />
