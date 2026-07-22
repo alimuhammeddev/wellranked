@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BadgeCheck, } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function PackagesCTA() {
   return (
@@ -15,24 +18,42 @@ export default function PackagesCTA() {
         </h1>
       </div>
 
-      <div className="relative mx-auto max-w-5xl px-5 text-center">
-
+      <motion.div
+        className="relative mx-auto max-w-5xl px-5 text-center"
+        initial={{
+          opacity: 0,
+          y: 40,
+          scale: 0.95,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.25,
+        }}
+        transition={{
+          duration: 0.6,
+          delay: 0.15,
+          ease: "easeOut",
+        }}
+      >
         <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white">
           Free Growth Audit
         </span>
 
         <h2 className="mt-6 text-2xl font-extrabold leading-tight text-white lg:text-4xl md:text-3xl">
           Ready to grow your business
-          <span className="block text-blue-200">
-            with less stress?
-          </span>
+          <span className="block text-blue-200">with less stress?</span>
         </h2>
 
         <p className="mx-auto mt-8 max-w-3xl md:text-lg leading-8 text-blue-100">
-          Book your free Wellranked Growth Audit and we'll show you the
-          biggest opportunities to improve your website, Google visibility,
-          reviews and lead generation. You'll receive practical,
-          easy-to-understand recommendations with no pressure and no jargon.
+          Book your free Wellranked Growth Audit and we'll show you the biggest
+          opportunities to improve your website, Google visibility, reviews and
+          lead generation. You'll receive practical, easy-to-understand
+          recommendations with no pressure and no jargon.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -68,8 +89,7 @@ export default function PackagesCTA() {
             Tailored to your business
           </div>
         </div>
-
-      </div>
+      </motion.div>
     </section>
   );
-};
+}

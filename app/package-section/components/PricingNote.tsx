@@ -1,9 +1,12 @@
+"use client";
+
 import {
   CircleDollarSign,
   BadgeCheck,
   Clock3,
   MessageCircleMore,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const notes = [
   {
@@ -49,7 +52,28 @@ export default function PricingNote() {
       <div className="mx-auto max-w-7xl lg:px-0 px-5">
         {/* Heading */}
 
-        <div className="mx-auto mb-10 max-w-3xl text-center">
+        <motion.div
+          className="mx-auto mb-10 max-w-3xl text-center"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Before You Choose
           </span>
@@ -62,15 +86,34 @@ export default function PricingNote() {
             We believe in clear pricing with no surprises. Here's what you
             should know before selecting your package.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {notes.map(({ icon: Icon, title, description }, i) => (
-            <div
+          {notes.map(({ icon: Icon, title, description }, index) => (
+            <motion.div
               key={title}
               className="group relative overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-blue-200"
+              initial={{
+                opacity: 0,
+                y: 40,
+                scale: 0.95,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
             >
               <GhostQuote />
 
@@ -85,12 +128,33 @@ export default function PricingNote() {
               <p className="relative mt-2 leading-7 text-gray-600">
                 {description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom Notice */}
-        <div className="relative mt-10 overflow-hidden rounded-3xl border border-blue-200 bg-blue-50 p-8 text-center">
+        <motion.div
+          className="relative mt-10 overflow-hidden rounded-3xl border border-blue-200 bg-blue-50 p-8 text-center"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <GhostQuote />
 
           <h3 className="relative md:text-2xl text-xl font-bold text-[#244EB3]">
@@ -100,11 +164,11 @@ export default function PricingNote() {
           <p className="relative mx-auto mt-4 max-w-3xl text-gray-600 leading-8">
             That's exactly why we offer a free Growth Audit. We'll review your
             website, Google visibility, reviews and online presence, then
-            recommend the package that will deliver the biggest impact for
-            your business—without any pressure or obligation.
+            recommend the package that will deliver the biggest impact for your
+            business—without any pressure or obligation.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
-};
+}

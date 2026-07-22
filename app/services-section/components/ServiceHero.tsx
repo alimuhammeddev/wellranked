@@ -15,6 +15,7 @@ import {
   Star,
 } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const services = [
   { title: "Website Design & Management", icon: Globe },
@@ -30,7 +31,6 @@ const services = [
 export default function ServicesHero() {
   return (
     <section className="relative overflow-hidden ">
-      
       {/* Dot grid background */}
       <div
         aria-hidden
@@ -100,27 +100,70 @@ export default function ServicesHero() {
         {/* Right — hub & spoke services map */}
         <div className="relative mx-auto w-full max-w-md">
           {/* Hub */}
-          <div className="relative z-20 mx-auto mb-8 w-fit">
+          <motion.div
+            className="relative z-20 mx-auto mb-8 w-fit"
+            initial={{
+              opacity: 0,
+              y: 40,
+              scale: 0.95,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
+          >
             <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-blue-100 bg-white/90 px-7 py-5 text-center">
               <span className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#244EB3] text-white">
                 <Sparkles size={20} />
               </span>
-              <h1 className="text-lg font-extrabold text-[#244EB3] sm:text-xl">
+              <h1 className="font-extrabold text-[#244EB3] md:text-lg">
                 Services We Offer
               </h1>
               <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400">
                 One partner, every channel
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Bridge connecting hub to the two service columns */}
-          <div aria-hidden className="relative mx-auto h-8 w-full">
+          <motion.div
+            aria-hidden
+            className="relative mx-auto h-8 w-full"
+            initial={{
+              opacity: 0,
+              y: 40,
+              scale: 0.95,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
+          >
             <span className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
             <span className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed border-blue-200" />
             <span className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
             <span className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
-          </div>
+          </motion.div>
 
           {/* Service cards */}
           <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
@@ -133,10 +176,29 @@ export default function ServicesHero() {
               className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200"
             />
 
-            {services.map(({ title, icon: Icon }) => (
-              <div
+            {services.map(({ title, icon: Icon }, index) => (
+              <motion.div
                 key={title}
                 className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border border-blue-100 bg-white/95 p-3 text-center  sm:p-4"
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                  scale: 0.95,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.25,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                  ease: "easeOut",
+                }}
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#244EB3]">
                   <Icon size={17} />
@@ -144,11 +206,11 @@ export default function ServicesHero() {
                 <span className="text-[11px] font-semibold leading-tight text-[#244EB3] sm:text-xs">
                   {title}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
     </section>
   );
-};
+}

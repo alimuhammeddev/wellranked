@@ -1,3 +1,5 @@
+"use client";
+
 import {
   BriefcaseBusiness,
   Rocket,
@@ -6,6 +8,7 @@ import {
   Check,
 } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const packages = [
   {
@@ -75,7 +78,28 @@ export default function PricingCards() {
   return (
     <section id="pricing" className="md:py-24 bg-white md:mb-0 mb-20">
       <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
-        <div className="text-center max-w-3xl mx-auto md:mb-16 mb-5">
+        <motion.div
+          className="text-center max-w-3xl mx-auto md:mb-16 mb-5"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Choose Your Plan
           </span>
@@ -88,23 +112,40 @@ export default function PricingCards() {
           </h2>
 
           <p className="mt-3 md:text-lg text-gray-600 leading-8">
-            Every package is designed to remove stress, improve trust and
-            help your business grow online.
+            Every package is designed to remove stress, improve trust and help
+            your business grow online.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-1">
-          {packages.map((plan) => {
+          {packages.map((plan, index) => {
             const Icon = plan.icon;
 
             return (
-              <div
+              <motion.div
                 key={plan.name}
                 className={`relative flex flex-col rounded-3xl border ${
-                  plan.featured
-                    ? "border-blue-200"
-                    : "border-blue-200"
+                  plan.featured ? "border-blue-200" : "border-blue-200"
                 }`}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                  scale: 0.95,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.25,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                  ease: "easeOut",
+                }}
               >
                 {plan.featured && (
                   <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[#244EB3] px-5 py-2 text-sm font-semibold text-white">
@@ -114,9 +155,7 @@ export default function PricingCards() {
 
                 <div
                   className={`rounded-t-3xl md:p-8 p-5 ${
-                    plan.featured
-                      ? "bg-[#244EB3] text-white"
-                      : "bg-[#F8FAFF]"
+                    plan.featured ? "bg-[#244EB3] text-white" : "bg-[#F8FAFF]"
                   }`}
                 >
                   <div
@@ -129,15 +168,11 @@ export default function PricingCards() {
                     <Icon size={24} />
                   </div>
 
-                  <h3 className="mt-3 text-xl font-bold">
-                    {plan.name}
-                  </h3>
+                  <h3 className="mt-3 text-xl font-bold">{plan.name}</h3>
 
                   <p
                     className={`mt-1 font-medium ${
-                      plan.featured
-                        ? "text-blue-100"
-                        : "text-[#244EB3]"
+                      plan.featured ? "text-blue-100" : "text-[#244EB3]"
                     }`}
                   >
                     {plan.tagline}
@@ -161,9 +196,7 @@ export default function PricingCards() {
                 </div>
 
                 <div className="flex flex-1 flex-col md:p-8 p-5">
-                  <p className="leading-7 text-gray-600">
-                    {plan.description}
-                  </p>
+                  <p className="leading-7 text-gray-600">{plan.description}</p>
 
                   <div className="mt-6 rounded-xl bg-blue-50 p-4">
                     <p className="text-xs uppercase tracking-wide text-[#244EB3] font-semibold">
@@ -179,20 +212,12 @@ export default function PricingCards() {
 
                   <div className="space-y-4 flex-1">
                     {plan.features.map((feature) => (
-                      <div
-                        key={feature}
-                        className="flex items-start gap-3"
-                      >
+                      <div key={feature} className="flex items-start gap-3">
                         <div className="mt-0.5 rounded-full bg-blue-100 p-1">
-                          <Check
-                            size={12}
-                            className="text-[#244EB3]"
-                          />
+                          <Check size={12} className="text-[#244EB3]" />
                         </div>
 
-                        <span className="text-gray-700">
-                          {feature}
-                        </span>
+                        <span className="text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -209,11 +234,11 @@ export default function PricingCards() {
                     <ArrowRight size={18} />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
     </section>
   );
-};
+}

@@ -1,4 +1,7 @@
+"use client";
+
 import { BriefcaseBusiness, Rocket, Crown, BadgeCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 const packages = [
   {
@@ -68,7 +71,28 @@ export default function PackageBreakdown() {
   return (
     <section className="md:py-24 bg-white">
       <div className="max-w-7xl mx-auto lg:px-0 px-5">
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-10"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Find Your Perfect Fit
           </span>
@@ -79,7 +103,7 @@ export default function PackageBreakdown() {
               to grow with your business.
             </span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="space-y-24">
           {packages.map((pkg, index) => {
@@ -93,7 +117,27 @@ export default function PackageBreakdown() {
                 }`}
               >
                 {/* Content */}
-                <div>
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.95,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.25,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.15,
+                    ease: "easeOut",
+                  }}
+                >
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#244EB3]">
                       <Icon size={24} />
@@ -119,10 +163,31 @@ export default function PackageBreakdown() {
                       {pkg.bestFor}
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Feature Card */}
-                <div className="relative rounded-3xl border border-gray-200 bg-[#F8FAFC] md:p-8 p-5 overflow-hidden">
+                <motion.div
+                  className="relative rounded-3xl border border-gray-200 bg-[#F8FAFC] md:p-8 p-5 overflow-hidden"
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.95,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.25,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.15,
+                    ease: "easeOut",
+                  }}
+                >
                   <div className="absolute left-0 top-0 h-1 w-full bg-[#244EB3]" />
                   <h4 className="text-xl font-bold text-[#102A56]">
                     What's Included
@@ -138,7 +203,7 @@ export default function PackageBreakdown() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               </div>
             );
           })}

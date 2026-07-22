@@ -12,6 +12,7 @@ import {
   Megaphone,
   BriefcaseBusiness,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -139,7 +140,28 @@ export default function ServicesGrid() {
     <section id="services" className="relative overflow-hidden bg-white">
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0 md:mt-20 mt-10">
         {/* Heading */}
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div
+          className="mx-auto max-w-3xl text-center"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Our Services
           </span>
@@ -154,17 +176,36 @@ export default function ServicesGrid() {
             support, our services work together to help your business get found,
             build trust and generate more enquiries.
           </p>
-        </div>
+        </motion.div>
 
         {/* Services */}
         <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-2">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
-              <div
+              <motion.div
                 key={service.title}
                 className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-blue-200"
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                  scale: 0.95,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.25,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                  ease: "easeOut",
+                }}
               >
                 <CornerRings />
 
@@ -194,7 +235,7 @@ export default function ServicesGrid() {
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </Link>
-              </div>
+              </motion.div>
             );
           })}
         </div>

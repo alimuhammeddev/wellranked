@@ -8,6 +8,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -52,22 +53,40 @@ export default function WhyChooseUs() {
     <section className="relative overflow-hidden bg-white md:py-24">
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
-        <div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Why Choose Wellranked
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             A Digital Partner That{" "}
-            <span className="text-[#244EB3]">
-              Helps Your Business Grow.
-            </span>
+            <span className="text-[#244EB3]">Helps Your Business Grow.</span>
           </h2>
 
           <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
-            We don't just build websites or run marketing campaigns. We
-            become an extension of your business, helping you attract more
-            customers, build trust and create sustainable long-term growth.
+            We don't just build websites or run marketing campaigns. We become
+            an extension of your business, helping you attract more customers,
+            build trust and create sustainable long-term growth.
           </p>
 
           <div className="mt-5 space-y-4">
@@ -91,17 +110,36 @@ export default function WhyChooseUs() {
             Talk To Wellranked
             <ArrowRight size={18} />
           </Link>
-        </div>
+        </motion.div>
 
         {/* Right */}
         <div className="grid gap-6 sm:grid-cols-2">
-          {features.map((feature, i) => {
+          {features.map((feature, index) => {
             const Icon = feature.icon;
 
             return (
-              <div
+              <motion.div
                 key={feature.title}
                 className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-white md:p-7 p-5"
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                  scale: 0.95,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.25,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                  ease: "easeOut",
+                }}
               >
                 <GhostQuote />
 
@@ -116,11 +154,11 @@ export default function WhyChooseUs() {
                 <p className="relative mt-3 leading-7 text-gray-600">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
     </section>
   );
-};
+}
