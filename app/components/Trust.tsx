@@ -1,3 +1,5 @@
+"use client";
+
 import {
   PoundSterling,
   Headphones,
@@ -6,6 +8,7 @@ import {
   TrendingUp,
   Building2,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const trustItems = [
   {
@@ -46,13 +49,33 @@ export default function TrustSection() {
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
         <div className="grid items-center md:gap-16 gap-10 lg:grid-cols-2">
           {/* Left */}
-          <div>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+              scale: 0.95,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
+          >
             <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
               Why Businesses Choose Wellranked
             </span>
 
             <h2 className="mt-3 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
-              Built for UK small businesses, {" "}
+              Built for UK small businesses,{" "}
               <span className="text-[#244EB3]">
                 sole traders & independent companies.
               </span>
@@ -68,14 +91,33 @@ export default function TrustSection() {
               day one, helping you build visibility, generate enquiries and grow
               with confidence.
             </p>
-          </div>
+          </motion.div>
 
           {/* Right */}
           <div className="grid gap-5 sm:grid-cols-2">
-            {trustItems.map(({ title, description, icon: Icon }) => (
-              <div
+            {trustItems.map(({ title, description, icon: Icon }, index) => (
+              <motion.div
                 key={title}
                 className="group relative overflow-hidden rounded-2xl border border-blue-200 bg-white p-5"
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                  scale: 0.95,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.25,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                  ease: "easeOut",
+                }}
               >
                 {/* Content */}
                 <div className="relative z-10">
@@ -89,7 +131,7 @@ export default function TrustSection() {
 
                   <p className="mt-2 leading-7 text-gray-600">{description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

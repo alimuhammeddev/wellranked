@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Globe,
   Search,
@@ -9,6 +11,7 @@ import {
   Bot,
   BadgeCheck,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const solutions = [
   {
@@ -51,7 +54,27 @@ export default function SolutionSection() {
       <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
         <div className="grid lg:grid-cols-2 md:gap-20 gap-10 items-center">
           {/* Left */}
-          <div>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+              scale: 0.95,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
+          >
             <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
               One Team. One Monthly Fee.
             </span>
@@ -86,15 +109,34 @@ export default function SolutionSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Right */}
           <div className="rounded-3xl border border-gray-200 bg-[#F8FAFF] md:p-8 p-5">
             <div className="grid sm:grid-cols-2 gap-4">
-              {solutions.map(({ title, icon: Icon }) => (
-                <div
+              {solutions.map(({ title, icon: Icon }, index) => (
+                <motion.div
                   key={title}
                   className="group relative overflow-hidden rounded-2xl bg-[#244EB3] border border-blue-100 p-5 transition-all duration-300"
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.95,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.25,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.15,
+                    ease: "easeOut",
+                  }}
                 >
                   {/* Decorative Curved Rings */}
                   <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full border border-blue-100"></div>
@@ -110,7 +152,7 @@ export default function SolutionSection() {
                       {title}
                     </h3>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

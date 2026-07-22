@@ -12,29 +12,7 @@ import {
   Rocket,
 } from "lucide-react";
 import Link from "next/link";
-
-const nodes = [
-  { x: 50, y: 8 }, // Top
-  { x: 68, y: 14 },
-  { x: 82, y: 30 },
-  { x: 88, y: 50 },
-  { x: 82, y: 70 },
-  { x: 68, y: 86 },
-  { x: 50, y: 92 },
-  { x: 32, y: 86 },
-  { x: 18, y: 70 },
-  { x: 12, y: 50 },
-  { x: 18, y: 30 },
-  { x: 32, y: 14 },
-
-  // Inner ring
-  { x: 50, y: 25 },
-  { x: 67, y: 33 },
-  { x: 67, y: 67 },
-  { x: 50, y: 75 },
-  { x: 33, y: 67 },
-  { x: 33, y: 33 },
-];
+import { motion } from "framer-motion";
 
 // Orbit badges placed on a true circle (computed, not hand-offset) so
 // spacing reads as deliberate rather than scattered.
@@ -128,7 +106,28 @@ export default function PackagesHero() {
         <div className="relative flex items-center justify-center md:min-h-140 min-h-96 rounded-[40px] overflow-hidden">
           <div className="absolute h-59 w-59 rounded-full bg-[#244EB3] z-20" />
           {/* Centerpiece: layered package cards */}
-          <div className="relative z-20 flex h-47.5 w-47.5 items-center justify-center">
+          <motion.div
+            className="relative z-20 flex h-47.5 w-47.5 items-center justify-center"
+            initial={{
+              opacity: 0,
+              y: 40,
+              scale: 0.95,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
+          >
             <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-blue-200 bg-white" />
             <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-blue-200 bg-white" />
             <div className="relative flex h-39.5 w-34.5 flex-col items-center justify-center rounded-2xl border border-blue-200 bg-white">
@@ -143,14 +142,33 @@ export default function PackagesHero() {
               </span>
               <span className="text-[10px] text-gray-500">per month</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Orbiting feature badges, evenly spaced on a computed circle */}
-          {orbitItems.map((item) => (
-            <div
+          {orbitItems.map((item, index) => (
+            <motion.div
               key={item.text}
               className="absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full md:border md:border-blue-200 bg-white"
               style={{ left: `${item.x}%`, top: `${item.y}%` }}
+              initial={{
+                opacity: 0,
+                y: 40,
+                scale: 0.95,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
             >
               <div className="rounded-full bg-[#EEF4FF] p-2 text-[#244EB3]">
                 {item.icon}
@@ -158,18 +176,8 @@ export default function PackagesHero() {
               <span className="mt-1 text-[9px] font-semibold text-[#102A56]">
                 {item.text}
               </span>
-            </div>
+            </motion.div>
           ))}
-
-          <style>{`
-            @keyframes packages-orbit-spin {
-              from { transform: rotate(0deg); }
-              to { transform: rotate(360deg); }
-            }
-            @media (prefers-reduced-motion: reduce) {
-              [style*="packages-orbit-spin"] { animation: none !important; }
-            }
-          `}</style>
         </div>
       </div>
     </section>

@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowRight, BadgeCheck, CalendarDays } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function FinalCTA() {
   return (
@@ -20,8 +23,27 @@ export default function FinalCTA() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:px-0 md:px-5 px-5 lg:grid-cols-2">
         {/* Left */}
-
-        <div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="inline-flex items-center rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100">
             Free Growth Audit
           </span>
@@ -56,11 +78,32 @@ export default function FinalCTA() {
               View Packages
             </Link>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right */}
 
-        <div className="rounded-3xl border border-white/20 bg-[#244EB3] md:p-8 p-5 backdrop-blur-xl">
+        <motion.div
+          className="rounded-3xl border border-white/20 bg-[#244EB3] md:p-8 p-5 backdrop-blur-xl"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#244EB3]">
               <CalendarDays size={24} />
@@ -103,7 +146,7 @@ export default function FinalCTA() {
               Just clear advice to help your business grow.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

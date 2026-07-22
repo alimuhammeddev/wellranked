@@ -1,4 +1,7 @@
+"use client";
+
 import { Clock3, Search, Star, Palette, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 const painPoints = [
   {
@@ -34,7 +37,27 @@ export default function PainSection() {
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 md:gap-16 gap-5 items-center">
           {/* Left */}
-          <div>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+              scale: 0.95,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
+          >
             <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
               The Challenge
             </span>
@@ -60,15 +83,34 @@ export default function PainSection() {
               </span>{" "}
               so you can focus on your product, service and customers.
             </p>
-          </div>
+          </motion.div>
 
           {/* Right */}
 
           <div className="grid md:grid-cols-2 md:gap-5 gap-3">
-            {painPoints.map(({ icon: Icon, title, description }) => (
-              <div
+            {painPoints.map(({ icon: Icon, title, description }, index) => (
+              <motion.div
                 key={title}
                 className="group relative overflow-hidden rounded-2xl border border-blue-200 bg-white p-5"
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                  scale: 0.95,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.25,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                  ease: "easeOut",
+                }}
               >
                 {/* Center Watermark Circle */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -96,7 +138,7 @@ export default function PainSection() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -1,4 +1,7 @@
+"use client";
+
 import { Check, BriefcaseBusiness, Rocket, Crown } from "lucide-react";
+import { motion } from "framer-motion";
 
 const packages = [
   {
@@ -56,7 +59,28 @@ export default function PackagesPreview() {
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
         {/* Heading */}
 
-        <div className="mx-auto md:mb-16 mb-10 max-w-3xl text-center">
+        <motion.div
+          className="mx-auto md:mb-16 mb-10 max-w-3xl text-center"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
             Pricing
           </span>
@@ -70,11 +94,32 @@ export default function PackagesPreview() {
             Choose the level of support your business needs today. Upgrade
             whenever you're ready to grow.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <motion.div
+          className="grid gap-8 lg:grid-cols-3"
+          initial={{
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
           {packages.map((pkg) => {
             const Icon = pkg.icon;
 
@@ -97,14 +142,14 @@ export default function PackagesPreview() {
 
                 <div
                   className={`rounded-t-3xl md:p-8 p-5 ${
-                    pkg.featured
-                      ? "bg-[#244EB3] text-white"
-                      : "bg-white"
+                    pkg.featured ? "bg-[#244EB3] text-white" : "bg-white"
                   }`}
                 >
                   <div
                     className={`flex h-14 w-14 items-center justify-center rounded-2xl ${
-                      pkg.featured ? "bg-white/20" : "bg-blue-100 text-[#244EB3]"
+                      pkg.featured
+                        ? "bg-white/20"
+                        : "bg-blue-100 text-[#244EB3]"
                     }`}
                   >
                     <Icon size={28} />
@@ -163,7 +208,7 @@ export default function PackagesPreview() {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
