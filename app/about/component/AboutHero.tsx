@@ -138,7 +138,7 @@ export default function AboutHero() {
               return (
                 <motion.div
                   key={n.label}
-                  className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5 left-(--x) top-var(--y) lg:left-(--lg-x) lg:top-(--lg-y)"
+                  className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5 left-(--x) top-(--y) lg:left-(--lg-x) lg:top-(--lg-y)"
                   style={
                     {
                       "--x": `${n.x}%`,
@@ -163,7 +163,7 @@ export default function AboutHero() {
                   }}
                   transition={{
                     duration: 0.6,
-                    delay: index* 0.15,
+                    delay: index * 0.15,
                     ease: "easeOut",
                   }}
                 >
@@ -181,4 +181,4 @@ export default function AboutHero() {
       </div>
     </section>
   );
-}
+};
