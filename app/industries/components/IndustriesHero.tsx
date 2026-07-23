@@ -56,29 +56,9 @@ const industries = [
   },
 ];
 
-const colors = [
-  "#244EB3", // Blue
-  "#7C3AED", // Purple
-  "#059669", // Green
-  "#EA580C", // Orange
-  "#DC2626", // Red
-];
-
 export default function IndustriesHero() {
-  const [colorIndex, setColorIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setColorIndex((prev) => (prev + 1) % colors.length);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentColor = colors[colorIndex];
-
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[#f5f5f5]">
       {/* Dot grid background */}
       <div
         aria-hidden
@@ -97,26 +77,20 @@ export default function IndustriesHero() {
       <div className="relative mx-auto grid max-w-7xl items-center lg:gap-20 gap-10 px-5 pt-40 pb-24 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <motion.div
-            animate={{
-              borderColor: currentColor,
-              color: currentColor,
-            }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 rounded-full border bg-blue-50 px-4 py-2 text-sm font-semibold"
+          <div
+            className="inline-flex items-center gap-2 rounded-full border border-[#059669] text-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold"
           >
             <Building2 size={16} />
             Industries We Help
-          </motion.div>
+          </div>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Built for Service Businesses That Depend on{" "}
-            <motion.span
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
+            <span
+              className="text-[#059669]"
             >
               Trust & Local Enquiries.
-            </motion.span>
+            </span>
           </h1>
 
           <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -126,10 +100,8 @@ export default function IndustriesHero() {
           </p>
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <motion.div
-              animate={{ backgroundColor: currentColor }}
-              transition={{ duration: 0.8 }}
-              className="rounded-full"
+            <div
+              className="rounded-full bg-[#059669]"
             >
               <Link
                 href="/growth-audit"
@@ -138,11 +110,11 @@ export default function IndustriesHero() {
                 Book Your Free Growth Audit
                 <ArrowRight size={18} />
               </Link>
-            </motion.div>
+            </div>
 
             <Link
               href="#industries"
-              className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-[#244EB3] hover:text-[#244EB3]"
+              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669] transition"
             >
               Explore Industries
             </Link>
@@ -155,19 +127,16 @@ export default function IndustriesHero() {
               "Marketing tailored to your industry",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <motion.div
-                  animate={{ color: currentColor }}
-                  transition={{ duration: 0.8 }}
+                <div
+                  className="text-[#059669]"
                 >
                   <BadgeCheck size={22} />
-                </motion.div>
-                <motion.span
+                </div>
+                <span
                   className="text-gray-700"
-                  animate={{ color: currentColor }}
-                  transition={{ duration: 0.8 }}
                 >
                   {item}
-                </motion.span>
+                </span>
               </div>
             ))}
           </div>
@@ -199,35 +168,30 @@ export default function IndustriesHero() {
           {/* dashed orbit guide rings */}
           <div
             aria-hidden
-            className="absolute h-80 w-80 rounded-full border border-dashed border-blue-200"
+            className="absolute h-80 w-80 rounded-full border border-dashed border-green-200"
           />
           <div
             aria-hidden
-            className="absolute h-48 w-48 rounded-full border border-dashed border-blue-100"
+            className="absolute h-48 w-48 rounded-full border border-dashed border-green-100"
           />
 
           {/* center hub */}
-          <motion.div
-            animate={{ borderColor: currentColor }}
-            transition={{ duration: 0.8 }}
-            className="relative z-10 flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full border bg-white text-center"
+          <div
+            className="relative z-10 flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full border border-[#059669] bg-white text-center"
           >
-            <motion.div
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
+            <div
+              className="text-[#059669]"
             >
               <Building2 size={22} />
-            </motion.div>
-            <motion.span
-              className="text-[11px] font-bold leading-tight text-[#102A56]"
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
+            </div>
+            <span
+              className="text-[11px] font-bold leading-tight text-[#059669]"
             >
               Your
               <br />
               Industry
-            </motion.span>
-          </motion.div>
+            </span>
+          </div>
 
           {/* rotating layer carrying each industry icon around the hub */}
           <div className="orbit-ring absolute h-80 w-80">
@@ -240,17 +204,12 @@ export default function IndustriesHero() {
                   style={{ transform: `rotate(${angle}deg) translate(10rem)` }}
                 >
                   <div className="orbit-icon group absolute flex flex-col items-center">
-                    <motion.span
-                      animate={{
-                        borderColor: currentColor,
-                        color: currentColor,
-                      }}
-                      transition={{ duration: 0.8 }}
-                      className="flex h-11 w-11 items-center justify-center rounded-2xl border bg-white"
+                    <span
+                      className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#059669] text-[#059669] bg-white"
                     >
                       <Icon size={24} />
-                    </motion.span>
-                    <div className="pointer-events-none absolute top-full z-30 mt-2 w-max max-w-44 scale-95 rounded-xl bg-[#102A56] px-3 py-2 text-center opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
+                    </span>
+                    <div className="pointer-events-none absolute top-full z-30 mt-2 w-max max-w-44 scale-95 rounded-xl bg-[#059669] px-3 py-2 text-center opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
                       <span className="block text-[11px] font-bold leading-tight text-white">
                         {title}
                       </span>

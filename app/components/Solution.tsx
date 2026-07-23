@@ -230,9 +230,9 @@ export default function SolutionSection() {
 
                     {/* Small circles */}
 
-                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white/20" />
+                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white" />
 
-                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white/20" />
+                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white" />
 
                     <div className="relative z-10">
                       <IconBlock icon={Icon} color={color} />

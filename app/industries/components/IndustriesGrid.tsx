@@ -22,63 +22,63 @@ const industries = [
     description:
       "Emergency and local search demand makes Google visibility, reviews and fast lead response essential.",
     icon: Wrench,
-    color: "#1E3A8A",
+    color: "#57CC99",
   },
   {
     title: "Electricians",
     description:
       "Customers compare local providers quickly. A better website, Google profile and review system can make you the safer choice.",
     icon: Zap,
-    color: "#D97706",
+    color: "#57CC99",
   },
   {
     title: "Roofers",
     description:
       "High-value jobs mean even a small increase in qualified leads can create major ROI.",
     icon: Hammer,
-    color: "#78350F",
+    color: "#57CC99",
   },
   {
     title: "Dentists",
     description:
       "Patients choose based on trust, reviews, visibility and website credibility.",
     icon: Stethoscope,
-    color: "#0D9488",
+    color: "#57CC99",
   },
   {
     title: "Aesthetic Clinics",
     description:
       "Your brand, visuals, reviews and social content directly influence bookings.",
     icon: Sparkles,
-    color: "#DB2777",
+    color: "#57CC99",
   },
   {
     title: "Solicitors",
     description:
       "Legal clients need trust before they enquire. Strong positioning and clear service pages matter.",
     icon: Scale,
-    color: "#0EA5E9",
+    color: "#57CC99",
   },
   {
     title: "Accountants",
     description:
       "Professional websites and local visibility help convert business owners into clients.",
     icon: Calculator,
-    color: "#047857",
+    color: "#57CC99",
   },
   {
     title: "Estate Agents",
     description:
       "Local trust, listings and consistent marketing improve authority and enquiries.",
     icon: Home,
-    color: "#B45309",
+    color: "#57CC99",
   },
   {
     title: "Cleaning, Removals & Pest Control",
     description:
       "Highly searchable services where fast response and local visibility make the difference.",
     icon: BrushCleaning,
-    color: "#7C3AED",
+    color: "#57CC99",
   },
 ];
 
@@ -126,7 +126,7 @@ export default function IndustriesGrid() {
     <section
       ref={sectionRef}
       id="industries"
-      className="md:py-24 py-16 bg-white md:mb-0 mb-20"
+      className="md:py-24 py-16 bg-[#f5f5f5] md:mb-0 mb-20"
     >
       {/* Header */}
       <motion.div
@@ -134,7 +134,7 @@ export default function IndustriesGrid() {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-        className="relative z-20 bg-white text-center max-w-xl mx-auto md:p-0 p-5"  
+        className="relative z-20 bg-[#f5f5f5] text-center max-w-xl mx-auto md:p-0 p-5"  
       >
         <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#102A56]">
           Industries We Help Grow
@@ -204,13 +204,13 @@ export default function IndustriesGrid() {
                     className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 md:p-8 p-5"
                   >
                     {/* Huge watermark icon */}
-                    <div className="absolute -bottom-8 -right-8 opacity-[0.08] text-white">
+                    <div className="absolute -bottom-8 -right-8 opacity-[0.1] text-white">
                       <Icon size={220} strokeWidth={1} />
                     </div>
 
                     {/* Small circles */}
-                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white/10" />
-                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white/10" />
+                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white" />
+                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white" />
 
                     <div className="relative z-10">
                       <div className="flex items-start justify-between">
