@@ -134,7 +134,7 @@ export default function IndustriesGrid() {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-        className="relative z-20 bg-white text-center max-w-xl mx-auto"
+        className="relative z-20 bg-white text-center max-w-xl mx-auto md:p-0 p-5"  
       >
         <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#102A56]">
           Industries We Help Grow

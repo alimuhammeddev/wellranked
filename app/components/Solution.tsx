@@ -91,7 +91,7 @@ export default function SolutionSection() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-            className="relative z-20 bg-white text-center max-w-4xl mx-auto mb-20 py-4"
+            className="relative z-20 bg-white text-center max-w-4xl mx-auto py-4"
           >
             <span className="inline-flex mx-auto items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
               One Team. One Monthly Fee.
@@ -152,7 +152,7 @@ export default function SolutionSection() {
                     index % 2 === 0 ? "justify-start" : "justify-end"
                   }`}
                   viewport={{
-                    amount: 0.55,
+                    amount: 0.6,
                     once: false,
                   }}
                   onViewportEnter={() => {
@@ -179,9 +179,27 @@ export default function SolutionSection() {
                   }}
                 >
                   <motion.div
-                    whileHover={{
-                      y: -5,
+                    initial={{
+                      opacity: 0,
+                      y: 80,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
                       scale: 1,
+                      rotate: 0,
+                    }}
+                    viewport={{
+                      amount: 0.25,
+                      once: true,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.08,
+                      ease: "easeOut",
+                    }}
+                    whileHover={{
+                      y: -6,
                     }}
                     style={{
                       backgroundColor: color,
