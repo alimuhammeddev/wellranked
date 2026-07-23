@@ -57,8 +57,8 @@ export default function PackagesPreview() {
   return (
     <section className="bg-[#F8FAFC] md:py-20 py-10">
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
-        {/* Heading */}
 
+        {/* Heading */}
         <motion.div
           className="mx-auto md:mb-16 mb-10 max-w-3xl text-center"
           initial={{

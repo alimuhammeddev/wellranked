@@ -242,4 +242,4 @@ export default function ServicesGrid() {
       </div>
     </section>
   );
-}
+};

@@ -12,70 +12,88 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const solutions = [
   {
     title: "Website Build & Management",
     icon: Globe,
+    color: "#244EB3",
   },
   {
     title: "AI Customer Response Assistant",
     icon: Bot,
+    color: "#7C3AED",
   },
   {
     title: "Local SEO & Google Visibility",
     icon: Search,
+    color: "#059669",
   },
   {
-    title: "Google Business Profile Mangement",
+    title: "Google Business Profile Management",
     icon: MapPinned,
+    color: "#EA580C",
   },
   {
     title: "Review Management & Reputation Management",
     icon: Star,
+    color: "#DC2626",
   },
   {
     title: "Unlimited Business Graphics",
     icon: Palette,
+    color: "#EC4899",
   },
   {
     title: "3 Social Media Graphics Posts per Week",
     icon: Image,
+    color: "#0891B2",
   },
   {
     title: "Email Marketing & Ads Management on Accelerator",
     icon: Mail,
+    color: "#CA8A04",
   },
 ];
 
 export default function SolutionSection() {
+  const [activeCard, setActiveCard] = useState(0);
+  const [showWatermark, setShowWatermark] = useState(false);
+
+  // Track scroll direction so we know whether a card is entering/leaving
+  // because the user is scrolling down or scrolling back up.
+  const scrollDirection = useRef<"up" | "down">("down");
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      scrollDirection.current = currentY > lastScrollY.current ? "down" : "up";
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const lastIndex = solutions.length - 1;
+
   return (
     <section className="md:py-24 py-16 bg-white">
       <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
-        <div className="grid lg:grid-cols-2 md:gap-20 gap-10 items-center">
-          {/* Left */}
+        <div className="grid items-center">
+          {/* Header */}
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-              scale: 0.95,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.25,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.15,
-              ease: "easeOut",
-            }}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+            className="relative z-20 bg-white text-center max-w-4xl mx-auto mb-20 py-4"
           >
-            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+            <span className="inline-flex mx-auto items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
               One Team. One Monthly Fee.
             </span>
 
@@ -83,75 +101,131 @@ export default function SolutionSection() {
               Everything handled.
             </h2>
 
-            <p className="mt-3 md:text-lg leading-8 text-gray-600">
+            <p className="mt-2 md:text-lg leading-8 text-gray-600">
               Instead of hiring a website developer, SEO specialist, designer,
               social media manager, ads expert and marketing coordinator
-              separately...
-            </p>
-
-            <p className="mt-2 md:text-lg leading-8 text-gray-600">
+              separately.{" "}
               <span className="font-semibold text-[#102A56]">
                 Wellranked gives you one joined-up team
               </span>{" "}
               working together to improve your online presence, generate more
               enquiries and help your business grow.
             </p>
-            <div className="mt-5 space-y-4">
-              {[
-                "No freelancers to manage",
-                "No expensive in-house hires",
-                "One monthly payment",
-                "Everything working together",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <BadgeCheck size={22} className="text-[#244EB3]" />
-                  <span className="text-gray-700 font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
-          {/* Right */}
-          <div className="rounded-3xl border border-gray-200 bg-[#F8FAFF] md:p-8 p-5">
-            <div className="grid sm:grid-cols-2 gap-4">
-              {solutions.map(({ title, icon: Icon }, index) => (
+          {/* cards */}
+          <div className="rounded-3xl md:p-8">
+            {/* Fixed, viewport-centered watermark (state-driven, not scroll-container-bound) */}
+            <div
+              className={`pointer-events-none fixed inset-0 z-0 flex items-center justify-center transition-opacity duration-300 ${
+                showWatermark ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <h1
+                style={{
+                  color: solutions[activeCard].color,
+                  opacity: 0.4,
+                  transition: "color 300ms ease",
+                }}
+                className="
+                max-w-5xl
+                text-center
+                text-[50px]
+                md:text-[100px]
+                lg:text-[100px]
+                font-black
+                leading-[0.9]
+                tracking-tight
+                select-none
+                mb-20
+              "
+              >
+                {solutions[activeCard].title}
+              </h1>
+            </div>
+
+            <div className="space-y-10">
+              {solutions.map(({ title, icon: Icon, color }, index) => (
                 <motion.div
                   key={title}
-                  className="group relative overflow-hidden rounded-2xl bg-[#244EB3] border border-blue-100 p-5 transition-all duration-300"
-                  initial={{
-                    opacity: 0,
-                    y: 40,
-                    scale: 0.95,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                  }}
+                  className={`relative z-10 flex ${
+                    index % 2 === 0 ? "justify-start" : "justify-end"
+                  }`}
                   viewport={{
-                    once: true,
-                    amount: 0.25,
+                    amount: 0.55,
+                    once: false,
                   }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.15,
-                    ease: "easeOut",
+                  onViewportEnter={() => {
+                    setActiveCard(index);
+                    // Any card entering means we're inside the section,
+                    // so the watermark should be visible.
+                    setShowWatermark(true);
+                  }}
+                  onViewportLeave={() => {
+                    // Hide only when scrolling DOWN past the last card
+                    // (i.e. leaving the section at the bottom).
+                    if (
+                      index === lastIndex &&
+                      scrollDirection.current === "down"
+                    ) {
+                      setShowWatermark(false);
+                    }
+
+                    // Hide only when scrolling UP past the first card
+                    // (i.e. leaving the section at the top).
+                    if (index === 0 && scrollDirection.current === "up") {
+                      setShowWatermark(false);
+                    }
                   }}
                 >
-                  {/* Decorative Curved Rings */}
-                  <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full border border-blue-100"></div>
+                  <motion.div
+                    whileHover={{
+                      y: -5,
+                      scale: 1,
+                    }}
+                    style={{
+                      backgroundColor: color,
+                    }}
+                    className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 md:p-8 p-5"
+                  >
+                    {/* Huge watermark icon */}
 
-                  <div className="absolute -top-4 -right-4 h-20 w-20 rounded-full border border-blue-100"></div>
-
-                  <div className="relative z-10">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#244EB3] transition">
-                      <Icon size={22} />
+                    <div className="absolute -bottom-8 -right-8 opacity-[0.08] text-white">
+                      <Icon size={220} strokeWidth={1} />
                     </div>
 
-                    <h3 className="mt-4 md:text-lg font-semibold text-white">
-                      {title}
-                    </h3>
-                  </div>
+                    {/* Small circles */}
+
+                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white/10" />
+
+                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white/10" />
+
+                    <div className="relative z-10">
+                      <div
+                        className="flex h-16 w-16 items-center justify-center rounded-2xl backdrop-blur"
+                        style={{
+                          background: "rgba(255,255,255,.18)",
+                        }}
+                      >
+                        <Icon size={30} className="text-white" />
+                      </div>
+
+                      <h3 className="mt-8 text-2xl font-bold text-white max-w-md leading-snug">
+                        {title}
+                      </h3>
+
+                      <p className="mt-4 text-white/80 max-w-lg leading-8">
+                        Everything is fully managed by our team so you can focus
+                        on running your business while we grow your online
+                        presence.
+                      </p>
+
+                      <div className="mt-8 flex items-center gap-2 text-white font-semibold">
+                        Included
+                        <BadgeCheck size={20} />
+                      </div>
+                    </div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
