@@ -66,13 +66,9 @@ interface IconBlockProps {
 function IconBlock({ icon: Icon, color }: IconBlockProps) {
   return (
     <div
-      className="flex h-16 w-16 items-center justify-center rounded-xl border"
-      style={{
-        backgroundColor: `color-mix(in srgb, white 78%, ${color})`,
-        borderColor: `color-mix(in srgb, white 40%, ${color})`,
-      }}
+      className="flex h-14 w-14 items-center justify-center rounded-xl border border-green-50 bg-white"
     >
-      <Icon size={28} strokeWidth={2} style={{ color }} />
+      <Icon size={24} strokeWidth={2} style={{ color }} />
     </div>
   );
 }
@@ -228,30 +224,30 @@ export default function SolutionSection() {
                   >
                     {/* Huge watermark icon */}
 
-                    <div className="absolute -bottom-8 -right-8 opacity-[0.3] text-white">
+                    <div className="absolute -bottom-8 -right-8 opacity-[0.1] text-white">
                       <Icon size={220} strokeWidth={1} />
                     </div>
 
                     {/* Small circles */}
 
-                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white/10" />
+                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white/20" />
 
-                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white/10" />
+                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white/20" />
 
                     <div className="relative z-10">
                       <IconBlock icon={Icon} color={color} />
 
-                      <h3 className="mt-8 text-2xl font-bold text-white max-w-md leading-snug">
+                      <h3 className="mt-5 md:text-2xl text-xl font-bold text-white max-w-md leading-snug">
                         {title}
                       </h3>
 
-                      <p className="mt-4 text-white max-w-lg leading-8">
+                      <p className="mt-2 text-white max-w-lg leading-8">
                         Everything is fully managed by our team so you can focus
                         on running your business while we grow your online
                         presence.
                       </p>
 
-                      <div className="mt-8 flex items-center gap-2 text-white font-semibold">
+                      <div className="mt-5 flex items-center gap-2 text-white font-semibold">
                         Included
                         <BadgeCheck size={20} />
                       </div>
