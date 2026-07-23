@@ -131,17 +131,17 @@ const comparison = [
 
 const Cell = ({ value }: { value: boolean }) =>
   value ? (
-    <Check className="mx-auto text-[#244EB3]" size={22} />
+    <Check className="mx-auto text-[#059669]" size={22} />
   ) : (
-    <Minus className="mx-auto text-gray-300" size={22} />
+    <Minus className="mx-auto text-green-300" size={22} />
   );
 
 export default function PricingComparison() {
   return (
-    <section className="bg-[#F8FAFC] py-24 md:block hidden">
+    <section className="bg-[#f5f5f5] py-24 md:block hidden">
       <div className="mx-auto max-w-7xl lg:px-0 px-5 ">
         <div className="mx-auto mb-10 max-w-3xl text-center">
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="rounded-full border border-green-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             Compare Packages
           </span>
 
@@ -159,16 +159,16 @@ export default function PricingComparison() {
           <table className="min-w-225 w-full border-collapse">
             <thead>
               <tr className="border-b">
-                <th className="sticky left-0 bg-white px-6 py-6 text-left text-lg font-bold text-[#102A56]">
+                <th className="sticky left-0 bg-white px-6 py-6 text-left text-lg font-bold text-[#059669]">
                   Features
                 </th>
 
                 <th className="px-8 py-6 text-center">
-                  <h3 className="text-xl font-bold text-[#102A56]">
+                  <h3 className="text-xl font-bold text-[#059669]">
                     Essential
                   </h3>
 
-                  <p className="mt-1 text-3xl font-bold text-[#244EB3]">
+                  <p className="mt-1 text-3xl font-bold text-[#059669]">
                     £395
                   </p>
 
@@ -177,7 +177,7 @@ export default function PricingComparison() {
                   </span>
                 </th>
 
-                <th className="bg-[#244EB3] px-8 py-6 text-center text-white">
+                <th className="bg-[#059669] px-8 py-6 text-center text-white">
                   <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
                     MOST POPULAR
                   </span>
@@ -196,11 +196,11 @@ export default function PricingComparison() {
                 </th>
 
                 <th className="px-8 py-6 text-center">
-                  <h3 className="text-xl font-bold text-[#102A56]">
+                  <h3 className="text-xl font-bold text-[#059669]">
                     Accelerator
                   </h3>
 
-                  <p className="mt-1 text-3xl font-bold text-[#244EB3]">
+                  <p className="mt-1 text-3xl font-bold text-[#059669]">
                     £995
                   </p>
 
@@ -219,7 +219,7 @@ export default function PricingComparison() {
                     index % 2 === 0 ? "bg-white" : "bg-gray-50"
                   }`}
                 >
-                  <td className="sticky left-0 bg-inherit px-6 py-5 font-medium text-[#102A56]">
+                  <td className="sticky left-0 bg-inherit px-6 py-5 font-medium text-[#059669]">
                     {item.feature}
                   </td>
 
@@ -227,7 +227,7 @@ export default function PricingComparison() {
                     <Cell value={item.essential} />
                   </td>
 
-                  <td className="bg-blue-50 py-5">
+                  <td className="bg-green-50 py-5">
                     <Cell value={item.growth} />
                   </td>
 

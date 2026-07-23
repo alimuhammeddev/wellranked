@@ -93,13 +93,13 @@ export default function PackageBreakdown() {
             ease: "easeOut",
           }}
         >
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <span className="rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             Find Your Perfect Fit
           </span>
 
           <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
             Every package is designed
-            <span className="block text-[#244EB3]">
+            <span className="block text-[#059669]">
               to grow with your business.
             </span>
           </h2>
@@ -139,14 +139,14 @@ export default function PackageBreakdown() {
                   }}
                 >
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#244EB3]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-100 text-[#059669]">
                       <Icon size={24} />
                     </div>
                     <div>
                       <h3 className="md:text-2xl text-xl font-bold text-[#102A56]">
                         {pkg.title}
                       </h3>
-                      <p className="text-[#244EB3] font-medium mt-1">
+                      <p className="text-[#059669] font-medium mt-1">
                         {pkg.subtitle}
                       </p>
                     </div>
@@ -155,11 +155,11 @@ export default function PackageBreakdown() {
                   <p className="mt-4 md:text-lg leading-8 text-gray-600">
                     {pkg.description}
                   </p>
-                  <div className="mt-4 rounded-2xl bg-blue-50 p-6">
-                    <p className="text-sm font-semibold uppercase tracking-wide text-[#244EB3]">
+                  <div className="mt-4 rounded-2xl bg-green-50 p-6">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-[#059669]">
                       Best For
                     </p>
-                    <p className="mt-3 text-[#102A56] font-medium">
+                    <p className="mt-3 text-[#059669] font-medium">
                       {pkg.bestFor}
                     </p>
                   </div>
@@ -167,7 +167,7 @@ export default function PackageBreakdown() {
 
                 {/* Feature Card */}
                 <motion.div
-                  className="relative rounded-3xl border border-gray-200 bg-[#F8FAFC] md:p-8 p-5 overflow-hidden"
+                  className="relative rounded-3xl border border-gray-200 bg-[#f5f5f5] md:p-8 p-5 overflow-hidden"
                   initial={{
                     opacity: 0,
                     y: 40,
@@ -188,8 +188,8 @@ export default function PackageBreakdown() {
                     ease: "easeOut",
                   }}
                 >
-                  <div className="absolute left-0 top-0 h-1 w-full bg-[#244EB3]" />
-                  <h4 className="text-xl font-bold text-[#102A56]">
+                  <div className="absolute left-0 top-0 h-1 w-full bg-[#059669]" />
+                  <h4 className="text-xl font-bold text-[#059669]">
                     What's Included
                   </h4>
                   <div className="mt-4 space-y-5">
@@ -197,7 +197,7 @@ export default function PackageBreakdown() {
                       <div key={feature} className="flex items-start gap-4">
                         <BadgeCheck
                           size={22}
-                          className="text-[#244EB3] mt-0.5"
+                          className="text-[#059669] mt-0.5"
                         />
                         <span className="text-gray-700">{feature}</span>
                       </div>

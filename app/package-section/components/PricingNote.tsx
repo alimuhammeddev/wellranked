@@ -39,7 +39,7 @@ function GhostQuote() {
   return (
     <span
       aria-hidden
-      className="pointer-events-none absolute -top-3 right-5 select-none font-serif text-7xl leading-none text-blue-50"
+      className="pointer-events-none absolute -top-3 right-5 select-none font-serif text-7xl leading-none text-green-50"
     >
       &rdquo;
     </span>
@@ -74,7 +74,7 @@ export default function PricingNote() {
             ease: "easeOut",
           }}
         >
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <span className="rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             Before You Choose
           </span>
 
@@ -94,7 +94,7 @@ export default function PricingNote() {
           {notes.map(({ icon: Icon, title, description }, index) => (
             <motion.div
               key={title}
-              className="group relative overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-blue-200"
+              className="group relative overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-green-200"
               initial={{
                 opacity: 0,
                 y: 40,
@@ -117,11 +117,11 @@ export default function PricingNote() {
             >
               <GhostQuote />
 
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#244EB3]">
+              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#059669]">
                 <Icon size={24} className="text-white" />
               </div>
 
-              <h3 className="relative mt-4 md:text-xl text-lg font-bold text-[#244EB3]">
+              <h3 className="relative mt-4 md:text-xl text-lg font-bold text-[#059669]">
                 {title}
               </h3>
 
@@ -134,7 +134,7 @@ export default function PricingNote() {
 
         {/* Bottom Notice */}
         <motion.div
-          className="relative mt-10 overflow-hidden rounded-3xl border border-blue-200 bg-blue-50 p-8 text-center"
+          className="relative mt-10 overflow-hidden rounded-3xl border border-green-200 bg-green-50 p-8 text-center"
           initial={{
             opacity: 0,
             y: 40,
@@ -157,7 +157,7 @@ export default function PricingNote() {
         >
           <GhostQuote />
 
-          <h3 className="relative md:text-2xl text-xl font-bold text-[#244EB3]">
+          <h3 className="relative md:text-2xl text-xl font-bold text-[#059669]">
             Not sure which package is right for you?
           </h3>
 

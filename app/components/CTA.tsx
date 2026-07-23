@@ -10,10 +10,6 @@ export default function FinalCTA() {
       {/* Background */}
       <div className="absolute inset-0 bg-[#059669]/95 md:mt-0 mt-20" />
 
-      {/* Decorative Blobs */}
-      <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-      <div className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl" />
-
       {/* Wellranked Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/10 whitespace-nowrap">

@@ -6,14 +6,10 @@ import { motion } from "framer-motion";
 
 export default function PackagesCTA() {
   return (
-    <section className="relative overflow-hidden bg-[#244EB3] py-24">
-      {/* Background Glow */}
-      <div className="absolute -left-20 top-0 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-      <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl" />
-
+    <section className="relative overflow-hidden bg-[#059669]/95 py-24">
       {/* Wellranked Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/5 whitespace-nowrap">
+        <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/10 whitespace-nowrap">
           Wellranked
         </h1>
       </div>
@@ -44,22 +40,22 @@ export default function PackagesCTA() {
           Free Growth Audit
         </span>
 
-        <h2 className="mt-6 text-2xl font-extrabold leading-tight text-white lg:text-4xl md:text-3xl">
+        <h2 className="mt-5 text-2xl font-extrabold leading-tight text-white lg:text-4xl md:text-3xl">
           Ready to grow your business
-          <span className="block text-blue-200">with less stress?</span>
+          <span className="block">with less stress?</span>
         </h2>
 
-        <p className="mx-auto mt-8 max-w-3xl md:text-lg leading-8 text-blue-100">
+        <p className="mx-auto mt-5 max-w-3xl md:text-lg leading-8 text-white">
           Book your free Wellranked Growth Audit and we'll show you the biggest
           opportunities to improve your website, Google visibility, reviews and
           lead generation. You'll receive practical, easy-to-understand
           recommendations with no pressure and no jargon.
         </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-5 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/growth-audit"
-            className="flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#244EB3]"
+            className="flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#059669]"
           >
             Book Your Free Growth Audit
             <ArrowRight size={18} />
@@ -73,7 +69,7 @@ export default function PackagesCTA() {
           </Link>
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 text-sm text-blue-100 md:flex-row md:gap-8">
+        <div className="mt-6 flex flex-col items-center justify-center gap-4 text-sm text-blue-100 md:flex-row md:gap-8">
           <div className="flex items-center gap-2">
             <BadgeCheck size={18} className="text-blue-100" />
             No pressure or obligation
