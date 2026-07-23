@@ -29,23 +29,9 @@ const services = [
   { title: "Marketing Concierge", icon: Headphones },
 ];
 
-const colors = ["#244EB3", "#7C3AED", "#059669", "#EA580C", "#DC2626"];
-
 export default function ServicesHero() {
-  const [colorIndex, setColorIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setColorIndex((prev) => (prev + 1) % colors.length);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentColor = colors[colorIndex];
-
   return (
-    <section className="relative overflow-hidden ">
+    <section className="relative overflow-hidden bg-[#f5f5f5]">
       {/* Dot grid background */}
       <div
         aria-hidden
@@ -64,26 +50,20 @@ export default function ServicesHero() {
       <div className="relative z-10 mx-auto grid max-w-7xl items-start md:gap-20 gap-10 px-5 pb-24 pt-40 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <motion.span
-            animate={{
-              borderColor: currentColor,
-              color: currentColor,
-            }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 rounded-full border bg-blue-50 px-4 py-2 text-sm font-semibold"
+          <span
+            className="inline-flex items-center gap-2 rounded-full border border-[#059669] text-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold"
           >
             <Globe2 size={16} />
             Digital Growth Services
-          </motion.span>
+          </span>
 
           <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Everything Your Business Needs{" "}
-            <motion.span
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
+            <span
+              className="text-[#059669]"
             >
               To Grow Online.
-            </motion.span>
+            </span>
           </h1>
 
           <p className="mt-2 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -94,10 +74,8 @@ export default function ServicesHero() {
           </p>
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <motion.div
-              animate={{ backgroundColor: currentColor }}
-              transition={{ duration: 0.8 }}
-              className="rounded-full"
+            <div
+              className="rounded-full bg-[#059669]"
             >
               <Link
                 href="/growth-audit"
@@ -106,11 +84,11 @@ export default function ServicesHero() {
                 Book Your Free Growth Audit
                 <ArrowRight size={18} />
               </Link>
-            </motion.div>
+            </div>
 
             <Link
               href="#services"
-              className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-[#244EB3] hover:text-[#244EB3]"
+              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669] transition hover:border-[#059669] hover:text-[#059669]"
             >
               See What We Can Improve
             </Link>
@@ -123,19 +101,16 @@ export default function ServicesHero() {
               "Marketing support from one trusted team",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <motion.div
-                  animate={{ color: currentColor }}
-                  transition={{ duration: 0.8 }}
+                <div
+                  className="text-[#059669]"
                 >
                   <BadgeCheck size={22} />
-                </motion.div>
-                <motion.span
+                </div>
+                <span
                   className="text-gray-700"
-                  animate={{ color: currentColor }}
-                  transition={{ duration: 0.8 }}
                 >
                   {item}
-                </motion.span>
+                </span>
               </div>
             ))}
           </div>
@@ -166,21 +141,17 @@ export default function ServicesHero() {
               ease: "easeOut",
             }}
           >
-            <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-blue-100 bg-white/90 px-7 py-5 text-center">
-              <motion.span
-                animate={{ backgroundColor: currentColor }}
-                transition={{ duration: 0.8 }}
-                className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl text-white"
+            <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-[#059669] bg-white/90 px-7 py-5 text-center">
+              <span
+                className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl text-white bg-[#059669]"
               >
                 <Sparkles size={20} />
-              </motion.span>
-              <motion.h1
-                animate={{ color: currentColor }}
-                transition={{ duration: 0.8 }}
-                className="font-extrabold md:text-lg"
+              </span>
+              <h1
+                className="font-extrabold md:text-lg text-[#059669]"
               >
                 Services We Offer
-              </motion.h1>
+              </h1>
               <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400">
                 One partner, every channel
               </p>
@@ -211,86 +182,45 @@ export default function ServicesHero() {
               ease: "easeOut",
             }}
           >
-            <motion.span
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
-              className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed"
+            <span
+              className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
             />
-            <motion.span
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
-              className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed"
+            <span
+              className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed border-[#059669]"
             />
-            <motion.span
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
-              className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed"
+            <span
+              className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
             />
-            <motion.span
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
-              className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed"
+            <span
+              className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
             />
           </motion.div>
 
           {/* Service cards */}
           <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
-            <motion.span
-              aria-hidden
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
-              className="absolute left-1/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed"
+            <span
+              className="absolute left-1/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
             />
-            <motion.span
-              aria-hidden
-              animate={{ color: currentColor }}
-              transition={{ duration: 0.8 }}
-              className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed"
+            <span
+              className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
             />
 
             {services.map(({ title, icon: Icon }, index) => (
-              <motion.div
+              <div
                 key={title}
-                className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border bg-white/95 p-3 text-center  sm:p-4"
-                animate={{ color: currentColor }}
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                  scale: 0.95,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.25,
-                }}
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.15,
-                  ease: "easeOut",
-                }}
+                className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border bg-white/95 p-3 text-center sm:p-4 text-[#059669]"
               >
-                <motion.span
-                  animate={{
-                    color: currentColor,
-                    backgroundColor: `${currentColor}20`,
-                  }}
-                  transition={{ duration: 0.8 }}
-                  className="flex h-9 w-9 items-center justify-center rounded-xl"
+                <span
+                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-50 text-[#059669]"
                 >
                   <Icon size={17} />
-                </motion.span>
-                <motion.span
-                  animate={{ color: currentColor }}
-                  transition={{ duration: 0.8 }}
+                </span>
+                <span
                   className="text-[11px] font-semibold leading-tight sm:text-xs"
                 >
                   {title}
-                </motion.span>
-              </motion.div>
+                </span>
+              </div>
             ))}
           </div>
         </div>

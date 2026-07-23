@@ -41,7 +41,7 @@ function GhostQuote() {
   return (
     <span
       aria-hidden
-      className="pointer-events-none absolute -top-3 right-5 select-none font-serif text-7xl leading-none text-blue-50"
+      className="pointer-events-none absolute -top-3 right-5 select-none font-serif text-7xl leading-none text-green-50"
     >
       &rdquo;
     </span>
@@ -50,7 +50,7 @@ function GhostQuote() {
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-white md:py-24">
+    <section className="relative overflow-hidden bg-[#f5f5f5] md:py-24">
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <motion.div
@@ -74,13 +74,13 @@ export default function WhyChooseUs() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <span className="inline-flex items-center rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             Why Choose Wellranked
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             A Digital Partner That{" "}
-            <span className="text-[#244EB3]">Helps Your Business Grow.</span>
+            <span className="text-[#059669]">Helps Your Business Grow.</span>
           </h2>
 
           <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -97,7 +97,7 @@ export default function WhyChooseUs() {
               "Long-term support as your business grows",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck size={22} className="text-[#244EB3]" />
+                <BadgeCheck size={22} className="text-[#059669]" />
                 <span className="text-gray-700">{item}</span>
               </div>
             ))}
@@ -105,7 +105,7 @@ export default function WhyChooseUs() {
 
           <Link
             href="/contact"
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#059669] px-8 py-4 font-semibold text-white"
           >
             Talk To Wellranked
             <ArrowRight size={18} />
@@ -120,7 +120,7 @@ export default function WhyChooseUs() {
             return (
               <motion.div
                 key={feature.title}
-                className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-white md:p-7 p-5"
+                className="group relative overflow-hidden rounded-3xl border border-green-200 bg-white md:p-7 p-5"
                 initial={{
                   opacity: 0,
                   y: 40,
@@ -143,11 +143,11 @@ export default function WhyChooseUs() {
               >
                 <GhostQuote />
 
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#244EB3]">
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#059669]">
                   <Icon size={24} className="text-white" />
                 </div>
 
-                <h3 className="relative mt-4 md:text-xl font-bold text-[#244EB3]">
+                <h3 className="relative mt-4 md:text-xl font-bold text-[#059669]">
                   {feature.title}
                 </h3>
 

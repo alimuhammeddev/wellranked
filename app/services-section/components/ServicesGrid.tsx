@@ -112,7 +112,7 @@ function CornerRings() {
   return (
     <svg
       viewBox="0 0 160 160"
-      className="pointer-events-none absolute -right-10 -top-10 h-30 w-30 transition-all duration-500 ease-out opacity-[0.25]"
+      className="pointer-events-none absolute -right-10 -top-10 h-30 w-30 transition-all duration-500 ease-out opacity-[0.3]"
       aria-hidden="true"
     >
       <circle
@@ -120,7 +120,7 @@ function CornerRings() {
         cy="80"
         r="78"
         fill="none"
-        stroke="#244EB3"
+        stroke="#059669"
         strokeWidth="1"
       />
       <circle
@@ -128,7 +128,7 @@ function CornerRings() {
         cy="80"
         r="54"
         fill="none"
-        stroke="#244EB3"
+        stroke="#059669"
         strokeWidth="1"
       />
     </svg>
@@ -162,13 +162,13 @@ export default function ServicesGrid() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             Our Services
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Everything You Need{" "}
-            <span className="text-[#244EB3]">To Grow Your Business Online</span>
+            <span className="text-[#059669]">To Grow Your Business Online</span>
           </h2>
 
           <p className="mt-3 md:text-lg leading-8 text-gray-600">
@@ -186,7 +186,7 @@ export default function ServicesGrid() {
             return (
               <motion.div
                 key={service.title}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-blue-200"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-green-200"
                 initial={{
                   opacity: 0,
                   y: 40,
@@ -210,12 +210,12 @@ export default function ServicesGrid() {
                 <CornerRings />
 
                 {/* Icon */}
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl ring-1 ring-inset transition-all duration-300 bg-[#244EB3] ring-[#244EB3]">
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl ring-1 ring-inset transition-all duration-300 bg-[#059669] ring-[#059669]">
                   <Icon size={24} className="text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="relative mt-3 text-xl font-bold text-[#244EB3]">
+                <h3 className="relative mt-3 text-xl font-bold text-[#059669]">
                   {service.title}
                 </h3>
 
@@ -226,7 +226,7 @@ export default function ServicesGrid() {
                 {/* CTA */}
                 <Link
                   href={service.href}
-                  className="relative mt-5 inline-flex items-center gap-2 font-semibold text-[#244EB3] transition-all group-hover:gap-3"
+                  className="relative mt-5 inline-flex items-center gap-2 font-semibold text-[#059669] transition-all group-hover:gap-3"
                 >
                   {service.cta}
 
