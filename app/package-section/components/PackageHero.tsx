@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 // Orbit badges placed on a true circle (computed, not hand-offset) so
 // spacing reads as deliberate rather than scattered.
@@ -33,7 +34,27 @@ const orbitItems = [
   return { ...item, x, y };
 });
 
+const colors = [
+  "#244EB3", // Blue
+  "#7C3AED", // Purple
+  "#059669", // Green
+  "#EA580C", // Orange
+  "#DC2626", // Red
+];
+
 export default function PackagesHero() {
+  const [colorIndex, setColorIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColorIndex((prev) => (prev + 1) % colors.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentColor = colors[colorIndex];
+
   return (
     <section className="relative overflow-hidden">
       {/* Dot grid background */}
@@ -54,14 +75,24 @@ export default function PackagesHero() {
       <div className="relative mx-auto grid max-w-7xl items-start gap-20 lg:px-0 md:px-5 px-5 pb-24 pt-40 lg:grid-cols-2">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <motion.span
+            animate={{
+              borderColor: currentColor,
+              color: currentColor,
+            }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center rounded-full border bg-blue-50 px-4 py-2 text-sm font-semibold"
+          >
             Packages & Pricing
-          </span>
+          </motion.span>
           <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Simple marketing packages{" "}
-            <span className="text-[#244EB3]">
+            <motion.span
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+            >
               built for busy business owners.
-            </span>
+            </motion.span>
           </h1>
 
           <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -71,13 +102,19 @@ export default function PackagesHero() {
           </p>
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/growth-audit"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
+            <motion.div
+              animate={{ backgroundColor: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="rounded-full"
             >
-              Book Your Free Growth Audit
-              <ArrowRight size={18} />
-            </Link>
+              <Link
+                href="/growth-audit"
+                className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
+              >
+                Book Your Free Growth Audit
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
 
             <Link
               href="#pricing"
@@ -94,9 +131,20 @@ export default function PackagesHero() {
               "Clear monthly pricing",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck size={22} className="text-[#244EB3]" />
+                <motion.div
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <BadgeCheck size={22} />
+                </motion.div>
 
-                <span className="text-gray-700">{item}</span>
+                <motion.span
+                  className="text-gray-700"
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {item}
+                </motion.span>
               </div>
             ))}
           </div>
@@ -104,7 +152,11 @@ export default function PackagesHero() {
 
         {/* Right */}
         <div className="relative flex items-center justify-center md:min-h-140 min-h-96 rounded-[40px] overflow-hidden">
-          <div className="absolute h-59 w-59 rounded-full bg-[#244EB3] z-20" />
+          <motion.div
+            animate={{ backgroundColor: currentColor }}
+            transition={{ duration: 0.8 }}
+            className="absolute z-20 h-59 w-59 rounded-full"
+          />
           {/* Centerpiece: layered package cards */}
           <motion.div
             className="relative z-20 flex h-47.5 w-47.5 items-center justify-center"
@@ -131,15 +183,26 @@ export default function PackagesHero() {
             <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-blue-200 bg-white" />
             <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-blue-200 bg-white" />
             <div className="relative flex h-39.5 w-34.5 flex-col items-center justify-center rounded-2xl border border-blue-200 bg-white">
-              <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#244EB3]">
+              <motion.span
+                animate={{
+                  color: currentColor,
+                  borderColor: currentColor,
+                }}
+                transition={{ duration: 0.8 }}
+                className="rounded-full border bg-blue-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide"
+              >
                 Most Popular
-              </span>
+              </motion.span>
               <span className="mt-2 text-[11px] font-semibold text-[#102A56]">
                 Growth
               </span>
-              <span className="mt-1 text-xl font-extrabold text-[#244EB3]">
+              <motion.span
+                animate={{ color: currentColor }}
+                transition={{ duration: 0.8 }}
+                className="mt-1 text-xl font-extrabold"
+              >
                 £695
-              </span>
+              </motion.span>
               <span className="text-[10px] text-gray-500">per month</span>
             </div>
           </motion.div>
@@ -148,6 +211,9 @@ export default function PackagesHero() {
           {orbitItems.map((item, index) => (
             <motion.div
               key={item.text}
+              animate={{
+                borderColor: currentColor,
+              }}
               className="absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full md:border md:border-blue-200 bg-white"
               style={{ left: `${item.x}%`, top: `${item.y}%` }}
               initial={{
@@ -165,14 +231,21 @@ export default function PackagesHero() {
                 amount: 0.25,
               }}
               transition={{
-                duration: 0.6,
+                duration: 0.8,
                 delay: index * 0.15,
                 ease: "easeOut",
               }}
             >
-              <div className="rounded-full bg-[#EEF4FF] p-2 text-[#244EB3]">
+              <motion.div
+                animate={{
+                  color: currentColor,
+                  backgroundColor: `${currentColor}20`,
+                }}
+                transition={{ duration: 0.8 }}
+                className="rounded-full p-2"
+              >
                 {item.icon}
-              </div>
+              </motion.div>
               <span className="mt-1 text-[9px] font-semibold text-[#102A56]">
                 {item.text}
               </span>

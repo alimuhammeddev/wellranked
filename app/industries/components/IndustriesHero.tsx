@@ -14,6 +14,8 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const industries = [
   {
@@ -54,7 +56,27 @@ const industries = [
   },
 ];
 
+const colors = [
+  "#244EB3", // Blue
+  "#7C3AED", // Purple
+  "#059669", // Green
+  "#EA580C", // Orange
+  "#DC2626", // Red
+];
+
 export default function IndustriesHero() {
+  const [colorIndex, setColorIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColorIndex((prev) => (prev + 1) % colors.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentColor = colors[colorIndex];
+
   return (
     <section className="relative overflow-hidden">
       {/* Dot grid background */}
@@ -75,14 +97,26 @@ export default function IndustriesHero() {
       <div className="relative mx-auto grid max-w-7xl items-center lg:gap-20 gap-10 px-5 pt-40 pb-24 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <motion.div
+            animate={{
+              borderColor: currentColor,
+              color: currentColor,
+            }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 rounded-full border bg-blue-50 px-4 py-2 text-sm font-semibold"
+          >
             <Building2 size={16} />
             Industries We Help
-          </span>
+          </motion.div>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Built for Service Businesses That Depend on{" "}
-            <span className="text-[#244EB3]">Trust & Local Enquiries.</span>
+            <motion.span
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+            >
+              Trust & Local Enquiries.
+            </motion.span>
           </h1>
 
           <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -92,13 +126,19 @@ export default function IndustriesHero() {
           </p>
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/growth-audit"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
+            <motion.div
+              animate={{ backgroundColor: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="rounded-full"
             >
-              Book Your Free Growth Audit
-              <ArrowRight size={18} />
-            </Link>
+              <Link
+                href="/growth-audit"
+                className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
+              >
+                Book Your Free Growth Audit
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
 
             <Link
               href="#industries"
@@ -115,8 +155,19 @@ export default function IndustriesHero() {
               "Marketing tailored to your industry",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck className="text-[#244EB3]" size={22} />
-                <span className="text-gray-700">{item}</span>
+                <motion.div
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <BadgeCheck size={22} />
+                </motion.div>
+                <motion.span
+                  className="text-gray-700"
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {item}
+                </motion.span>
               </div>
             ))}
           </div>
@@ -156,14 +207,27 @@ export default function IndustriesHero() {
           />
 
           {/* center hub */}
-          <div className="relative z-10 flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full border border-blue-100 bg-white text-center">
-            <Building2 size={22} className="text-[#244EB3]" />
-            <span className="text-[11px] font-bold leading-tight text-[#102A56]">
+          <motion.div
+            animate={{ borderColor: currentColor }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full border bg-white text-center"
+          >
+            <motion.div
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+            >
+              <Building2 size={22} />
+            </motion.div>
+            <motion.span
+              className="text-[11px] font-bold leading-tight text-[#102A56]"
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+            >
               Your
               <br />
               Industry
-            </span>
-          </div>
+            </motion.span>
+          </motion.div>
 
           {/* rotating layer carrying each industry icon around the hub */}
           <div className="orbit-ring absolute h-80 w-80">
@@ -176,9 +240,16 @@ export default function IndustriesHero() {
                   style={{ transform: `rotate(${angle}deg) translate(10rem)` }}
                 >
                   <div className="orbit-icon group absolute flex flex-col items-center">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-blue-100 bg-white text-[#244EB3]">
+                    <motion.span
+                      animate={{
+                        borderColor: currentColor,
+                        color: currentColor,
+                      }}
+                      transition={{ duration: 0.8 }}
+                      className="flex h-11 w-11 items-center justify-center rounded-2xl border bg-white"
+                    >
                       <Icon size={24} />
-                    </span>
+                    </motion.span>
                     <div className="pointer-events-none absolute top-full z-30 mt-2 w-max max-w-44 scale-95 rounded-xl bg-[#102A56] px-3 py-2 text-center opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
                       <span className="block text-[11px] font-bold leading-tight text-white">
                         {title}

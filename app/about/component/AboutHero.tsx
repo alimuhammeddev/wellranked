@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const CARDS = [
   { label: "Website", icon: Globe, x: 50, y: 10, lgX: 50, lgY: 20 },
@@ -37,7 +38,21 @@ const CARDS = [
   },
 ] as const;
 
+const colors = ["#244EB3", "#7C3AED", "#059669", "#EA580C", "#DC2626"];
+
 export default function AboutHero() {
+  const [colorIndex, setColorIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColorIndex((prev) => (prev + 1) % colors.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentColor = colors[colorIndex];
+
   return (
     <section className="relative overflow-hidden">
       {/* Dot grid background */}
@@ -58,16 +73,26 @@ export default function AboutHero() {
       <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:gap-20 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <motion.span
+            animate={{
+              borderColor: currentColor,
+              color: currentColor,
+            }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 rounded-full border bg-blue-50 px-4 py-2 text-sm font-semibold"
+          >
             <Building2 size={16} />
             About Wellranked
-          </span>
+          </motion.span>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             We Built Wellranked for Business Owners Who Are{" "}
-            <span className="text-[#244EB3]">
+            <motion.span
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+            >
               Tired of Doing Everything Themselves.
-            </span>
+            </motion.span>
           </h1>
 
           <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -86,13 +111,19 @@ export default function AboutHero() {
 
           {/* Buttons */}
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/growth-audit"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
+            <motion.div
+              animate={{ backgroundColor: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="rounded-full"
             >
-              Book Your Free Growth Audit
-              <ArrowRight size={18} />
-            </Link>
+              <Link
+                href="/growth-audit"
+                className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
+              >
+                Book Your Free Growth Audit
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
 
             <Link
               href="#our-values"
@@ -110,8 +141,19 @@ export default function AboutHero() {
               "Helping you focus on running your business",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck className="text-[#244EB3]" size={22} />
-                <span className="text-gray-700">{item}</span>
+                <motion.div
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <BadgeCheck size={22} />
+                </motion.div>
+                <motion.span
+                  className="text-gray-700"
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {item}
+                </motion.span>
               </div>
             ))}
           </div>
@@ -123,13 +165,21 @@ export default function AboutHero() {
             {/* Center Circle*/}
             <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
               <div className="relative h-24 w-24 lg:h-28 lg:w-28">
-                <div className="relative flex h-full w-full items-center justify-center rounded-full bg-[#244EB3] text-3xl font-extrabold text-white">
+                <motion.div
+                  animate={{ backgroundColor: currentColor }}
+                  transition={{ duration: 0.8 }}
+                  className="relative flex h-full w-full items-center justify-center rounded-full text-3xl font-extrabold text-white"
+                >
                   W
-                </div>
+                </motion.div>
               </div>
-              <span className="mt-3 text-xs font-bold uppercase tracking-wide text-[#244EB3]">
+              <motion.span
+                animate={{ color: currentColor }}
+                transition={{ duration: 0.8 }}
+                className="mt-3 text-xs font-bold uppercase tracking-wide"
+              >
                 Wellranked
-              </span>
+              </motion.span>
             </div>
 
             {/* Cards */}
@@ -167,12 +217,24 @@ export default function AboutHero() {
                     ease: "easeOut",
                   }}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-100 bg-white text-[#244EB3]">
+                  <motion.div
+                    animate={{
+                      color: currentColor,
+                      borderColor: currentColor,
+                      backgroundColor: `${currentColor}15`,
+                    }}
+                    transition={{ duration: 0.8 }}
+                    className="flex h-11 w-11 items-center justify-center rounded-full border bg-white"
+                  >
                     <Icon size={18} />
-                  </div>
-                  <span className="max-w-23 text-center text-xs font-semibold leading-tight text-gray-600">
+                  </motion.div>
+                  <motion.span
+                    animate={{ color: currentColor }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-23 text-center text-xs font-semibold leading-tight"
+                  >
                     {n.label}
-                  </span>
+                  </motion.span>
                 </motion.div>
               );
             })}
@@ -181,4 +243,4 @@ export default function AboutHero() {
       </div>
     </section>
   );
-};
+}

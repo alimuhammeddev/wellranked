@@ -157,23 +157,23 @@ export default function SolutionSection() {
                   }}
                   onViewportEnter={() => {
                     setActiveCard(index);
-                    // Any card entering means we're inside the section,
-                    // so the watermark should be visible.
-                    setShowWatermark(true);
+
+                    if (index > 0) {
+                      setShowWatermark(true);
+                    } else {
+                      setShowWatermark(false);
+                    }
                   }}
                   onViewportLeave={() => {
-                    // Hide only when scrolling DOWN past the last card
-                    // (i.e. leaving the section at the bottom).
+                    if (index === 0 && scrollDirection.current === "up") {
+                      setShowWatermark(false);
+                    }
+
+                    // Leaving the last card at the bottom
                     if (
                       index === lastIndex &&
                       scrollDirection.current === "down"
                     ) {
-                      setShowWatermark(false);
-                    }
-
-                    // Hide only when scrolling UP past the first card
-                    // (i.e. leaving the section at the top).
-                    if (index === 0 && scrollDirection.current === "up") {
                       setShowWatermark(false);
                     }
                   }}

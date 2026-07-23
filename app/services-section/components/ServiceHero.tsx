@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const services = [
   { title: "Website Design & Management", icon: Globe },
@@ -28,7 +29,21 @@ const services = [
   { title: "Marketing Concierge", icon: Headphones },
 ];
 
+const colors = ["#244EB3", "#7C3AED", "#059669", "#EA580C", "#DC2626"];
+
 export default function ServicesHero() {
+  const [colorIndex, setColorIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColorIndex((prev) => (prev + 1) % colors.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentColor = colors[colorIndex];
+
   return (
     <section className="relative overflow-hidden ">
       {/* Dot grid background */}
@@ -49,14 +64,26 @@ export default function ServicesHero() {
       <div className="relative z-10 mx-auto grid max-w-7xl items-start md:gap-20 gap-10 px-5 pb-24 pt-40 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <motion.span
+            animate={{
+              borderColor: currentColor,
+              color: currentColor,
+            }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 rounded-full border bg-blue-50 px-4 py-2 text-sm font-semibold"
+          >
             <Globe2 size={16} />
             Digital Growth Services
-          </span>
+          </motion.span>
 
           <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Everything Your Business Needs{" "}
-            <span className="text-[#244EB3]">To Grow Online.</span>
+            <motion.span
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+            >
+              To Grow Online.
+            </motion.span>
           </h1>
 
           <p className="mt-2 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -67,13 +94,19 @@ export default function ServicesHero() {
           </p>
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/growth-audit"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
+            <motion.div
+              animate={{ backgroundColor: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="rounded-full"
             >
-              Book Your Free Growth Audit
-              <ArrowRight size={18} />
-            </Link>
+              <Link
+                href="/growth-audit"
+                className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
+              >
+                Book Your Free Growth Audit
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
 
             <Link
               href="#services"
@@ -90,8 +123,19 @@ export default function ServicesHero() {
               "Marketing support from one trusted team",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck size={22} className="text-[#244EB3]" />
-                <span className="text-gray-700">{item}</span>
+                <motion.div
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <BadgeCheck size={22} />
+                </motion.div>
+                <motion.span
+                  className="text-gray-700"
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {item}
+                </motion.span>
               </div>
             ))}
           </div>
@@ -123,12 +167,20 @@ export default function ServicesHero() {
             }}
           >
             <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-blue-100 bg-white/90 px-7 py-5 text-center">
-              <span className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#244EB3] text-white">
+              <motion.span
+                animate={{ backgroundColor: currentColor }}
+                transition={{ duration: 0.8 }}
+                className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl text-white"
+              >
                 <Sparkles size={20} />
-              </span>
-              <h1 className="font-extrabold text-[#244EB3] md:text-lg">
+              </motion.span>
+              <motion.h1
+                animate={{ color: currentColor }}
+                transition={{ duration: 0.8 }}
+                className="font-extrabold md:text-lg"
+              >
                 Services We Offer
-              </h1>
+              </motion.h1>
               <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400">
                 One partner, every channel
               </p>
@@ -159,27 +211,48 @@ export default function ServicesHero() {
               ease: "easeOut",
             }}
           >
-            <span className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
-            <span className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed border-blue-200" />
-            <span className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
-            <span className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200" />
+            <motion.span
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed"
+            />
+            <motion.span
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed"
+            />
+            <motion.span
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed"
+            />
+            <motion.span
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed"
+            />
           </motion.div>
 
           {/* Service cards */}
           <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
-            <span
+            <motion.span
               aria-hidden
-              className="absolute left-1/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200"
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="absolute left-1/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed"
             />
-            <span
+            <motion.span
               aria-hidden
-              className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-blue-200"
+              animate={{ color: currentColor }}
+              transition={{ duration: 0.8 }}
+              className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed"
             />
 
             {services.map(({ title, icon: Icon }, index) => (
               <motion.div
                 key={title}
-                className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border border-blue-100 bg-white/95 p-3 text-center  sm:p-4"
+                className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border bg-white/95 p-3 text-center  sm:p-4"
+                animate={{ color: currentColor }}
                 initial={{
                   opacity: 0,
                   y: 40,
@@ -195,17 +268,28 @@ export default function ServicesHero() {
                   amount: 0.25,
                 }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.8,
                   delay: index * 0.15,
                   ease: "easeOut",
                 }}
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#244EB3]">
+                <motion.span
+                  animate={{
+                    color: currentColor,
+                    backgroundColor: `${currentColor}20`,
+                  }}
+                  transition={{ duration: 0.8 }}
+                  className="flex h-9 w-9 items-center justify-center rounded-xl"
+                >
                   <Icon size={17} />
-                </span>
-                <span className="text-[11px] font-semibold leading-tight text-[#244EB3] sm:text-xs">
+                </motion.span>
+                <motion.span
+                  animate={{ color: currentColor }}
+                  transition={{ duration: 0.8 }}
+                  className="text-[11px] font-semibold leading-tight sm:text-xs"
+                >
                   {title}
-                </span>
+                </motion.span>
               </motion.div>
             ))}
           </div>
