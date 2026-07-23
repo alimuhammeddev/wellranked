@@ -21,12 +21,12 @@ export default function Footer() {
           {/* Logo */}
 
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#244EB3] text-lg font-bold text-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#059669] text-lg font-bold text-white">
               W
             </div>
 
             <div>
-              <h2 className="font-bold text-[#244EB3]">Wellranked</h2>
+              <h2 className="font-bold text-[#059669]">Wellranked</h2>
 
               <p className="text-sm text-gray-500">
                 Visibility • Growth • Authority
@@ -41,7 +41,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 transition hover:text-[#244EB3]"
+                className="text-gray-600 transition hover:text-[#059669]"
               >
                 {link.label}
               </Link>
@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-2 text-sm">
             <Link
               href="mailto:hello@wellranked.co.uk"
-              className="flex items-center gap-2 text-gray-600 transition hover:text-[#244EB3]"
+              className="flex items-center gap-2 text-gray-600 transition hover:text-[#059669]"
             >
               <Mail size={16} />
               hello@wellranked.co.uk
@@ -67,7 +67,7 @@ export default function Footer() {
             <div className="mt-1 flex items-center gap-3">
               <Link
                 href="#"
-                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
+                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#059669] hover:text-[#059669]"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={16} />
@@ -75,7 +75,7 @@ export default function Footer() {
 
               <Link
                 href="#"
-                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
+                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#059669] hover:text-[#059669]"
                 aria-label="Instagram"
               >
                 <FaInstagram size={16} />
@@ -83,7 +83,7 @@ export default function Footer() {
 
               <Link
                 href="#"
-                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#244EB3] hover:text-[#244EB3]"
+                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#059669] hover:text-[#059669]"
                 aria-label="X / Twitter"
               >
                 <FaXTwitter size={16} />
@@ -98,11 +98,11 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Wellranked. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-[#244EB3]">
+            <Link href="#" className="hover:text-[#059669]">
               Privacy Policy
             </Link>
 
-            <Link href="#" className="hover:text-[#244EB3]">
+            <Link href="#" className="hover:text-[#059669]">
               Terms
             </Link>
           </div>

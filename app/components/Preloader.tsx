@@ -6,7 +6,7 @@ const icons = [Search, Globe, Megaphone, BarChart3, Sparkles];
 
 export default function Preloader() {
   return (
-    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-[#10224D]">
+    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-[#059669]">
       <div className="relative flex items-center justify-center w-72 h-72">
         {/* Orbit */}
         <div className="absolute w-60 h-60 animate-spin-slow">
@@ -34,7 +34,7 @@ export default function Preloader() {
 
         {/* Center Logo */}
         <div className="relative z-10">
-          <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-[#244EB3] text-white text-3xl font-bold">
+          <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-[#059669] text-white text-3xl font-bold">
             W
           </div>
         </div>

@@ -8,7 +8,7 @@ export default function FinalCTA() {
   return (
     <section className="relative overflow-hidden py-28">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#244EB3]/95 md:mt-0 mt-20" />
+      <div className="absolute inset-0 bg-[#059669]/95 md:mt-0 mt-20" />
 
       {/* Decorative Blobs */}
       <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
@@ -16,7 +16,7 @@ export default function FinalCTA() {
 
       {/* Wellranked Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/5 whitespace-nowrap">
+        <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/10 whitespace-nowrap">
           Wellranked
         </h1>
       </div>
@@ -44,7 +44,7 @@ export default function FinalCTA() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100">
+          <span className="inline-flex items-center rounded-full border border-green-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white">
             Free Growth Audit
           </span>
 
@@ -62,7 +62,7 @@ export default function FinalCTA() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/growth-audit"
-              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#244EB3]"
+              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#059669]"
             >
               Book Your Free Growth Audit
               <ArrowRight
@@ -83,7 +83,7 @@ export default function FinalCTA() {
         {/* Right */}
 
         <motion.div
-          className="rounded-3xl border border-white/20 bg-[#244EB3] md:p-8 p-5 backdrop-blur-xl"
+          className="rounded-3xl border border-white/10 bg-[#059669] md:p-8 p-5 backdrop-blur-xl"
           initial={{
             opacity: 0,
             y: 40,
@@ -105,7 +105,7 @@ export default function FinalCTA() {
           }}
         >
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#244EB3]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#059669]">
               <CalendarDays size={24} />
             </div>
 
@@ -137,7 +137,7 @@ export default function FinalCTA() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl bg-white/10 p-5 text-center">
+          <div className="mt-8 rounded-2xl bg-white/5 p-5 text-center">
             <p className="text-sm uppercase tracking-wider text-white">
               No pressure. No jargon.
             </p>

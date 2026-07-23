@@ -10,6 +10,7 @@ import {
   Mail,
   Bot,
   BadgeCheck,
+  LucideIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -18,44 +19,63 @@ const solutions = [
   {
     title: "Website Build & Management",
     icon: Globe,
-    color: "#244EB3",
+    color: "#57CC99",
   },
   {
     title: "AI Customer Response Assistant",
     icon: Bot,
-    color: "#7C3AED",
+    color: "#57CC99",
   },
   {
     title: "Local SEO & Google Visibility",
     icon: Search,
-    color: "#059669",
+    color: "#57CC99",
   },
   {
     title: "Google Business Profile Management",
     icon: MapPinned,
-    color: "#EA580C",
+    color: "#57CC99",
   },
   {
     title: "Review Management & Reputation Management",
     icon: Star,
-    color: "#DC2626",
+    color: "#57CC99",
   },
   {
     title: "Unlimited Business Graphics",
     icon: Palette,
-    color: "#EC4899",
+    color: "#57CC99",
   },
   {
     title: "3 Social Media Graphics Posts per Week",
     icon: Image,
-    color: "#0891B2",
+    color: "#57CC99",
   },
   {
     title: "Email Marketing & Ads Management on Accelerator",
     icon: Mail,
-    color: "#CA8A04",
+    color: "#57CC99",
   },
 ];
+
+interface IconBlockProps {
+  icon: LucideIcon;
+  color: string;
+}
+
+function IconBlock({ icon: Icon, color }: IconBlockProps) {
+  return (
+    <div
+      className="flex h-16 w-16 items-center justify-center rounded-xl border"
+      style={{
+        backgroundColor: `color-mix(in srgb, white 78%, ${color})`,
+        borderColor: `color-mix(in srgb, white 40%, ${color})`,
+      }}
+    >
+      <Icon size={28} strokeWidth={2} style={{ color }} />
+    </div>
+  );
+}
 
 export default function SolutionSection() {
   const [activeCard, setActiveCard] = useState(0);
@@ -82,7 +102,7 @@ export default function SolutionSection() {
   const lastIndex = solutions.length - 1;
 
   return (
-    <section className="md:py-24 py-16 bg-white">
+    <section className="md:py-24 py-16 bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
         <div className="grid items-center">
           {/* Header */}
@@ -91,9 +111,9 @@ export default function SolutionSection() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-            className="relative z-20 bg-white text-center max-w-4xl mx-auto py-4"
+            className="relative z-20 bg-[#f5f5f5] text-center max-w-4xl mx-auto py-4"
           >
-            <span className="inline-flex mx-auto items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+            <span className="inline-flex mx-auto items-center rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
               One Team. One Monthly Fee.
             </span>
 
@@ -105,7 +125,7 @@ export default function SolutionSection() {
               Instead of hiring a website developer, SEO specialist, designer,
               social media manager, ads expert and marketing coordinator
               separately.{" "}
-              <span className="font-semibold text-[#102A56]">
+              <span className="font-semibold text-[#059669]">
                 Wellranked gives you one joined-up team
               </span>{" "}
               working together to improve your online presence, generate more
@@ -208,7 +228,7 @@ export default function SolutionSection() {
                   >
                     {/* Huge watermark icon */}
 
-                    <div className="absolute -bottom-8 -right-8 opacity-[0.08] text-white">
+                    <div className="absolute -bottom-8 -right-8 opacity-[0.3] text-white">
                       <Icon size={220} strokeWidth={1} />
                     </div>
 
@@ -219,20 +239,13 @@ export default function SolutionSection() {
                     <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white/10" />
 
                     <div className="relative z-10">
-                      <div
-                        className="flex h-16 w-16 items-center justify-center rounded-2xl backdrop-blur"
-                        style={{
-                          background: "rgba(255,255,255,.18)",
-                        }}
-                      >
-                        <Icon size={30} className="text-white" />
-                      </div>
+                      <IconBlock icon={Icon} color={color} />
 
                       <h3 className="mt-8 text-2xl font-bold text-white max-w-md leading-snug">
                         {title}
                       </h3>
 
-                      <p className="mt-4 text-white/80 max-w-lg leading-8">
+                      <p className="mt-4 text-white max-w-lg leading-8">
                         Everything is fully managed by our team so you can focus
                         on running your business while we grow your online
                         presence.
@@ -252,4 +265,4 @@ export default function SolutionSection() {
       </div>
     </section>
   );
-}
+};

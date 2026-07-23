@@ -45,7 +45,7 @@ const trustItems = [
 
 export default function TrustSection() {
   return (
-    <section className="bg-[#F8FAFC] lg:py-24 md:py-10">
+    <section className="bg-[#f5f5f5] lg:py-24 md:py-10">
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
         <div className="grid items-center md:gap-16 gap-10 lg:grid-cols-2">
           {/* Left */}
@@ -70,13 +70,13 @@ export default function TrustSection() {
               ease: "easeOut",
             }}
           >
-            <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+            <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
               Why Businesses Choose Wellranked
             </span>
 
             <h2 className="mt-3 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
               Built for UK small businesses,{" "}
-              <span className="text-[#244EB3]">
+              <span className="text-[#059669]">
                 sole traders & independent companies.
               </span>
             </h2>
@@ -98,7 +98,7 @@ export default function TrustSection() {
             {trustItems.map(({ title, description, icon: Icon }, index) => (
               <motion.div
                 key={title}
-                className="group relative overflow-hidden rounded-2xl border border-blue-200 bg-white p-5"
+                className="group relative overflow-hidden rounded-2xl border border-green-200 bg-white p-5"
                 initial={{
                   opacity: 0,
                   y: 40,
@@ -121,11 +121,11 @@ export default function TrustSection() {
               >
                 {/* Content */}
                 <div className="relative z-10">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#244EB3] text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#059669] text-white">
                     <Icon size={22} />
                   </div>
 
-                  <h3 className="mt-4 md:text-lg font-semibold text-[#244EB3]">
+                  <h3 className="mt-4 md:text-lg font-semibold text-[#059669]">
                     {title}
                   </h3>
 
