@@ -69,7 +69,7 @@ const packages = [
 
 export default function PackageBreakdown() {
   return (
-    <section className="md:py-24 bg-white">
+    <section className="md:py-24 bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto lg:px-0 px-5">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-10"

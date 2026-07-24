@@ -13,7 +13,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white z-20">
+    <footer className="bg-[#f5f5f5] z-20">
       <div className="mx-auto max-w-7xl md:px-0 px-5 py-12">
         {/* Top */}
 

@@ -8,7 +8,7 @@ export default function FinalCTA() {
   return (
     <section className="relative overflow-hidden py-28">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#059669]/95 md:mt-0 mt-20" />
+      <div className="absolute inset-0 bg-[#059669]/95" />
 
       {/* Wellranked Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">

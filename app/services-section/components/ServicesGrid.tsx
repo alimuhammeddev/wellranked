@@ -137,7 +137,7 @@ function CornerRings() {
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="relative overflow-hidden bg-white">
+    <section id="services" className="relative overflow-hidden bg-[#f5f5f5]">
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0 md:mt-20 mt-10">
         {/* Heading */}
         <motion.div

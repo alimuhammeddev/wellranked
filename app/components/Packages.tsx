@@ -55,7 +55,7 @@ const packages = [
 
 export default function PackagesPreview() {
   return (
-    <section className="bg-[#f5f5f5] md:py-20 py-10">
+    <section className="bg-white md:py-20 py-10">
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
 
         {/* Heading */}

@@ -45,7 +45,7 @@ const trustItems = [
 
 export default function TrustSection() {
   return (
-    <section className="bg-[#f5f5f5] lg:py-24 md:py-10">
+    <section className="bg-[#f5f5f5] lg:py-24 md:py-10 py-16">
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
         <div className="grid items-center md:gap-16 gap-10 lg:grid-cols-2">
           {/* Left */}

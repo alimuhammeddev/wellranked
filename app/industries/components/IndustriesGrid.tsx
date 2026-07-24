@@ -126,7 +126,7 @@ export default function IndustriesGrid() {
     <section
       ref={sectionRef}
       id="industries"
-      className="md:py-24 py-16 bg-[#f5f5f5] md:mb-0 mb-20"
+      className="md:py-24 py-16 bg-[#f5f5f5]"
     >
       {/* Header */}
       <motion.div

@@ -48,7 +48,7 @@ function GhostQuote() {
 
 export default function PricingNote() {
   return (
-    <section className="bg-[#F8FAFC] py-24">
+    <section className="bg-[#f5f5f5] py-24">
       <div className="mx-auto max-w-7xl lg:px-0 px-5">
         {/* Heading */}
 

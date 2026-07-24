@@ -76,7 +76,7 @@ const packages = [
 
 export default function PricingCards() {
   return (
-    <section id="pricing" className="md:py-24 bg-[#f5f5f5] md:mb-0 mb-20">
+    <section id="pricing" className="md:py-24 bg-[#f5f5f5] py-20">
       <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
         <motion.div
           className="text-center max-w-3xl mx-auto md:mb-16 mb-5"
