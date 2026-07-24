@@ -53,7 +53,7 @@ function MarqueeStrip() {
       >
         {[...marqueeItems, ...marqueeItems].map((item, i) => (
           <div key={i} className="flex items-center">
-            <span className="mx-6 text-sm font-semibold uppercase tracking-wide text-[#1F3064]">
+            <span className="mx-6 text-sm font-semibold uppercase tracking-wide text-[#102A56]">
               {item}
             </span>
             <span className="text-[#059669]">●</span>

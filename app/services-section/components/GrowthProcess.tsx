@@ -85,7 +85,7 @@ export default function GrowthProcess() {
             return (
               <motion.div
                 key={step.number}
-                className="group relative rounded-3xl border border-green-200 bg-white md:p-8 p-5 transition-all duration-300 hover:border-[#244EB3]"
+                className="group relative rounded-3xl border border-green-200 bg-white md:p-8 p-5 transition-all duration-300"
                 initial={{
                   opacity: 0,
                   y: 40,

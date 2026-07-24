@@ -2,7 +2,7 @@
 
 import {
   Globe,
-  Search,
+  ScanSearch,
   MapPinned,
   Star,
   Palette,
@@ -28,7 +28,7 @@ const solutions = [
   },
   {
     title: "Local SEO & Google Visibility",
-    icon: Search,
+    icon: ScanSearch,
     color: "#57CC99",
   },
   {
@@ -66,9 +66,9 @@ interface IconBlockProps {
 function IconBlock({ icon: Icon, color }: IconBlockProps) {
   return (
     <div
-      className="flex h-14 w-14 items-center justify-center rounded-xl border border-green-50 bg-white"
+      className="flex items-center text-white"
     >
-      <Icon size={24} strokeWidth={2} style={{ color }} />
+      <Icon size={40} strokeWidth={2} />
     </div>
   );
 }
@@ -147,8 +147,8 @@ export default function SolutionSection() {
                 max-w-5xl
                 text-center
                 text-[50px]
-                md:text-[100px]
-                lg:text-[100px]
+                md:text-[80px]
+                lg:text-[80px]
                 font-black
                 leading-[0.9]
                 tracking-tight
@@ -230,9 +230,9 @@ export default function SolutionSection() {
 
                     {/* Small circles */}
 
-                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white" />
+                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-green-100" />
 
-                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white" />
+                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-gray-50" />
 
                     <div className="relative z-10">
                       <IconBlock icon={Icon} color={color} />

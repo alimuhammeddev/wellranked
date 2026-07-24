@@ -48,7 +48,7 @@ export default function WhyWellrankedGrid() {
   const others = features.filter((item) => !item.featured);
 
   return (
-    <section id="why-grid" className="bg-white md:py-24 md:mb-0 mb-20">
+    <section id="why-grid" className="bg-[#f5f5f5] md:py-24 md:mb-0 mb-20">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <motion.div
@@ -73,7 +73,7 @@ export default function WhyWellrankedGrid() {
             ease: "easeOut",
           }}
         >
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <span className="rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             Why Businesses Choose Wellranked
           </span>
 
@@ -82,7 +82,7 @@ export default function WhyWellrankedGrid() {
           </h2>
 
           <p className="mt-3 md:text-lg leading-8 text-gray-600">
-            We don't just provide marketing services—we become an extension of
+            We don't just provide marketing services we become an extension of
             your business, making sure every part of your online presence works
             together to generate more enquiries.
           </p>
@@ -92,7 +92,7 @@ export default function WhyWellrankedGrid() {
         {featured && (
           <div className="mt-10">
             <motion.div
-              className="group relative overflow-hidden rounded-3xl bg-[#244EB3] md:p-10 p-5"
+              className="group relative overflow-hidden rounded-3xl bg-[#059669] md:p-10 p-5"
               initial={{
                 opacity: 0,
                 y: 40,
@@ -116,24 +116,24 @@ export default function WhyWellrankedGrid() {
               {/* decorative glows + ghost icon */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"
+                className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white-400/20 blur-3xl"
               />
               <div
                 aria-hidden
-                className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-indigo-400/10 blur-3xl"
+                className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-white-400/10 blur-3xl"
               />
               <featured.icon
                 aria-hidden
                 size={150}
-                className="pointer-events-none absolute -bottom-10 -right-10 rotate-12 text-white/5"
+                className="pointer-events-none absolute -bottom-10 -right-10 rotate-12 text-white/10"
               />
 
               <div className="relative flex flex-col gap-6 md:grid md:grid-cols-[auto,1fr] md:items-center md:gap-10">
                 <div className="flex items-start justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-200 text-[#244EB3] backdrop-blur-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-100 text-[#059669] backdrop-blur-sm">
                     <featured.icon size={24} />
                   </span>
-                  <span className="text-xs font-bold tracking-widest text-blue-200">
+                  <span className="text-xs font-bold tracking-widest text-green-200">
                     01
                   </span>
                 </div>
@@ -156,7 +156,7 @@ export default function WhyWellrankedGrid() {
           {others.map(({ title, description, icon: Icon, }, i) => (
             <motion.div
               key={title}
-              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#244EB3] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_45px_-15px_rgba(36,78,179,0.25)] md:p-8"
+              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#059669] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-green-200 md:p-8"
               initial={{
                 opacity: 0,
                 y: 40,
@@ -180,14 +180,14 @@ export default function WhyWellrankedGrid() {
               <Icon
                 aria-hidden
                 size={100}
-                className="pointer-events-none absolute -bottom-4 -right-4 rotate-12 text-white/5"
+                className="pointer-events-none absolute -bottom-4 -right-4 rotate-12 text-white/10"
               />
 
               <div className="relative flex items-start justify-between">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-200 text-[#244EB3]">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-100 text-[#059669]">
                   <Icon size={22} />
                 </span>
-                <span className="text-xs font-bold tracking-widest text-blue-200">
+                <span className="text-xs font-bold tracking-widest text-green-200">
                   0{i + 2}
                 </span>
               </div>
