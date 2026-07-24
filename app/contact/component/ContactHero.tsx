@@ -4,7 +4,7 @@ import { ArrowRight, BadgeCheck, Mail, Phone, Globe } from "lucide-react";
 
 export default function ContactHero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[#f5f5f5]">
       {/* Dot grid background */}
       <div
         aria-hidden
@@ -23,13 +23,13 @@ export default function ContactHero() {
       <div className="relative mx-auto grid max-w-7xl md:gap-16 gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             <Mail size={16} />
             Contact Wellranked
           </span>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            Talk to <span className="text-[#244EB3]">Wellranked</span>
+            Talk to <span className="text-[#059669]">Wellranked</span>
           </h1>
 
           <p className="mt-3 max-w-xl md:text-lg leading-8 text-gray-600">
@@ -45,7 +45,7 @@ export default function ContactHero() {
               "No obligation consultation",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck className="text-[#244EB3]" size={22} />
+                <BadgeCheck className="text-[#059669]" size={22} />
 
                 <span className="text-gray-700">{item}</span>
               </div>
@@ -54,36 +54,36 @@ export default function ContactHero() {
 
           <div className="mt-5 space-y-5">
             <div className="flex items-center gap-4">
-              <div className="rounded-xl bg-blue-50 p-3">
-                <Mail className="text-[#244EB3]" size={20} />
+              <div className="rounded-xl bg-green-50 p-3">
+                <Mail className="text-[#059669]" size={20} />
               </div>
 
               <div>
-                <p className="font-semibold text-[#244EB3]">Email</p>
+                <p className="font-semibold text-[#059669]">Email</p>
 
                 <p className="text-gray-600">hello@wellranked.co.uk</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="rounded-xl bg-blue-50 p-3">
-                <Phone className="text-[#244EB3]" size={20} />
+              <div className="rounded-xl bg-green-50 p-3">
+                <Phone className="text-[#059669]" size={20} />
               </div>
 
               <div>
-                <p className="font-semibold text-[#244EB3]">Phone</p>
+                <p className="font-semibold text-[#059669]">Phone</p>
 
                 <p className="text-gray-600">Available during business hours</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="rounded-xl bg-blue-50 p-3">
-                <Globe className="text-[#244EB3]" size={20} />
+              <div className="rounded-xl bg-green-50 p-3">
+                <Globe className="text-[#059669]" size={20} />
               </div>
 
               <div>
-                <p className="font-semibold text-[#244EB3]">Location</p>
+                <p className="font-semibold text-[#059669]">Location</p>
 
                 <p className="text-gray-600">
                   Supporting businesses across the UK
@@ -127,12 +127,12 @@ export default function ContactHero() {
 
               <textarea
                 rows={8}
-                className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-[#244EB3]"
+                className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-[#059669]"
                 placeholder="Tell us a little about your business..."
               />
             </div>
 
-            <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#244EB3] py-4 font-semibold text-white">
+            <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#059669] py-4 font-semibold text-white">
               Send Enquiry
               <ArrowRight size={18} />
             </button>
@@ -151,7 +151,7 @@ function Input({ label, type = "text" }: { label: string; type?: string }) {
       <input
         type={type}
         placeholder={label}
-        className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-600"
+        className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-[#059669]"
       />
     </div>
   );

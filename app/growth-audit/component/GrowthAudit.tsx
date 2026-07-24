@@ -11,7 +11,7 @@ import {
 
 export default function GrowthAuditHero() {
   return (
-    <section className="relative overflow-hidde">
+    <section className="relative overflow-hidden bg-[#f5f5f5]">
       {/* Dot grid background */}
       <div
         aria-hidden
@@ -29,14 +29,14 @@ export default function GrowthAuditHero() {
       <div className="relative mx-auto grid max-w-7xl md:gap-16 gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             <Search size={16} />
             Free Growth Audit
           </span>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Get a Free Review of Your{" "}
-            <span className="text-[#244EB3]">Website & Online Presence</span>
+            <span className="text-[#059669]">Website & Online Presence</span>
           </h1>
 
           <p className="mt-3 max-w-xl md:text-lg leading-8 text-gray-600">
@@ -53,15 +53,15 @@ export default function GrowthAuditHero() {
               "Local SEO opportunities",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck size={22} className="text-[#244EB3]" />
+                <BadgeCheck size={22} className="text-[#059669]" />
                 <span className="text-gray-700">{item}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 rounded-3xl border border-blue-100 bg-blue-50 p-5">
-            <h1 className="flex items-center gap-2 text-xl font-bold text-[#102A56]">
-              <TrendingUp className="text-[#244EB3]" size={22} />
+          <div className="mt-5 rounded-3xl border border-green-100 bg-green-100 p-5">
+            <h1 className="flex items-center gap-2 text-xl font-bold text-[#059669]">
+              <TrendingUp className="text-[#059669]" size={22} />
               What We'll Review
             </h1>
 
@@ -77,7 +77,7 @@ export default function GrowthAuditHero() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-xl bg-white px-4 py-3 text-sm font-medium flex items-center gap-1 text-[#244EB3]"
+                  className="rounded-xl bg-[#059669] px-4 py-3 text-sm font-medium flex items-center gap-1 text-white"
                 >
                   <Check size={15} /> {item}
                 </div>
@@ -124,13 +124,13 @@ export default function GrowthAuditHero() {
               <textarea
                 rows={4}
                 placeholder="Tell us about your biggest challenge..."
-                className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-600"
+                className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-[#059669]"
               />
             </div>
 
             <Input label="Preferred Call Time" />
 
-            <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#244EB3] py-4 font-semibold text-white">
+            <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#059669] py-4 font-semibold text-white">
               Request My Free Audit
               <ArrowRight size={18} />
             </button>
@@ -149,7 +149,7 @@ function Input({ label, type = "text" }: { label: string; type?: string }) {
       <input
         type={type}
         placeholder={label}
-        className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-[#244EB3]"
+        className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-[#059669]"
       />
     </div>
   );
