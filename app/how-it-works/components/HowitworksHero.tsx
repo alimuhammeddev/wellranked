@@ -49,7 +49,7 @@ const journey = [
 
 export default function HowItWorksHero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[#f5f5f5]">
       {/* Dot grid background */}
       <div
         aria-hidden
@@ -68,14 +68,14 @@ export default function HowItWorksHero() {
       <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:gap-20 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#244EB3]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
             <Workflow size={16} />
             How It Works
           </span>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             A Simple Process {" "}
-            <span className="text-[#244EB3]">
+            <span className="text-[#059669]">
               Built for Busy Business Owners.
             </span>
           </h1>
@@ -91,7 +91,7 @@ export default function HowItWorksHero() {
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/growth-audit"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#244EB3] px-8 py-4 font-semibold text-white"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#059669] px-8 py-4 font-semibold text-white"
             >
               Book Free Growth Audit
               <ArrowRight size={18} />
@@ -99,7 +99,7 @@ export default function HowItWorksHero() {
 
             <Link
               href="#process"
-              className="rounded-full border border-gray-300 bg-white px-8 py-4 text-center font-semibold text-[#102A56] transition hover:border-[#244EB3] hover:text-[#244EB3]"
+              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669] transition"
             >
               See The Process
             </Link>
@@ -113,7 +113,7 @@ export default function HowItWorksHero() {
               "Ongoing monthly marketing support",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck className="text-[#244EB3]" size={22} />
+                <BadgeCheck className="text-[#059669]" size={22} />
                 <span className="text-gray-700">{item}</span>
               </div>
             ))}
@@ -123,7 +123,7 @@ export default function HowItWorksHero() {
         {/* Right */}
         <div className="rounded-3xl border border-gray-200 bg-white p-5 md:p-8">
           <div className="flex items-center gap-2">
-            <Workflow className="text-[#244EB3]" size={20} />
+            <Workflow className="text-[#059669]" size={20} />
             <h3 className="md:text-2xl text-xl font-bold text-[#102A56]">
               Your Journey
             </h3>
@@ -138,12 +138,12 @@ export default function HowItWorksHero() {
             {journey.map(({ step, title, icon: Icon }, index) => (
               <div key={step}>
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50">
-                    <Icon size={20} className="text-[#244EB3]" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-50">
+                    <Icon size={20} className="text-[#059669]" />
                   </div>
 
                   <div className="flex-1">
-                    <p className="text-xs font-semibold tracking-wider text-[#244EB3]">
+                    <p className="text-xs font-semibold tracking-wider text-[#059669]">
                       STEP {step}
                     </p>
 
@@ -158,14 +158,14 @@ export default function HowItWorksHero() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl bg-[#F8FAFC] p-5">
-            <p className="text-sm text-[#244EB3] flex items-center gap-1">
+          <div className="mt-8 rounded-2xl bg-green-100 p-5">
+            <p className="text-sm text-[#059669] flex items-center gap-1">
               <Check size={15} /> Simple process from start to finish
             </p>
-            <p className="mt-2 text-sm text-[#244EB3] flex items-center gap-1">
+            <p className="mt-2 text-sm text-[#059669] flex items-center gap-1">
               <Check size={15} /> One dedicated marketing partner
             </p>
-            <p className="mt-2 text-sm text-[#244EB3] flex items-center gap-1">
+            <p className="mt-2 text-sm text-[#059669] flex items-center gap-1">
               <Check size={15} /> Focused on helping your business grow
             </p>
           </div>
