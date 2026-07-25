@@ -48,7 +48,7 @@ export default function WhyWellrankedGrid() {
   const others = features.filter((item) => !item.featured);
 
   return (
-    <section id="why-grid" className="bg-[#f5f5f5] md:py-24 md:mb-0 mb-20">
+    <section id="why-grid" className="bg-[#f5f5f5] md:py-24 md:mb-0 py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <motion.div
