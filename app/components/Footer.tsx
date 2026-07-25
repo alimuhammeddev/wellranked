@@ -6,6 +6,7 @@ import { Mail, MapPin } from "lucide-react";
 const links = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services-section" },
+  { label: "Industries", href: "/industries" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

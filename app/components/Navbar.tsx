@@ -21,8 +21,8 @@ export default function Navbar() {
   const links = [
     { name: "Home", href: "/" },
     { name: "Packages", href: "/package-section" },
+    { name: "Growth Support", href: "/growth-support" },
     { name: "Services", href: "/services-section" },
-    { name: "Industries", href: "/industries" },
     { name: "Why Wellranked", href: "/why-wellranked" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
@@ -36,7 +36,7 @@ export default function Navbar() {
     >
       {/* Navbar Background */}
       <div
-        className={`bg-[#F5F5F5] backdrop-blur-3xl border border-green-50 shadow-[0_8px_30px_rgba(16,42,86,0.08)] transition-all duration-700 ease-in-out ${
+        className={`bg-[#F5F5F5] backdrop-blur-3xl border border-green-200 shadow-[0_8px_30px_rgba(16,42,86,0.08)] transition-all duration-700 ease-in-out ${
           scrolled ? "rounded-none" : "mx-4 rounded-full"
         }`}
       >
