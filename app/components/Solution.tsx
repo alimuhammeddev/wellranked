@@ -1,77 +1,59 @@
 "use client";
 
-import {
-  Globe,
-  ScanSearch,
-  MapPinned,
-  Star,
-  Palette,
-  Image,
-  Mail,
-  Bot,
-  BadgeCheck,
-  LucideIcon,
-} from "lucide-react";
+import { BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const solutions = [
   {
     title: "Website Build & Management",
-    icon: Globe,
+    image:
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
     color: "#57CC99",
   },
   {
     title: "AI Customer Response Assistant",
-    icon: Bot,
+    image:
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
     color: "#57CC99",
   },
   {
     title: "Local SEO & Google Visibility",
-    icon: ScanSearch,
+    image:
+      "https://images.unsplash.com/photo-1571677246347-5040036b95cc?w=800&q=80",
     color: "#57CC99",
   },
   {
     title: "Google Business Profile Management",
-    icon: MapPinned,
+    image:
+      "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80",
     color: "#57CC99",
   },
   {
     title: "Review Management & Reputation Management",
-    icon: Star,
+    image:
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
     color: "#57CC99",
   },
   {
     title: "Unlimited Business Graphics",
-    icon: Palette,
+    image:
+      "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
     color: "#57CC99",
   },
   {
     title: "3 Social Media Graphics Posts per Week",
-    icon: Image,
+    image:
+      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
     color: "#57CC99",
   },
   {
     title: "Email Marketing & Ads Management on Accelerator",
-    icon: Mail,
+    image:
+      "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80",
     color: "#57CC99",
   },
 ];
-
-interface IconBlockProps {
-  icon: LucideIcon;
-  color: string;
-}
-
-function IconBlock({ icon: Icon, color }: IconBlockProps) {
-  return (
-    <div
-      className="flex items-center text-white"
-    >
-      <Icon size={40} strokeWidth={2} />
-    </div>
-  );
-}
 
 export default function SolutionSection() {
   const [activeCard, setActiveCard] = useState(0);
@@ -161,7 +143,7 @@ export default function SolutionSection() {
             </div>
 
             <div className="space-y-10">
-              {solutions.map(({ title, icon: Icon, color }, index) => (
+              {solutions.map(({ title, image, color }, index) => (
                 <motion.div
                   key={title}
                   className={`relative z-10 flex ${
@@ -217,27 +199,26 @@ export default function SolutionSection() {
                     whileHover={{
                       y: -6,
                     }}
-                    style={{
-                      backgroundColor: color,
-                    }}
-                    className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 md:p-8 p-5"
+                    className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 lg:h-112.5 flex flex-col bg-[#059669]"
                   >
-                    {/* Huge watermark icon */}
-
-                    <div className="absolute -bottom-8 -right-8 opacity-[0.1] text-white">
-                      <Icon size={220} strokeWidth={1} />
+                    {/* Image block, clearly visible at the top of the card */}
+                    <div className="relative w-full h-44 md:h-48 shrink-0 overflow-hidden">
+                      <img
+                        src={image}
+                        alt={title}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
 
                     {/* Small circles */}
 
-                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-green-100" />
+                    <div className="absolute top-32 -right-12 h-40 w-40 rounded-full border border-green-200" />
 
-                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-gray-50" />
+                    <div className="absolute top-38 -right-6 h-24 w-24 rounded-full border border-green-200" />
 
-                    <div className="relative z-10">
-                      <IconBlock icon={Icon} color={color} />
-
-                      <h3 className="mt-5 md:text-2xl text-xl font-bold text-white max-w-md leading-snug">
+                    <div className="relative z-10 md:p-8 p-5">
+                      <h3 className="md:text-2xl text-xl font-bold text-white max-w-md leading-snug">
                         {title}
                       </h3>
 
