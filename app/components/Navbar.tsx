@@ -121,6 +121,7 @@ export default function Navbar() {
 
               <Link
                 href="/growth-audit"
+                onClick={() => setOpen(false)}
                 className="mt-2 flex items-center justify-center gap-2 rounded-full bg-[#059669] py-3 font-bold text-white"
               >
                 Book Free Growth Audit
