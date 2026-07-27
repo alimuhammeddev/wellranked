@@ -36,7 +36,7 @@ const steps = [
 
 export default function GrowthProcess() {
   return (
-    <section className="relative overflow-hidden md:py-24 py-10">
+    <section className="relative overflow-hidden bg-[#f5f5f5] md:py-24 py-10">
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <motion.div
