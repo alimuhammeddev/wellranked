@@ -95,9 +95,9 @@ export default function SolutionSection() {
               One Team. One Monthly Fee.
             </span>
 
-            <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
+            <h1 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
               Everything handled.
-            </h2>
+            </h1>
 
             <p className="mt-2 md:text-lg leading-8 text-gray-600">
               Instead of hiring a website developer, SEO specialist, designer,
@@ -218,9 +218,9 @@ export default function SolutionSection() {
                     <div className="absolute top-38 -right-6 h-24 w-24 rounded-full border border-green-200" />
 
                     <div className="relative z-10 md:p-8 p-5">
-                      <h3 className="md:text-2xl text-xl font-bold text-white max-w-md leading-snug">
+                      <h1 className="md:text-2xl text-xl font-bold text-white max-w-md leading-snug">
                         {title}
-                      </h3>
+                      </h1>
 
                       <p className="mt-2 text-white max-w-lg leading-8">
                         Everything is fully managed by our team so you can focus
