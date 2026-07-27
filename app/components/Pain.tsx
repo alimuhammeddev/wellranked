@@ -65,9 +65,9 @@ function PainCard({ icon: Icon, title, description, index }: PainCardProps) {
         <Icon size={20} />
       </div>
 
-      <h3 className="mt-4 text-base font-semibold leading-snug text-[#102A56]">
+      <h1 className="mt-4 text-base font-semibold leading-snug text-[#102A56]">
         {title}
-      </h3>
+      </h1>
 
       <span
         className={`mt-3 inline-flex items-center rounded-full ${accent.tint} px-3 py-1 text-sm font-medium ${accent.tintText}`}
@@ -102,7 +102,7 @@ function GrowthCard({ icon: Icon, title, description, index }: PainCardProps) {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-white">{title}</h3>
+          <h1 className="text-lg font-semibold text-white">{title}</h1>
           <p className="mt-1 text-emerald-200">{description}</p>
         </div>
       </div>
