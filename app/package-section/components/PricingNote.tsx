@@ -1,34 +1,34 @@
 "use client";
 
 import {
-  CircleDollarSign,
-  BadgeCheck,
-  Clock3,
-  MessageCircleMore,
-} from "lucide-react";
+  Megaphone,
+  Package,
+  Calendar,
+  HelpCircle,
+} from "iconoir-react";
 import { motion } from "framer-motion";
 
 const notes = [
   {
-    icon: CircleDollarSign,
+    icon: Megaphone,
     title: "Advertising Spend",
     description:
       "Meta and Google advertising spend is billed separately from your monthly package.",
   },
   {
-    icon: BadgeCheck,
+    icon: Package,
     title: "Package Availability",
     description:
       "Recommendations may vary depending on your business type, location and current marketing setup.",
   },
   {
-    icon: Clock3,
+    icon: Calendar,
     title: "Flexible Monthly Plans",
     description:
       "No complicated long-term contracts. Upgrade your package whenever your business grows.",
   },
   {
-    icon: MessageCircleMore,
+    icon: HelpCircle,
     title: "Need Help Choosing?",
     description:
       "Book a free Growth Audit and we'll recommend the package that's right for your business.",
@@ -118,7 +118,7 @@ export default function PricingNote() {
               <GhostQuote />
 
               <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#059669]">
-                <Icon size={24} className="text-white" />
+                <Icon width={24} height={24} className="text-white" />
               </div>
 
               <h3 className="relative mt-4 md:text-xl text-lg font-bold text-[#059669]">
@@ -171,4 +171,4 @@ export default function PricingNote() {
       </div>
     </section>
   );
-}
+};;
