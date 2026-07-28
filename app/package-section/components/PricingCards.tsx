@@ -1,21 +1,21 @@
 "use client";
 
 import {
-  Suitcase,
+  BriefcaseBusiness,
+  Rocket,
   Crown,
   ArrowRight,
   Check,
-} from "iconoir-react";
+} from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BiTrendingUp } from "react-icons/bi";
 
 const packages = [
   {
     name: "Wellranked Essential",
     tagline: "Professional Online Presence",
     price: "£395",
-    icon: Suitcase,
+    icon: BriefcaseBusiness,
     featured: false,
     bestFor: "Sole traders, new businesses & small firms",
     description:
@@ -34,7 +34,7 @@ const packages = [
     name: "Growth Partner",
     tagline: "Your Outsourced Marketing Department",
     price: "£695",
-    icon: BiTrendingUp,
+    icon: Rocket,
     featured: true,
     bestFor: "Busy business owners",
     description:
@@ -165,7 +165,7 @@ export default function PricingCards() {
                         : "bg-green-100 text-[#059669]"
                     }`}
                   >
-                    <Icon width={24} height={24} />
+                    <Icon size={24} />
                   </div>
 
                   <h3 className="mt-3 text-xl font-bold">{plan.name}</h3>
@@ -214,7 +214,7 @@ export default function PricingCards() {
                     {plan.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-3">
                         <div className="mt-0.5 rounded-full bg-green-100 p-1">
-                          <Check width={12} height={12} className="text-[#059669]" />
+                          <Check size={12} className="text-[#059669]" />
                         </div>
 
                         <span className="text-gray-700">{feature}</span>
@@ -231,7 +231,7 @@ export default function PricingCards() {
                     }`}
                   >
                     Get Started
-                    <ArrowRight width={18} height={18} />
+                    <ArrowRight size={18} />
                   </Link>
                 </div>
               </motion.div>

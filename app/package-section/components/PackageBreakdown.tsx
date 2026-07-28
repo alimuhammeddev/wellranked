@@ -1,14 +1,13 @@
 "use client";
 
-import { Suitcase, Crown, CheckCircle } from "iconoir-react";
+import { BriefcaseBusiness, Rocket, Crown, BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
-import { BiTrendingUp } from "react-icons/bi";
 
 const packages = [
   {
     title: "Wellranked Essential",
     subtitle: "Professional Online Presence",
-    icon: Suitcase,
+    icon: BriefcaseBusiness,
     color: "blue",
     description:
       "For businesses that need a credible website and online foundation without managing everything themselves.",
@@ -27,7 +26,7 @@ const packages = [
   {
     title: "Wellranked Growth Partner",
     subtitle: "Your Outsourced Marketing Department",
-    icon: BiTrendingUp,
+    icon: Rocket,
     color: "indigo",
     description:
       "Our most popular package for businesses that want their website, Google visibility, reviews, graphics and social content handled properly every month.",
@@ -141,7 +140,7 @@ export default function PackageBreakdown() {
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-100 text-[#059669]">
-                      <Icon width={24} height={24} />
+                      <Icon size={24} />
                     </div>
                     <div>
                       <h3 className="md:text-2xl text-xl font-bold text-[#102A56]">
@@ -196,9 +195,8 @@ export default function PackageBreakdown() {
                   <div className="mt-4 space-y-5">
                     {pkg.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-4">
-                        <CheckCircle
-                          width={22}
-                          height={22}
+                        <BadgeCheck
+                          size={22}
                           className="text-[#059669] mt-0.5"
                         />
                         <span className="text-gray-700">{feature}</span>

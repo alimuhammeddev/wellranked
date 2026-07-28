@@ -171,4 +171,4 @@ export default function PricingNote() {
       </div>
     </section>
   );
-};;
+};

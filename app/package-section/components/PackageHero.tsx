@@ -1,31 +1,30 @@
 "use client";
 
 import {
-  PiCurrencyGbpBold,
-  PiTrendUpBold,
-  PiChartLineUpBold,
-  PiWalletBold,
-  PiDiamondBold,
-  PiShieldCheckBold,
-  PiRocketBold,
-  PiSealCheckBold,
-} from "react-icons/pi";
-import { ArrowRight } from "lucide-react";
+  ArrowRight,
+  BadgeCheck,
+  BadgePoundSterling,
+  TrendingUp,
+  ChartNoAxesCombined,
+  Wallet,
+  Gem,
+  ShieldCheck,
+  Rocket,
+} from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 // Orbit badges placed on a true circle (computed, not hand-offset) so
 // spacing reads as deliberate rather than scattered.
 const orbitItems = [
-  { text: "£695", icon: <PiCurrencyGbpBold size={16} /> },
-  { text: "ROI", icon: <PiTrendUpBold size={16} /> },
-  { text: "Growth", icon: <PiChartLineUpBold size={16} /> },
-  { text: "Flexible", icon: <PiWalletBold size={16} /> },
-  { text: "Premium", icon: <PiDiamondBold size={16} /> },
-  { text: "Trusted", icon: <PiShieldCheckBold size={16} /> },
-  { text: "Scalable", icon: <PiRocketBold size={16} /> },
-  { text: "Value", icon: <PiSealCheckBold size={16} /> },
+  { text: "£695", icon: <BadgePoundSterling size={16} /> },
+  { text: "ROI", icon: <TrendingUp size={16} /> },
+  { text: "Growth", icon: <ChartNoAxesCombined size={16} /> },
+  { text: "Flexible", icon: <Wallet size={16} /> },
+  { text: "Premium", icon: <Gem size={16} /> },
+  { text: "Trusted", icon: <ShieldCheck size={16} /> },
+  { text: "Scalable", icon: <Rocket size={16} /> },
+  { text: "Value", icon: <BadgeCheck size={16} /> },
 ].map((item, i, arr) => {
   const angle = (i / arr.length) * 2 * Math.PI - Math.PI / 2; // start at top
   const radius = 42; // % of container
@@ -98,7 +97,7 @@ export default function PackagesHero() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <div className="text-[#059669]">
-                  <PiSealCheckBold size={22} />
+                  <BadgeCheck size={22} />
                 </div>
 
                 <span className="text-gray-700">{item}</span>
@@ -175,7 +174,7 @@ export default function PackagesHero() {
                 ease: "easeOut",
               }}
             >
-              <div className="rounded-full p-2 text-[#059669]">{item.icon}</div>
+              <div className="rounded-full p-2 text-[#059669] bg-green-50">{item.icon}</div>
               <span className="mt-1 text-[9px] font-semibold text-[#059669]">
                 {item.text}
               </span>
