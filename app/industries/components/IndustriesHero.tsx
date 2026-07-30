@@ -78,7 +78,7 @@ export default function IndustriesHero() {
         {/* Left */}
         <div>
           <div
-            className="inline-flex items-center gap-2 rounded-full border border-[#059669] text-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold"
+            className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold"
           >
             <Building2 size={16} />
             Industries We Help
@@ -87,7 +87,7 @@ export default function IndustriesHero() {
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Built for Service Businesses That Depend on{" "}
             <span
-              className="text-[#059669]"
+              className="text-[#145EEE]"
             >
               Trust & Local Enquiries.
             </span>
@@ -101,7 +101,7 @@ export default function IndustriesHero() {
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
             <div
-              className="rounded-full bg-[#059669]"
+              className="rounded-full bg-[#145EEE]"
             >
               <Link
                 href="/growth-audit"
@@ -114,7 +114,7 @@ export default function IndustriesHero() {
 
             <Link
               href="#industries"
-              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669] transition"
+              className="rounded-full border border-[#145EEE] bg-white px-8 py-4 text-center font-semibold text-[#145EEE] transition"
             >
               Explore Industries
             </Link>
@@ -128,7 +128,7 @@ export default function IndustriesHero() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <div
-                  className="text-[#059669]"
+                  className="text-[#145EEE]"
                 >
                   <BadgeCheck size={22} />
                 </div>
@@ -168,24 +168,24 @@ export default function IndustriesHero() {
           {/* dashed orbit guide rings */}
           <div
             aria-hidden
-            className="absolute h-80 w-80 rounded-full border border-dashed border-green-200"
+            className="absolute h-80 w-80 rounded-full border border-dashed border-blue-200"
           />
           <div
             aria-hidden
-            className="absolute h-48 w-48 rounded-full border border-dashed border-green-100"
+            className="absolute h-48 w-48 rounded-full border border-dashed border-blue-100"
           />
 
           {/* center hub */}
           <div
-            className="relative z-10 flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full border border-[#059669] bg-white text-center"
+            className="relative z-10 flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full border border-[#145EEE] bg-white text-center"
           >
             <div
-              className="text-[#059669]"
+              className="text-[#145EEE]"
             >
               <Building2 size={22} />
             </div>
             <span
-              className="text-[11px] font-bold leading-tight text-[#059669]"
+              className="text-[11px] font-bold leading-tight text-[#145EEE]"
             >
               Your
               <br />
@@ -205,11 +205,11 @@ export default function IndustriesHero() {
                 >
                   <div className="orbit-icon group absolute flex flex-col items-center">
                     <span
-                      className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#059669] text-[#059669] bg-white"
+                      className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#145EEE] text-[#145EEE] bg-white"
                     >
                       <Icon size={24} />
                     </span>
-                    <div className="pointer-events-none absolute top-full z-30 mt-2 w-max max-w-44 scale-95 rounded-xl bg-[#059669] px-3 py-2 text-center opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
+                    <div className="pointer-events-none absolute top-full z-30 mt-2 w-max max-w-44 scale-95 rounded-xl bg-[#145EEE] px-3 py-2 text-center opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
                       <span className="block text-[11px] font-bold leading-tight text-white">
                         {title}
                       </span>

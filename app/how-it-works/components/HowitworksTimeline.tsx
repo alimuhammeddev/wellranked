@@ -61,13 +61,13 @@ export default function HowItWorksTimeline() {
         {/* Heading */}
 
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Our Process
           </span>
 
           <h2 className="mt-5 text-2xl font-bold text-[#102A56] lg:text-4xl md:text-3xl">
             From Your First Conversation{" "}
-            <span className="text-[#059669]">To Long-Term Growth</span>
+            <span className="text-[#145EEE]">To Long-Term Growth</span>
           </h2>
 
           <p className="mt-3 md:text-lg leading-8 text-gray-600">
@@ -79,20 +79,20 @@ export default function HowItWorksTimeline() {
         {/* Desktop Timeline */}
 
         <div className="relative mt-10 hidden lg:block">
-          <div className="absolute left-0 right-0 top-10 h-0.5 rounded-full bg-green-200" />
+          <div className="absolute left-0 right-0 top-10 h-0.5 rounded-full bg-blue-200" />
 
           <div className="grid grid-cols-6 gap-6">
             {steps.map(({ number, title, description, icon: Icon }) => (
               <div key={number} className="relative text-center">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#059669] bg-[#059669]">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#145EEE] bg-[#145EEE]">
                   <Icon className="text-white" size={30} />
                 </div>
 
-                <span className="mt-5 inline-block rounded-full bg-[#059669] px-3 py-1 text-xs font-bold text-white">
+                <span className="mt-5 inline-block rounded-full bg-[#145EEE] px-3 py-1 text-xs font-bold text-white">
                   STEP {number}
                 </span>
 
-                <h3 className="mt-4 text-lg font-bold text-[#059669]">
+                <h3 className="mt-4 text-lg font-bold text-[#145EEE]">
                   {title}
                 </h3>
 
@@ -110,19 +110,19 @@ export default function HowItWorksTimeline() {
           {steps.map(({ number, title, description, icon: Icon }) => (
             <div
               key={number}
-              className="rounded-3xl border border-green-200 bg-white p-5"
+              className="rounded-3xl border border-blue-200 bg-white p-5"
             >
               <div className="flex items-start gap-5">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#059669]">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#145EEE]">
                   <Icon size={24} className="text-white" />
                 </div>
 
                 <div>
-                  <span className="text-sm font-semibold text-[#059669]">
+                  <span className="text-sm font-semibold text-[#145EEE]">
                     STEP {number}
                   </span>
 
-                  <h3 className="mt-1 text-xl font-bold text-[#059669]">
+                  <h3 className="mt-1 text-xl font-bold text-[#145EEE]">
                     {title}
                   </h3>
 

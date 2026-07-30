@@ -157,7 +157,6 @@ export default function IndustriesGrid() {
           >
             <h1
               style={{
-                color: industries[activeCard].color,
                 opacity: 0.4,
                 transition: "color 300ms ease",
               }}
@@ -172,6 +171,7 @@ export default function IndustriesGrid() {
               tracking-tight
               select-none
               mb-20
+              text-[#145EEE]
             "
             >
               {industries[activeCard].title}
@@ -200,8 +200,7 @@ export default function IndustriesGrid() {
                 >
                   <motion.div
                     whileHover={{ y: -5, scale: 1 }}
-                    style={{ backgroundColor: color }}
-                    className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 md:p-8 p-5"
+                    className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 md:p-8 p-5 bg-[#145EEE]"
                   >
                     {/* Huge watermark icon */}
                     <div className="absolute -bottom-8 -right-8 opacity-[0.1] text-white">
@@ -228,7 +227,7 @@ export default function IndustriesGrid() {
                         {title}
                       </h3>
 
-                      <p className="mt-4 text-white/80 max-w-lg leading-8">
+                      <p className="mt-4 text-white max-w-lg leading-8">
                         {description}
                       </p>
 

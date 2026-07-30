@@ -60,7 +60,7 @@ export default function AboutHero() {
         {/* Left */}
         <div>
           <span
-            className="inline-flex items-center gap-2 rounded-full border border-[#059669] text-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold"
+            className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold"
           >
             <Building2 size={16} />
             About Wellranked
@@ -69,7 +69,7 @@ export default function AboutHero() {
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             We Built Wellranked for Business Owners Who Are{" "}
             <span
-              className="text-[#059669]"
+              className="text-[#145EEE]"
             >
               Tired of Doing Everything Themselves.
             </span>
@@ -92,7 +92,7 @@ export default function AboutHero() {
           {/* Buttons */}
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
             <div
-              className="rounded-full bg-[#059669]"
+              className="rounded-full bg-[#145EEE]"
             >
               <Link
                 href="/growth-audit"
@@ -105,7 +105,7 @@ export default function AboutHero() {
 
             <Link
               href="#our-values"
-              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669] transition"
+              className="rounded-full border border-[#145EEE] bg-white px-8 py-4 text-center font-semibold text-[#145EEE] transition"
             >
               Our Values
             </Link>
@@ -120,7 +120,7 @@ export default function AboutHero() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <div
-                  className="text-[#059669]"
+                  className="text-[#145EEE]"
                 >
                   <BadgeCheck size={22} />
                 </div>
@@ -141,13 +141,13 @@ export default function AboutHero() {
             <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
               <div className="relative h-24 w-24 lg:h-28 lg:w-28">
                 <div
-                  className="relative flex h-full w-full bg-[#059669] items-center justify-center rounded-full text-3xl font-extrabold text-white"
+                  className="relative flex h-full w-full bg-[#145EEE] items-center justify-center rounded-full text-3xl font-extrabold text-white"
                 >
                   W
                 </div>
               </div>
               <span
-                className="mt-3 text-xs text-[#059669] font-bold uppercase tracking-wide"
+                className="mt-3 text-xs text-[#145EEE] font-bold uppercase tracking-wide"
               >
                 Wellranked
               </span>
@@ -189,12 +189,12 @@ export default function AboutHero() {
                   }}
                 >
                   <div
-                    className="flex h-11 w-11 items-center text-[#059669] justify-center rounded-full border border-[#059669] bg-white"
+                    className="flex h-11 w-11 items-center text-[#145EEE] justify-center rounded-full border border-[#145EEE] bg-white"
                   >
                     <Icon size={18} />
                   </div>
                   <span
-                    className="max-w-23 text-center text-[#059669] text-xs font-semibold leading-tight"
+                    className="max-w-23 text-center text-[#145EEE] text-xs font-semibold leading-tight"
                   >
                     {n.label}
                   </span>

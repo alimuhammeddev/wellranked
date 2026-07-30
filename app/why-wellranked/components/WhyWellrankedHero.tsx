@@ -64,14 +64,14 @@ export default function WhyWellrankedHero() {
       <div className="relative mx-auto grid max-w-7xl items-start gap-12 px-5 pb-24 pt-40 lg:grid-cols-2 lg:gap-20 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             <BriefcaseBusiness size={16} />
             Why Wellranked
           </span>
 
           <h1 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Because Small Businesses Need{" "}
-            <span className="text-[#059669]">More Than Another Agency.</span>
+            <span className="text-[#145EEE]">More Than Another Agency.</span>
           </h1>
 
           <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
@@ -84,7 +84,7 @@ export default function WhyWellrankedHero() {
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/growth-audit"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#059669] px-8 py-4 font-semibold text-white"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#145EEE] px-8 py-4 font-semibold text-white"
             >
               Book Your Free Growth Audit
               <ArrowRight size={18} />
@@ -92,7 +92,7 @@ export default function WhyWellrankedHero() {
 
             <Link
               href="#why-grid"
-              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669]"
+              className="rounded-full border border-[#145EEE] bg-white px-8 py-4 text-center font-semibold text-[#145EEE]"
             >
               Why Choose Us
             </Link>
@@ -105,7 +105,7 @@ export default function WhyWellrankedHero() {
               "Everything working towards business growth",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <BadgeCheck className="text-[#059669]" size={22} />
+                <BadgeCheck className="text-[#145EEE]" size={22} />
                 <span className="text-gray-700">{item}</span>
               </div>
             ))}
@@ -113,7 +113,7 @@ export default function WhyWellrankedHero() {
         </div>
 
         {/* Right — auto-cycling "one team" showcase panel */}
-        <div className="relative overflow-hidden rounded-3xl bg-[#059669] p-6 md:p-8">
+        <div className="relative overflow-hidden rounded-3xl bg-[#145EEE] p-6 md:p-8">
           <style>{`
             @keyframes why-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
             @keyframes why-fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -163,14 +163,14 @@ export default function WhyWellrankedHero() {
                     className={
                       isActive
                         ? "text-white"
-                        : "text-green-200 transition-colors duration-300 group-hover:text-white"
+                        : "text-blue-200 transition-colors duration-300 group-hover:text-white"
                     }
                   />
                   <span
                     className={`text-[11px] font-semibold leading-tight ${
                       isActive
                         ? "text-white"
-                        : "text-green-200 transition-colors duration-300 group-hover:text-white"
+                        : "text-blue-200 transition-colors duration-300 group-hover:text-white"
                     }`}
                   >
                     {item.title}

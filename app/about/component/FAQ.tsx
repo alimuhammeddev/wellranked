@@ -77,14 +77,14 @@ export default function FAQSection() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             <MessageCircleQuestion size={16} />
             Frequently Asked Questions
           </span>
 
           <h2 className="mt-3 text-2xl font-bold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Everything You Need{" "}
-            <span className="text-[#059669]">Before You Get Started</span>
+            <span className="text-[#145EEE]">Before You Get Started</span>
           </h2>
 
           <p className="mt-2 md:text-lg leading-8 text-slate-600">
@@ -95,7 +95,7 @@ export default function FAQSection() {
 
           {/* CTA */}
 
-          <div className="relative mt-5 overflow-hidden rounded-3xl bg-[#059669] md:p-8 p-5 text-white">
+          <div className="relative mt-5 overflow-hidden rounded-3xl bg-[#145EEE] md:p-8 p-5 text-white">
             <div className="relative">
               <h3 className="md:text-2xl text-xl font-bold">
                 Still Have Questions?
@@ -108,7 +108,7 @@ export default function FAQSection() {
 
               <Link
                 href="/contact"
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-[#059669]"
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-[#145EEE]"
               >
                 Contact Our Team
                 <ArrowRight size={18} />
@@ -126,8 +126,8 @@ export default function FAQSection() {
             return (
               <div
                 key={faq.question}
-                className={`group relative overflow-hidden rounded-3xl border bg-white/90 border-green-200
-                ${isOpen ? "border-green-300" : "border-green-200"}`}
+                className={`group relative overflow-hidden rounded-3xl border bg-white/90 border-blue-200
+                ${isOpen ? "border-blue-300" : "border-blue-200"}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -138,14 +138,14 @@ export default function FAQSection() {
                     <div
                       className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
                         isOpen
-                          ? "bg-[#059669] text-white"
-                          : "bg-green-50 text-[#059669]"
+                          ? "bg-[#145EEE] text-white"
+                          : "bg-blue-50 text-[#145EEE]"
                       }`}
                     >
                       {String(index + 1).padStart(2, "0")}
                     </div>
 
-                    <h3 className="md:text-lg font-semibold tracking-tight text-[#059669]">
+                    <h3 className="md:text-lg font-semibold tracking-tight text-[#145EEE]">
                       {faq.question}
                     </h3>
                   </div>
@@ -155,8 +155,8 @@ export default function FAQSection() {
                   <div
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                       isOpen
-                        ? "rotate-180 bg-[#059669] text-white"
-                        : "bg-green-50 text-[#059669]"
+                        ? "rotate-180 bg-[#145EEE] text-white"
+                        : "bg-blue-50 text-[#145EEE]"
                     }`}
                   >
                     <ChevronDown size={18} />

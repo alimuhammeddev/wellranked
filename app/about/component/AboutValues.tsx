@@ -71,7 +71,7 @@ export default function AboutValues() {
             ease: "easeOut",
           }}
         >
-          <span className="rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             What We Believe
           </span>
 
@@ -87,11 +87,11 @@ export default function AboutValues() {
         </motion.div>
 
         {/* Beliefs */}
-        <div className="mt-12 border-b border-green-200">
+        <div className="mt-12 border-b border-blue-200">
           {beliefs.map(( { title, description, icon: Icon }, i) => (
             <motion.div
               key={title}
-              className="group grid gap-4 border-t border-green-200 py-8 transition-all duration-300 sm:grid-cols-[3.5rem_2.75rem_1fr] sm:items-start sm:gap-8"
+              className="group grid gap-4 border-t border-blue-200 py-8 transition-all duration-300 sm:grid-cols-[3.5rem_2.75rem_1fr] sm:items-start sm:gap-8"
               initial={{
                 opacity: 0,
                 y: 40,
@@ -112,16 +112,16 @@ export default function AboutValues() {
                 ease: "easeOut",
               }}
             >
-              <span className="font-serif text-2xl font-medium text-[#059669] lg:text-4xl md:text-3xl">
+              <span className="font-serif text-2xl font-medium text-[#145EEE] lg:text-4xl md:text-3xl">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
-              <div className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-green-50 text-[#059669]">
+              <div className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-blue-50 text-[#145EEE]">
                 <Icon size={20} />
               </div>
 
               <div>
-                <h1 className="text-lg font-bold text-[#059669] md:text-xl">
+                <h1 className="text-lg font-bold text-[#145EEE] md:text-xl">
                   {title}
                 </h1>
 
@@ -135,7 +135,7 @@ export default function AboutValues() {
 
         {/* Bottom CTA */}
         <motion.div
-          className="relative mt-16 overflow-hidden rounded-4xl border border-green-100 bg-green-50 p-6 text-center md:p-14"
+          className="relative mt-16 overflow-hidden rounded-4xl border border-blue-100 bg-blue-50 p-6 text-center md:p-14"
           initial={{
             opacity: 0,
             y: 40,
@@ -158,7 +158,7 @@ export default function AboutValues() {
         >
 
           <div className="relative">
-            <h1 className="text-xl font-bold text-[#059669] sm:text-2xl">
+            <h1 className="text-xl font-bold text-[#145EEE] sm:text-2xl">
               Our Goal Is Simple
             </h1>
 
@@ -171,7 +171,7 @@ export default function AboutValues() {
 
             <Link
               href="/growth-audit"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#059669] px-7 py-3.5 font-semibold text-white"
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#145EEE] px-7 py-3.5 font-semibold text-white"
             >
               Book Your Free Growth Audit
               <ArrowRight size={18} />

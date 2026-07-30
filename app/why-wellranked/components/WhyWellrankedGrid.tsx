@@ -73,7 +73,7 @@ export default function WhyWellrankedGrid() {
             ease: "easeOut",
           }}
         >
-          <span className="rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Why Businesses Choose Wellranked
           </span>
 
@@ -92,7 +92,7 @@ export default function WhyWellrankedGrid() {
         {featured && (
           <div className="mt-10">
             <motion.div
-              className="group relative overflow-hidden rounded-3xl bg-[#059669] md:p-10 p-5"
+              className="group relative overflow-hidden rounded-3xl bg-[#145EEE] md:p-10 p-5"
               initial={{
                 opacity: 0,
                 y: 40,
@@ -130,10 +130,10 @@ export default function WhyWellrankedGrid() {
 
               <div className="relative flex flex-col gap-6 md:grid md:grid-cols-[auto,1fr] md:items-center md:gap-10">
                 <div className="flex items-start justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-100 text-[#059669] backdrop-blur-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#145EEE] backdrop-blur-sm">
                     <featured.icon size={24} />
                   </span>
-                  <span className="text-xs font-bold tracking-widest text-green-200">
+                  <span className="text-xs font-bold tracking-widest text-blue-200">
                     01
                   </span>
                 </div>
@@ -156,7 +156,7 @@ export default function WhyWellrankedGrid() {
           {others.map(({ title, description, icon: Icon, }, i) => (
             <motion.div
               key={title}
-              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#059669] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-green-200 md:p-8"
+              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#145EEE] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 md:p-8"
               initial={{
                 opacity: 0,
                 y: 40,
@@ -184,10 +184,10 @@ export default function WhyWellrankedGrid() {
               />
 
               <div className="relative flex items-start justify-between">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-100 text-[#059669]">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#145EEE]">
                   <Icon size={22} />
                 </span>
-                <span className="text-xs font-bold tracking-widest text-green-200">
+                <span className="text-xs font-bold tracking-widest text-blue-200">
                   0{i + 2}
                 </span>
               </div>
