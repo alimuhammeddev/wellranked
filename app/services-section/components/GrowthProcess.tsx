@@ -61,13 +61,13 @@ export default function GrowthProcess() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Our Process
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             A Clear Process That{" "}
-            <span className="text-[#059669]">Delivers Real Results.</span>
+            <span className="text-[#145EEE]">Delivers Real Results.</span>
           </h2>
 
           <p className="mt-3 md:text-lg leading-8 text-gray-600">
@@ -85,7 +85,7 @@ export default function GrowthProcess() {
             return (
               <motion.div
                 key={step.number}
-                className="group relative rounded-3xl border border-green-200 bg-white md:p-8 p-5 transition-all duration-300"
+                className="group relative rounded-3xl border border-blue-200 bg-white md:p-8 p-5 transition-all duration-300"
                 initial={{
                   opacity: 0,
                   y: 40,
@@ -107,19 +107,19 @@ export default function GrowthProcess() {
                 }}
               >
                 {/* Number */}
-                <span className="absolute right-6 top-6 text-5xl font-extrabold text-green-100 transition">
+                <span className="absolute right-6 top-6 text-5xl font-extrabold text-blue-100 transition">
                   {step.number}
                 </span>
 
                 {/* Icon */}
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#059669]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#145EEE]">
                   <Icon
                     size={24}
                     className="text-white transition"
                   />
                 </div>
 
-                <h3 className="mt-6 text-xl font-bold text-[#059669]">
+                <h3 className="mt-6 text-xl font-bold text-[#145EEE]">
                   {step.title}
                 </h3>
 

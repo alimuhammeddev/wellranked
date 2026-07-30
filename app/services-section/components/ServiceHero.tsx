@@ -51,7 +51,7 @@ export default function ServicesHero() {
         {/* Left */}
         <div>
           <span
-            className="inline-flex items-center gap-2 rounded-full border border-[#059669] text-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold"
+            className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold"
           >
             <Globe2 size={16} />
             Digital Growth Services
@@ -60,7 +60,7 @@ export default function ServicesHero() {
           <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Everything Your Business Needs{" "}
             <span
-              className="text-[#059669]"
+              className="text-[#145EEE]"
             >
               To Grow Online.
             </span>
@@ -75,7 +75,7 @@ export default function ServicesHero() {
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
             <div
-              className="rounded-full bg-[#059669]"
+              className="rounded-full bg-[#145EEE]"
             >
               <Link
                 href="/growth-audit"
@@ -88,7 +88,7 @@ export default function ServicesHero() {
 
             <Link
               href="#services"
-              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669] transition hover:border-[#059669] hover:text-[#059669]"
+              className="rounded-full border border-[#145EEE] bg-white px-8 py-4 text-center font-semibold text-[#145EEE] transition"
             >
               See What We Can Improve
             </Link>
@@ -102,7 +102,7 @@ export default function ServicesHero() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <div
-                  className="text-[#059669]"
+                  className="text-[#145EEE]"
                 >
                   <BadgeCheck size={22} />
                 </div>
@@ -141,14 +141,14 @@ export default function ServicesHero() {
               ease: "easeOut",
             }}
           >
-            <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-[#059669] bg-white/90 px-7 py-5 text-center">
+            <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-[#145EEE] bg-white/90 px-7 py-5 text-center">
               <span
-                className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl text-white bg-[#059669]"
+                className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl text-white bg-[#145EEE]"
               >
                 <Sparkles size={20} />
               </span>
               <h1
-                className="font-extrabold md:text-lg text-[#059669]"
+                className="font-extrabold md:text-lg text-[#145EEE]"
               >
                 Services We Offer
               </h1>
@@ -183,35 +183,35 @@ export default function ServicesHero() {
             }}
           >
             <span
-              className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
+              className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
             />
             <span
-              className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed border-[#059669]"
+              className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed border-[#145EEE]"
             />
             <span
-              className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
+              className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
             />
             <span
-              className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
+              className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
             />
           </motion.div>
 
           {/* Service cards */}
           <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
             <span
-              className="absolute left-1/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
+              className="absolute left-1/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
             />
             <span
-              className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-[#059669]"
+              className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
             />
 
             {services.map(({ title, icon: Icon }, index) => (
               <div
                 key={title}
-                className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border bg-white/95 p-3 text-center sm:p-4 text-[#059669]"
+                className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border bg-white/95 p-3 text-center sm:p-4 text-[#145EEE]"
               >
                 <span
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-50 text-[#059669]"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#145EEE]"
                 >
                   <Icon size={17} />
                 </span>
