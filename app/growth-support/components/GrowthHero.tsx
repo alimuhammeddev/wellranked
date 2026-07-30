@@ -61,13 +61,13 @@ export default function GrowthSupportHero() {
         {/* LEFT */}
 
         <div>
-          <span className="inline-flex items-center rounded-full border border-[#059669] bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Growth Support Package
           </span>
 
           <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Keep up with customer enquiries{" "}
-            <span className="text-[#059669]">
+            <span className="text-[#145EEE]">
               without hiring another full-time employee.
             </span>
           </h1>
@@ -79,7 +79,7 @@ export default function GrowthSupportHero() {
           </p>
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <div className="rounded-full bg-[#059669]">
+            <div className="rounded-full bg-[#145EEE]">
               <Link
                 href="/contact"
                 className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
@@ -91,7 +91,7 @@ export default function GrowthSupportHero() {
 
             <Link
               href="#pricing"
-              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669] transition hover:border-[#059669] hover:text-[#059669]"
+              className="rounded-full border border-[#145EEE] bg-white px-8 py-4 text-center font-semibold text-[#145EEE] transition"
             >
               View Support Packages
             </Link>
@@ -104,7 +104,7 @@ export default function GrowthSupportHero() {
               "Daily business summaries",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <div className="text-[#059669]">
+                <div className="text-[#145EEE]">
                   <BadgeCheck size={22} />
                 </div>
 
@@ -116,7 +116,7 @@ export default function GrowthSupportHero() {
         {/* RIGHT */}
         <div className="relative flex items-center justify-center md:min-h-140 min-h-100 overflow-hidden rounded-[40px]">
           {/* Background circle */}
-          <div className="absolute z-10 h-60 w-60 rounded-full bg-[#059669]" />
+          <div className="absolute z-10 h-60 w-60 rounded-full bg-[#145EEE]" />
 
           {/* Center Card */}
           <motion.div
@@ -142,14 +142,14 @@ export default function GrowthSupportHero() {
             }}
           >
             {/* Back Card */}
-            <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-green-200 bg-white shadow-sm" />
+            <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-blue-200 bg-white shadow-sm" />
 
             {/* Middle Card */}
-            <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-green-200 bg-white shadow-sm" />
+            <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-blue-200 bg-white shadow-sm" />
 
             {/* Front Card */}
-            <div className="relative flex h-40 w-35 flex-col items-center justify-center rounded-2xl border border-green-200 bg-white shadow-xl">
-              <span className="rounded-full border border-[#059669] bg-green-100 px-3 py-1 text-[9px] font-bold uppercase tracking-wide text-[#059669]">
+            <div className="relative flex h-40 w-35 flex-col items-center justify-center rounded-2xl border border-blue-200 bg-white shadow-xl">
+              <span className="rounded-full border border-[#145EEE] bg-blue-100 px-3 py-1 text-[9px] font-bold uppercase tracking-wide text-[#145EEE]">
                 START
               </span>
 
@@ -157,7 +157,7 @@ export default function GrowthSupportHero() {
                 Growth Support
               </span>
 
-              <span className="mt-2 text-xl font-extrabold text-[#059669]">
+              <span className="mt-2 text-xl font-extrabold text-[#145EEE]">
                 £295
               </span>
 
@@ -169,7 +169,7 @@ export default function GrowthSupportHero() {
           {orbitItems.map((item, index) => (
             <motion.div
               key={item.text}
-              className="absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-[#059669] bg-white"
+              className="absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-[#145EEE] bg-white"
               style={{
                 left: `${item.x}%`,
                 top: `${item.y}%`,
@@ -194,11 +194,11 @@ export default function GrowthSupportHero() {
                 ease: "easeOut",
               }}
             >
-              <div className="rounded-full bg-green-50 p-2 text-[#059669]">
+              <div className="rounded-full bg-blue-50 p-2 text-[#145EEE]">
                 {item.icon}
               </div>
 
-              <span className="mt-1 text-[9px] font-semibold text-[#059669]">
+              <span className="mt-1 text-[9px] font-semibold text-[#145EEE]">
                 {item.text}
               </span>
             </motion.div>
@@ -206,7 +206,7 @@ export default function GrowthSupportHero() {
 
           {/* Floating Glow */}
           <motion.div
-            className="absolute bottom-20 left-12 h-24 w-24 rounded-full bg-green-200/40 blur-3xl"
+            className="absolute bottom-20 left-12 h-24 w-24 rounded-full bg-blue-200/40 blur-3xl"
             animate={{
               y: [0, -12, 0],
             }}
@@ -218,7 +218,7 @@ export default function GrowthSupportHero() {
           />
 
           <motion.div
-            className="absolute right-10 top-16 h-20 w-20 rounded-full bg-emerald-300/30 blur-3xl"
+            className="absolute right-10 top-16 h-20 w-20 rounded-full bg-blue-300/30 blur-3xl"
             animate={{
               y: [0, 10, 0],
             }}

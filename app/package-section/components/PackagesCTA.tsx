@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function PackagesCTA() {
   return (
-    <section className="relative overflow-hidden bg-[#059669]/95 py-24">
+    <section className="relative overflow-hidden bg-[#145EEE]/95 py-24">
       {/* Wellranked Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/10 whitespace-nowrap">
@@ -55,7 +55,7 @@ export default function PackagesCTA() {
         <div className="mt-5 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/growth-audit"
-            className="flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#059669]"
+            className="flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#145EEE]"
           >
             Book Your Free Growth Audit
             <ArrowRight size={18} />
@@ -70,18 +70,18 @@ export default function PackagesCTA() {
         </div>
 
         <div className="mt-6 flex flex-col items-center justify-center gap-4 text-sm text-blue-100 md:flex-row md:gap-8">
-          <div className="flex items-center gap-2">
-            <BadgeCheck size={18} className="text-blue-100" />
+          <div className="flex items-center gap-2 text-white">
+            <BadgeCheck size={18} className="text-white" />
             No pressure or obligation
           </div>
-
-          <div className="flex items-center gap-2">
-            <BadgeCheck size={18} className="text-blue-100" />
+ 
+          <div className="flex items-center gap-2 text-white">
+            <BadgeCheck size={18} className="text-white" />
             Clear, practical advice
           </div>
 
-          <div className="flex items-center gap-2">
-            <BadgeCheck size={18} className="text-blue-100" />
+          <div className="flex items-center gap-2 text-white">
+            <BadgeCheck size={18} className="text-white" />
             Tailored to your business
           </div>
         </div>

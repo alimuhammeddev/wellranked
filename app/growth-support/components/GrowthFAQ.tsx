@@ -75,13 +75,13 @@ export default function GrowthFAQ() {
           }}
           viewport={{ once: true }}
         >
-          <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Frequently Asked Questions
           </span>
 
           <h2 className="mt-3 text-2xl font-bold text-[#102A56] md:text-3xl lg:text-4xl">
             Everything you need to know
-            <span className="block text-[#059669]">about Growth Support.</span>
+            <span className="block text-[#145EEE]">about Growth Support.</span>
           </h2>
 
           <p className="mt-4 text-gray-600 md:text-lg leading-8">
@@ -109,7 +109,7 @@ export default function GrowthFAQ() {
                 duration: 0.5,
                 delay: index * 0.08,
               }}
-              className="overflow-hidden rounded-3xl border border-green-100 bg-white"
+              className="overflow-hidden rounded-3xl border border-blue-100 bg-white"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -121,7 +121,7 @@ export default function GrowthFAQ() {
 
                 <ChevronDown
                   className={`transition duration-300 ${
-                    openIndex === index ? "rotate-180 text-[#059669]" : ""
+                    openIndex === index ? "rotate-180 text-[#145EEE]" : ""
                   }`}
                 />
               </button>

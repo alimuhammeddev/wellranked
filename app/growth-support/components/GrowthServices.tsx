@@ -8,8 +8,6 @@ import {
   FileText,
   Camera,
 } from "lucide-react";
-
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 const services = [
@@ -76,13 +74,13 @@ export default function GrowthServices() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             What We Can Handle
           </span>
 
           <h2 className="mt-3 text-2xl font-bold text-[#102A56] md:text-3xl lg:text-4xl">
             Every customer interaction,
-            <span className="block text-[#059669]">
+            <span className="block text-[#145EEE]">
               handled professionally.
             </span>
           </h2>
@@ -120,9 +118,9 @@ export default function GrowthServices() {
                   delay: index * 0.12,
                   ease: "easeOut",
                 }}
-                className="group rounded-3xl border border-green-100 bg-white md:p-8 p-5 transition-all duration-300 hover:border-[#059669]"
+                className="group rounded-3xl border border-blue-100 bg-white md:p-8 p-5 transition-all duration-300 hover:border-[#145EEE]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-50 text-[#059669]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#145EEE]">
                   <Icon size={24} />
                 </div>
 

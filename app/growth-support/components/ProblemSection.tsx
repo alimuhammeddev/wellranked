@@ -43,14 +43,14 @@ export default function ProblemsSection() {
     <section className="bg-[#f5f5f5] md:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Common Challenges
           </span>
 
           <h2 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Your business is growing.
             <br />
-            <span className="text-[#059669]">
+            <span className="text-[#145EEE]">
               Your inbox is becoming the bottleneck.
             </span>
           </h2>
@@ -85,9 +85,9 @@ export default function ProblemsSection() {
                   duration: 0.6,
                   delay: index * 0.15,
                 }}
-                className="group rounded-3xl border border-gray-200 bg-white md:p-8 p-5 transition-all duration-300 hover:border-[#059669]"
+                className="group rounded-3xl border border-gray-200 bg-white md:p-8 p-5 transition-all duration-300 hover:border-[#145EEE]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-50 text-[#059669]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#145EEE]">
                   <Icon size={24} />
                 </div>
 
