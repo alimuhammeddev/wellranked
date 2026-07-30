@@ -8,7 +8,7 @@ export default function FinalCTA() {
   return (
     <section className="relative overflow-hidden py-28">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#059669]/95" />
+      <div className="absolute inset-0 bg-[#145EEE]/95" />
 
       {/* Wellranked Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -40,7 +40,7 @@ export default function FinalCTA() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center rounded-full border border-green-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white">
+          <span className="inline-flex items-center rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white">
             Free Growth Audit
           </span>
 
@@ -58,7 +58,7 @@ export default function FinalCTA() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/growth-audit"
-              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#059669]"
+              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#145EEE]"
             >
               Book Your Free Growth Audit
               <ArrowRight
@@ -79,7 +79,7 @@ export default function FinalCTA() {
         {/* Right */}
 
         <motion.div
-          className="rounded-3xl border border-white/10 bg-[#059669] md:p-8 p-5 backdrop-blur-xl"
+          className="rounded-3xl border border-white/10 bg-[#145EEE] md:p-8 p-5 backdrop-blur-xl"
           initial={{
             opacity: 0,
             y: 40,
@@ -101,7 +101,7 @@ export default function FinalCTA() {
           }}
         >
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#059669]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#145EEE]">
               <CalendarDays size={24} />
             </div>
 

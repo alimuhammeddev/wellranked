@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "./assets/logo.svg";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -36,24 +38,14 @@ export default function Navbar() {
     >
       {/* Navbar Background */}
       <div
-        className={`bg-[#F5F5F5] backdrop-blur-3xl border border-green-200 shadow-[0_8px_30px_rgba(16,42,86,0.08)] transition-all duration-700 ease-in-out ${
+        className={`bg-[#F5F5F5] backdrop-blur-3xl border border-blue-200 shadow-[0_8px_30px_rgba(16,42,86,0.08)] transition-all duration-700 ease-in-out ${
           scrolled ? "rounded-none" : "mx-4 rounded-full"
         }`}
       >
         {/* Navbar Content */}
         <div className="mx-auto flex h-20 max-w-337.5 items-center justify-between md:px-5 px-5">
-          <Link href="/" className="group flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#059669] text-white font-bold">
-              W
-            </div>
-
-            <div>
-              <h1 className="text-[#059669] font-bold">Wellranked</h1>
-
-              <p className="text-gray-500 text-sm">
-                Visibility • Growth • Authority
-              </p>
-            </div>
+          <Link href="/" >
+            <Image src={logo} alt="Logo" width={100}/>
           </Link>
 
           {/* Desktop Nav */}
@@ -62,10 +54,10 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="group relative text-[15px] font-medium text-[#102A56] transition-colors duration-300 hover:text-[#059669]"
+                className="group relative text-[15px] font-medium text-[#102A56] transition-colors duration-300 hover:text-[#145EEE]"
               >
                 {link.name}
-                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#059669] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#145EEE] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </nav>
@@ -73,7 +65,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="/growth-audit"
-            className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-[#059669] px-7 py-3 lg:flex"
+            className="group relative hidden items-center justify-center overflow-hidden rounded-full bg-[#145EEE] px-7 py-3 lg:flex"
           >
             <span className="relative z-10 flex items-center gap-2 font-semibold text-white">
               Book Free Growth Audit
@@ -88,7 +80,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             aria-label="mobile menu"
-            className="rounded-full p-2 text-[#102A56] transition hover:bg-green-50 lg:hidden"
+            className="rounded-full p-2 text-[#102A56] transition hover:bg-blue-50 lg:hidden"
           >
             {open ? <X size={28} /> : <Menu size={28} aria-hidden="true" />}
           </button>
@@ -102,7 +94,7 @@ export default function Navbar() {
         }`}
       >
         <div
-          className={`bg-[#f5f5f5] backdrop-blur-3xl border border-green-50 shadow-[0_8px_30px_rgba(16,42,86,0.08)] p-6 transition-all duration-700 ${
+          className={`bg-[#f5f5f5] backdrop-blur-3xl border border-blue-50 shadow-[0_8px_30px_rgba(16,42,86,0.08)] p-6 transition-all duration-700 ${
             scrolled ? "rounded-none" : "mx-4 mt-4 rounded-3xl"
           }`}
         >
@@ -113,7 +105,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-lg font-medium text-[#102A56] transition-all duration-300 hover:translate-x-2 hover:text-[#059669]"
+                  className="text-lg font-medium text-[#102A56] transition-all duration-300 hover:translate-x-2 hover:text-[#145EEE]"
                 >
                   {link.name}
                 </Link>
@@ -122,7 +114,7 @@ export default function Navbar() {
               <Link
                 href="/growth-audit"
                 onClick={() => setOpen(false)}
-                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-[#059669] py-3 font-bold text-white"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-[#145EEE] py-3 font-bold text-white"
               >
                 Book Free Growth Audit
                 <ArrowRight size={18} />

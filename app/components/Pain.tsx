@@ -51,18 +51,16 @@ function PainCard({ icon: Icon, title, description, index }: PainCardProps) {
 
   return (
     <motion.div
-      className="group relative rounded-2xl border border-slate-200 bg-white py-6 pl-6 pr-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-200/70"
-      style={{ borderLeft: `4px solid ${accent.color}` }}
+      className="group relative rounded-2xl border border-blue-200 bg-white py-6 pl-6 pr-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-200/70 border-l-4"
       initial={{ opacity: 0, y: 30, scale: 0.96 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.5, delay: index * 0.12, ease: "easeOut" }}
     >
       <div
-        className="flex h-11 w-11 items-center justify-center rounded-xl text-white"
-        style={{ backgroundColor: accent.color }}
+        className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100"
       >
-        <Icon size={20} />
+        <Icon size={20} className="text-[#145EEE]"/>
       </div>
 
       <h1 className="mt-4 text-base font-semibold leading-snug text-[#102A56]">
@@ -70,7 +68,7 @@ function PainCard({ icon: Icon, title, description, index }: PainCardProps) {
       </h1>
 
       <span
-        className={`mt-3 inline-flex items-center rounded-full ${accent.tint} px-3 py-1 text-sm font-medium ${accent.tintText}`}
+        className={`mt-3 inline-flex items-center rounded-full text-[#145EEE] px-3 py-1 text-sm font-medium bg-blue-100`}
       >
         {description}
       </span>
@@ -89,21 +87,21 @@ function GrowthCard({ icon: Icon, title, description, index }: PainCardProps) {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#059669]/25 blur-3xl"
+        className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#145EEE]/25 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-6 -bottom-10 h-32 w-32 rounded-full bg-[#244EB3]/20 blur-3xl"
+        className="pointer-events-none absolute -left-6 -bottom-10 h-32 w-32 rounded-full bg-[#145EEE]/20 blur-3xl"
       />
 
       <div className="relative flex items-center gap-5">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#059669] text-white">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#145EEE] text-white">
           <Icon size={22} />
         </div>
 
         <div>
           <h1 className="text-lg font-semibold text-white">{title}</h1>
-          <p className="mt-1 text-emerald-200">{description}</p>
+          <p className="mt-1 text-blue-200">{description}</p>
         </div>
       </div>
     </motion.div>
@@ -137,13 +135,13 @@ export default function PainSection() {
               ease: "easeOut",
             }}
           >
-            <span className="inline-flex items-center rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+            <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
               The Challenge
             </span>
 
             <h1 className="mt-6 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
               Running a business is already hard enough.{" "}
-              <span className="text-[#059669]">
+              <span className="text-[#145EEE]">
                 Marketing shouldn't be another full time job.
               </span>
             </h1>
@@ -156,7 +154,7 @@ export default function PainSection() {
 
             <p className="mt-2 md:text-lg leading-8 text-gray-600">
               That's too much.
-              <span className="font-semibold text-[#059669]">
+              <span className="font-semibold text-[#145EEE]">
                 {" "}
                 Wellranked exists to take marketing off your plate,
               </span>{" "}

@@ -56,7 +56,7 @@ function MarqueeStrip() {
             <span className="mx-6 text-sm font-semibold uppercase tracking-wide text-[#102A56]">
               {item}
             </span>
-            <span className="text-[#059669]">●</span>
+            <span className="text-[#145EEE]">●</span>
           </div>
         ))}
       </motion.div>
@@ -87,17 +87,17 @@ export default function Hero() {
           {/* LEFT CONTENT */}
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#059669] bg-white px-4 py-2 mb-8">
-              <span className="w-2 h-2 rounded-full border border-[#059669] bg-[#059669]" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] bg-white px-4 py-2 mb-8">
+              <span className="w-2 h-2 rounded-full border border-[#145EEE] bg-[#145EEE]" />
 
-              <span className="text-sm font-medium text-[#059669]">
+              <span className="text-sm font-medium text-[#145EEE]">
                 Helping UK Small Businesses Grow Online
               </span>
             </div>
 
             <h1 className="text-2xl lg:text-4xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1F3064]">
               Your Outsourced{" "}
-              <span className="text-[#059669]">Marketing Department</span>
+              <span className="text-[#145EEE]">Marketing Department</span>
               {""} for Less Than the Cost of <span>One Employee.</span>
             </h1>
 
@@ -111,7 +111,7 @@ export default function Hero() {
             {/* Buttons */}
 
             <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-              <div className="rounded-full bg-[#059669]">
+              <div className="rounded-full bg-[#145EEE]">
                 <Link
                   href="/growth-audit"
                   className="flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white rounded-full"
@@ -123,7 +123,7 @@ export default function Hero() {
 
               <Link
                 href="/package-section"
-                className="rounded-full border bg-white px-8 py-4 text-center font-semibold transition border-[#059669] text-[#059669]"
+                className="rounded-full border bg-white px-8 py-4 text-center font-semibold transition border-[#145EEE] text-[#145EEE]"
               >
                 View Packages
               </Link>
@@ -137,7 +137,7 @@ export default function Hero() {
 
           <div className="relative flex items-center justify-center py-16 md:mt-0 -mt-10">
             {/* Center Circle */}
-            <div className="relative z-20 flex h-60 w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full overflow-hidden bg-[#059669]">
+            <div className="relative z-20 flex h-60 w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full overflow-hidden bg-[#145EEE]">
               {/* Full background network */}
               <svg
                 className="absolute inset-0 w-full h-full opacity-25"
@@ -320,12 +320,12 @@ export default function Hero() {
                     ease: "easeOut",
                   }}
                 >
-                  <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white border border-[#059669]">
+                  <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white border border-[#145EEE]">
                     <div className="flex flex-col items-center">
-                      <div className="text-[#059669]">
+                      <div className="text-[#145EEE]">
                         <Icon size={24} />
                       </div>
-                      <span className="mt-1 text-[11px] font-semibold text-[#059669]">
+                      <span className="mt-1 text-[11px] font-semibold text-[#145EEE]">
                         {name}
                       </span>
                     </div>
@@ -387,10 +387,10 @@ export default function Hero() {
                 >
                   <div className="flex h-20 w-20 items-center justify-center">
                     <div className="flex flex-col items-center">
-                      <div className="text-[#059669]">
+                      <div className="text-[#145EEE]">
                         <Icon size={22} />
                       </div>
-                      <span className="mt-1 text-[10px] font-semibold text-[#059669]">
+                      <span className="mt-1 text-[10px] font-semibold text-[#145EEE]">
                         {name}
                       </span>
                     </div>

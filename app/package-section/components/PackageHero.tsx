@@ -54,12 +54,12 @@ export default function PackagesHero() {
       <div className="relative mx-auto grid max-w-7xl items-start gap-20 lg:px-0 md:px-5 px-5 pb-24 pt-40 lg:grid-cols-2">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center rounded-full bg-green-50 border border-[#059669] text-[#059669] px-4 py-2 text-sm font-semibold">
+          <span className="inline-flex items-center rounded-full bg-blue-50 border border-[#145EEE] text-[#145EEE] px-4 py-2 text-sm font-semibold">
             Packages & Pricing
           </span>
           <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
             Simple marketing packages{" "}
-            <span className="text-[#059669]">
+            <span className="text-[#145EEE]">
               built for busy business owners.
             </span>
           </h1>
@@ -71,7 +71,7 @@ export default function PackagesHero() {
           </p>
 
           <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <div className=" bg-[#059669] rounded-full">
+            <div className=" bg-[#145EEE] rounded-full">
               <Link
                 href="/growth-audit"
                 className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
@@ -83,7 +83,7 @@ export default function PackagesHero() {
 
             <Link
               href="#pricing"
-              className="rounded-full border border-[#059669] bg-white px-8 py-4 text-center font-semibold text-[#059669] transition hover:border-[#059669] hover:text-[#059669]"
+              className="rounded-full border border-[#145EEE] bg-white px-8 py-4 text-center font-semibold text-[#145EEE] transition"
             >
               Compare Packages
             </Link>
@@ -96,7 +96,7 @@ export default function PackagesHero() {
               "Clear monthly pricing",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <div className="text-[#059669]">
+                <div className="text-[#145EEE]">
                   <BadgeCheck size={22} />
                 </div>
 
@@ -108,7 +108,7 @@ export default function PackagesHero() {
 
         {/* Right */}
         <div className="relative flex items-center justify-center md:min-h-140 min-h-96 rounded-[40px] overflow-hidden">
-          <div className="absolute z-20 h-59 w-59 rounded-full bg-[#059669]" />
+          <div className="absolute z-20 h-59 w-59 rounded-full bg-[#145EEE]" />
           {/* Centerpiece: layered package cards */}
           <motion.div
             className="relative z-20 flex h-47.5 w-47.5 items-center justify-center"
@@ -132,16 +132,16 @@ export default function PackagesHero() {
               ease: "easeOut",
             }}
           >
-            <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-green-200 bg-white" />
-            <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-green-200 bg-white" />
-            <div className="relative flex h-39.5 w-34.5 flex-col items-center justify-center rounded-2xl border border-green-200 bg-white">
-              <span className="rounded-full border border-[#059669] bg-green-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#059669]">
+            <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-blue-200 bg-white" />
+            <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-blue-200 bg-white" />
+            <div className="relative flex h-39.5 w-34.5 flex-col items-center justify-center rounded-2xl border border-blue-200 bg-white">
+              <span className="rounded-full border border-[#145EEE] bg-blue-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#145EEE]">
                 Most Popular
               </span>
               <span className="mt-2 text-[11px] font-semibold text-[#102A56]">
                 Growth
               </span>
-              <span className="mt-1 text-xl font-extrabold text-[#059669]">
+              <span className="mt-1 text-xl font-extrabold text-[#145EEE]">
                 £695
               </span>
               <span className="text-[10px] text-gray-500">per month</span>
@@ -152,7 +152,7 @@ export default function PackagesHero() {
           {orbitItems.map((item, index) => (
             <motion.div
               key={item.text}
-              className="absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full md:border md:border-[#059669] bg-white"
+              className="absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full md:border md:border-[#145EEE] bg-white"
               style={{ left: `${item.x}%`, top: `${item.y}%` }}
               initial={{
                 opacity: 0,
@@ -174,8 +174,8 @@ export default function PackagesHero() {
                 ease: "easeOut",
               }}
             >
-              <div className="rounded-full p-2 text-[#059669] bg-green-50">{item.icon}</div>
-              <span className="mt-1 text-[9px] font-semibold text-[#059669]">
+              <div className="rounded-full p-2 text-[#145EEE] bg-blue-50">{item.icon}</div>
+              <span className="mt-1 text-[9px] font-semibold text-[#145EEE]">
                 {item.text}
               </span>
             </motion.div>

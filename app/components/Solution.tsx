@@ -91,7 +91,7 @@ export default function SolutionSection() {
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="relative z-20 bg-[#f5f5f5] text-center max-w-4xl mx-auto py-4"
           >
-            <span className="inline-flex mx-auto items-center rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+            <span className="inline-flex mx-auto items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
               One Team. One Monthly Fee.
             </span>
 
@@ -103,7 +103,7 @@ export default function SolutionSection() {
               Instead of hiring a website developer, SEO specialist, designer,
               social media manager, ads expert and marketing coordinator
               separately.{" "}
-              <span className="font-semibold text-[#059669]">
+              <span className="font-semibold text-[#145EEE]">
                 Wellranked gives you one joined-up team
               </span>{" "}
               working together to improve your online presence, generate more
@@ -121,7 +121,6 @@ export default function SolutionSection() {
             >
               <h1
                 style={{
-                  color: solutions[activeCard].color,
                   opacity: 0.4,
                   transition: "color 300ms ease",
                 }}
@@ -136,6 +135,7 @@ export default function SolutionSection() {
                 tracking-tight
                 select-none
                 mb-20
+                text-[#145EEE]
               "
               >
                 {solutions[activeCard].title}
@@ -143,7 +143,7 @@ export default function SolutionSection() {
             </div>
 
             <div className="space-y-10">
-              {solutions.map(({ title, image, color }, index) => (
+              {solutions.map(({ title, image, }, index) => (
                 <motion.div
                   key={title}
                   className={`relative z-10 flex ${
@@ -199,7 +199,7 @@ export default function SolutionSection() {
                     whileHover={{
                       y: -6,
                     }}
-                    className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 lg:h-112.5 flex flex-col bg-[#059669]"
+                    className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 lg:h-112.5 flex flex-col bg-[#145EEE]"
                   >
                     {/* Image block, clearly visible at the top of the card */}
                     <div className="relative w-full h-44 md:h-48 shrink-0 overflow-hidden">
@@ -213,9 +213,9 @@ export default function SolutionSection() {
 
                     {/* Small circles */}
 
-                    <div className="absolute top-32 -right-12 h-40 w-40 rounded-full border border-green-200" />
+                    <div className="absolute top-32 -right-12 h-40 w-40 rounded-full border border-blue-200" />
 
-                    <div className="absolute top-38 -right-6 h-24 w-24 rounded-full border border-green-200" />
+                    <div className="absolute top-38 -right-6 h-24 w-24 rounded-full border border-blue-200" />
 
                     <div className="relative z-10 md:p-8 p-5">
                       <h1 className="md:text-2xl text-xl font-bold text-white max-w-md leading-snug">

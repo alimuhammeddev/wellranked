@@ -100,13 +100,13 @@ export default function PricingCards() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Choose Your Plan
           </span>
 
           <h2 className="mt-3 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
             One monthly fee.
-            <span className="block text-[#059669]">
+            <span className="block text-[#145EEE]">
               Everything working together.
             </span>
           </h2>
@@ -125,7 +125,7 @@ export default function PricingCards() {
               <motion.div
                 key={plan.name}
                 className={`relative flex flex-col rounded-3xl border ${
-                  plan.featured ? "border-green-200" : "border-green-200"
+                  plan.featured ? "border-blue-200" : "border-blue-200"
                 }`}
                 initial={{
                   opacity: 0,
@@ -148,21 +148,21 @@ export default function PricingCards() {
                 }}
               >
                 {plan.featured && (
-                  <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[#059669] px-5 py-2 text-sm font-semibold text-white">
+                  <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[#145EEE] px-5 py-2 text-sm font-semibold text-white">
                     MOST POPULAR
                   </div>
                 )}
 
                 <div
                   className={`rounded-t-3xl md:p-8 p-5 ${
-                    plan.featured ? "bg-[#059669] text-white" : "bg-[#F8FAFF]"
+                    plan.featured ? "bg-[#145EEE] text-white" : "bg-[#F8FAFF]"
                   }`}
                 >
                   <div
                     className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
                       plan.featured
                         ? "bg-white/20"
-                        : "bg-green-100 text-[#059669]"
+                        : "bg-blue-100 text-[#145EEE]"
                     }`}
                   >
                     <Icon size={24} />
@@ -172,7 +172,7 @@ export default function PricingCards() {
 
                   <p
                     className={`mt-1 font-medium ${
-                      plan.featured ? "text-blue-100" : "text-[#059669]"
+                      plan.featured ? "text-blue-100" : "text-[#145EEE]"
                     }`}
                   >
                     {plan.tagline}
@@ -198,12 +198,12 @@ export default function PricingCards() {
                 <div className="flex flex-1 flex-col md:p-8 p-5">
                   <p className="leading-7 text-gray-600">{plan.description}</p>
 
-                  <div className="mt-6 rounded-xl bg-green-50 p-4">
-                    <p className="text-xs uppercase tracking-wide text-[#059669] font-semibold">
+                  <div className="mt-6 rounded-xl bg-blue-50 p-4">
+                    <p className="text-xs uppercase tracking-wide text-[#145EEE] font-semibold">
                       Best For
                     </p>
 
-                    <p className="mt-2 text-sm font-medium text-[#059669]">
+                    <p className="mt-2 text-sm font-medium text-[#145EEE]">
                       {plan.bestFor}
                     </p>
                   </div>
@@ -213,8 +213,8 @@ export default function PricingCards() {
                   <div className="space-y-4 flex-1">
                     {plan.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-3">
-                        <div className="mt-0.5 rounded-full bg-green-100 p-1">
-                          <Check size={12} className="text-[#059669]" />
+                        <div className="mt-0.5 rounded-full bg-blue-100 p-1">
+                          <Check size={12} className="text-[#145EEE]" />
                         </div>
 
                         <span className="text-gray-700">{feature}</span>
@@ -226,8 +226,8 @@ export default function PricingCards() {
                     href="/growth-audit"
                     className={`mt-10 flex items-center justify-center gap-2 rounded-full py-4 font-semibold transition ${
                       plan.featured
-                        ? "bg-[#059669] text-white"
-                        : "border border-[#059669] text-[#059669] hover:bg-green-50"
+                        ? "bg-[#145EEE] text-white"
+                        : "border border-[#145EEE] text-[#145EEE] hover:bg-blue-50"
                     }`}
                   >
                     Get Started

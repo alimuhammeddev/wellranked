@@ -81,13 +81,13 @@ export default function PackagesPreview() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-[#059669]">
+          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Pricing
           </span>
 
           <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
             Simple monthly packages.
-            <span className="block text-[#059669]">No hidden costs.</span>
+            <span className="block text-[#145EEE]">No hidden costs.</span>
           </h2>
 
           <p className="mt-2 md:text-lg leading-7 text-gray-600">
@@ -128,12 +128,12 @@ export default function PackagesPreview() {
                 key={pkg.name}
                 className={`relative flex flex-col rounded-3xl border bg-[#f5f5f5] ${
                   pkg.featured
-                    ? "border-green-200 lg:-mt-4 lg:mb-4"
-                    : "border-green-200"
+                    ? "border-blue-200 lg:-mt-4 lg:mb-4"
+                    : "border-blue-200"
                 }`}
               >
                 {pkg.featured && (
-                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#059669] px-5 py-2 text-sm font-semibold text-white">
+                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#145EEE] px-5 py-2 text-sm font-semibold text-white">
                     Most Popular
                   </div>
                 )}
@@ -142,14 +142,14 @@ export default function PackagesPreview() {
 
                 <div
                   className={`rounded-t-3xl md:p-8 p-5 ${
-                    pkg.featured ? "bg-[#059669] text-white" : "bg-white"
+                    pkg.featured ? "bg-[#145EEE] text-white" : "bg-white"
                   }`}
                 >
                   <div
                     className={`flex h-14 w-14 items-center justify-center rounded-2xl ${
                       pkg.featured
                         ? "bg-white/20"
-                        : "bg-green-100 text-[#059669]"
+                        : "bg-blue-100 text-[#145EEE]"
                     }`}
                   >
                     <Icon size={28} />
@@ -163,7 +163,7 @@ export default function PackagesPreview() {
                     <span
                       className={
                         pkg.featured
-                          ? "pb-2 text-green-100"
+                          ? "pb-2 text-blue-100"
                           : "pb-2 text-gray-500"
                       }
                     >
@@ -173,7 +173,7 @@ export default function PackagesPreview() {
 
                   <p
                     className={`mt-3 leading-7 ${
-                      pkg.featured ? "text-green-100" : "text-gray-600"
+                      pkg.featured ? "text-blue-100" : "text-gray-600"
                     }`}
                   >
                     {pkg.description}
@@ -186,8 +186,8 @@ export default function PackagesPreview() {
                   <div className="space-y-4">
                     {pkg.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-3">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100">
-                          <Check size={14} className="text-[#059669]" />
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">
+                          <Check size={14} className="text-[#145EEE]" />
                         </div>
 
                         <span className="text-gray-700">{feature}</span>
@@ -198,8 +198,8 @@ export default function PackagesPreview() {
                   <button
                     className={`mt-10 w-full rounded-full py-4 font-medium transition ${
                       pkg.featured
-                        ? "bg-[#059669] text-white"
-                        : "border border-[#059669] text-[#059669] hover:bg-green-50"
+                        ? "bg-[#145EEE] text-white"
+                        : "border border-[#145EEE] text-[#145EEE] hover:bg-blue-50"
                     }`}
                   >
                     Choose Package
