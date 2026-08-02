@@ -146,12 +146,6 @@ export default function PainSection() {
 
   return (
     <section className="relative overflow-hidden px-5 py-16 md:px-8 md:py-28 bg-white">
-      {/* Ambient glows */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-0 top-10 h-96 w-96 rounded-full bg-[#145EEE]/15 blur-[140px]" />
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[#6FE3C4]/10 blur-[130px]" />
-      </div>
-
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
         <motion.div
