@@ -1,149 +1,81 @@
 "use client";
 
-import { ArrowRight, BadgeCheck, CalendarDays } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const trustPoints = [
+  "Website Performance Review",
+  "Google Visibility Analysis",
+  "Simple Action Plan, No Obligation",
+];
+
 export default function FinalCTA() {
   return (
-    <section className="relative overflow-hidden py-28">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#145EEE]/95" />
+    <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+      {/* Grid Background */}
+      <div
+        className="absolute inset-0 opacity-60"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(15,23,42,0.06) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(15,23,42,0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: "40px 40px",
+        }}
+      />
 
-      {/* Wellranked Watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <h1 className="select-none text-[7rem] md:text-[18rem] lg:text-[17rem] font-black uppercase tracking-tight text-white/10 whitespace-nowrap">
-          Wellranked
-        </h1>
-      </div>
+      <motion.div
+        className="relative mx-auto md:max-w-7xl rounded-3xl md:px-14 py-14 text-center md:py-16"
+        initial={{ opacity: 0, y: 40, scale: 0.96 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <h2 className="text-2xl font-bold leading-tight text-[#145EEE] md:text-3xl lg:text-4xl">
+          Want to know what's stopping your business from getting more
+          enquiries?
+        </h2>
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:px-0 md:px-5 px-5 lg:grid-cols-2">
-        {/* Left */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
-        >
-          <span className="inline-flex items-center rounded-full border border-blue-400/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white">
-            Free Growth Audit
-          </span>
+        <p className="mx-auto mt-4 md:max-w-2xl text-base leading-7 text-[#145EEE] md:text-lg">
+          Book a free Wellranked Growth Audit and we'll show you the biggest
+          improvements you can make across your website, Google visibility,
+          reviews and lead generation.
+        </p>
 
-          <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-white">
-            Want to know what's stopping your business from getting
-            <span className="block text-white">more enquiries?</span>
-          </h2>
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Link
+            href="/growth-audit"
+            className="group flex items-center justify-center gap-2 rounded-full bg-[#145EEE] px-7 py-3.5 font-semibold text-white transition-transform hover:-translate-y-0.5"
+          >
+            Book Your Free Growth Audit
+            <ArrowRight
+              size={16}
+              className="transition group-hover:translate-x-1"
+            />
+          </Link>
 
-          <p className="mt-3 max-w-xl text-lg leading-8 text-white">
-            Book a free Wellranked Growth Audit and we'll show you the biggest
-            improvements you can make across your website, Google visibility,
-            reviews and lead generation.
-          </p>
+          <Link
+            href="/package-section"
+            className="rounded-full bg-white/15 border border-[#145EEE] px-7 py-3.5 font-semibold text-[#145EEE] backdrop-blur transition hover:bg-white/20"
+          >
+            View Packages
+          </Link>
+        </div>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/growth-audit"
-              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#145EEE]"
-            >
-              Book Your Free Growth Audit
-              <ArrowRight
-                size={18}
-                className="transition group-hover:translate-x-1"
-              />
-            </Link>
-
-            <Link
-              href="/package-section"
-              className="rounded-full border border-white/30 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10 text-center"
-            >
-              View Packages
-            </Link>
-          </div>
-        </motion.div>
-
-        {/* Right */}
-
-        <motion.div
-          className="rounded-3xl border border-white/10 bg-[#145EEE] md:p-8 p-5 backdrop-blur-xl"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
-        >
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#145EEE]">
-              <CalendarDays size={24} />
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          {trustPoints.map((point) => (
+            <div key={point} className="flex items-center gap-1.5">
+              <CheckCircle2 size={15} className="text-[#145EEE]" />
+              <span className="text-sm text-[#145EEE]">{point}</span>
             </div>
+          ))}
+        </div>
 
-            <div>
-              <h3 className="md:text-xl text-lg font-bold text-white">
-                Your Free Audit Includes
-              </h3>
-
-              <p className="text-white">
-                A practical review of your online presence.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 space-y-4">
-            {[
-              "Website performance review",
-              "Google visibility analysis",
-              "Google Business Profile audit",
-              "Review & reputation check",
-              "Lead generation opportunities",
-              "Simple action plan with no obligation",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-4">
-                <BadgeCheck className="text-white" size={22} />
-
-                <span className="text-white">{item}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 rounded-2xl bg-white/5 p-5 text-center">
-            <p className="text-sm uppercase tracking-wider text-white">
-              No pressure. No jargon.
-            </p>
-
-            <p className="mt-2 md:text-lg font-semibold text-white">
-              Just clear advice to help your business grow.
-            </p>
-          </div>
-        </motion.div>
-      </div>
+        <p className="mt-6 text-sm font-medium text-white/70">
+          No pressure. No jargon. Just clear advice to help your business grow.
+        </p>
+      </motion.div>
     </section>
   );
-}
+};
