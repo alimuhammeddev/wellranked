@@ -24,7 +24,7 @@ export default function Footer() {
           {/* Logo */}
 
           <Link href="/" className="flex items-center gap-3">
-            <Image src={logo} alt="logo" width={100}/>
+            <Image src={logo} alt="logo" width={200}/>
           </Link>
 
           {/* Navigation */}

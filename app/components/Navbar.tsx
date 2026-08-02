@@ -12,7 +12,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -38,14 +38,16 @@ export default function Navbar() {
     >
       {/* Navbar Background */}
       <div
-        className={`bg-[#F5F5F5] backdrop-blur-3xl border border-blue-200 shadow-[0_8px_30px_rgba(16,42,86,0.08)] transition-all duration-700 ease-in-out ${
-          scrolled ? "rounded-none" : "mx-4 rounded-full"
+        className={`transition-all duration-500 ease-in-out ${
+          scrolled
+            ? "bg-[#ffffff]/90 backdrop-blur-3xl border border-[#145EEE]/15 shadow-[0_8px_30px_rgba(16,42,86,0.08)] rounded-none"
+            : "bg-transparent border border-transparent shadow-none mx-4 rounded-full"
         }`}
       >
         {/* Navbar Content */}
         <div className="mx-auto flex h-20 max-w-337.5 items-center justify-between md:px-5 px-5">
-          <Link href="/" >
-            <Image src={logo} alt="Logo" width={100}/>
+          <Link href="/">
+            <Image src={logo} alt="Logo" width={200} />
           </Link>
 
           {/* Desktop Nav */}
@@ -94,7 +96,7 @@ export default function Navbar() {
         }`}
       >
         <div
-          className={`bg-[#f5f5f5] backdrop-blur-3xl border border-blue-50 shadow-[0_8px_30px_rgba(16,42,86,0.08)] p-6 transition-all duration-700 ${
+          className={`bg-[#ffffff] backdrop-blur-3xl border border-blue-50 shadow-[0_8px_30px_rgba(16,42,86,0.08)] p-6 transition-all duration-700 ${
             scrolled ? "rounded-none" : "mx-4 mt-4 rounded-3xl"
           }`}
         >

@@ -1,107 +1,64 @@
 "use client";
 
 import {
-  Globe,
-  Search,
   ArrowRight,
-  MessageCircle,
-  PenTool,
-  Bot,
-  TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const services = [
-  { name: "Website", Icon: Globe },
-  { name: "SEO", Icon: Search },
-  { name: "AI", Icon: Bot },
-  { name: "Google Ads", Icon: TrendingUp },
-  { name: "Social", Icon: MessageCircle },
-  { name: "Branding", Icon: PenTool },
-];
-
-const marqueeItems = [
-  "Website Design",
-  "SEO & Google Rankings",
-  "AI Automation",
-  "Google Ads",
-  "Social Media Management",
-  "Branding & Graphics",
-  "Lead Generation",
-];
-
-function MarqueeStrip() {
-  return (
-    <div
-      className="relative w-full overflow-hidden bg-[#f5f5f5] -mt-16"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
-      }}
-    >
-      <motion.div
-        className="flex whitespace-nowrap"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          duration: 5,
-          ease: "linear",
-          repeat: Infinity,
-        }}
-      >
-        {[...marqueeItems, ...marqueeItems].map((item, i) => (
-          <div key={i} className="flex items-center">
-            <span className="mx-6 text-sm font-semibold uppercase tracking-wide text-[#102A56]">
-              {item}
-            </span>
-            <span className="text-[#145EEE]">●</span>
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  );
-}
-
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F5F5F5]">
-      {/* Dot grid background */}
+    <section className="relative overflow-hidden bg-white">
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          backgroundImage: `
+      linear-gradient(rgba(20,94,238,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,94,238,.08) 1px, transparent 1px)
+    `,
+          backgroundSize: "60px 60px",
+          opacity: 1,
         }}
       />
 
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 left-1/2 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[140px]" />
+
+        <div className="absolute top-32 left-10 h-52 w-52 rounded-full bg-[#145EEE]/10 blur-[140px]" />
+      </div>
+
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-6xl mx-auto text-center">
           {/* LEFT CONTENT */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] bg-white px-4 py-2 mb-8">
-              <span className="w-2 h-2 rounded-full border border-[#145EEE] bg-[#145EEE]" />
+            <div className="inline-flex items-center mx-auto gap-2.5 rounded-full border border-[#145EEE]/30 bg-white px-4 py-2 mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#145EEE] opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#145EEE]" />
+              </span>
 
               <span className="text-sm font-medium text-[#145EEE]">
                 Helping UK Small Businesses Grow Online
               </span>
             </div>
 
-            <h1 className="text-2xl lg:text-4xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1F3064]">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-[-0.03em] text-[#102A56]">
               Your Outsourced{" "}
-              <span className="text-[#145EEE]">Marketing Department</span>
+              <span className="relative inline-flex items-center justify-center px-6 py-2 mx-2 rounded-2xl overflow-hidden">
+                <span className="relative z-10 font-black text-[#145EEE]">
+                  Marketing Department
+                </span>
+              </span>
               {""} for Less Than the Cost of <span>One Employee.</span>
             </h1>
 
-            <p className="mt-3 md:text-lg text-gray-600 leading-8 max-w-xl">
+            <p className="mt-5 md:text-2xl text-gray-600 leading-8">
               Wellranked helps UK small businesses get found, trusted and chosen
               by managing your website, Google visibility, reviews, content,
               graphics, social posts and lead generation all under one simple
@@ -110,8 +67,12 @@ export default function Hero() {
 
             {/* Buttons */}
 
-            <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-              <div className="rounded-full bg-[#145EEE]">
+            <div className="mt-8 flex flex-col mx-auto justify-center gap-4 sm:flex-row">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="rounded-full bg-[#145EEE]"
+              >
                 <Link
                   href="/growth-audit"
                   className="flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white rounded-full"
@@ -119,291 +80,23 @@ export default function Hero() {
                   Book Your Free Growth Audit
                   <ArrowRight size={18} />
                 </Link>
-              </div>
+              </motion.div>
 
-              <Link
-                href="/package-section"
-                className="rounded-full border bg-white px-8 py-4 text-center font-semibold transition border-[#145EEE] text-[#145EEE]"
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
               >
-                View Packages
-              </Link>
-            </div>
-
-            <p className="mt-5 text-sm text-gray-500 max-w-lg">
-              No pressure. No jargon. Just a clear review of what is holding
-              your business back online.
-            </p>
-          </div>
-
-          <div className="relative flex items-center justify-center py-16 md:mt-0 -mt-10">
-            {/* Center Circle */}
-            <div className="relative z-20 flex h-60 w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 items-center justify-center rounded-full overflow-hidden bg-[#145EEE]">
-              {/* Full background network */}
-              <svg
-                className="absolute inset-0 w-full h-full opacity-25"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-              >
-                {/* Horizontal */}
-                <line
-                  x1="0"
-                  y1="20"
-                  x2="100"
-                  y2="20"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-                <line
-                  x1="0"
-                  y1="50"
-                  x2="100"
-                  y2="50"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-                <line
-                  x1="0"
-                  y1="80"
-                  x2="100"
-                  y2="80"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-
-                {/* Vertical */}
-                <line
-                  x1="20"
-                  y1="0"
-                  x2="20"
-                  y2="100"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-                <line
-                  x1="50"
-                  y1="0"
-                  x2="50"
-                  y2="100"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-                <line
-                  x1="80"
-                  y1="0"
-                  x2="80"
-                  y2="100"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-
-                {/* Diagonals */}
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100"
-                  y2="100"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-                <line
-                  x1="100"
-                  y1="0"
-                  x2="0"
-                  y2="100"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-                <line
-                  x1="0"
-                  y1="50"
-                  x2="50"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-                <line
-                  x1="50"
-                  y1="100"
-                  x2="100"
-                  y2="50"
-                  stroke="white"
-                  strokeWidth=".3"
-                />
-
-                {/* Nodes */}
-                {[
-                  [20, 20],
-                  [50, 20],
-                  [80, 20],
-                  [20, 50],
-                  [50, 50],
-                  [80, 50],
-                  [20, 80],
-                  [50, 80],
-                  [80, 80],
-                  [10, 35],
-                  [90, 65],
-                  [35, 10],
-                  [65, 90],
-                ].map(([x, y], i) => (
-                  <circle key={i} cx={x} cy={y} r="1.2" fill="white" />
-                ))}
-              </svg>
-
-              {/* Content */}
-              <div className="relative z-10 text-center">
-                <h2 className="text-3xl font-bold text-white">Wellranked</h2>
-                <p className="mt-2 text-blue-100">Your Growth Partner</p>
-              </div>
-            </div>
-
-            {/* Desktop Service Circles */}
-            <div className="hidden lg:block">
-              {[
-                {
-                  ...services[0],
-                  className: "top-6 right-10",
-                  line: "-rotate-12",
-                  side: "right",
-                }, // Website
-                {
-                  ...services[1],
-                  className: "top-1/2 right-0 -translate-y-1/2",
-                  line: "",
-                  side: "right",
-                }, // SEO
-                {
-                  ...services[2],
-                  className: "bottom-6 right-10",
-                  line: "rotate-12",
-                  side: "right",
-                }, // AI
-                {
-                  ...services[3],
-                  className: "top-6 left-10",
-                  line: "rotate-12",
-                  side: "left",
-                }, // Ads
-                {
-                  ...services[4],
-                  className: "top-1/2 left-0 -translate-y-1/2",
-                  line: "",
-                  side: "left",
-                }, // Social
-                {
-                  ...services[5],
-                  className: "bottom-6 left-10",
-                  line: "-rotate-12",
-                  side: "left",
-                }, // Branding
-              ].map(({ Icon, name, className }, index) => (
-                <motion.div
-                  key={name}
-                  className={`absolute ${className}`}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.6,
-                    y: 30,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    scale: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.4,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.12,
-                    ease: "easeOut",
-                  }}
+                <Link
+                  href="/package-section"
+                  className="flex items-center justify-center rounded-full border bg-white px-8 py-4 text-center font-semibold transition border-[#145EEE] text-[#145EEE]"
                 >
-                  <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white border border-[#145EEE]">
-                    <div className="flex flex-col items-center">
-                      <div className="text-[#145EEE]">
-                        <Icon size={24} />
-                      </div>
-                      <span className="mt-1 text-[11px] font-semibold text-[#145EEE]">
-                        {name}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  View Packages
+                </Link>
+              </motion.div>
             </div>
-
-            {/* Mobile / Tablet */}
-            <div className="absolute inset-0 lg:hidden">
-              {[
-                {
-                  ...services[0],
-                  className: " -mt-2 left-2/4 -translate-x-1/2",
-                }, // Top
-                {
-                  ...services[1],
-                  className: "top-[20%] -right-[1%]",
-                }, // Top Right
-                {
-                  ...services[2],
-                  className: "bottom-[16%] right-[1%]",
-                }, // Bottom Right
-                {
-                  ...services[3],
-                  className: "-bottom-[8px] left-2/4 -translate-x-1/2",
-                }, // Bottom
-                {
-                  ...services[4],
-                  className: "bottom-[16%] left-[1%]",
-                }, // Bottom Left
-                {
-                  ...services[5],
-                  className: "top-[16%] left-[1%]",
-                }, // Top Left
-              ].map(({ Icon, name, className }, index) => (
-                <motion.div
-                  key={name}
-                  className={`absolute ${className}`}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.6,
-                    y: 30,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    scale: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.4,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    ease: "easeOut",
-                  }}
-                >
-                  <div className="flex h-20 w-20 items-center justify-center">
-                    <div className="flex flex-col items-center">
-                      <div className="text-[#145EEE]">
-                        <Icon size={22} />
-                      </div>
-                      <span className="mt-1 text-[10px] font-semibold text-[#145EEE]">
-                        {name}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-
-      {/* Marquee strip under the two grid columns, full width, no padding */}
-      <MarqueeStrip />
     </section>
   );
-};
+}
