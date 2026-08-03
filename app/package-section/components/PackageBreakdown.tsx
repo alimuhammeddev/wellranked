@@ -1,18 +1,37 @@
 "use client";
 
-import { BriefcaseBusiness, Rocket, Crown, BadgeCheck } from "lucide-react";
+import {
+  Check,
+  BriefcaseBusiness,
+  Rocket,
+  Crown,
+  LucideIcon,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
-const packages = [
+interface Package {
+  title: string;
+  subtitle: string;
+  description: string;
+  bestFor: string;
+  icon: LucideIcon;
+  color: "blue" | "navy";
+  featured: boolean;
+  rotation: string;
+  features: string[];
+}
+
+const packages: Package[] = [
   {
     title: "Wellranked Essential",
     subtitle: "Professional Online Presence",
-    icon: BriefcaseBusiness,
-    color: "blue",
     description:
       "For businesses that need a credible website and online foundation without managing everything themselves.",
-    bestFor:
-      "Sole traders, new businesses and small firms that need to look professional online.",
+    bestFor: "Sole traders, new businesses & small firms",
+    icon: BriefcaseBusiness,
+    color: "blue",
+    featured: false,
+    rotation: "md:rotate-0",
     features: [
       "Custom website",
       "Hosting & maintenance",
@@ -26,19 +45,20 @@ const packages = [
   {
     title: "Wellranked Growth Partner",
     subtitle: "Your Outsourced Marketing Department",
-    icon: Rocket,
-    color: "indigo",
     description:
       "Our most popular package for businesses that want their website, Google visibility, reviews, graphics and social content handled properly every month.",
-    bestFor:
-      "Busy business owners who want peace of mind and consistent marketing support.",
+    bestFor: "Busy business owners",
+    icon: Rocket,
+    color: "navy",
+    featured: true,
+    rotation: "md:rotate-[0.6deg]",
     features: [
       "Everything in Essential",
       "Local SEO",
       "Google Profile management",
       "Review growth campaigns",
       "Unlimited business graphics",
-      "3 social posts every week",
+      "3 social posts per week",
       "Monthly competitor report",
       "Seasonal campaigns",
       "Monthly growth call",
@@ -48,17 +68,18 @@ const packages = [
   {
     title: "Wellranked Accelerator",
     subtitle: "More Visibility. More Leads. More Growth.",
-    icon: Crown,
-    color: "emerald",
     description:
-      "For businesses ready to actively generate more enquiries through organic visibility, paid campaigns, email marketing and stronger conversion systems.",
-    bestFor:
-      "Businesses ready to scale lead generation and increase monthly enquiries.",
+      "Generate more enquiries through paid campaigns, email marketing and stronger conversion systems.",
+    bestFor: "Businesses ready to scale",
+    icon: Crown,
+    color: "blue",
+    featured: false,
+    rotation: "md:rotate-[-0.6deg]",
     features: [
       "Everything in Growth Partner",
-      "Email marketing",
       "Google Ads management",
       "Meta Ads management",
+      "Email marketing",
       "Lead response support",
       "Customer reactivation campaigns",
       "Missed-call text-back",
@@ -67,37 +88,117 @@ const packages = [
   },
 ];
 
+function BoardingPassCard({
+  pkg,
+  index,
+}: {
+  pkg: Package;
+  index: number;
+}) {
+  const Icon = pkg.icon;
+  const bgClass = pkg.color === "navy" ? "bg-[#102A56]" : "bg-[#145EEE]";
+  const checkStroke = pkg.color === "navy" ? "#102A56" : "#145EEE";
+
+  return (
+    <motion.div
+      className={`relative group ${pkg.rotation} hover:rotate-0 transition-transform duration-500`}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
+    >
+      {/* Featured Badge */}
+      {pkg.featured && (
+        <div className="absolute -top-3.5 left-1/2 z-20 -translate-x-1/2 -rotate-2 rounded-md border-2 border-[#145EEE] bg-[#FDFBF4] px-4 py-1 shadow-sm">
+          <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#145EEE]">
+            Most Popular
+          </span>
+        </div>
+      )}
+
+      <div
+        className={`relative flex flex-col md:flex-row overflow-visible rounded-[22px] ${bgClass} transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl`}
+      >
+        {/* Corner Punch Holes */}
+        <div className="absolute left-3 top-3 h-2.5 w-2.5 rounded-full bg-[#FDFBF4] z-10" />
+        <div className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-[#FDFBF4] z-10" />
+        <div className="absolute left-3 bottom-3 h-2.5 w-2.5 rounded-full bg-[#FDFBF4] z-10" />
+        <div className="absolute right-3 bottom-3 h-2.5 w-2.5 rounded-full bg-[#FDFBF4] z-10" />
+
+        {/* Stub */}
+        <div className="relative flex w-full md:w-[32%] flex-col justify-between px-6 py-8 md:px-8 md:py-10">
+          {/* Vertical Perforation (desktop) */}
+          <div className="hidden md:block absolute top-0 bottom-0 right-0 z-10 w-0">
+            <div className="absolute -top-3 right-0 h-6 w-6 translate-x-1/2 rounded-full bg-[#FDFBF4]" />
+            <div className="absolute -bottom-3 right-0 h-6 w-6 translate-x-1/2 rounded-full bg-[#FDFBF4]" />
+            <div className="mx-auto h-full border-r-2 border-dashed border-[#DDD6C4]/60" />
+          </div>
+
+          {/* Horizontal Perforation (mobile) */}
+          <div className="md:hidden absolute bottom-0 left-0 right-0 z-10 h-0">
+            <div className="absolute -left-3 bottom-0 h-6 w-6 -translate-y-1/2 rounded-full bg-[#FDFBF4]" />
+            <div className="absolute -right-3 bottom-0 h-6 w-6 -translate-y-1/2 rounded-full bg-[#FDFBF4]" />
+            <div className="mx-auto w-full border-b-2 border-dashed border-[#DDD6C4]/60" />
+          </div>
+
+          <div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
+              <Icon size={22} className="text-white" />
+            </div>
+            <div className="mt-4 text-[10px] font-black uppercase tracking-[0.16em] text-white/80">
+              {pkg.subtitle}
+            </div>
+            <h3 className="mt-2 text-xl font-black text-white">{pkg.title}</h3>
+          </div>
+
+          <div className="mt-6 md:mt-0">
+            <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-white/90">
+                Best for: {pkg.bestFor}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Details */}
+        <div className="flex-1 px-6 py-8 md:px-10 md:py-10">
+          <p className="text-sm leading-relaxed text-white/90 md:text-base">
+            {pkg.description}
+          </p>
+
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {pkg.features.map((feature) => (
+              <div key={feature} className="flex items-center gap-2.5">
+                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50">
+                  <Check size={11} strokeWidth={3} className={`text-[${checkStroke}]`} style={{ color: checkStroke }} />
+                </div>
+                <span className="text-sm text-white">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function PackageBreakdown() {
   return (
-    <section className="md:py-24 bg-[#f5f5f5]">
-      <div className="max-w-7xl mx-auto lg:px-0 px-5">
+    <section className="relative overflow-hidden px-5 py-16 md:px-8 md:py-28 bg-white">
+      <div className="relative mx-auto max-w-6xl">
+        {/* Header */}
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-10"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          className="mx-auto max-w-2xl text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold uppercase tracking-[0.18em] text-[#145EEE]">
             Find Your Perfect Fit
           </span>
 
-          <h2 className="mt-4 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
+          <h2 className="mt-6 text-2xl font-bold leading-tight text-[#102A56] md:text-3xl lg:text-4xl">
             Every package is designed
             <span className="block text-[#145EEE]">
               to grow with your business.
@@ -105,108 +206,11 @@ export default function PackageBreakdown() {
           </h2>
         </motion.div>
 
-        <div className="space-y-24">
-          {packages.map((pkg, index) => {
-            const Icon = pkg.icon;
-
-            return (
-              <div
-                key={pkg.title}
-                className={`grid lg:grid-cols-2 md:gap-14 gap-10 items-center ${
-                  index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                {/* Content */}
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 40,
-                    scale: 0.95,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.25,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.15,
-                    ease: "easeOut",
-                  }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-[#145EEE]">
-                      <Icon size={24} />
-                    </div>
-                    <div>
-                      <h3 className="md:text-2xl text-xl font-bold text-[#102A56]">
-                        {pkg.title}
-                      </h3>
-                      <p className="text-[#145EEE] font-medium mt-1">
-                        {pkg.subtitle}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="mt-4 md:text-lg leading-8 text-gray-600">
-                    {pkg.description}
-                  </p>
-                  <div className="mt-4 rounded-2xl bg-blue-50 p-6">
-                    <p className="text-sm font-semibold uppercase tracking-wide text-[#145EEE]">
-                      Best For
-                    </p>
-                    <p className="mt-3 text-[#145EEE] font-medium">
-                      {pkg.bestFor}
-                    </p>
-                  </div>
-                </motion.div>
-
-                {/* Feature Card */}
-                <motion.div
-                  className="relative rounded-3xl border border-gray-200 bg-[#f5f5f5] md:p-8 p-5 overflow-hidden"
-                  initial={{
-                    opacity: 0,
-                    y: 40,
-                    scale: 0.95,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.25,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.15,
-                    ease: "easeOut",
-                  }}
-                >
-                  <div className="absolute left-0 top-0 h-1 w-full bg-[#145EEE]" />
-                  <h4 className="text-xl font-bold text-[#145EEE]">
-                    What's Included
-                  </h4>
-                  <div className="mt-4 space-y-5">
-                    {pkg.features.map((feature) => (
-                      <div key={feature} className="flex items-start gap-4">
-                        <BadgeCheck
-                          size={22}
-                          className="text-[#145EEE] mt-0.5"
-                        />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            );
-          })}
+        {/* Cards */}
+        <div className="space-y-10 md:space-y-12">
+          {packages.map((pkg, index) => (
+            <BoardingPassCard key={pkg.title} pkg={pkg} index={index} />
+          ))}
         </div>
       </div>
     </section>

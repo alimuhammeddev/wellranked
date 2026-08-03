@@ -46,7 +46,7 @@ export default function FinalCTA() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/growth-audit"
-            className="group flex items-center justify-center gap-2 rounded-full bg-[#145EEE] px-7 py-3.5 font-semibold text-white transition-transform hover:-translate-y-0.5"
+            className="group flex items-center justify-center gap-2 md:w-fit w-full rounded-full bg-[#145EEE] px-7 py-3.5 font-semibold text-white transition-transform hover:-translate-y-0.5"
           >
             Book Your Free Growth Audit
             <ArrowRight
@@ -57,7 +57,7 @@ export default function FinalCTA() {
 
           <Link
             href="/package-section"
-            className="rounded-full bg-white/15 border border-[#145EEE] px-7 py-3.5 font-semibold text-[#145EEE] backdrop-blur transition hover:bg-white/20"
+            className="md:w-fit w-full rounded-full bg-white/15 border border-[#145EEE] px-7 py-3.5 font-semibold text-[#145EEE] backdrop-blur transition hover:bg-white/20"
           >
             View Packages
           </Link>

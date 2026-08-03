@@ -1,16 +1,28 @@
 "use client";
 
 import {
+  Check,
   BriefcaseBusiness,
   Rocket,
   Crown,
   ArrowRight,
-  Check,
+  LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const packages = [
+interface Package {
+  name: string;
+  tagline: string;
+  price: string;
+  icon: LucideIcon;
+  featured: boolean;
+  bestFor: string;
+  description: string;
+  features: string[];
+}
+
+const packages: Package[] = [
   {
     name: "Wellranked Essential",
     tagline: "Professional Online Presence",
@@ -74,169 +86,141 @@ const packages = [
   },
 ];
 
+function VerticalPerforation() {
+  return (
+    <div className="absolute top-0 bottom-0 left-[34%] z-10 w-0 md:left-[36%]">
+      <div className="absolute -top-3 left-0 h-6 w-6 -translate-x-1/2 rounded-full bg-white" />
+      <div className="absolute -bottom-3 left-0 h-6 w-6 -translate-x-1/2 rounded-full bg-white" />
+      <div className="mx-auto h-full border-l-2 border-dashed border-[#DDD6C4]" />
+    </div>
+  );
+}
+
+function BoardingPass({ pkg, index }: { pkg: Package; index: number }) {
+  const Icon = pkg.icon;
+  const rotate =
+    index === 0 ? "md:rotate-[-1.5deg]" : index === 2 ? "md:rotate-[1.5deg]" : "";
+
+  return (
+    <motion.div
+      className={`relative w-full ${rotate} transition-transform duration-500 hover:rotate-0 hover:-translate-y-2 ${
+        pkg.featured ? "md:-translate-y-3" : ""
+      }`}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.55, delay: index * 0.1, ease: "easeOut" }}
+    >
+      {pkg.featured && (
+        <div className="absolute -top-3.5 left-1/2 z-20 -translate-x-1/2 -rotate-3 rounded-md border-2 border-[#145EEE] bg-[#FDFBF4] px-3 py-1">
+          <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#145EEE]">
+            Most Popular
+          </span>
+        </div>
+      )}
+
+      <div
+        className={`relative flex overflow-visible rounded-[22px] ${
+          pkg.featured ? "bg-[#102A56]" : "bg-[#145EEE]"
+        }`}
+      >
+        {/* Punched corner holes */}
+        <div className="absolute left-3 top-3 h-2 w-2 rounded-full bg-white" />
+        <div className="absolute right-3 top-3 h-2 w-2 rounded-full bg-white" />
+
+        {/* Stub */}
+        <div className="flex w-[34%] flex-col justify-between px-4 py-7 md:w-[36%] md:px-5">
+          <div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
+              <Icon size={18} className="text-white" />
+            </div>
+            <div className="mt-3 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+              {pkg.tagline}
+            </div>
+          </div>
+
+          <div>
+            <div className="text-2xl font-black leading-none text-white">
+              {pkg.price}
+            </div>
+            <div className="mt-1 text-xs text-white">per month</div>
+          </div>
+        </div>
+
+        <VerticalPerforation />
+
+        {/* Details */}
+        <div className="flex-1 px-5 py-7 md:px-7">
+          <h3 className="text-lg font-bold leading-snug text-white">
+            {pkg.name}
+          </h3>
+
+          <div className="mt-2 inline-flex items-center rounded-full bg-white/10 px-3 py-1">
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-white/80">
+              Best for: {pkg.bestFor}
+            </span>
+          </div>
+
+          <p className="mt-3 text-sm leading-relaxed text-white">
+            {pkg.description}
+          </p>
+
+          <div className="mt-5 space-y-2.5">
+            {pkg.features.map((feature) => (
+              <div key={feature} className="flex items-center gap-2.5">
+                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50">
+                  <Check size={11} className="text-[#145EEE]" />
+                </div>
+                <span className="text-sm text-white">{feature}</span>
+              </div>
+            ))}
+          </div>
+
+          <Link
+            href="/growth-audit"
+            className="mt-7 flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-white py-3 text-sm font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white/10"
+          >
+            Get Started
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function PricingCards() {
   return (
-    <section id="pricing" className="md:py-24 bg-[#f5f5f5] py-20">
-      <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-5">
+    <section id="pricing" className="relative overflow-hidden px-5 py-16 md:px-8 md:py-28">
+      <div className="relative mx-auto max-w-6xl">
         <motion.div
-          className="text-center max-w-3xl mx-auto md:mb-16 mb-5"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          className="mx-auto max-w-2xl text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold uppercase tracking-[0.18em] text-[#145EEE]">
             Choose Your Plan
           </span>
 
-          <h2 className="mt-3 text-2xl lg:text-4xl md:text-3xl font-bold text-[#102A56]">
+          <h2 className="mt-6 text-2xl font-bold leading-tight text-[#102A56] md:text-3xl lg:text-4xl">
             One monthly fee.
             <span className="block text-[#145EEE]">
               Everything working together.
             </span>
           </h2>
 
-          <p className="mt-3 md:text-lg text-gray-600 leading-8">
-            Every package is designed to remove stress, improve trust and help
-            your business grow online.
+          <p className="mt-5 text-base leading-7 text-gray-600 md:text-lg">
+            Every package is designed to remove stress, improve trust and
+            help your business grow online.
           </p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-1">
-          {packages.map((plan, index) => {
-            const Icon = plan.icon;
-
-            return (
-              <motion.div
-                key={plan.name}
-                className={`relative flex flex-col rounded-3xl border ${
-                  plan.featured ? "border-blue-200" : "border-blue-200"
-                }`}
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                  scale: 0.95,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.25,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.15,
-                  ease: "easeOut",
-                }}
-              >
-                {plan.featured && (
-                  <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[#145EEE] px-5 py-2 text-sm font-semibold text-white">
-                    MOST POPULAR
-                  </div>
-                )}
-
-                <div
-                  className={`rounded-t-3xl md:p-8 p-5 ${
-                    plan.featured ? "bg-[#145EEE] text-white" : "bg-[#F8FAFF]"
-                  }`}
-                >
-                  <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
-                      plan.featured
-                        ? "bg-white/20"
-                        : "bg-blue-100 text-[#145EEE]"
-                    }`}
-                  >
-                    <Icon size={24} />
-                  </div>
-
-                  <h3 className="mt-3 text-xl font-bold">{plan.name}</h3>
-
-                  <p
-                    className={`mt-1 font-medium ${
-                      plan.featured ? "text-blue-100" : "text-[#145EEE]"
-                    }`}
-                  >
-                    {plan.tagline}
-                  </p>
-
-                  <div className="mt-3 flex items-end gap-2">
-                    <span className="text-3xl font-extrabold">
-                      {plan.price}
-                    </span>
-
-                    <span
-                      className={
-                        plan.featured
-                          ? "pb-2 text-blue-100"
-                          : "pb-2 text-gray-500"
-                      }
-                    >
-                      /month
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex flex-1 flex-col md:p-8 p-5">
-                  <p className="leading-7 text-gray-600">{plan.description}</p>
-
-                  <div className="mt-6 rounded-xl bg-blue-50 p-4">
-                    <p className="text-xs uppercase tracking-wide text-[#145EEE] font-semibold">
-                      Best For
-                    </p>
-
-                    <p className="mt-2 text-sm font-medium text-[#145EEE]">
-                      {plan.bestFor}
-                    </p>
-                  </div>
-
-                  <div className="my-8 h-px bg-gray-200" />
-
-                  <div className="space-y-4 flex-1">
-                    {plan.features.map((feature) => (
-                      <div key={feature} className="flex items-start gap-3">
-                        <div className="mt-0.5 rounded-full bg-blue-100 p-1">
-                          <Check size={12} className="text-[#145EEE]" />
-                        </div>
-
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link
-                    href="/growth-audit"
-                    className={`mt-10 flex items-center justify-center gap-2 rounded-full py-4 font-semibold transition ${
-                      plan.featured
-                        ? "bg-[#145EEE] text-white"
-                        : "border border-[#145EEE] text-[#145EEE] hover:bg-blue-50"
-                    }`}
-                  >
-                    Get Started
-                    <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="mt-14 grid grid-cols-1 gap-x-6 gap-y-14 md:mt-20 md:grid-cols-3 md:items-start md:gap-y-0">
+          {packages.map((pkg, index) => (
+            <BoardingPass key={pkg.name} pkg={pkg} index={index} />
+          ))}
         </div>
       </div>
     </section>
