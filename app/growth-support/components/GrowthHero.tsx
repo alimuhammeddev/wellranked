@@ -42,43 +42,46 @@ const orbitItems = [
 export default function GrowthSupportHero() {
   return (
     <section className="relative overflow-hidden bg-[#f5f5f5]">
-      {/* Background */}
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(5,150,105,0.18) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          backgroundImage: `
+      linear-gradient(rgba(20,94,238,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,94,238,.08) 1px, transparent 1px)
+    `,
+          backgroundSize: "60px 60px",
+          opacity: 1,
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-start gap-20 lg:px-0 md:px-5 px-5 pb-24 pt-40 lg:grid-cols-2">
-        {/* LEFT */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 left-1/2 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[140px]" />
 
+        <div className="absolute top-32 left-10 h-52 w-52 rounded-full bg-[#145EEE]/10 blur-[140px]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <div>
-          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
-            Growth Support Package
-          </span>
+          <div className="flex justify-center">
+            <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] uppercase tracking-[0.18em]">
+              Growth Support Package
+            </span>
+          </div>
 
-          <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
+          <h1 className="mt-3 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
             Keep up with customer enquiries{" "}
             <span className="text-[#145EEE]">
               without hiring another full-time employee.
             </span>
           </h1>
 
-          <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
+          <p className="mt-3 text-center md:text-2xl leading-8 text-gray-600">
             We help growing businesses respond to customer messages, organise
-            enquiries, capture bookings and follow up professionally—so no
+            enquiries, capture bookings and follow up professionally so no
             opportunity gets lost in a busy inbox.
           </p>
 
-          <div className="mt-5 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-5 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <div className="rounded-full bg-[#145EEE]">
               <Link
                 href="/contact"
@@ -96,138 +99,6 @@ export default function GrowthSupportHero() {
               View Support Packages
             </Link>
           </div>
-
-          <div className="mt-5 space-y-3">
-            {[
-              "Professional customer replies",
-              "Organised bookings & enquiries",
-              "Daily business summaries",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <div className="text-[#145EEE]">
-                  <BadgeCheck size={22} />
-                </div>
-
-                <span className="text-gray-700">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* RIGHT */}
-        <div className="relative flex items-center justify-center md:min-h-140 min-h-100 overflow-hidden rounded-[40px]">
-          {/* Background circle */}
-          <div className="absolute z-10 h-60 w-60 rounded-full bg-[#145EEE]" />
-
-          {/* Center Card */}
-          <motion.div
-            className="relative z-20 flex h-47.5 w-47.5 items-center justify-center"
-            initial={{
-              opacity: 0,
-              y: 40,
-              scale: 0.95,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.25,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.15,
-              ease: "easeOut",
-            }}
-          >
-            {/* Back Card */}
-            <div className="absolute h-37.5 w-37.5 -rotate-6 rounded-2xl border border-blue-200 bg-white shadow-sm" />
-
-            {/* Middle Card */}
-            <div className="absolute h-37.5 w-37.5 rotate-3 rounded-2xl border border-blue-200 bg-white shadow-sm" />
-
-            {/* Front Card */}
-            <div className="relative flex h-40 w-35 flex-col items-center justify-center rounded-2xl border border-blue-200 bg-white shadow-xl">
-              <span className="rounded-full border border-[#145EEE] bg-blue-100 px-3 py-1 text-[9px] font-bold uppercase tracking-wide text-[#145EEE]">
-                START
-              </span>
-
-              <span className="mt-3 text-xs font-semibold text-[#102A56]">
-                Growth Support
-              </span>
-
-              <span className="mt-2 text-xl font-extrabold text-[#145EEE]">
-                £295
-              </span>
-
-              <span className="text-[11px] text-gray-500">per month</span>
-            </div>
-          </motion.div>
-
-          {/* Orbit Items */}
-          {orbitItems.map((item, index) => (
-            <motion.div
-              key={item.text}
-              className="absolute flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-[#145EEE] bg-white"
-              style={{
-                left: `${item.x}%`,
-                top: `${item.y}%`,
-              }}
-              initial={{
-                opacity: 0,
-                y: 40,
-                scale: 0.95,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.25,
-              }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.12,
-                ease: "easeOut",
-              }}
-            >
-              <div className="rounded-full bg-blue-50 p-2 text-[#145EEE]">
-                {item.icon}
-              </div>
-
-              <span className="mt-1 text-[9px] font-semibold text-[#145EEE]">
-                {item.text}
-              </span>
-            </motion.div>
-          ))}
-
-          {/* Floating Glow */}
-          <motion.div
-            className="absolute bottom-20 left-12 h-24 w-24 rounded-full bg-blue-200/40 blur-3xl"
-            animate={{
-              y: [0, -12, 0],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          <motion.div
-            className="absolute right-10 top-16 h-20 w-20 rounded-full bg-blue-300/30 blur-3xl"
-            animate={{
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
         </div>
       </div>
     </section>

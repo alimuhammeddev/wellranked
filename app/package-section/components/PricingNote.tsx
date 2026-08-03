@@ -169,7 +169,7 @@ export default function PricingNote() {
 
                 <div className="relative">
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br ${theme.iconFrom} ${theme.iconTo} shadow-lg ${theme.shadow}`}
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br ${theme.iconFrom} ${theme.iconTo} ${theme.shadow}`}
                   >
                     <Icon width={22} height={22} className="text-white" />
                   </div>

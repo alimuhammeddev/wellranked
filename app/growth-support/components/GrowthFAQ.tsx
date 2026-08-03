@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
@@ -64,93 +63,98 @@ export default function GrowthFAQ() {
     <section className="bg-[#f5f5f5] py-20">
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
         <motion.div
-          className="mx-auto max-w-3xl text-center"
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{ once: true }}
+          className="mx-auto max-w-2xl text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold uppercase tracking-[0.18em] text-[#145EEE]">
             Frequently Asked Questions
           </span>
 
-          <h2 className="mt-3 text-2xl font-bold text-[#102A56] md:text-3xl lg:text-4xl">
+          <h2 className="mt-6 text-2xl font-bold leading-tight text-[#102A56] md:text-3xl lg:text-4xl">
             Everything you need to know
             <span className="block text-[#145EEE]">about Growth Support.</span>
           </h2>
 
-          <p className="mt-4 text-gray-600 md:text-lg leading-8">
+          <p className="mt-5 text-base leading-7 text-gray-600 md:text-lg">
             Here are answers to the questions we receive most often about our
             Growth Support service.
           </p>
         </motion.div>
 
-        <div className="mt-10 grid items-start gap-4 lg:grid-cols-2">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={faq.question}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-              }}
-              className="overflow-hidden rounded-3xl border border-blue-100 bg-white"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="flex w-full items-center justify-between p-5 text-left"
+        <div className="mt-14 grid items-start gap-5 lg:grid-cols-2">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <motion.div
+                key={faq.question}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: (index % 2) * 0.06 }}
+                className={`overflow-hidden rounded-3xl border bg-white transition-shadow ${
+                  isOpen
+                    ? "border-[#145EEE]/30 shadow-[0_12px_30px_-12px_rgba(20,94,238,0.25)]"
+                    : "border-blue-100 hover:border-blue-200"
+                }`}
               >
-                <h3 className="md:text-lg font-semibold text-[#102A56]">
-                  {faq.question}
-                </h3>
-
-                <ChevronDown
-                  className={`transition duration-300 ${
-                    openIndex === index ? "rotate-180 text-[#145EEE]" : ""
-                  }`}
-                />
-              </button>
-
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{
-                      height: 0,
-                      opacity: 0,
-                    }}
-                    animate={{
-                      height: "auto",
-                      opacity: 1,
-                    }}
-                    transition={{
-                      duration: 0.3,
-                    }}
+                {/* Question — styled as an incoming enquiry */}
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="flex w-full items-start gap-3 p-5 text-left"
+                >
+                  <span
+                    className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white transition-colors ${
+                      isOpen ? "bg-[#145EEE]" : "bg-[#102A56]"
+                    }`}
                   >
-                    <p className="border-t border-gray-100 px-6 py-6 leading-8 text-gray-600">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                    Q
+                  </span>
+
+                  <span className="flex-1 rounded-2xl rounded-tl-sm bg-[#F8FAFF] px-4 py-3 md:text-[15px] text-sm font-semibold text-[#102A56]">
+                    {faq.question}
+                  </span>
+
+                  <ChevronDown
+                    size={18}
+                    className={`mt-2 shrink-0 text-[#145EEE] transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Answer — styled as the reply */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="ml-[35px] h-3 w-px border-l border-dashed border-blue-200" />
+
+                      <div className="flex items-start gap-3 px-5 pb-5">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[11px] font-bold text-[#145EEE]">
+                          A
+                        </span>
+
+                        <p className="flex-1 rounded-2xl rounded-tl-sm border border-blue-100 bg-blue-50/60 px-4 py-3 text-sm leading-7 text-gray-600">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
-}
+};
