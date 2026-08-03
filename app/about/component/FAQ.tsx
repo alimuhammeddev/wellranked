@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { ChevronDown, MessageCircleQuestion, ArrowRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -117,64 +117,74 @@ export default function FAQSection() {
           </div>
         </motion.div>
 
-        {/* RIGHT */}
-
-        <div className="space-y-5">
+        {/* RIGHT — Q&A conversation thread */}
+        <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <div
+              <motion.div
                 key={faq.question}
-                className={`group relative overflow-hidden rounded-3xl border bg-white/90 border-blue-200
-                ${isOpen ? "border-blue-300" : "border-blue-200"}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: (index % 4) * 0.06 }}
+                className={`overflow-hidden rounded-3xl border bg-white transition-shadow ${
+                  isOpen
+                    ? "border-[#145EEE]/30 shadow-[0_12px_30px_-12px_rgba(20,94,238,0.25)]"
+                    : "border-blue-100 hover:border-blue-200"
+                }`}
               >
+                {/* Question — incoming enquiry */}
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="relative flex w-full items-center justify-between px-5 py-3 text-left"
+                  className="flex w-full items-start gap-3 p-5 text-left"
                 >
-                  <div className="flex items-center gap-5">
-                    {/* Number */}
-                    <div
-                      className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
-                        isOpen
-                          ? "bg-[#145EEE] text-white"
-                          : "bg-blue-50 text-[#145EEE]"
-                      }`}
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
-
-                    <h3 className="md:text-lg font-semibold tracking-tight text-[#145EEE]">
-                      {faq.question}
-                    </h3>
-                  </div>
-
-                  {/* Chevron */}
-
-                  <div
-                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                      isOpen
-                        ? "rotate-180 bg-[#145EEE] text-white"
-                        : "bg-blue-50 text-[#145EEE]"
+                  <span
+                    className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white transition-colors ${
+                      isOpen ? "bg-[#145EEE]" : "bg-[#102A56]"
                     }`}
                   >
-                    <ChevronDown size={18} />
-                  </div>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="flex-1 rounded-2xl rounded-tl-sm bg-[#F8FAFF] px-4 py-3 md:text-lg font-semibold tracking-tight text-[#145EEE]">
+                    {faq.question}
+                  </span>
+
+                  <ChevronDown
+                    size={18}
+                    className={`mt-2 shrink-0 text-[#145EEE] transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
 
-                {/* Content */}
+                {/* Answer — the reply */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="ml-8.75 h-3 w-px border-l border-dashed border-blue-200" />
 
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${
-                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="border-t border-slate-100 md:px-7 px-5 pb-7 pt-5 text-[15px] leading-8 text-slate-600">
-                    {faq.answer}
-                  </div>
-                </div>
-              </div>
+                      <div className="flex items-start gap-3 px-5 pb-5">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[11px] font-bold text-[#145EEE]">
+                          A
+                        </span>
+
+                        <p className="flex-1 rounded-2xl rounded-tl-sm border border-blue-100 bg-blue-50/60 px-4 py-3 text-[15px] leading-8 text-slate-600">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
         </div>

@@ -41,48 +41,50 @@ const CARDS = [
 export default function AboutHero() {
   return (
     <section className="relative overflow-hidden bg-[#f5f5f5]">
-      {/* Dot grid background */}
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          backgroundImage: `
+      linear-gradient(rgba(20,94,238,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,94,238,.08) 1px, transparent 1px)
+    `,
+          backgroundSize: "60px 60px",
+          opacity: 1,
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:gap-20 lg:px-0">
-        {/* Left */}
-        <div>
-          <span
-            className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold"
-          >
-            <Building2 size={16} />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 left-1/2 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[140px]" />
+
+        <div className="absolute top-32 left-10 h-52 w-52 rounded-full bg-[#145EEE]/10 blur-[140px]" />
+      </div>
+
+        <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto text-center lg:mx-0 lg:text-center"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 uppercase tracking-[0.18em] font-semibold">
             About Wellranked
           </span>
 
-          <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
+          <h1 className="mt-5 text-3xl font-extrabold leading-tight text-[#102A56] lg:text-5xl md:text-7xl">
             We Built Wellranked for Business Owners Who Are{" "}
-            <span
-              className="text-[#145EEE]"
-            >
+            <span className="text-[#145EEE]">
               Tired of Doing Everything Themselves.
             </span>
           </h1>
 
-          <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
+          <p className="mt-3 md:text-lg leading-8 text-center text-gray-600">
             Wellranked was created to give UK small businesses access to the
             kind of joined-up marketing support that's usually only available to
             larger companies. We help businesses stay visible, trusted and
             active online, without the stress of managing everything yourself.
           </p>
 
-          <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
+          <p className="mt-3 md:text-lg leading-8 text-gray-600">
             Think of us as your outsourced marketing department. While you focus
             on serving your customers, we look after your website, local SEO,
             Google Business Profile, reviews, content and digital marketing to
@@ -90,10 +92,8 @@ export default function AboutHero() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <div
-              className="rounded-full bg-[#145EEE]"
-            >
+          <div className="mt-5 flex flex-col justify-center gap-4 sm:flex-row">
+            <div className="rounded-full bg-[#145EEE]">
               <Link
                 href="/growth-audit"
                 className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
@@ -110,99 +110,7 @@ export default function AboutHero() {
               Our Values
             </Link>
           </div>
-
-          {/* Trust Points */}
-          <div className="mt-6 space-y-3">
-            {[
-              "Built specifically for UK small businesses",
-              "One trusted partner for your digital marketing",
-              "Helping you focus on running your business",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <div
-                  className="text-[#145EEE]"
-                >
-                  <BadgeCheck size={22} />
-                </div>
-                <span
-                  className="text-gray-700"
-                >
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right */}
-        <div className="relative mx-auto w-full max-w-110 py-4 lg:max-w-none lg:py-0">
-          <div className="relative aspect-square w-full">
-            {/* Center Circle*/}
-            <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
-              <div className="relative h-24 w-24 lg:h-28 lg:w-28">
-                <div
-                  className="relative flex h-full w-full bg-[#145EEE] items-center justify-center rounded-full text-3xl font-extrabold text-white"
-                >
-                  W
-                </div>
-              </div>
-              <span
-                className="mt-3 text-xs text-[#145EEE] font-bold uppercase tracking-wide"
-              >
-                Wellranked
-              </span>
-            </div>
-
-            {/* Cards */}
-            {CARDS.map((n, index) => {
-              const Icon = n.icon;
-              return (
-                <motion.div
-                  key={n.label}
-                  className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5 left-(--x) top-(--y) lg:left-(--lg-x) lg:top-(--lg-y)"
-                  style={
-                    {
-                      "--x": `${n.x}%`,
-                      "--y": `${n.y}%`,
-                      "--lg-x": `${n.lgX}%`,
-                      "--lg-y": `${n.lgY}%`,
-                    } as React.CSSProperties
-                  }
-                  initial={{
-                    opacity: 0,
-                    y: 40,
-                    scale: 0.95,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.25,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.15,
-                    ease: "easeOut",
-                  }}
-                >
-                  <div
-                    className="flex h-11 w-11 items-center text-[#145EEE] justify-center rounded-full border border-[#145EEE] bg-white"
-                  >
-                    <Icon size={18} />
-                  </div>
-                  <span
-                    className="max-w-23 text-center text-[#145EEE] text-xs font-semibold leading-tight"
-                  >
-                    {n.label}
-                  </span>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
