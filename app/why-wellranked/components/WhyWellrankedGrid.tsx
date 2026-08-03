@@ -87,7 +87,7 @@ export default function WhyWellrankedGrid() {
           }}
         >
           <span className="rounded-full border border-[#145EEE] uppercase tracking-[0.18em] bg-blue-50 px-4 py-2  font-semibold text-[#145EEE]">
-            Why Businesses Choose Wellranked
+            Why Businesses Trust Us
           </span>
 
           <h2 className="mt-5 text-2xl font-bold text-[#102A56] lg:text-4xl md:text-3xl">
@@ -105,7 +105,7 @@ export default function WhyWellrankedGrid() {
         {featured && (
           <div className="mt-10">
             <motion.div
-              className="group relative overflow-visible rounded-[26px] bg-[#145EEE]"
+              className="group relative overflow-hidden rounded-[26px] bg-[#145EEE]"
               initial={{
                 opacity: 0,
                 y: 40,
@@ -129,11 +129,11 @@ export default function WhyWellrankedGrid() {
               {/* decorative glows + ghost icon */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white-400/20 blur-3xl"
+                className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/20 blur-3xl"
               />
               <div
                 aria-hidden
-                className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-white-400/10 blur-3xl"
+                className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-white/10 blur-3xl"
               />
               <featured.icon
                 aria-hidden
@@ -175,7 +175,7 @@ export default function WhyWellrankedGrid() {
           {others.map(({ title, description, icon: Icon }, i) => (
             <motion.div
               key={title}
-              className="group relative overflow-visible rounded-[22px] bg-[#145EEE] transition-all duration-300 hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-[22px] bg-[#145EEE] transition-all duration-300 hover:-translate-y-1"
               initial={{
                 opacity: 0,
                 y: 40,

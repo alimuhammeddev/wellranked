@@ -45,7 +45,7 @@ export default function WhyWellrankedHero() {
   const ActiveIcon = highlights[active].icon;
 
   return (
-    <section className=" bg-white">
+    <section className="relative overflow-hidden bg-white">
       <div
         className="absolute inset-0"
         style={{
@@ -59,9 +59,9 @@ export default function WhyWellrankedHero() {
       />
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-40 left-1/2 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[140px]" />
+        <div className="absolute top-40 left-1/2 h-64 w-64 md:h-137.5 md:w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[80px] md:blur-[140px]" />
 
-        <div className="absolute top-32 left-10 h-52 w-52 rounded-full bg-[#145EEE]/10 blur-[140px]" />
+        <div className="absolute top-32 left-10 h-32 w-32 md:h-52 md:w-52 rounded-full bg-[#145EEE]/10 blur-[80px] md:blur-[140px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
@@ -108,4 +108,4 @@ export default function WhyWellrankedHero() {
       </div>
     </section>
   );
-}
+};

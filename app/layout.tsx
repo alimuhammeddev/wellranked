@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Wellranked",
   description: "The Outsourced Marketing Department for UK Small Businesses",
+  icons: {
+    icon: "/icon.svg",
+  }
 };
 
 export default function RootLayout({
