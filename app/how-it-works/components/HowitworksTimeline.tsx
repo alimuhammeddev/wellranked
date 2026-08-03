@@ -8,6 +8,7 @@ import {
   TrendingUp,
   BarChart3,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -56,11 +57,16 @@ const steps = [
 
 export default function HowItWorksTimeline() {
   return (
-    <section id="process" className="bg-[#f5f5f5] md:py-24 py-16">
+    <section id="process" className="bg-wwhite md:py-24 py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
-
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div
+          className="mx-auto max-w-3xl text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Our Process
           </span>
@@ -74,10 +80,9 @@ export default function HowItWorksTimeline() {
             Every stage is designed to make marketing simple, transparent and
             effective, so you always know what happens next.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Desktop Timeline */}
-
+        {/* Desktop Timeline — original layout */}
         <div className="relative mt-10 hidden lg:block">
           <div className="absolute left-0 right-0 top-10 h-0.5 rounded-full bg-blue-200" />
 
@@ -104,20 +109,25 @@ export default function HowItWorksTimeline() {
           </div>
         </div>
 
-        {/* Mobile */}
+        {/* Mobile: connected spine */}
+        <div className="relative mt-10 lg:hidden">
+          <div className="absolute left-6 top-2 bottom-2 w-px border-l-2 border-dashed border-blue-200" />
 
-        <div className="mt-10 space-y-6 lg:hidden">
-          {steps.map(({ number, title, description, icon: Icon }) => (
-            <div
-              key={number}
-              className="rounded-3xl border border-blue-200 bg-white p-5"
-            >
-              <div className="flex items-start gap-5">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#145EEE]">
-                  <Icon size={24} className="text-white" />
+          <div className="space-y-6">
+            {steps.map(({ number, title, description, icon: Icon }, i) => (
+              <motion.div
+                key={number}
+                className="relative pl-16"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+              >
+                <div className="absolute left-6 top-6 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl bg-[#145EEE] ring-4 ring-[#f5f5f5]">
+                  <Icon size={22} className="text-white" />
                 </div>
 
-                <div>
+                <div className="rounded-3xl border border-blue-200 bg-white p-5 transition-shadow duration-300 hover:shadow-md">
                   <span className="text-sm font-semibold text-[#145EEE]">
                     STEP {number}
                   </span>
@@ -128,11 +138,11 @@ export default function HowItWorksTimeline() {
 
                   <p className="mt-2 leading-7 text-gray-600">{description}</p>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};

@@ -2,85 +2,52 @@
 
 import {
   ArrowRight,
-  BadgeCheck,
-  Workflow,
-  Search,
-  ClipboardCheck,
-  FolderOpen,
-  Globe,
-  TrendingUp,
-  BarChart3,
-  Check,
 } from "lucide-react";
 import Link from "next/link";
-
-const journey = [
-  {
-    step: "01",
-    title: "Free Growth Audit",
-    icon: Search,
-  },
-  {
-    step: "02",
-    title: "Improvement Plan",
-    icon: ClipboardCheck,
-  },
-  {
-    step: "03",
-    title: "Fast Onboarding",
-    icon: FolderOpen,
-  },
-  {
-    step: "04",
-    title: "Website & Marketing Setup",
-    icon: Globe,
-  },
-  {
-    step: "05",
-    title: "Monthly Delivery",
-    icon: TrendingUp,
-  },
-  {
-    step: "06",
-    title: "Simple Reporting",
-    icon: BarChart3,
-  },
-];
+import { motion } from "framer-motion";
 
 export default function HowItWorksHero() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f5f5]">
-      {/* Dot grid background */}
+    <section className="relative overflow-hidden bg-white">
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          backgroundImage: `
+      linear-gradient(rgba(20,94,238,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,94,238,.08) 1px, transparent 1px)
+    `,
+          backgroundSize: "60px 60px",
+          opacity: 1,
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:gap-20 lg:px-0">
-        {/* Left */}
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
-            <Workflow size={16} />
-            How It Works
-          </span>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 left-1/2 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[140px]" />
 
-          <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            A Simple Process {" "}
+        <div className="absolute top-32 left-10 h-52 w-52 rounded-full bg-[#145EEE]/10 blur-[140px]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex justify-center">
+            <span className="inline-flex rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 uppercase tracking-[0.18em] font-semibold text-[#145EEE]">
+              How It Works
+            </span>
+          </div>
+
+          <h1 className="mt-5 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
+            A Simple Process{" "}
             <span className="text-[#145EEE]">
               Built for Busy Business Owners.
             </span>
           </h1>
 
-          <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
+          <p className="mt-3 md:text-2xl text-center leading-8 text-gray-600">
             We've designed our process to make marketing straightforward. From
             your free Growth Audit to ongoing monthly support, every step is
             focused on helping your business grow without adding more work to
@@ -88,7 +55,7 @@ export default function HowItWorksHero() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-5 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-5 flex flex-col mx-auto justify-center gap-4 sm:flex-row">
             <Link
               href="/growth-audit"
               className="flex items-center justify-center gap-2 rounded-full bg-[#145EEE] px-8 py-4 font-semibold text-white"
@@ -104,72 +71,7 @@ export default function HowItWorksHero() {
               See The Process
             </Link>
           </div>
-
-          {/* Benefits */}
-          <div className="mt-5 space-y-3">
-            {[
-              "Clear recommendations with no jargon",
-              "Fast and hassle-free onboarding",
-              "Ongoing monthly marketing support",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <BadgeCheck className="text-[#145EEE]" size={22} />
-                <span className="text-gray-700">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right */}
-        <div className="rounded-3xl border border-gray-200 bg-white p-5 md:p-8">
-          <div className="flex items-center gap-2">
-            <Workflow className="text-[#145EEE]" size={20} />
-            <h3 className="md:text-2xl text-xl font-bold text-[#102A56]">
-              Your Journey
-            </h3>
-          </div>
-
-          <p className="mt-2 text-gray-600">
-            From your first conversation to ongoing growth, here's what working
-            with Wellranked looks like.
-          </p>
-
-          <div className="mt-8 space-y-4">
-            {journey.map(({ step, title, icon: Icon }, index) => (
-              <div key={step}>
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50">
-                    <Icon size={20} className="text-[#145EEE]" />
-                  </div>
-
-                  <div className="flex-1">
-                    <p className="text-xs font-semibold tracking-wider text-[#145EEE]">
-                      STEP {step}
-                    </p>
-
-                    <h4 className="font-semibold text-[#102A56]">{title}</h4>
-                  </div>
-                </div>
-
-                {index !== journey.length - 1 && (
-                  <div className="ml-6 mt-2 h-6 w-px bg-blue-200" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 rounded-2xl bg-blue-100 p-5">
-            <p className="text-sm text-[#145EEE] flex items-center gap-1">
-              <Check size={15} /> Simple process from start to finish
-            </p>
-            <p className="mt-2 text-sm text-[#145EEE] flex items-center gap-1">
-              <Check size={15} /> One dedicated marketing partner
-            </p>
-            <p className="mt-2 text-sm text-[#145EEE] flex items-center gap-1">
-              <Check size={15} /> Focused on helping your business grow
-            </p>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

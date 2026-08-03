@@ -15,7 +15,7 @@ const industries = [
     description:
       "Emergency and local search demand makes Google visibility, reviews and fast lead response essential.",
     image:
-      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Electricians",

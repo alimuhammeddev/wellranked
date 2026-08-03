@@ -29,7 +29,6 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <div className="max-w-6xl mx-auto text-center">
-          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,8 +68,6 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-col mx-auto justify-center gap-4 sm:flex-row">
               <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
                 className="rounded-full bg-[#145EEE]"
               >
                 <Link
@@ -83,8 +80,6 @@ export default function Hero() {
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
               >
                 <Link
                   href="/package-section"
