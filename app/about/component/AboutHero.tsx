@@ -40,7 +40,7 @@ const CARDS = [
 
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f5f5]">
+    <section className="relative overflow-hidden bg-white">
       <div
         className="absolute inset-0"
         style={{

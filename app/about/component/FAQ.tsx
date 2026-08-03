@@ -52,7 +52,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>();
 
   return (
-    <section className="relative overflow-hidden py-14 md:py-24 bg-[#f5f5f5]">
+    <section className="relative overflow-hidden py-14 md:py-24 bg-white">
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-0">
         {/* LEFT */}
         <motion.div

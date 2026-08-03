@@ -1,119 +1,94 @@
 "use client";
 
-import {
-  ArrowUpRight,
-  BadgeCheck,
-  BrushCleaning,
-  Calculator,
-  Hammer,
-  Home,
-  Scale,
-  Sparkles,
-  Stethoscope,
-  Wrench,
-  Zap,
-} from "lucide-react";
+import { BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+
+// A distinct accent set from the "SolutionSection" board — same idea
+// (rotating colour per pin/tape/badge) but shifted hues so the two
+// sections don't read as identical: sky blue, orange, emerald, violet.
+const ACCENTS = ["#0EA5E9", "#F97316", "#10B981", "#8B5CF6"];
 
 const industries = [
   {
     title: "Plumbers & Heating Engineers",
     description:
       "Emergency and local search demand makes Google visibility, reviews and fast lead response essential.",
-    icon: Wrench,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Electricians",
     description:
       "Customers compare local providers quickly. A better website, Google profile and review system can make you the safer choice.",
-    icon: Zap,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Roofers",
     description:
       "High-value jobs mean even a small increase in qualified leads can create major ROI.",
-    icon: Hammer,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Dentists",
     description:
       "Patients choose based on trust, reviews, visibility and website credibility.",
-    icon: Stethoscope,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Aesthetic Clinics",
     description:
       "Your brand, visuals, reviews and social content directly influence bookings.",
-    icon: Sparkles,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Solicitors",
     description:
       "Legal clients need trust before they enquire. Strong positioning and clear service pages matter.",
-    icon: Scale,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Accountants",
     description:
       "Professional websites and local visibility help convert business owners into clients.",
-    icon: Calculator,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Estate Agents",
     description:
       "Local trust, listings and consistent marketing improve authority and enquiries.",
-    icon: Home,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Cleaning, Removals & Pest Control",
     description:
       "Highly searchable services where fast response and local visibility make the difference.",
-    icon: BrushCleaning,
-    color: "#57CC99",
+    image:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
   },
-];
+].map((item, i) => ({ ...item, color: ACCENTS[i % ACCENTS.length] }));
 
 export default function IndustriesGrid() {
   const [activeCard, setActiveCard] = useState(0);
   const [showWatermark, setShowWatermark] = useState(false);
 
-  // Track scroll direction so we know whether a card is entering/leaving
-  // because the user is scrolling down or scrolling back up.
   const scrollDirection = useRef<"up" | "down">("down");
   const lastScrollY = useRef(0);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;
 
     const handleScroll = () => {
       const currentY = window.scrollY;
-
       scrollDirection.current = currentY > lastScrollY.current ? "down" : "up";
       lastScrollY.current = currentY;
-
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-
-        // Section completely above viewport
-        if (rect.bottom < 0) {
-          setShowWatermark(false);
-        }
-
-        // Section completely below viewport
-        if (rect.top > window.innerHeight) {
-          setShowWatermark(false);
-        }
-      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -121,125 +96,153 @@ export default function IndustriesGrid() {
   }, []);
 
   const lastIndex = industries.length - 1;
+  const active = industries[activeCard];
 
   return (
     <section
-      ref={sectionRef}
       id="industries"
-      className="md:py-24 py-16 bg-[#f5f5f5]"
+      className="relative md:py-24 py-16"
+      style={{
+        backgroundColor: "white",
+        backgroundImage:
+          "radial-gradient(rgba(16,42,86,0.06) 1px, transparent 1px)",
+        backgroundSize: "18px 18px",
+      }}
     >
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 40, scale: 0.95 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-        className="relative z-20 bg-[#f5f5f5] text-center max-w-xl mx-auto md:p-0 p-5"  
-      >
-        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#102A56]">
-          Industries We Help Grow
-        </h2>
+      <div className="max-w-6xl mx-auto lg:px-0 md:px-5 px-5">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+          className="relative z-20 text-center max-w-3xl mx-auto"
+        >
+          <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#102A56]">
+            Industries We Help Grow
+          </h2>
 
-        <p className="mt-2 md:text-lg text-gray-600">
-          Every industry has different challenges. We tailor your website, SEO
-          and digital marketing strategy to attract more of the customers you
-          want.
-        </p>
-      </motion.div>
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
-        {/* cards */}
-        <div className="rounded-3xl md:p-8">
-          {/* Fixed, viewport-centered watermark (state-driven, not scroll-container-bound) */}
+          <p className="mt-2 md:text-lg leading-8 text-gray-600">
+            Every industry has different challenges. We tailor your website, SEO
+            and digital marketing strategy to attract more of the customers you
+            want.
+          </p>
+        </motion.div>
+
+        {/* Board */}
+        <div className="relative mt-16 md:mt-24">
+          {/* Fixed watermark */}
           <div
-            className={`pointer-events-none fixed inset-0 z-0 flex items-center justify-center transition-opacity duration-300 ${
+            className={`pointer-events-none fixed inset-0 z-0 flex items-center justify-center px-6 transition-opacity duration-300 ${
               showWatermark ? "opacity-100" : "opacity-0"
             }`}
           >
             <h1
-              style={{
-                opacity: 0.4,
-                transition: "color 300ms ease",
-              }}
-              className="
-              max-w-5xl
-              text-center
-              text-[50px]
-              md:text-[100px]
-              lg:text-[100px]
-              font-black
-              leading-[0.9]
-              tracking-tight
-              select-none
-              mb-20
-              text-[#145EEE]
-            "
+              style={{ color: active.color, opacity: 0.14 }}
+              className="max-w-5xl text-center text-[46px] md:text-[76px] font-black italic leading-[0.9] tracking-tight select-none transition-colors duration-300"
             >
-              {industries[activeCard].title}
+              {active.title}
             </h1>
           </div>
 
-          <div className="mt-10 space-y-10">
-            {industries.map(
-              ({ title, description, icon: Icon, color }, index) => (
+          {/* Center thread */}
+          <div className="pointer-events-none absolute left-1/2 top-0 bottom-0 hidden w-px -translate-x-1/2 border-l-2 border-dashed border-[#102A56]/20 md:block" />
+
+          <div className="space-y-14 md:space-y-20">
+            {industries.map(({ title, description, image, color }, index) => {
+              const isLeft = index % 2 === 0;
+              return (
                 <motion.div
                   key={title}
                   className={`relative z-10 flex ${
-                    index % 2 === 0 ? "justify-start" : "justify-end"
+                    isLeft ? "justify-start" : "justify-end"
                   }`}
-                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ amount: 0.55, once: true }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeOut",
-                  }}
+                  viewport={{ amount: 0.6, once: false }}
                   onViewportEnter={() => {
                     setActiveCard(index);
                     setShowWatermark(index > 0);
                   }}
+                  onViewportLeave={() => {
+                    if (index === 0 && scrollDirection.current === "up") {
+                      setShowWatermark(false);
+                    }
+                    if (
+                      index === lastIndex &&
+                      scrollDirection.current === "down"
+                    ) {
+                      setShowWatermark(false);
+                    }
+                  }}
                 >
+                  {/* Pin on the thread */}
+                  <div
+                    className="pointer-events-none absolute left-1/2 top-8 z-20 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full ring-4 ring-[#f5f5f5] md:block"
+                    style={{ backgroundColor: color }}
+                  />
+
                   <motion.div
-                    whileHover={{ y: -5, scale: 1 }}
-                    className="relative overflow-hidden rounded-3xl w-full md:w-[50%] md:h-87.5 md:p-8 p-5 bg-[#145EEE]"
+                    initial={{ opacity: 0, y: 60, rotate: isLeft ? -3 : 3 }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                      rotate: isLeft ? -1.5 : 1.5,
+                    }}
+                    whileHover={{ rotate: 0, y: -6 }}
+                    viewport={{ amount: 0.25, once: true }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.06,
+                      ease: "easeOut",
+                    }}
+                    className="relative w-full md:w-[47%] rounded-2xl bg-white p-3 shadow-[0_20px_45px_rgba(16,42,86,0.18)]"
                   >
-                    {/* Huge watermark icon */}
-                    <div className="absolute -bottom-8 -right-8 opacity-[0.1] text-white">
-                      <Icon size={220} strokeWidth={1} />
+                    {/* Washi tape */}
+                    <div
+                      className="absolute -top-3 left-8 h-6 w-16 -rotate-6 rounded-sm opacity-70"
+                      style={{ backgroundColor: color }}
+                    />
+
+                    {/* Photo */}
+                    <div className="relative h-44 w-full overflow-hidden rounded-lg md:h-48">
+                      <img
+                        src={image}
+                        alt={title}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                      <div
+                        className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white"
+                        style={{ backgroundColor: color }}
+                      >
+                        Industry {String(index + 1).padStart(2, "0")}
+                      </div>
                     </div>
 
-                    {/* Small circles */}
-                    <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full border border-white" />
-                    <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-white" />
-
-                    <div className="relative z-10">
-                      <div className="flex items-start justify-between">
-                        <div
-                          className="flex h-16 w-16 items-center justify-center rounded-2xl backdrop-blur"
-                          style={{ background: "rgba(255,255,255,.18)" }}
-                        >
-                          <Icon size={30} className="text-white" />
-                        </div>
-
-                        <ArrowUpRight size={18} className="mt-1 text-white" />
-                      </div>
-
-                      <h3 className="mt-8 text-2xl font-bold text-white max-w-md leading-snug">
+                    {/* Content */}
+                    <div className="px-2 pb-3 pt-5">
+                      <h3 className="text-lg md:text-xl font-bold leading-snug text-[#102A56]">
                         {title}
                       </h3>
 
-                      <p className="mt-4 text-white max-w-lg leading-8">
+                      <p className="mt-2 text-sm md:text-base leading-relaxed text-gray-600">
                         {description}
                       </p>
 
-                      <div className="mt-8 flex items-center gap-2 text-white font-semibold">
+                      <div
+                        className="mt-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold"
+                        style={{
+                          color,
+                          backgroundColor: `${color}1A`,
+                        }}
+                      >
+                        <BadgeCheck size={16} />
                         Trusted Partner
-                        <BadgeCheck size={20} />
                       </div>
                     </div>
                   </motion.div>
                 </motion.div>
-              ),
-            )}
+              );
+            })}
           </div>
         </div>
       </div>

@@ -15,94 +15,53 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
-const industries = [
-  {
-    title: "Plumbers & Heating Engineers",
-    icon: Wrench,
-  },
-  {
-    title: "Electricians",
-    icon: Zap,
-  },
-  {
-    title: "Roofers",
-    icon: Building2,
-  },
-  {
-    title: "Dentists",
-    icon: Smile,
-  },
-  {
-    title: "Aesthetic Clinics",
-    icon: Sparkles,
-  },
-  {
-    title: "Solicitors",
-    icon: Scale,
-  },
-  {
-    title: "Accountants",
-    icon: Calculator,
-  },
-  {
-    title: "Estate Agents",
-    icon: Key,
-  },
-  {
-    title: "Cleaning, Removals & Pest Control",
-    icon: SprayCan,
-  },
-];
 
 export default function IndustriesHero() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f5f5]">
-      {/* Dot grid background */}
+    <section className="relative overflow-hidden bg-white">
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          backgroundImage: `
+      linear-gradient(rgba(20,94,238,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,94,238,.08) 1px, transparent 1px)
+    `,
+          backgroundSize: "60px 60px",
+          opacity: 1,
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center lg:gap-20 gap-10 px-5 pt-40 pb-24 lg:grid-cols-2 lg:px-0">
-        {/* Left */}
-        <div>
-          <div
-            className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold"
-          >
-            <Building2 size={16} />
-            Industries We Help
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 left-1/2 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[140px]" />
+
+        <div className="absolute top-32 left-10 h-52 w-52 rounded-full bg-[#145EEE]/10 blur-[140px]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex justify-center">
+            <span className="inline-flex rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 uppercase tracking-[0.18em] font-semibold">
+              Industries We Help
+            </span>
           </div>
 
-          <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
+          <h1 className="mt-5 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
             Built for Service Businesses That Depend on{" "}
-            <span
-              className="text-[#145EEE]"
-            >
-              Trust & Local Enquiries.
-            </span>
+            <span className="text-[#145EEE]">Trust & Local Enquiries.</span>
           </h1>
 
-          <p className="mt-3 max-w-2xl md:text-lg leading-8 text-gray-600">
+          <p className="mt-3 md:text-2xl text-center leading-8 text-gray-600">
             Wellranked helps UK SMEs improve their visibility, build customer
             trust and generate more enquiries through websites, SEO, Google
             Business optimisation and digital marketing.
           </p>
 
-          <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <div
-              className="rounded-full bg-[#145EEE]"
-            >
+          <div className="mt-5 flex flex-col mx-auto justify-center gap-4 sm:flex-row">
+            <div className="rounded-full bg-[#145EEE]">
               <Link
                 href="/growth-audit"
                 className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
@@ -119,107 +78,7 @@ export default function IndustriesHero() {
               Explore Industries
             </Link>
           </div>
-
-          <div className="mt-5 space-y-3">
-            {[
-              "More local enquiries",
-              "Stronger online credibility",
-              "Marketing tailored to your industry",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <div
-                  className="text-[#145EEE]"
-                >
-                  <BadgeCheck size={22} />
-                </div>
-                <span
-                  className="text-gray-700"
-                >
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right — orbiting industries */}
-        <div className="relative mx-auto flex h-104 w-full max-w-md items-center justify-center">
-          <style>{`
-            @keyframes orbit-spin {
-              from { transform: rotate(0deg); }
-              to { transform: rotate(360deg); }
-            }
-            @keyframes orbit-counter {
-              from { transform: translate(-50%, -50%) rotate(0deg); }
-              to { transform: translate(-50%, -50%) rotate(-360deg); }
-            }
-            @keyframes orbit-pulse {
-              0%, 100% { transform: scale(1); opacity: 0.35; }
-              50% { transform: scale(1.15); opacity: 0.15; }
-            }
-            .orbit-ring { animation: orbit-spin 34s linear infinite; }
-            .orbit-icon { animation: orbit-counter 34s linear infinite; }
-            .orbit-halo { animation: orbit-pulse 4s ease-in-out infinite; }
-            @media (prefers-reduced-motion: reduce) {
-              .orbit-ring, .orbit-icon, .orbit-halo { animation: none !important; }
-            }
-          `}</style>
-
-          {/* dashed orbit guide rings */}
-          <div
-            aria-hidden
-            className="absolute h-80 w-80 rounded-full border border-dashed border-blue-200"
-          />
-          <div
-            aria-hidden
-            className="absolute h-48 w-48 rounded-full border border-dashed border-blue-100"
-          />
-
-          {/* center hub */}
-          <div
-            className="relative z-10 flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full border border-[#145EEE] bg-white text-center"
-          >
-            <div
-              className="text-[#145EEE]"
-            >
-              <Building2 size={22} />
-            </div>
-            <span
-              className="text-[11px] font-bold leading-tight text-[#145EEE]"
-            >
-              Your
-              <br />
-              Industry
-            </span>
-          </div>
-
-          {/* rotating layer carrying each industry icon around the hub */}
-          <div className="orbit-ring absolute h-80 w-80">
-            {industries.map(({ title, icon: Icon }, i) => {
-              const angle = (360 / industries.length) * i;
-              return (
-                <div
-                  key={title}
-                  className="absolute left-1/2 top-1/2 h-0 w-0"
-                  style={{ transform: `rotate(${angle}deg) translate(10rem)` }}
-                >
-                  <div className="orbit-icon group absolute flex flex-col items-center">
-                    <span
-                      className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#145EEE] text-[#145EEE] bg-white"
-                    >
-                      <Icon size={24} />
-                    </span>
-                    <div className="pointer-events-none absolute top-full z-30 mt-2 w-max max-w-44 scale-95 rounded-xl bg-[#145EEE] px-3 py-2 text-center opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
-                      <span className="block text-[11px] font-bold leading-tight text-white">
-                        {title}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -46,7 +46,7 @@ const beliefs = [
 
 export default function AboutValues() {
   return (
-    <section id="our-values" className="bg-[#f5f5f5] md:py-24 py-16">
+    <section id="our-values" className="bg-white md:py-24 py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <motion.div
