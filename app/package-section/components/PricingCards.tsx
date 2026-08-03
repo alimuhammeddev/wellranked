@@ -112,7 +112,7 @@ function BoardingPass({ pkg, index }: { pkg: Package; index: number }) {
       transition={{ duration: 0.55, delay: index * 0.1, ease: "easeOut" }}
     >
       {pkg.featured && (
-        <div className="absolute -top-3.5 left-1/2 z-20 -translate-x-1/2 -rotate-3 rounded-md border-2 border-[#145EEE] bg-[#FDFBF4] px-3 py-1">
+        <div className="absolute -top-3.5 left-1/2 z-20 -translate-x-1/2 -rotate-3 rounded-md border-2 border-[#145EEE] bg-white px-3 py-1">
           <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#145EEE]">
             Most Popular
           </span>
@@ -156,7 +156,7 @@ function BoardingPass({ pkg, index }: { pkg: Package; index: number }) {
           </h3>
 
           <div className="mt-2 inline-flex items-center rounded-full bg-white/10 px-3 py-1">
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-white/80">
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-white">
               Best for: {pkg.bestFor}
             </span>
           </div>

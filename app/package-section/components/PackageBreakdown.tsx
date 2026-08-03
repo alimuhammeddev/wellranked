@@ -109,7 +109,7 @@ function BoardingPassCard({
     >
       {/* Featured Badge */}
       {pkg.featured && (
-        <div className="absolute -top-3.5 left-1/2 z-20 -translate-x-1/2 -rotate-2 rounded-md border-2 border-[#145EEE] bg-[#FDFBF4] px-4 py-1 shadow-sm">
+        <div className="absolute -top-3.5 left-1/2 z-20 -translate-x-1/2 -rotate-2 rounded-md border-2 border-[#145EEE] bg-white px-4 py-1 shadow-sm">
           <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#145EEE]">
             Most Popular
           </span>
@@ -117,35 +117,35 @@ function BoardingPassCard({
       )}
 
       <div
-        className={`relative flex flex-col md:flex-row overflow-visible rounded-[22px] ${bgClass} transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl`}
+        className={`relative flex flex-col md:flex-row overflow-visible rounded-[22px] ${bgClass} transition-all duration-500`}
       >
         {/* Corner Punch Holes */}
-        <div className="absolute left-3 top-3 h-2.5 w-2.5 rounded-full bg-[#FDFBF4] z-10" />
-        <div className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-[#FDFBF4] z-10" />
-        <div className="absolute left-3 bottom-3 h-2.5 w-2.5 rounded-full bg-[#FDFBF4] z-10" />
-        <div className="absolute right-3 bottom-3 h-2.5 w-2.5 rounded-full bg-[#FDFBF4] z-10" />
+        <div className="absolute left-3 top-3 h-2.5 w-2.5 rounded-full bg-white" />
+        <div className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-white" />
+        <div className="absolute left-3 bottom-3 h-2.5 w-2.5 rounded-full bg-white" />
+        <div className="absolute right-3 bottom-3 h-2.5 w-2.5 rounded-full bg-white" />
 
         {/* Stub */}
         <div className="relative flex w-full md:w-[32%] flex-col justify-between px-6 py-8 md:px-8 md:py-10">
           {/* Vertical Perforation (desktop) */}
           <div className="hidden md:block absolute top-0 bottom-0 right-0 z-10 w-0">
-            <div className="absolute -top-3 right-0 h-6 w-6 translate-x-1/2 rounded-full bg-[#FDFBF4]" />
-            <div className="absolute -bottom-3 right-0 h-6 w-6 translate-x-1/2 rounded-full bg-[#FDFBF4]" />
-            <div className="mx-auto h-full border-r-2 border-dashed border-[#DDD6C4]/60" />
+            <div className="absolute -top-3 right-0 h-6 w-6 translate-x-1/2 rounded-full bg-white" />
+            <div className="absolute -bottom-3 right-0 h-6 w-6 translate-x-1/2 rounded-full bg-white" />
+            <div className="mx-auto h-full border-r-2 border-dashed border-white" />
           </div>
 
           {/* Horizontal Perforation (mobile) */}
           <div className="md:hidden absolute bottom-0 left-0 right-0 z-10 h-0">
-            <div className="absolute -left-3 bottom-0 h-6 w-6 -translate-y-1/2 rounded-full bg-[#FDFBF4]" />
-            <div className="absolute -right-3 bottom-0 h-6 w-6 -translate-y-1/2 rounded-full bg-[#FDFBF4]" />
-            <div className="mx-auto w-full border-b-2 border-dashed border-[#DDD6C4]/60" />
+            <div className="absolute -left-3 bottom-0 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
+            <div className="absolute -right-3 bottom-0 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
+            <div className="mx-auto w-full border-b-2 border-dashed border-white" />
           </div>
 
           <div>
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
               <Icon size={22} className="text-white" />
             </div>
-            <div className="mt-4 text-[10px] font-black uppercase tracking-[0.16em] text-white/80">
+            <div className="mt-4 text-[10px] font-black uppercase tracking-[0.16em] text-white">
               {pkg.subtitle}
             </div>
             <h3 className="mt-2 text-xl font-black text-white">{pkg.title}</h3>
@@ -153,7 +153,7 @@ function BoardingPassCard({
 
           <div className="mt-6 md:mt-0">
             <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-white/90">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-white">
                 Best for: {pkg.bestFor}
               </span>
             </div>
@@ -162,7 +162,7 @@ function BoardingPassCard({
 
         {/* Details */}
         <div className="flex-1 px-6 py-8 md:px-10 md:py-10">
-          <p className="text-sm leading-relaxed text-white/90 md:text-base">
+          <p className="text-sm leading-relaxed text-white md:text-base">
             {pkg.description}
           </p>
 
