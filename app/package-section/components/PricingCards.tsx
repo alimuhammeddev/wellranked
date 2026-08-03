@@ -91,7 +91,7 @@ function VerticalPerforation() {
     <div className="absolute top-0 bottom-0 left-[34%] z-10 w-0 md:left-[36%]">
       <div className="absolute -top-3 left-0 h-6 w-6 -translate-x-1/2 rounded-full bg-white" />
       <div className="absolute -bottom-3 left-0 h-6 w-6 -translate-x-1/2 rounded-full bg-white" />
-      <div className="mx-auto h-full border-l-2 border-dashed border-[#DDD6C4]" />
+      <div className="mx-auto h-full border-l-2 border-dashed border-white" />
     </div>
   );
 }
@@ -200,7 +200,7 @@ export default function PricingCards() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold uppercase tracking-[0.18em] text-[#145EEE]">
+          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold text-sm tracking-[0.18em] text-[#145EEE]">
             Choose Your Plan
           </span>
 

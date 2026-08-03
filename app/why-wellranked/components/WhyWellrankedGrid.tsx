@@ -20,13 +20,13 @@ const features = [
   {
     title: "We Focus on Practical Growth",
     description:
-      "Everything we do is designed to improve your visibility, build trust and generate more enquiries. No unnecessary jargon—just work that helps customers choose your business.",
+      "Everything we do is designed to improve your visibility, build trust and generate more enquiries. No unnecessary jargon just work that helps customers choose your business.",
     icon: TrendingUp,
   },
   {
     title: "Built for UK SMEs",
     description:
-      "Our services are designed for independent businesses, sole traders and growing local companies—not large corporations with enterprise-sized budgets.",
+      "Our services are designed for independent businesses, sole traders and growing local companies not large corporations with enterprise-sized budgets.",
     icon: Building2,
   },
   {
@@ -51,7 +51,6 @@ function Perforation({ position }: { position: number }) {
     >
       <div className="absolute -left-3 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
       <div className="absolute -right-3 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
-      <div className="mx-4 border-t-2 border-dashed border-white" />
     </div>
   );
 }
@@ -61,7 +60,7 @@ export default function WhyWellrankedGrid() {
   const others = features.filter((item) => !item.featured);
 
   return (
-    <section id="why-grid" className="bg-white md:py-48 md:mb-0 py-16">
+    <section id="why-grid" className="bg-white md:py-32 md:mb-0 py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <motion.div
@@ -86,7 +85,7 @@ export default function WhyWellrankedGrid() {
             ease: "easeOut",
           }}
         >
-          <span className="rounded-full border border-[#145EEE] uppercase tracking-[0.18em] bg-blue-50 px-4 py-2  font-semibold text-[#145EEE]">
+          <span className="rounded-full border border-[#145EEE] text-sm tracking-[0.18em] bg-blue-50 px-4 py-2 font-semibold text-[#145EEE]">
             Why Businesses Trust Us
           </span>
 
@@ -126,15 +125,6 @@ export default function WhyWellrankedGrid() {
                 ease: "easeOut",
               }}
             >
-              {/* decorative glows + ghost icon */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/20 blur-3xl"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-white/10 blur-3xl"
-              />
               <featured.icon
                 aria-hidden
                 size={150}
@@ -146,7 +136,7 @@ export default function WhyWellrankedGrid() {
               <div className="absolute right-4 top-4 h-2.5 w-2.5 rounded-full bg-white" />
 
               {/* Icon + number section */}
-              <div className="relative flex items-center justify-between px-5 pb-8 pt-7 md:px-10">
+              <div className="relative flex items-center justify-between px-5 pt-7 md:px-10">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#145EEE] backdrop-blur-sm">
                   <featured.icon size={24} />
                 </span>
@@ -158,7 +148,7 @@ export default function WhyWellrankedGrid() {
               <Perforation position={26} />
 
               {/* Title + description section */}
-              <div className="relative px-5 pb-8 pt-6 md:px-10 md:pb-10">
+              <div className="relative px-5 pt-6 pb-8 md:px-10 md:pb-10">
                 <h3 className="text-xl font-bold text-white md:text-2xl">
                   {featured.title}
                 </h3>
@@ -207,7 +197,7 @@ export default function WhyWellrankedGrid() {
               <div className="absolute right-3 top-3 h-2 w-2 rounded-full bg-white" />
 
               {/* Icon + number section */}
-              <div className="relative flex items-start justify-between px-6 pb-8 pt-7 md:px-8">
+              <div className="relative flex items-start justify-between px-6 pt-7 md:px-8">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#145EEE]">
                   <Icon size={22} />
                 </span>
@@ -233,4 +223,4 @@ export default function WhyWellrankedGrid() {
       </div>
     </section>
   );
-};
+}

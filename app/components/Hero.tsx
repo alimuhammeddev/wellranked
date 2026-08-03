@@ -54,7 +54,7 @@ export default function Hero() {
                   Marketing Department
                 </span>
               </span>
-              {""} for Less Than the Cost of <span>One Employee.</span>
+              {""}for Less Than the Cost of <span>One Employee.</span>
             </h1>
 
             <p className="mt-5 md:text-2xl text-gray-600 leading-8">

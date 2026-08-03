@@ -20,7 +20,7 @@ export default function ContactHero() {
       <div className="relative mx-auto grid max-w-7xl md:gap-16 gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="inline-flex items-center gap-2 rounded-full tracking-[0.18em] border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             <Mail size={16} />
             Contact Wellranked
           </span>

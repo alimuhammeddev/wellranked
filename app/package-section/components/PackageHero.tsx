@@ -43,7 +43,7 @@ export default function PackagesHero() {
       >
         <div>
           <div className="flex justify-center">
-            <span className="inline-flex rounded-full bg-blue-50 border uppercase tracking-[0.18em] border-[#145EEE] text-[#145EEE] px-4 py-2 text-sm font-semibold">
+            <span className="inline-flex rounded-full bg-blue-50 border tracking-[0.18em] border-[#145EEE] text-[#145EEE] px-4 py-2 text-sm font-semibold">
               Packages & Pricing
             </span>
           </div>

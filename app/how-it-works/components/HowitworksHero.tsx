@@ -35,7 +35,7 @@ export default function HowItWorksHero() {
           transition={{ duration: 0.5 }}
         >
           <div className="flex justify-center">
-            <span className="inline-flex rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 uppercase tracking-[0.18em] font-semibold text-[#145EEE]">
+            <span className="inline-flex rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm tracking-[0.18em] font-semibold text-[#145EEE]">
               How It Works
             </span>
           </div>
@@ -48,7 +48,7 @@ export default function HowItWorksHero() {
           </h1>
 
           <p className="mt-3 md:text-2xl text-center leading-8 text-gray-600">
-            We've designed our process to make marketing straightforward. From
+            We've designed our process to make marketing straight forward. From
             your free Growth Audit to ongoing monthly support, every step is
             focused on helping your business grow without adding more work to
             your day.

@@ -141,7 +141,7 @@ export default function PricingComparison() {
     <section className="bg-white py-24 md:block hidden">
       <div className="mx-auto max-w-7xl lg:px-0 px-5 ">
         <div className="mx-auto mb-10 max-w-3xl text-center">
-          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-[0.18em] text-[#145EEE]">
             Compare Packages
           </span>
 

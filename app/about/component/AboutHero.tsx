@@ -66,7 +66,7 @@ export default function AboutHero() {
           transition={{ duration: 0.6 }}
           className="mx-auto text-center lg:mx-0 lg:text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 uppercase tracking-[0.18em] font-semibold">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm tracking-[0.18em] font-semibold">
             About Wellranked
           </span>
 

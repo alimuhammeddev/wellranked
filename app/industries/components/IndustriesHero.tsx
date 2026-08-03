@@ -44,7 +44,7 @@ export default function IndustriesHero() {
           transition={{ duration: 0.5 }}
         >
           <div className="flex justify-center">
-            <span className="inline-flex rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 uppercase tracking-[0.18em] font-semibold">
+            <span className="inline-flex rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm tracking-[0.18em] font-semibold">
               Industries We Help
             </span>
           </div>

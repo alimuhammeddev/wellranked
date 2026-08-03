@@ -71,7 +71,7 @@ export default function AboutValues() {
             ease: "easeOut",
           }}
         >
-          <span className="rounded-full border border-[#145EEE] uppercase bg-blue-50 px-4 py-2 font-semibold text-[#145EEE]">
+          <span className="rounded-full border border-[#145EEE] text-sm tracking-[0.18em] bg-blue-50 px-4 py-2 font-semibold text-[#145EEE]">
             What We Believe
           </span>
 

@@ -77,7 +77,7 @@ export default function FAQSection() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-[0.18em] text-[#145EEE]">
             <MessageCircleQuestion size={16} />
             Frequently Asked Questions
           </span>

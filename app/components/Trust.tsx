@@ -128,7 +128,7 @@ export default function TrustSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
             Why Businesses Choose Wellranked
           </span>
 
@@ -139,7 +139,7 @@ export default function TrustSection() {
 
           <p className="mt-5 md:text-lg leading-8 text-gray-600">
             We understand small businesses need practical marketing support,
-            not complicated agency language — every package is built to be
+            not complicated agency language every package is built to be
             clear, affordable and useful from day one.
           </p>
         </motion.div>

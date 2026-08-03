@@ -57,7 +57,7 @@ const steps = [
 
 export default function HowItWorksTimeline() {
   return (
-    <section id="process" className="bg-wwhite md:py-24 py-16">
+    <section id="process" className="bg-white md:py-24 py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <motion.div
@@ -67,13 +67,13 @@ export default function HowItWorksTimeline() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="inline-flex items-center gap-2 rounded-full border tracking-[0.18em] border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Our Process
           </span>
 
           <h2 className="mt-5 text-2xl font-bold text-[#102A56] lg:text-4xl md:text-3xl">
             From Your First Conversation{" "}
-            <span className="text-[#145EEE]">To Long-Term Growth</span>
+            <span className="text-[#145EEE]">To Long Term Growth</span>
           </h2>
 
           <p className="mt-3 md:text-lg leading-8 text-gray-600">

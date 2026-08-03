@@ -67,7 +67,7 @@ export default function GrowthSupportHero() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex justify-center">
-            <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] uppercase tracking-[0.18em]">
+            <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
               Growth Support Package
             </span>
           </div>

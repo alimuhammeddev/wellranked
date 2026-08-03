@@ -58,9 +58,9 @@ function Perforation({ position }: { position: number }) {
       className="absolute left-0 right-0 z-10"
       style={{ top: `${position}%` }}
     >
-      <div className="absolute -left-3 h-6 w-6 -translate-y-1/2 rounded-full bg-[#F9FAFB]" />
-      <div className="absolute -right-3 h-6 w-6 -translate-y-1/2 rounded-full bg-[#F9FAFB]" />
-      <div className="mx-4 border-t-2 border-dashed border-blue-50" />
+      <div className="absolute -left-3 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
+      <div className="absolute -right-3 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
+      <div className="mx-4 border-t-2 border-dashed border-white" />
     </div>
   );
 }
@@ -155,7 +155,7 @@ export default function PainSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold tracking-[0.18em] text-[#145EEE]">
+          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold tracking-[0.18em] text-sm text-[#145EEE]">
             The Challenge
           </span>
 

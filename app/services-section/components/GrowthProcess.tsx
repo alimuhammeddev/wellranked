@@ -61,7 +61,7 @@ export default function GrowthProcess() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 font-semibold text-[#145EEE] uppercase tracking-[0.18em]">
+          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 font-semibold text-[#145EEE] text-sm tracking-[0.18em]">
             Our Process
           </span>
 

@@ -91,7 +91,7 @@ export default function SolutionSection() {
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
           className="relative z-20 text-center max-w-3xl mx-auto"
         >
-          <span className="inline-flex mx-auto items-center gap-1.5 rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] uppercase tracking-[0.18em]">
+          <span className="inline-flex mx-auto items-center gap-1.5 rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
             One Team. One Monthly Fee.
           </span>
 
@@ -99,13 +99,13 @@ export default function SolutionSection() {
             Everything, pinned to one board.
           </h1>
 
-          <p className="mt-3 md:text-lg leading-8 text-[#5B5646]">
+          <p className="mt-3 md:text-lg leading-8 text-gray-600">
             Instead of hiring a developer, SEO specialist, designer, social
             manager and ads expert separately,{" "}
             <span className="font-semibold text-[#145EEE]">
               Wellranked runs it all as one connected team
             </span>{" "}
-            — every piece working off the same plan.
+            every piece working off the same plan.
           </p>
         </motion.div>
 

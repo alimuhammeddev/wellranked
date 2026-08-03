@@ -138,7 +138,7 @@ export default function WhyChooseUs() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 font-semibold text-[#145EEE] uppercase tracking-[0.18em]">
+          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 font-semibold text-[#145EEE] text-sm tracking-[0.18em]">
             Why Choose Wellranked
           </span>
 
