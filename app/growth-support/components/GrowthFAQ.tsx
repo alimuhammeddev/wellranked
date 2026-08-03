@@ -60,7 +60,7 @@ export default function GrowthFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>();
 
   return (
-    <section className="bg-[#f5f5f5] py-20">
+    <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -136,7 +136,7 @@ export default function GrowthFAQ() {
                       transition={{ duration: 0.3, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="ml-[35px] h-3 w-px border-l border-dashed border-blue-200" />
+                      <div className="ml-8.75 h-3 w-px border-l border-dashed border-blue-200" />
 
                       <div className="flex items-start gap-3 px-5 pb-5">
                         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[11px] font-bold text-[#145EEE]">
@@ -157,4 +157,4 @@ export default function GrowthFAQ() {
       </div>
     </section>
   );
-};
+}

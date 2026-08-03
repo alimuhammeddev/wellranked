@@ -16,67 +16,54 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
-const services = [
-  { title: "Website Design & Management", icon: Globe },
-  { title: "Local SEO", icon: Search },
-  { title: "Google Business Profile", icon: MapPin },
-  { title: "Review & Reputation Management", icon: Star },
-  { title: "Graphics & Social Content", icon: Palette },
-  { title: "Email Marketing", icon: Mail },
-  { title: "Meta & Google Ads Management", icon: Megaphone },
-  { title: "Marketing Concierge", icon: Headphones },
-];
 
 export default function ServicesHero() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f5f5]">
-      {/* Dot grid background */}
+    <section className="relative overflow-hidden bg-white">
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          backgroundImage: `
+      linear-gradient(rgba(20,94,238,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,94,238,.08) 1px, transparent 1px)
+    `,
+          backgroundSize: "60px 60px",
+          opacity: 1,
         }}
       />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-start md:gap-20 gap-10 px-5 pb-24 pt-40 md:px-5 lg:grid-cols-2 lg:px-0">
-        {/* Left */}
-        <div>
-          <span
-            className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold"
-          >
-            <Globe2 size={16} />
-            Digital Growth Services
-          </span>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 left-1/2 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[140px]" />
 
-          <h1 className="mt-3 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            Everything Your Business Needs{" "}
-            <span
-              className="text-[#145EEE]"
-            >
-              To Grow Online.
+        <div className="absolute top-32 left-10 h-52 w-52 rounded-full bg-[#145EEE]/10 blur-[140px]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex justify-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em]">
+              Digital Growth Services
             </span>
+          </div>
+
+          <h1 className="mt-3 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
+            Everything Your Business Needs{" "}
+            <span className="text-[#145EEE]">To Grow Online.</span>
           </h1>
 
-          <p className="mt-2 max-w-2xl md:text-lg leading-8 text-gray-600">
+          <p className="mt-2 text-center md:text-2xl leading-8 text-gray-600">
             Whether you need a better website, stronger Google rankings, more
             customer enquiries or ongoing marketing support, Wellranked provides
             practical digital marketing services that help UK businesses grow
             with confidence.
           </p>
 
-          <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-            <div
-              className="rounded-full bg-[#145EEE]"
-            >
+          <div className="mt-5 flex flex-col mx-auto justify-center gap-4 sm:flex-row">
+            <div className="rounded-full bg-[#145EEE]">
               <Link
                 href="/growth-audit"
                 className="flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white"
@@ -93,137 +80,7 @@ export default function ServicesHero() {
               See What We Can Improve
             </Link>
           </div>
-
-          <div className="mt-5 space-y-3">
-            {[
-              "Professional websites that build trust",
-              "Local SEO that gets your business found",
-              "Marketing support from one trusted team",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <div
-                  className="text-[#145EEE]"
-                >
-                  <BadgeCheck size={22} />
-                </div>
-                <span
-                  className="text-gray-700"
-                >
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right — hub & spoke services map */}
-        <div className="relative mx-auto w-full max-w-md">
-          {/* Hub */}
-          <motion.div
-            className="relative z-20 mx-auto mb-8 w-fit"
-            initial={{
-              opacity: 0,
-              y: 40,
-              scale: 0.95,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.25,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.15,
-              ease: "easeOut",
-            }}
-          >
-            <div className="flex flex-col items-center gap-1.5 rounded-3xl border border-[#145EEE] bg-white/90 px-7 py-5 text-center">
-              <span
-                className="mb-1 flex h-11 w-11 items-center justify-center rounded-2xl text-white bg-[#145EEE]"
-              >
-                <Sparkles size={20} />
-              </span>
-              <h1
-                className="font-extrabold md:text-lg text-[#145EEE]"
-              >
-                Services We Offer
-              </h1>
-              <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400">
-                One partner, every channel
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Bridge connecting hub to the two service columns */}
-          <motion.div
-            aria-hidden
-            className="relative mx-auto h-8 w-full"
-            initial={{
-              opacity: 0,
-              y: 40,
-              scale: 0.95,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.25,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.15,
-              ease: "easeOut",
-            }}
-          >
-            <span
-              className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
-            />
-            <span
-              className="absolute left-1/4 top-1/2 h-px w-1/2 -translate-y-1/2 border-t-2 border-dashed border-[#145EEE]"
-            />
-            <span
-              className="absolute left-1/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
-            />
-            <span
-              className="absolute left-3/4 top-1/2 h-1/2 w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
-            />
-          </motion.div>
-
-          {/* Service cards */}
-          <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
-            <span
-              className="absolute left-1/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
-            />
-            <span
-              className="absolute left-3/4 top-0 z-0 h-full w-px -translate-x-1/2 border-l-2 border-dashed border-[#145EEE]"
-            />
-
-            {services.map(({ title, icon: Icon }, index) => (
-              <div
-                key={title}
-                className="relative z-10 flex flex-col items-center gap-2 rounded-2xl border bg-white/95 p-3 text-center sm:p-4 text-[#145EEE]"
-              >
-                <span
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#145EEE]"
-                >
-                  <Icon size={17} />
-                </span>
-                <span
-                  className="text-[11px] font-semibold leading-tight sm:text-xs"
-                >
-                  {title}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

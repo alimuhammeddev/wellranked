@@ -41,7 +41,7 @@ const orbitItems = [
 
 export default function GrowthSupportHero() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f5f5]">
+    <section className="relative overflow-hidden bg-white">
       <div
         className="absolute inset-0"
         style={{
@@ -61,7 +61,11 @@ export default function GrowthSupportHero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="flex justify-center">
             <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] uppercase tracking-[0.18em]">
               Growth Support Package
@@ -99,7 +103,7 @@ export default function GrowthSupportHero() {
               View Support Packages
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -6,15 +6,22 @@ import {
   Clock3,
   Headphones,
   TrendingUp,
+  LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const features = [
+interface Feature {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+const features: Feature[] = [
   {
     title: "Built for Small Businesses",
     description:
-      "Every strategy is designed around the needs of local businesses, sole traders and growing SMEs. No unnecessary complexity—just practical marketing that works.",
+      "Every strategy is designed around the needs of local businesses, sole traders and growing SMEs. No unnecessary complexity just practical marketing that works.",
     icon: BadgeCheck,
   },
   {
@@ -37,20 +44,77 @@ const features = [
   },
 ];
 
-function GhostQuote() {
+function Perforation({ position }: { position: number }) {
   return (
-    <span
-      aria-hidden
-      className="pointer-events-none absolute -top-3 right-5 select-none font-serif text-7xl leading-none text-blue-50"
+    <div
+      className="absolute left-0 right-0 z-10"
+      style={{ top: `${position}%` }}
     >
-      &rdquo;
-    </span>
+      <div className="absolute -left-3 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
+      <div className="absolute -right-3 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
+      <div className="mx-4 border-t-2 border-dashed border-white" />
+    </div>
+  );
+}
+
+function FeatureTicket({
+  feature,
+  index,
+  rotate,
+}: {
+  feature: Feature;
+  index: number;
+  rotate: string;
+}) {
+  const Icon = feature.icon;
+
+  return (
+    <motion.div
+      className={`group relative w-full ${rotate} transition-transform duration-500 hover:rotate-0 hover:-translate-y-2`}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+    >
+      <div className="relative overflow-visible rounded-[22px] bg-[#145EEE]">
+        {/* Punched corner holes */}
+        <div className="absolute left-3 top-3 h-2 w-2 rounded-full bg-white" />
+        <div className="absolute right-3 top-3 h-2 w-2 rounded-full bg-white" />
+
+        {/* Icon + title section */}
+        <div className="px-6 pb-8 pt-7">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white">
+            <Icon size={20} className="text-[#145EEE]" />
+          </div>
+
+          <h3 className="mt-4 text-[17px] font-bold leading-snug text-white">
+            {feature.title}
+          </h3>
+        </div>
+
+        <Perforation position={42} />
+
+        {/* Description section */}
+        <div className="relative px-6 pb-9 pt-5">
+          <p className="text-[14px] leading-relaxed text-white">
+            {feature.description}
+          </p>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
 export default function WhyChooseUs() {
+  const rotations = [
+    "rotate-[-2deg]",
+    "rotate-[1.5deg]",
+    "rotate-[-1.5deg]",
+    "rotate-[2deg]",
+  ];
+
   return (
-    <section className="relative overflow-hidden bg-[#f5f5f5] md:py-24">
+    <section className="relative overflow-hidden bg-white md:py-24 py-16">
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
         <motion.div
@@ -74,7 +138,7 @@ export default function WhyChooseUs() {
             ease: "easeOut",
           }}
         >
-          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
+          <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 font-semibold text-[#145EEE] uppercase tracking-[0.18em]">
             Why Choose Wellranked
           </span>
 
@@ -114,51 +178,16 @@ export default function WhyChooseUs() {
 
         {/* Right */}
         <div className="grid gap-6 sm:grid-cols-2">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-
-            return (
-              <motion.div
-                key={feature.title}
-                className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-white md:p-7 p-5"
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                  scale: 0.95,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.25,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.15,
-                  ease: "easeOut",
-                }}
-              >
-                <GhostQuote />
-
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#145EEE]">
-                  <Icon size={24} className="text-white" />
-                </div>
-
-                <h3 className="relative mt-4 md:text-xl font-bold text-[#145EEE]">
-                  {feature.title}
-                </h3>
-
-                <p className="relative mt-3 leading-7 text-gray-600">
-                  {feature.description}
-                </p>
-              </motion.div>
-            );
-          })}
+          {features.map((feature, index) => (
+            <FeatureTicket
+              key={feature.title}
+              feature={feature}
+              index={index}
+              rotate={rotations[index % rotations.length]}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
-}
+};

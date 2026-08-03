@@ -11,10 +11,19 @@ import {
   Mail,
   Megaphone,
   BriefcaseBusiness,
+  LucideIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
-const services = [
+interface Service {
+  title: string;
+  description: string;
+  cta: string;
+  href: string;
+  icon: LucideIcon;
+}
+
+const services: Service[] = [
   {
     title: "Website Design & Management",
     description:
@@ -81,64 +90,99 @@ const services = [
   },
 ];
 
-// Subtle dot-grid pattern, sits behind the top-right corner of each card.
-function DotGrid() {
-  const cols = 8;
-  const rows = 6;
-  const spacing = 18;
-
-  const dots = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      dots.push({ x: c * spacing + 6, y: r * spacing + 6 });
-    }
-  }
-
+function Perforation({ position }: { position: number }) {
   return (
-    <svg
-      viewBox="0 0 150 110"
-      preserveAspectRatio="xMaxYMin meet"
-      className="pointer-events-none absolute -right-2 -top-2 h-32 w-40 opacity-[0.12] transition-all duration-500 ease-out group-hover:opacity-[0.22]"
-      aria-hidden="true"
+    <div
+      className="absolute left-0 right-0 z-10"
+      style={{ top: `${position}%` }}
     >
-      {dots.map((d, i) => (
-        <circle key={i} cx={d.x} cy={d.y} r={1.6} fill="#244EB3" />
-      ))}
-    </svg>
+      <div className="absolute -left-3 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
+      <div className="absolute -right-3 h-6 w-6 -translate-y-1/2 rounded-full bg-white" />
+      <div className="mx-4 border-t-2 border-dashed border-blue-50" />
+    </div>
   );
 }
 
-function CornerRings() {
+function ServiceTicket({
+  service,
+  index,
+  rotate,
+  color,
+}: {
+  service: Service;
+  index: number;
+  rotate: string;
+  color: string;
+}) {
+  const Icon = service.icon;
+
   return (
-    <svg
-      viewBox="0 0 160 160"
-      className="pointer-events-none absolute -right-10 -top-10 h-30 w-30 transition-all duration-500 ease-out opacity-[0.3]"
-      aria-hidden="true"
+    <motion.div
+      className={`group relative w-full ${rotate} transition-transform duration-500 hover:rotate-0 hover:-translate-y-2`}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
     >
-      <circle
-        cx="80"
-        cy="80"
-        r="78"
-        fill="none"
-        stroke="#059669"
-        strokeWidth="1"
-      />
-      <circle
-        cx="80"
-        cy="80"
-        r="54"
-        fill="none"
-        stroke="#059669"
-        strokeWidth="1"
-      />
-    </svg>
+      <div
+        className="relative flex h-full flex-col overflow-visible rounded-[22px]"
+        style={{ backgroundColor: color }}
+      >
+        {/* Punched corner holes */}
+        <div className="absolute left-3 top-3 h-2 w-2 rounded-full bg-white" />
+        <div className="absolute right-3 top-3 h-2 w-2 rounded-full bg-white" />
+
+        {/* Icon + title section */}
+        <div className="px-6 pb-8 pt-7 md:px-7">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white">
+            <Icon size={20} style={{ color }} />
+          </div>
+
+          <h3 className="mt-4 text-lg font-bold leading-snug text-white md:text-xl">
+            {service.title}
+          </h3>
+        </div>
+
+        <Perforation position={38} />
+
+        {/* Description + CTA section */}
+        <div className="relative flex flex-1 flex-col px-6 pb-8 pt-5 md:px-7">
+          <p className="grow text-[14px] leading-relaxed text-white mb-10">
+            {service.description}
+          </p>
+
+          <Link
+            href={service.href}
+            className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-white transition-all group-hover:gap-3"
+          >
+            {service.cta}
+            <ArrowRight
+              size={16}
+              className="transition-transform group-hover:translate-x-1"
+            />
+          </Link>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
 export default function ServicesGrid() {
+  const rotations = [
+    "rotate-[-1.5deg]",
+    "rotate-[1.5deg]",
+    "rotate-[-1deg]",
+    "rotate-[1deg]",
+  ];
+
+  // A small palette of harmonizing shades built from the brand blue (#145EEE)
+  // and navy (#102A56) — same family, varied depth, so cards feel related
+  // rather than identical.
+  const colors = ["#145EEE", "#102A56", "#1D4ED8", "#3652C4"];
+
   return (
-    <section id="services" className="relative overflow-hidden bg-[#f5f5f5]">
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-0 md:mt-20 mt-10">
+    <section id="services" className="relative overflow-hidden bg-white">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-0 md:mt-20 mt-10 md:pb-24 pb-10">
         {/* Heading */}
         <motion.div
           className="mx-auto max-w-3xl text-center"
@@ -180,64 +224,15 @@ export default function ServicesGrid() {
 
         {/* Services */}
         <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-2">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <motion.div
-                key={service.title}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white md:p-8 p-5 border-blue-200"
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                  scale: 0.95,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.25,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.15,
-                  ease: "easeOut",
-                }}
-              >
-                <CornerRings />
-
-                {/* Icon */}
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl ring-1 ring-inset transition-all duration-300 bg-[#145EEE] ring-[#145EEE]">
-                  <Icon size={24} className="text-white" />
-                </div>
-
-                {/* Content */}
-                <h3 className="relative mt-3 text-xl font-bold text-[#145EEE]">
-                  {service.title}
-                </h3>
-
-                <p className="relative mt-3 grow leading-7 text-gray-600">
-                  {service.description}
-                </p>
-
-                {/* CTA */}
-                <Link
-                  href={service.href}
-                  className="relative mt-5 inline-flex items-center gap-2 font-semibold text-[#145EEE] transition-all group-hover:gap-3"
-                >
-                  {service.cta}
-
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </Link>
-              </motion.div>
-            );
-          })}
+          {services.map((service, index) => (
+            <ServiceTicket
+              key={service.title}
+              service={service}
+              index={index}
+              rotate={rotations[index % rotations.length]}
+              color={colors[index % colors.length]}
+            />
+          ))}
         </div>
       </div>
     </section>
