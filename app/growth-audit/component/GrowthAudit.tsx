@@ -11,19 +11,16 @@ import {
 
 export default function GrowthAuditHero() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f5f5]">
-      {/* Dot grid background */}
+    <section className="relative overflow-hidden bg-white">
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(36,78,179,0.18) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 35%, black 40%, transparent 95%)",
+          backgroundImage: `
+      linear-gradient(rgba(20,94,238,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,94,238,.08) 1px, transparent 1px)
+    `,
+          backgroundSize: "60px 60px",
+          opacity: 1,
         }}
       />
       <div className="relative mx-auto grid max-w-7xl md:gap-16 gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:px-0">
