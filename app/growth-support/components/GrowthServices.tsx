@@ -100,7 +100,7 @@ export default function GrowthServices() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold uppercase tracking-[0.18em] text-[#145EEE] text-xs">
+          <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold uppercase tracking-[0.18em] text-[#145EEE]">
             What We Can Handle
           </span>
 

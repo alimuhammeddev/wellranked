@@ -1,6 +1,6 @@
-import WhyWellrankedCTA from "./components/WhyWellrankedCTA";
 import WhyWellrankedGrid from "./components/WhyWellrankedGrid";
 import WhyWellrankedHero from "./components/WhyWellrankedHero";
+import CTA from "../components/CTA";
 
 export default function WhywellRanked() {
   return (
@@ -12,7 +12,7 @@ export default function WhywellRanked() {
         <WhyWellrankedGrid />
       </div>
       <div>
-        <WhyWellrankedCTA />
+        <CTA />
       </div>
     </section>
   );

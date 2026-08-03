@@ -2,17 +2,6 @@
 
 import {
   ArrowRight,
-  BadgeCheck,
-  Globe2,
-  Globe,
-  Headphones,
-  Mail,
-  MapPin,
-  Megaphone,
-  Palette,
-  Search,
-  Sparkles,
-  Star,
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
