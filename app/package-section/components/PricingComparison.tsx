@@ -40,8 +40,8 @@ const comparison = [
   {
     feature: "Local SEO",
     essential: true,
-    growth: false,
-    accelerator: false,
+    growth: true,
+    accelerator: true,
   },
   {
     feature: "Advanced SEO",

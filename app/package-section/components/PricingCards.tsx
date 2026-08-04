@@ -54,6 +54,7 @@ const packages: Package[] = [
       "Our most popular package for businesses that want their website, Google visibility, reviews, graphics and social content handled properly every month.",
     features: [
       "Everything in Essential",
+      "Local SEO",
       "Advanced SEO",
       "Google Profile Management",
       "Review Growth Campaigns",
@@ -79,6 +80,7 @@ const packages: Package[] = [
     features: [
       "Everything in Growth Partner",
       "Google Ads Management",
+      "Local SEO",
       "Advanced SEO",
       "Meta Ads Management",
       "Video Edit Reels (4 videos)",

@@ -55,6 +55,7 @@ const packages: Package[] = [
     rotation: "md:rotate-[0.6deg]",
     features: [
       "Everything in Essential",
+      "Local SEO",
       "Advanced SEO",
       "Video Edit Reels (2 videos)",
       "Creative Consultancy",
@@ -81,6 +82,7 @@ const packages: Package[] = [
     features: [
       "Everything in Growth Partner",
       "Google Ads management",
+      "Local SEO",
       "Advanced SEO",
       "Video Edit Reels (4 videos)",
       "Creative Consultancy",
