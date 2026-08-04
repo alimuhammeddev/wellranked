@@ -39,8 +39,38 @@ const comparison = [
   },
   {
     feature: "Local SEO",
+    essential: true,
+    growth: false,
+    accelerator: false,
+  },
+  {
+    feature: "Advanced SEO",
     essential: false,
     growth: true,
+    accelerator: true,
+  },
+  {
+    feature: "Video Edit Reels (2 videos)",
+    essential: false,
+    growth: true,
+    accelerator: false,
+  },
+  {
+    feature: "Video Edit Reels (4 videos)",
+    essential: false,
+    growth: false,
+    accelerator: true,
+  },
+  {
+    feature: "Creative Consultancy",
+    essential: false,
+    growth: true,
+    accelerator: true,
+  },
+  {
+    feature: "Business Consultancy",
+    essential: false,
+    growth: false,
     accelerator: true,
   },
   {
