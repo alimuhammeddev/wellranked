@@ -50,13 +50,13 @@ const comparison = [
     accelerator: true,
   },
   {
-    feature: "Video Edit Reels (2 videos)",
+    feature: "Video Edit (2 Reels a month)",
     essential: false,
     growth: true,
     accelerator: false,
   },
   {
-    feature: "Video Edit Reels (4 videos)",
+    feature: "Video Edit (4 Reels a month)",
     essential: false,
     growth: false,
     accelerator: true,
@@ -92,9 +92,15 @@ const comparison = [
     accelerator: true,
   },
   {
-    feature: "3 Social Posts Per Week",
+    feature: "2 Social Posts Per Week",
     essential: false,
     growth: true,
+    accelerator: false,
+  },
+  {
+    feature: "3 Social Posts Per Week",
+    essential: false,
+    growth: false,
     accelerator: true,
   },
   {
