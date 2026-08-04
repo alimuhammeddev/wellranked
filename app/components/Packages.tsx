@@ -27,7 +27,7 @@ const packages: Package[] = [
     features: [
       "Professional website",
       "Website management",
-      "Basic local SEO",
+      "Local SEO",
       "Google Business Profile",
       "Email support",
     ],
@@ -42,7 +42,7 @@ const packages: Package[] = [
       "Our most popular package. Your outsourced marketing department for website, SEO, Google profile, reviews, graphics and social content.",
     features: [
       "Everything in Essential",
-      "Advanced local SEO",
+      "Advanced SEO",
       "Review management",
       "Unlimited graphics",
       "3 social posts / week",
@@ -61,6 +61,7 @@ const packages: Package[] = [
       "Everything in Growth Partner",
       "Email marketing",
       "Ads management",
+      "Advanced SEO",
       "Landing pages",
       "Lead follow-up",
       "Monthly strategy session",

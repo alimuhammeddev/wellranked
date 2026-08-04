@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "./assets/logo.svg";
+import logo from "./assets/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,8 +22,8 @@ export default function Navbar() {
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Packages", href: "/package-section" },
-    { name: "Growth Support", href: "/growth-support" },
+    { name: "Growth Packages", href: "/package-section" },
+    { name: "Support Packages", href: "/growth-support" },
     { name: "Services", href: "/services-section" },
     { name: "Why Wellranked", href: "/why-wellranked" },
     { name: "About", href: "/about" },
@@ -45,18 +45,18 @@ export default function Navbar() {
         }`}
       >
         {/* Navbar Content */}
-        <div className="mx-auto flex h-20 max-w-337.5 items-center justify-between md:px-5 px-5">
+        <div className="mx-auto flex h-20 max-w-350 items-center justify-between md:px-5 px-5">
           <Link href="/">
             <Image src={logo} alt="Logo" width={200} />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-12 lg:flex">
+          <nav className="hidden items-center gap-8 lg:flex">
             {links.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="group relative text-[15px] font-medium text-[#102A56] transition-colors duration-300 hover:text-[#145EEE]"
+                className="group relative text-base font-medium text-[#102A56] transition-colors duration-300 hover:text-[#145EEE]"
               >
                 {link.name}
                 <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#145EEE] transition-all duration-300 group-hover:w-full" />
@@ -107,7 +107,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-lg font-medium text-[#102A56] transition-all duration-300 hover:translate-x-2 hover:text-[#145EEE]"
+                  className="text-base font-medium text-[#102A56] transition-all duration-300 hover:translate-x-2 hover:text-[#145EEE]"
                 >
                   {link.name}
                 </Link>

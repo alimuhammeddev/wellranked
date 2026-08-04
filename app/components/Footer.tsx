@@ -3,7 +3,7 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
-import logo from "./assets/logo.svg";
+import logo from "./assets/logo.png";
 
 const links = [
   { label: "Home", href: "/" },

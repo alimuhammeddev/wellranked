@@ -35,6 +35,7 @@ const packages: Package[] = [
     features: [
       "Custom website",
       "Hosting & maintenance",
+      "Local SEO",
       "AI website assistant",
       "Unlimited website updates",
       "Google Business Profile setup",
@@ -54,7 +55,9 @@ const packages: Package[] = [
     rotation: "md:rotate-[0.6deg]",
     features: [
       "Everything in Essential",
-      "Local SEO",
+      "Advanced SEO",
+      "Video Edit Reels (2 videos)",
+      "Creative Consultancy",
       "Google Profile management",
       "Review growth campaigns",
       "Unlimited business graphics",
@@ -78,6 +81,10 @@ const packages: Package[] = [
     features: [
       "Everything in Growth Partner",
       "Google Ads management",
+      "Advanced SEO",
+      "Video Edit Reels (4 videos)",
+      "Creative Consultancy",
+      "Business Consultancy",
       "Meta Ads management",
       "Email marketing",
       "Lead response support",
