@@ -3,6 +3,7 @@
 import { BadgeCheck, Pin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const ACCENTS = ["#145EEE", "#E4572E", "#0E9F73", "#D9A441"];
 
@@ -10,32 +11,32 @@ const solutions = [
   {
     title: "Website Build & Management",
     image:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=640&q=65",
   },
   {
     title: "AI Customer Response Assistant",
     image:
-      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=640&q=65",
   },
   {
     title: "Local SEO & Google Visibility",
     image:
-      "https://images.unsplash.com/photo-1571677246347-5040036b95cc?w=800&q=80",
+      "https://images.unsplash.com/photo-1571677246347-5040036b95cc?auto=format&fit=crop&w=640&q=65",
   },
   {
     title: "Google Business Profile Management",
     image:
-      "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80",
+      "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=640&q=65",
   },
   {
     title: "Review Management & Reputation Management",
     image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=640&q=65",
   },
   {
     title: "Unlimited Business Graphics",
     image:
-      "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=640&q=65",
   },
   {
     title: "3 Social Media Graphics Posts per Week",
@@ -184,11 +185,14 @@ export default function SolutionSection() {
 
                     {/* Photo */}
                     <div className="relative h-44 w-full overflow-hidden rounded-lg md:h-48">
-                      <img
+                      <Image
                         src={image}
                         alt={title}
-                        className="h-full w-full object-cover"
+                        fill
+                        className="object-cover"
                         loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 47vw"
+                        quality={65}
                       />
                       <div
                         className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white"
@@ -205,8 +209,8 @@ export default function SolutionSection() {
                       </h1>
 
                       <p className="mt-2 text-sm md:text-base leading-relaxed text-[#5B5646]">
-                        Fully managed by our team, so you can focus on
-                        running the business while this quietly runs itself.
+                        Fully managed by our team, so you can focus on running
+                        the business while this quietly runs itself.
                       </p>
 
                       <div
@@ -229,4 +233,4 @@ export default function SolutionSection() {
       </div>
     </section>
   );
-};
+}
