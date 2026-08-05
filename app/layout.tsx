@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Wellranked",
   description: "The Outsourced Marketing Department for UK Small Businesses",
   icons: {
-    icon: "/icon.svg",
+    icon: "/icon.png",
   }
 };
 
