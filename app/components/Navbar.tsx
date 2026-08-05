@@ -46,8 +46,16 @@ export default function Navbar() {
       >
         {/* Navbar Content */}
         <div className="mx-auto flex h-20 max-w-350 items-center justify-between md:px-5 px-5">
-          <Link href="/">
-            <Image src={logo} alt="Logo" width={200} />
+          <Link href="/" aria-label="Go to homepage">
+            <Image
+              src={logo}
+              alt="Wellranked Logo"
+              width={200}
+              height={67}
+              priority
+              sizes="(max-width:768px) 160px, 200px"
+              className="w-40 md:w-50 h-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}

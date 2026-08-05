@@ -186,8 +186,8 @@ export default function PricingComparison() {
           </h2>
 
           <p className="mt-2 md:text-lg leading-8 text-gray-600">
-            Compare every package side-by-side and choose the level of
-            support that best suits your business.
+            Compare every package side-by-side and choose the level of support
+            that best suits your business.
           </p>
         </div>
 
@@ -204,31 +204,23 @@ export default function PricingComparison() {
                     Essential
                   </h3>
 
-                  <p className="mt-1 text-3xl font-bold text-[#145EEE]">
-                    £395
-                  </p>
+                  <p className="mt-1 text-3xl font-bold text-[#145EEE]">£395</p>
 
-                  <span className="text-gray-500">
-                    /month
-                  </span>
+                  <span className="text-gray-500">/month</span>
                 </th>
 
                 <th className="bg-[#145EEE] px-8 py-6 text-center text-white">
-                  <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
+                  <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#145EEE]">
                     MOST POPULAR
                   </span>
 
-                  <h3 className="mt-4 text-xl font-bold">
+                  <h3 className="mt-4 text-xl font-bold text-white">
                     Growth Partner
                   </h3>
 
-                  <p className="mt-1 text-3xl font-bold">
-                    £695
-                  </p>
+                  <p className="mt-1 text-3xl font-bold">£695</p>
 
-                  <span className="text-blue-100">
-                    /month
-                  </span>
+                  <span className="text-white">/month</span>
                 </th>
 
                 <th className="px-8 py-6 text-center">
@@ -236,13 +228,9 @@ export default function PricingComparison() {
                     Accelerator
                   </h3>
 
-                  <p className="mt-1 text-3xl font-bold text-[#145EEE]">
-                    £995
-                  </p>
+                  <p className="mt-1 text-3xl font-bold text-[#145EEE]">£995</p>
 
-                  <span className="text-gray-500">
-                    /month
-                  </span>
+                  <span className="text-gray-500">/month</span>
                 </th>
               </tr>
             </thead>
@@ -278,4 +266,4 @@ export default function PricingComparison() {
       </div>
     </section>
   );
-};
+}
