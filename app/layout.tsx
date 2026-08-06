@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LayoutWrapper from "./components/LayoutWrapper";
+import ChatBase from "./components/ChatBase";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   description: "The Outsourced Marketing Department for UK Small Businesses",
   icons: {
     icon: "/icon.png",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +43,9 @@ export default function RootLayout({
             <Footer />
           </div>
         </LayoutWrapper>
+
+        <ChatBase />
       </body>
     </html>
   );
-};
+}
