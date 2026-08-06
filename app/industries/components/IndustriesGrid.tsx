@@ -4,10 +4,8 @@ import { BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-// A distinct accent set from the "SolutionSection" board — same idea
-// (rotating colour per pin/tape/badge) but shifted hues so the two
-// sections don't read as identical: sky blue, orange, emerald, violet.
-const ACCENTS = ["#0EA5E9", "#F97316", "#10B981", "#8B5CF6"];
+
+const ACCENTS = ["#145EEE", "#145EEE", "#145EEE", "#145EEE"];
 
 const industries = [
   {
@@ -210,12 +208,6 @@ export default function IndustriesGrid() {
                         className="h-full w-full object-cover"
                         loading="lazy"
                       />
-                      <div
-                        className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white"
-                        style={{ backgroundColor: color }}
-                      >
-                        Industry {String(index + 1).padStart(2, "0")}
-                      </div>
                     </div>
 
                     {/* Content */}

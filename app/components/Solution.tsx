@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const ACCENTS = ["#145EEE", "#E4572E", "#0E9F73", "#D9A441"];
+const ACCENTS = ["#145EEE", "#145EEE", "#145EEE", "#145EEE"];
 
 const solutions = [
   {
@@ -194,12 +194,6 @@ export default function SolutionSection() {
                         sizes="(max-width: 768px) 100vw, 47vw"
                         quality={65}
                       />
-                      <div
-                        className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white"
-                        style={{ backgroundColor: color }}
-                      >
-                        Item {String(index + 1).padStart(2, "0")}
-                      </div>
                     </div>
 
                     {/* Content */}
