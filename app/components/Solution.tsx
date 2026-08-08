@@ -10,43 +10,35 @@ const ACCENTS = ["#145EEE", "#145EEE", "#145EEE", "#145EEE"];
 const solutions = [
   {
     title: "Website Build & Management",
-    image:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=640&q=65",
+    image: "/images/websitebuild.PNG",
   },
   {
     title: "AI Customer Response Assistant",
-    image:
-      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=640&q=65",
+    image: "/images/airesponse.PNG",
   },
   {
     title: "Local SEO & Google Visibility",
-    image:
-      "https://images.unsplash.com/photo-1571677246347-5040036b95cc?auto=format&fit=crop&w=640&q=65",
+    image: "/images/seo.PNG",
   },
   {
     title: "Google Business Profile Management",
-    image:
-      "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=640&q=65",
+    image: "/images/googlebusiness.PNG",
   },
   {
     title: "Review Management & Reputation Management",
-    image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=640&q=65",
+    image: "/images/googlereview.PNG",
   },
   {
     title: "Unlimited Business Graphics",
-    image:
-      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=640&q=65",
+    image: "/images/graphics.PNG",
   },
   {
     title: "3 Social Media Graphics Posts per Week",
-    image:
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
+    image: "/images/social.PNG",
   },
   {
     title: "Email Marketing & Ads Management on Accelerator",
-    image:
-      "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80",
+    image: "/images/email.PNG",
   },
 ].map((item, i) => ({ ...item, color: ACCENTS[i % ACCENTS.length] }));
 
@@ -184,12 +176,14 @@ export default function SolutionSection() {
                     />
 
                     {/* Photo */}
-                    <div className="relative h-44 w-full overflow-hidden rounded-lg md:h-48">
+                    {/* Photo */}
+                    <div className="relative w-full overflow-hidden rounded-lg">
                       <Image
                         src={image}
                         alt={title}
-                        fill
-                        className="object-cover"
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto rounded-lg"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, 47vw"
                         quality={65}
