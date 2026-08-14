@@ -67,7 +67,7 @@ export default function Navbar() {
                 className="group relative text-base font-medium text-[#102A56] transition-colors duration-300 hover:text-[#145EEE]"
               >
                 {link.name}
-                <span className="absolute -bottom-2 left-0 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#145EEE] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#145EEE] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </nav>
