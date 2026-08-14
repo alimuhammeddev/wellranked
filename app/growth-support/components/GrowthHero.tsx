@@ -53,13 +53,6 @@ export default function GrowthSupportHero() {
           opacity: 1,
         }}
       />
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-40 left-1/2 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-[#145EEE]/15 blur-[140px]" />
-
-        <div className="absolute top-32 left-10 h-52 w-52 rounded-full bg-[#145EEE]/10 blur-[140px]" />
-      </div>
-
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
