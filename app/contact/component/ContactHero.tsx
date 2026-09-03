@@ -132,7 +132,7 @@ export default function ContactHero() {
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="rounded-xl bg-green-50 p-3">
+              <div className="rounded-xl bg-blue-50 p-3">
                 <Globe className="text-[#145EEE]" size={20} />
               </div>
               <div>
