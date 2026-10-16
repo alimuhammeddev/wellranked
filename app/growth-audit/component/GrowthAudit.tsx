@@ -1,13 +1,10 @@
-"use client";
-
 import {
-  ArrowRight,
   BadgeCheck,
   Search,
-  Globe,
   TrendingUp,
   Check,
 } from "lucide-react";
+import LeadConnectorGrowthAuditForm from "./LeadConnectorGrowthAuditForm";
 
 export default function GrowthAuditHero() {
   return (
@@ -37,8 +34,8 @@ export default function GrowthAuditHero() {
           </h1>
 
           <p className="mt-3 max-w-xl md:text-lg leading-8 text-gray-600">
-            We'll review your website, Google visibility and overall online
-            presence to show you what's working, what's missing and what can be
+            We will review your website, Google visibility and overall online
+            presence to show you what is working, what is missing and what can be
             improved to help your business generate more enquiries.
           </p>
 
@@ -59,7 +56,7 @@ export default function GrowthAuditHero() {
           <div className="mt-5 rounded-3xl border border-blue-100 bg-blue-100 p-5">
             <h1 className="flex items-center gap-2 text-xl font-bold text-[#145EEE]">
               <TrendingUp className="text-[#145EEE]" size={22} />
-              What We'll Review
+              What We Will Review
             </h1>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -85,69 +82,12 @@ export default function GrowthAuditHero() {
 
         {/* Right */}
 
-        <div className="rounded-3xl border border-gray-200 bg-white p-5 md:p-8">
-          <h2 className="md:text-2xl text-xl font-bold text-[#102A56]">
-            Request Your Free Audit
-          </h2>
-
-          <p className="mt-2 text-gray-600">
-            Complete the form below and we'll contact you to arrange your free
-            Growth Audit.
-          </p>
-
-          <form className="mt-8 space-y-5">
-            <div className="grid gap-5 md:grid-cols-2">
-              <Input label="Name" />
-              <Input label="Business Name" />
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-2">
-              <Input label="Phone Number" />
-              <Input label="Email Address" type="email" />
-            </div>
-
-            <Input label="Website URL" />
-
-            <div className="grid gap-5 md:grid-cols-2">
-              <Input label="Business Type" />
-              <Input label="Location Served" />
-            </div>
-
-            <div>
-              <label className="mb-2 block font-medium text-[#102A56]">
-                Biggest Marketing Challenge
-              </label>
-
-              <textarea
-                rows={4}
-                placeholder="Tell us about your biggest challenge..."
-                className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-[#145EEE]"
-              />
-            </div>
-
-            <Input label="Preferred Call Time" />
-
-            <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#145EEE] py-4 font-semibold text-white">
-              Request My Free Audit
-              <ArrowRight size={18} />
-            </button>
-          </form>
+        <div className="rounded-3xl border border-gray-200 bg-white">
+          <div className="mt-6">
+            <LeadConnectorGrowthAuditForm />
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function Input({ label, type = "text" }: { label: string; type?: string }) {
-  return (
-    <div>
-      <label className="mb-2 block font-medium text-[#102A56]">{label}</label>
-
-      <input
-        type={type}
-        placeholder={label}
-        className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-[#145EEE]"
-      />
-    </div>
   );
 }
