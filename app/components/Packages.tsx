@@ -10,8 +10,6 @@ import {
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const SECTION_BG = "#0A1830";
-
 interface Package {
   name: string;
   className: string;
