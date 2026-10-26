@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
        disallow: "",
     },
-    sitemap: "https://www.wellranked.co.uk/sitemap.xml",
+    sitemap: "https://wellranked.co.uk/sitemap.xml",
   };
 }

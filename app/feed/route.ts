@@ -1,5 +1,5 @@
 
-const BASE_URL = "https://www.wellranked.co.uk";
+const BASE_URL = "https://wellranked.co.uk";
 
 const pages = [
   {
