@@ -1,7 +1,14 @@
 "use client";
 
-import { Check, BriefcaseBusiness, Rocket, Crown, LucideIcon } from "lucide-react";
+import {
+  Check,
+  BriefcaseBusiness,
+  Rocket,
+  Crown,
+  LucideIcon,
+} from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const SECTION_BG = "#0A1830";
 
@@ -73,12 +80,8 @@ const packages: Package[] = [
 function VerticalPerforation() {
   return (
     <div className="absolute top-0 bottom-0 left-[34%] z-10 w-0 md:left-[36%]">
-      <div
-        className="absolute -top-3 left-0 h-6 w-6 -translate-x-1/2 rounded-full bg-white"
-      />
-      <div
-        className="absolute -bottom-3 left-0 h-6 w-6 -translate-x-1/2 rounded-full bg-white"
-      />
+      <div className="absolute -top-3 left-0 h-6 w-6 -translate-x-1/2 rounded-full bg-white" />
+      <div className="absolute -bottom-3 left-0 h-6 w-6 -translate-x-1/2 rounded-full bg-white" />
       <div className="mx-auto h-full border-l-2 border-dashed border-white" />
     </div>
   );
@@ -86,7 +89,12 @@ function VerticalPerforation() {
 
 function BoardingPass({ pkg, index }: { pkg: Package; index: number }) {
   const Icon = pkg.icon;
-  const rotate = index === 0 ? "md:rotate-[-1.5deg]" : index === 2 ? "md:rotate-[1.5deg]" : "";
+  const rotate =
+    index === 0
+      ? "md:rotate-[-1.5deg]"
+      : index === 2
+        ? "md:rotate-[1.5deg]"
+        : "";
 
   return (
     <motion.div
@@ -182,7 +190,9 @@ function BoardingPass({ pkg, index }: { pkg: Package; index: number }) {
                 >
                   <Check
                     size={11}
-                    className={pkg.featured ? "text-[#145EEE]" : "text-[#145EEE]"}
+                    className={
+                      pkg.featured ? "text-[#145EEE]" : "text-[#145EEE]"
+                    }
                   />
                 </div>
                 <span
@@ -196,15 +206,16 @@ function BoardingPass({ pkg, index }: { pkg: Package; index: number }) {
             ))}
           </div>
 
-          <button
-            className={`mt-7 w-full rounded-xl border-2 border-dashed py-3 text-sm font-bold uppercase tracking-[0.08em] transition-colors ${
+          <Link
+            href="/growth-audit"
+            className={`mt-7 block w-full rounded-xl border-2 border-dashed py-3 text-center text-sm font-bold uppercase tracking-[0.08em] transition-colors ${
               pkg.featured
                 ? "border-white text-white hover:bg-white/10"
                 : "border-white text-white hover:bg-[#145EEE]/5"
             }`}
           >
             Choose {pkg.name}
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>
@@ -213,9 +224,7 @@ function BoardingPass({ pkg, index }: { pkg: Package; index: number }) {
 
 export default function PackagesPreview() {
   return (
-    <section
-      className="relative overflow-hidden px-5 py-16 md:px-8 md:py-28"
-    >
+    <section className="relative overflow-hidden px-5 py-16 md:px-8 md:py-28">
       <div className="relative mx-auto max-w-6xl">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -235,7 +244,7 @@ export default function PackagesPreview() {
 
           <p className="mt-5 text-base leading-7 text-gray-600 md:text-lg">
             Choose the level of support your business needs today. Upgrade
-            whenever you're ready to grow.
+            whenever you are ready to grow.
           </p>
         </motion.div>
 
@@ -247,4 +256,4 @@ export default function PackagesPreview() {
       </div>
     </section>
   );
-};
+}
