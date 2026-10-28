@@ -19,9 +19,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
-  title: "Wellranked",
-  description: "The Outsourced Marketing Department for UK Small Businesses",
+  title: {
+    default: "Wellranked | SEO & Digital Marketing Agency UK",
+    template: "%s",
+  },
+  description:
+    "Grow your online visibility with SEO and digital marketing services from Wellranked. Improve search rankings, attract relevant traffic and generate more leads.",
+  metadataBase: new URL("https://wellranked.co.uk"),
   icons: {
     icon: "/icon.png",
   },
@@ -32,6 +38,7 @@ export const metadata: Metadata = {
     },
   },
 };
+
 
 export default function RootLayout({
   children,
