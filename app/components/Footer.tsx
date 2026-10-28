@@ -59,7 +59,7 @@ export default function Footer() {
 
             <div className="mt-1 flex items-center gap-3">
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/wellranked-marketing-agency/"
                 className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#145EEE] hover:text-[#145EEE]"
                 aria-label="LinkedIn"
               >
@@ -67,19 +67,11 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="#"
+                href="https://www.instagram.com/wellrankedmarketing/"
                 className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#145EEE] hover:text-[#145EEE]"
                 aria-label="Instagram"
               >
                 <FaInstagram size={16} />
-              </Link>
-
-              <Link
-                href="#"
-                className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-[#145EEE] hover:text-[#145EEE]"
-                aria-label="X / Twitter"
-              >
-                <FaXTwitter size={16} />
               </Link>
             </div>
           </div>
