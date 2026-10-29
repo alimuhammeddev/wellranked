@@ -1,7 +1,5 @@
-
 import type { Metadata } from "next";
 
-import PackageBreakdown from "./components/PackageBreakdown";
 import PackagesHero from "./components/PackageHero";
 import PricingCards from "./components/PricingCards";
 import PricingComparison from "./components/PricingComparison";
@@ -25,9 +23,9 @@ export default function Packages() {
       <div>
         <PricingComparison />
       </div>
-      <div>
+      {/* <div>
         <PackageBreakdown />
-      </div>
+      </div> */}
       <div>
         <PricingNote />
       </div>
