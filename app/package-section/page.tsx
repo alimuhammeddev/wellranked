@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
-
 import PackagesHero from "./components/PackageHero";
 import PricingCards from "./components/PricingCards";
 import PricingComparison from "./components/PricingComparison";
 import PricingNote from "./components/PricingNote";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "SEO Packages & Digital Marketing Services | Wellranked",
-  description:
-    "Discover Wellranked's SEO packages and digital marketing services designed to improve search visibility, attract relevant traffic, and support sustainable business growth.",
-};
+export const metadata = createPageMetadata(
+  "SEO Packages & Digital Marketing Services | Wellranked",
+  "Discover Wellranked's SEO packages and digital marketing services designed to improve search visibility, attract relevant traffic, and support sustainable business growth.",
+  "/package-section",
+);
 
 export default function Packages() {
   return (

@@ -54,10 +54,10 @@ export default function GrowthAuditHero() {
           </div>
 
           <div className="mt-5 rounded-3xl border border-blue-100 bg-blue-100 p-5">
-            <h1 className="flex items-center gap-2 text-xl font-bold text-[#145EEE]">
+            <h2 className="flex items-center gap-2 text-xl font-bold text-[#145EEE]">
               <TrendingUp className="text-[#145EEE]" size={22} />
               What We Will Review
-            </h1>
+            </h2>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {[

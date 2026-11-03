@@ -88,9 +88,9 @@ export default function SolutionSection() {
             One Team. One Monthly Fee.
           </span>
 
-          <h1 className="mt-6 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
+          <h2 className="mt-6 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">
             Everything, pinned to one board.
-          </h1>
+          </h2>
 
           <p className="mt-3 md:text-lg leading-8 text-gray-600">
             Instead of hiring a developer, SEO specialist, designer, social
@@ -110,12 +110,13 @@ export default function SolutionSection() {
               showWatermark ? "opacity-100" : "opacity-0"
             }`}
           >
-            <h1
+            <p
+              aria-hidden="true"
               style={{ color: active.color, opacity: 0.14 }}
               className="max-w-5xl text-center text-[46px] md:text-[76px] font-black italic leading-[0.9] tracking-tight select-none transition-colors duration-300"
             >
               {active.title}
-            </h1>
+            </p>
           </div>
 
           {/* Center thread */}
@@ -192,9 +193,9 @@ export default function SolutionSection() {
 
                     {/* Content */}
                     <div className="px-2 pb-3 pt-5">
-                      <h1 className="text-lg md:text-xl font-bold leading-snug text-[#102A56]">
+                      <h3 className="text-lg md:text-xl font-bold leading-snug text-[#102A56]">
                         {title}
-                      </h1>
+                      </h3>
 
                       <p className="mt-2 text-sm md:text-base leading-relaxed text-[#5B5646]">
                         Fully managed by our team, so you can focus on running

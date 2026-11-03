@@ -4,8 +4,6 @@ import {
   Search,
   Star,
   Palette,
-  TrendingUp,
-  Sparkles,
   LucideIcon,
   Globe,
 } from "lucide-react";
@@ -44,13 +42,6 @@ const painPoints: PainPoint[] = [
     fix: "We design it, post it, and keep it on schedule.",
   },
 ];
-
-const growthPoint: PainPoint = {
-  icon: TrendingUp,
-  tag: "Growth",
-  problem: "You want more enquiries, not more busywork.",
-  fix: "One system that runs your whole growth engine, end to end.",
-};
 
 function Perforation({ position }: { position: number }) {
   return (
@@ -107,10 +98,8 @@ function TicketCard({
 
         {/* Fix / stamped section */}
         <div className="relative px-6 pb-10 pt-5">
-          <p className="text-[14px] leading-relaxed text-white">
-            {point.fix}
-          </p> <br />
-
+          <p className="text-[14px] leading-relaxed text-white">{point.fix}</p>{" "}
+          <br />
           <div className="pointer-events-none absolute -right-1 bottom-5 rotate-[-9deg] rounded-md border-2 border-blue-50 px-2.5 py-1 opacity-90">
             <span className="text-[10px] font-black tracking-[0.14em] text-white">
               HANDLED
@@ -122,8 +111,7 @@ function TicketCard({
   );
 }
 
-function MasterPass({ point }: { point: PainPoint }) {
-  const Icon = point.icon;
+function MasterPass() {
   return (
     <motion.div
       className="relative mt-10 w-full overflow-hidden rounded-[26px] bg-[#145EEE] md:mt-14"
@@ -131,8 +119,7 @@ function MasterPass({ point }: { point: PainPoint }) {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-    </motion.div>
+    ></motion.div>
   );
 }
 
@@ -159,12 +146,12 @@ export default function PainSection() {
             The Challenge
           </span>
 
-          <h1 className="mt-6 text-2xl font-bold leading-tight text-[#102A56] md:text-3xl lg:text-4xl">
+          <h2 className="mt-6 text-2xl font-bold leading-tight text-[#102A56] md:text-3xl lg:text-4xl">
             Running a business is already hard enough.{" "}
             <span className="text-[#145EEE]">
-              Marketing shouldn't be another full time job.
+              Marketing should not be another full time job.
             </span>
-          </h1>
+          </h2>
 
           <p className="mt-5 text-base leading-7 text-gray-600 md:text-xl">
             Every task below is one more thing pulled off your plate stamped,
@@ -185,7 +172,7 @@ export default function PainSection() {
         </div>
 
         {/* Master pass */}
-        <MasterPass point={growthPoint} />
+        <MasterPass />
       </div>
     </section>
   );

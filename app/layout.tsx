@@ -1,32 +1,31 @@
 
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fira_Sans } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LayoutWrapper from "./components/LayoutWrapper";
 import ChatBase from "./components/ChatBase";
+import { createPageMetadata } from "./seo";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const firaSans = Fira_Sans({
+  weight: "400",
+  variable: "--font-fira-sans",
   subsets: ["latin"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 
 export const metadata: Metadata = {
+  ...createPageMetadata(
+    "Wellranked | SEO & Digital Marketing Agency UK",
+    "Grow your online visibility with SEO and digital marketing services from Wellranked. Improve search rankings, attract relevant traffic and generate more leads.",
+    "/",
+  ),
   title: {
     default: "Wellranked | SEO & Digital Marketing Agency UK",
     template: "%s",
   },
-  description:
-    "Grow your online visibility with SEO and digital marketing services from Wellranked. Improve search rankings, attract relevant traffic and generate more leads.",
   metadataBase: new URL("https://wellranked.co.uk"),
   icons: {
     icon: "/icon.png",
@@ -45,12 +44,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://wellranked.co.uk/#organization",
+    name: "Wellranked",
+    url: "https://wellranked.co.uk/",
+    logo: "https://wellranked.co.uk/icon.png",
+    sameAs: [
+      "https://www.linkedin.com/company/wellranked-marketing-agency/",
+      "https://www.instagram.com/wellrankedmarketing/",
+    ],
+  };
+
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${firaSans.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-6HKGZV9EW3"
@@ -94,4 +113,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-};
+}

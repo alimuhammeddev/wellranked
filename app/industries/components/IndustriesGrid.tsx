@@ -3,6 +3,7 @@
 import { BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 
 const ACCENTS = ["#145EEE", "#145EEE", "#145EEE", "#145EEE"];
@@ -135,12 +136,13 @@ export default function IndustriesGrid() {
               showWatermark ? "opacity-100" : "opacity-0"
             }`}
           >
-            <h1
+            <p
+              aria-hidden="true"
               style={{ color: active.color, opacity: 0.14 }}
               className="max-w-5xl text-center text-[46px] md:text-[76px] font-black italic leading-[0.9] tracking-tight select-none transition-colors duration-300"
             >
               {active.title}
-            </h1>
+            </p>
           </div>
 
           {/* Center thread */}
@@ -202,11 +204,12 @@ export default function IndustriesGrid() {
 
                     {/* Photo */}
                     <div className="relative h-44 w-full overflow-hidden rounded-lg md:h-48">
-                      <img
+                      <Image
                         src={image}
                         alt={title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 47vw"
                         className="h-full w-full object-cover"
-                        loading="lazy"
                       />
                     </div>
 

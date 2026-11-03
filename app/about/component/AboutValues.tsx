@@ -75,9 +75,9 @@ export default function AboutValues() {
             What We Believe
           </span>
 
-          <h1 className="mt-5 text-2xl font-bold text-[#102A56] md:text-3xl lg:text-4xl">
+          <h2 className="mt-5 text-2xl font-bold text-[#102A56] md:text-3xl lg:text-4xl">
             The Principles Behind Everything We Do
-          </h1>
+          </h2>
 
           <p className="mt-3 leading-8 text-gray-600 md:text-lg">
             Wellranked exists to make digital marketing simpler, more affordable
@@ -121,9 +121,9 @@ export default function AboutValues() {
               </div>
 
               <div>
-                <h1 className="text-lg font-bold text-[#145EEE] md:text-xl">
+                <h3 className="text-lg font-bold text-[#145EEE] md:text-xl">
                   {title}
-                </h1>
+                </h3>
 
                 <p className="mt-2 max-w-2xl leading-7 text-gray-600">
                   {description}
@@ -158,9 +158,9 @@ export default function AboutValues() {
         >
 
           <div className="relative">
-            <h1 className="text-xl font-bold text-[#145EEE] sm:text-2xl">
+            <h2 className="text-xl font-bold text-[#145EEE] sm:text-2xl">
               Our Goal Is Simple
-            </h1>
+            </h2>
 
             <p className="mx-auto mt-3 max-w-3xl text-base leading-8 text-gray-600 sm:text-lg">
               We want every small business to have access to professional
