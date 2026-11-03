@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import logo from "./assets/logo.png";
@@ -54,7 +53,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-2 text-gray-600">
               <MapPin size={16} />
-              Serving businesses across the UK
+              235 Tonge Moor Road, Bolton, Greater Manchester, BL2 2HR, England
             </div>
 
             <div className="mt-1 flex items-center gap-3">

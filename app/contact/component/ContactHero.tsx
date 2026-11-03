@@ -65,7 +65,7 @@ export default function ContactHero() {
               </div>
               <div>
                 <p className="font-semibold text-[#145EEE]">Phone</p>
-                <p className="text-gray-600">Available during business hours</p>
+                <p className="text-gray-600">02046345657</p>
               </div>
             </div>
 
@@ -76,7 +76,7 @@ export default function ContactHero() {
               <div>
                 <p className="font-semibold text-[#145EEE]">Location</p>
                 <p className="text-gray-600">
-                  Supporting businesses across the UK
+                  235 Tonge Moor Road, Bolton, Greater Manchester, BL2 2HR, England
                 </p>
               </div>
             </div>
