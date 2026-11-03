@@ -31,7 +31,7 @@ export default function AboutHero() {
 
           <p className="mt-3 md:text-lg leading-8 text-center text-gray-600">
             Wellranked was created to give UK small businesses access to the
-            kind of joined-up marketing support that's usually only available to
+            kind of joined-up marketing support that is usually only available to
             larger companies. We help businesses stay visible, trusted and
             active online, without the stress of managing everything yourself.
           </p>
