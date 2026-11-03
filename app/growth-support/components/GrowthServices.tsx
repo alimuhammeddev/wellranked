@@ -1,5 +1,3 @@
-"use client";
-
 import {
   MessageCircleMore,
   CalendarDays,
@@ -10,7 +8,7 @@ import {
   Check,
   LucideIcon,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 interface Service {
   icon: LucideIcon;
@@ -61,11 +59,8 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
   const Icon = service.icon;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+    <Reveal
+      delay={index * 0.1}
       className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-white p-7 transition-all duration-500 hover:-translate-y-2 hover:border-blue-200 hover:shadow-[0_20px_50px_-12px_rgba(16,42,86,0.15)]"
     >
       <div className="relative">
@@ -84,7 +79,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
           {service.description}
         </p>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -93,12 +88,8 @@ export default function GrowthServices() {
     <section className="relative overflow-hidden px-5 py-20 md:px-8 md:py-28 bg-white">
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
-        <motion.div
+        <Reveal
           className="mx-auto max-w-2xl text-center mb-16"
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold text-sm tracking-[0.18em] text-[#145EEE]">
             What We Can Handle
@@ -116,7 +107,7 @@ export default function GrowthServices() {
             your business stay organised, responsive and focused on serving
             customers.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Grid */}
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

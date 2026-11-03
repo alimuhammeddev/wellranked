@@ -4,6 +4,7 @@ import { BadgeCheck, Pin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Reveal from "./Reveal";
 
 const ACCENTS = ["#145EEE", "#145EEE", "#145EEE", "#145EEE"];
 
@@ -77,11 +78,8 @@ export default function SolutionSection() {
     >
       <div className="max-w-6xl mx-auto lg:px-0 md:px-5 px-5">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+        <Reveal
+          delay={0.15}
           className="relative z-20 text-center max-w-3xl mx-auto"
         >
           <span className="inline-flex mx-auto items-center gap-1.5 rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
@@ -100,7 +98,7 @@ export default function SolutionSection() {
             </span>{" "}
             every piece working off the same plan.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Board */}
         <div className="relative mt-16 md:mt-24">
@@ -154,22 +152,15 @@ export default function SolutionSection() {
                     style={{ backgroundColor: color }}
                   />
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 60, rotate: isLeft ? -3 : 3 }}
-                    whileInView={{
-                      opacity: 1,
-                      y: 0,
-                      rotate: isLeft ? -1.5 : 1.5,
-                    }}
-                    whileHover={{ rotate: 0, y: -6 }}
-                    viewport={{ amount: 0.25, once: true }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.06,
-                      ease: "easeOut",
-                    }}
-                    className="relative w-full md:w-[47%] rounded-2xl bg-white p-3 shadow-[0_20px_45px_rgba(16,42,86,0.18)]"
+                  <Reveal
+                    className="relative w-full md:w-[47%]"
+                    delay={index * 0.06}
                   >
+                    <motion.div
+                      initial={{ rotate: isLeft ? -1.5 : 1.5 }}
+                      whileHover={{ rotate: 0, y: -6 }}
+                      className="relative rounded-2xl bg-white p-3 shadow-[0_20px_45px_rgba(16,42,86,0.18)]"
+                    >
                     {/* Washi tape */}
                     <div
                       className="absolute -top-3 left-8 h-6 w-16 -rotate-6 rounded-sm opacity-70"
@@ -213,7 +204,8 @@ export default function SolutionSection() {
                         Included
                       </div>
                     </div>
-                  </motion.div>
+                    </motion.div>
+                  </Reveal>
                 </motion.div>
               );
             })}

@@ -1,42 +1,6 @@
-"use client";
-
-import {
-  ArrowRight,
-  BadgeCheck,
-  Building2,
-  FileText,
-  Globe,
-  MapPin,
-  Megaphone,
-  Search,
-  Star,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
-const CARDS = [
-  { label: "Website", icon: Globe, x: 50, y: 10, lgX: 50, lgY: 20 },
-  { label: "Local SEO", icon: Search, x: 84.6, y: 30, lgX: 76, lgY: 35 },
-  {
-    label: "Google Business Profile",
-    icon: MapPin,
-    x: 84.6,
-    y: 70,
-    lgX: 76,
-    lgY: 65,
-  },
-  { label: "Reviews", icon: Star, x: 50, y: 90, lgX: 50, lgY: 80 },
-  { label: "Content", icon: FileText, x: 15.4, y: 70, lgX: 24, lgY: 65 },
-  {
-    label: "Digital Marketing",
-    icon: Megaphone,
-    x: 15.4,
-    y: 30,
-    lgX: 24,
-    lgY: 35,
-  },
-] as const;
+import Reveal from "../../components/Reveal";
 
 export default function AboutHero() {
   return (
@@ -53,12 +17,7 @@ export default function AboutHero() {
         }}
       />
         <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto text-center lg:mx-0 lg:text-center"
-        >
+        <Reveal duration={0.6} className="mx-auto text-center lg:mx-0 lg:text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm tracking-[0.18em] font-semibold">
             About Wellranked
           </span>
@@ -103,7 +62,7 @@ export default function AboutHero() {
               Our Values
             </Link>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

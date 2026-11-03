@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Headphones,
   MessagesSquare,
@@ -9,7 +7,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 interface Plan {
   name: string;
@@ -109,14 +107,11 @@ function BoardingPass({ plan, index }: { plan: Plan; index: number }) {
     index === 0 ? "md:rotate-[-1.5deg]" : index === 2 ? "md:rotate-[1.5deg]" : "";
 
   return (
-    <motion.div
+    <Reveal
       className={`relative w-full ${rotate} transition-transform duration-500 hover:rotate-0 hover:-translate-y-2 ${
         plan.featured ? "md:-translate-y-3" : ""
       }`}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.55, delay: index * 0.1, ease: "easeOut" }}
+      delay={index * 0.1}
     >
       {plan.featured && (
         <div className="absolute -top-3.5 left-1/2 z-20 -translate-x-1/2 -rotate-3 rounded-md border-2 border-[#145EEE] bg-[#FDFBF4] px-3 py-1">
@@ -192,7 +187,7 @@ function BoardingPass({ plan, index }: { plan: Plan; index: number }) {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -200,12 +195,8 @@ export default function GrowthPricing() {
   return (
     <section id="pricing" className="relative overflow-hidden px-5 py-16 md:px-8 md:py-28">
       <div className="relative mx-auto max-w-6xl">
-        <motion.div
+        <Reveal
           className="mx-auto max-w-2xl text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold text-sm tracking-[0.18em] text-[#145EEE]">
             Growth Support Pricing
@@ -222,7 +213,7 @@ export default function GrowthPricing() {
             Choose the level of support that matches your enquiry volume,
             communication channels and day-to-day operational needs.
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-x-6 gap-y-14 md:mt-20 md:grid-cols-3 md:items-start md:gap-y-0">
           {plans.map((plan, index) => (

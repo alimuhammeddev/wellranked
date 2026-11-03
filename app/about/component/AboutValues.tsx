@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Building2,
   HeartHandshake,
@@ -9,7 +7,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 const beliefs = [
   {
@@ -49,27 +47,9 @@ export default function AboutValues() {
     <section id="our-values" className="bg-white md:py-24 py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
-        <motion.div
+        <Reveal
           className="mx-auto max-w-3xl text-center"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          delay={0.15}
         >
           <span className="rounded-full border border-[#145EEE] text-sm tracking-[0.18em] bg-blue-50 px-4 py-2 font-semibold text-[#145EEE]">
             What We Believe
@@ -84,33 +64,15 @@ export default function AboutValues() {
             and more effective for small businesses. These principles shape
             every recommendation we make and every service we deliver.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Beliefs */}
         <div className="mt-12 border-b border-blue-200">
           {beliefs.map(( { title, description, icon: Icon }, i) => (
-            <motion.div
+            <Reveal
               key={title}
               className="group grid gap-4 border-t border-blue-200 py-8 transition-all duration-300 sm:grid-cols-[3.5rem_2.75rem_1fr] sm:items-start sm:gap-8"
-              initial={{
-                opacity: 0,
-                y: 40,
-                scale: 0.95,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.25,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.15,
-                ease: "easeOut",
-              }}
+              delay={i * 0.1}
             >
               <span className="font-serif text-2xl font-medium text-[#145EEE] lg:text-4xl md:text-3xl">
                 {String(i + 1).padStart(2, "0")}
@@ -129,32 +91,14 @@ export default function AboutValues() {
                   {description}
                 </p>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
+        <Reveal
           className="relative mt-16 overflow-hidden rounded-4xl border border-blue-100 bg-blue-50 p-6 text-center md:p-14"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          delay={0.15}
         >
 
           <div className="relative">
@@ -177,7 +121,7 @@ export default function AboutValues() {
               <ArrowRight size={18} />
             </Link>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

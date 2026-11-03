@@ -1,5 +1,3 @@
-"use client";
-
 import {
   MessageCircleMore,
   Inbox,
@@ -8,7 +6,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 const SECTION_BG = "#0A1830";
 
@@ -68,12 +66,9 @@ function TicketCard({ problem, index }: { problem: Problem; index: number }) {
     index % 2 === 0 ? "md:rotate-[-1.5deg]" : "md:rotate-[1.5deg]";
 
   return (
-    <motion.div
+    <Reveal
       className={`group relative w-full ${rotate} transition-transform duration-500 hover:rotate-0 hover:-translate-y-2`}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.55, delay: index * 0.1, ease: "easeOut" }}
+      delay={index * 0.1}
     >
       <div className="relative overflow-visible rounded-[22px] bg-[#145EEE]">
         {/* Punched corner holes */}
@@ -104,7 +99,7 @@ function TicketCard({ problem, index }: { problem: Problem; index: number }) {
           </p>
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -114,12 +109,8 @@ export default function ProblemsSection() {
       className="relative overflow-hidden px-5 py-16 md:px-8 md:py-28"
     >
       <div className="relative mx-auto max-w-6xl">
-        <motion.div
+        <Reveal
           className="mx-auto max-w-3xl text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="inline-flex rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
             Common Challenges
@@ -138,7 +129,7 @@ export default function ProblemsSection() {
             clear system, opportunities disappear before you even have a
             chance to respond.
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="md:mt-20 mt-10 grid gap-6 md:grid-cols-2">
           {problems.map((problem, index) => (

@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Search,
   ClipboardCheck,
@@ -8,7 +6,7 @@ import {
   TrendingUp,
   BarChart3,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 const steps = [
   {
@@ -60,12 +58,8 @@ export default function HowItWorksTimeline() {
     <section id="process" className="bg-white md:py-24 py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
-        <motion.div
+        <Reveal
           className="mx-auto max-w-3xl text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="inline-flex items-center gap-2 rounded-full border tracking-[0.18em] border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             Our Process
@@ -80,7 +74,7 @@ export default function HowItWorksTimeline() {
             Every stage is designed to make marketing simple, transparent and
             effective, so you always know what happens next.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Desktop Timeline — original layout */}
         <div className="relative mt-10 hidden lg:block">
@@ -115,13 +109,10 @@ export default function HowItWorksTimeline() {
 
           <div className="space-y-6">
             {steps.map(({ number, title, description, icon: Icon }, i) => (
-              <motion.div
+              <Reveal
                 key={number}
                 className="relative pl-16"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                delay={i * 0.08}
               >
                 <div className="absolute left-6 top-6 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl bg-[#145EEE] ring-4 ring-[#f5f5f5]">
                   <Icon size={22} className="text-white" />
@@ -138,7 +129,7 @@ export default function HowItWorksTimeline() {
 
                   <p className="mt-2 leading-7 text-gray-600">{description}</p>
                 </div>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>

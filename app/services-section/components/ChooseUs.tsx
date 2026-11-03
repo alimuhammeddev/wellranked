@@ -1,5 +1,3 @@
-"use client";
-
 import {
   ArrowRight,
   BadgeCheck,
@@ -9,7 +7,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 interface Feature {
   title: string;
@@ -69,12 +67,9 @@ function FeatureTicket({
   const Icon = feature.icon;
 
   return (
-    <motion.div
+    <Reveal
       className={`group relative w-full ${rotate} transition-transform duration-500 hover:rotate-0 hover:-translate-y-2`}
-      initial={{ opacity: 0, y: 40, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+      delay={index * 0.1}
     >
       <div className="relative overflow-visible rounded-[22px] bg-[#145EEE]">
         {/* Punched corner holes */}
@@ -101,7 +96,7 @@ function FeatureTicket({
           </p>
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -117,26 +112,8 @@ export default function WhyChooseUs() {
     <section className="relative overflow-hidden bg-white md:py-24 py-16">
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-5 lg:grid-cols-2 lg:px-0">
         {/* Left */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+        <Reveal
+          delay={0.15}
         >
           <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 font-semibold text-[#145EEE] text-sm tracking-[0.18em]">
             Why Choose Wellranked
@@ -174,7 +151,7 @@ export default function WhyChooseUs() {
             Talk To Wellranked
             <ArrowRight size={18} />
           </Link>
-        </motion.div>
+        </Reveal>
 
         {/* Right */}
         <div className="grid gap-6 sm:grid-cols-2">

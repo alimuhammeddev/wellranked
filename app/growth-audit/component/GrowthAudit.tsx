@@ -5,6 +5,7 @@ import {
   Check,
 } from "lucide-react";
 import LeadConnectorGrowthAuditForm from "./LeadConnectorGrowthAuditForm";
+import Reveal from "../../components/Reveal";
 
 export default function GrowthAuditHero() {
   return (
@@ -22,7 +23,7 @@ export default function GrowthAuditHero() {
       />
       <div className="relative mx-auto grid max-w-7xl md:gap-16 gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:px-0">
         {/* Left */}
-        <div>
+        <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full tracking-[0.18em] border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             <Search size={16} />
             Free Growth Audit
@@ -78,15 +79,15 @@ export default function GrowthAuditHero() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* Right */}
 
-        <div className="rounded-3xl border border-gray-200 bg-white">
+        <Reveal className="rounded-3xl border border-gray-200 bg-white" delay={0.1}>
           <div className="mt-6">
             <LeadConnectorGrowthAuditForm />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { Check, Minus } from "lucide-react";
+import Reveal from "../../components/Reveal";
 
 const comparison = [
   {
@@ -176,7 +177,7 @@ export default function PricingComparison() {
   return (
     <section className="bg-white py-24 md:block hidden">
       <div className="mx-auto max-w-7xl lg:px-0 px-5 ">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
+        <Reveal className="mx-auto mb-10 max-w-3xl text-center">
           <span className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-[0.18em] text-[#145EEE]">
             Compare Packages
           </span>
@@ -189,7 +190,7 @@ export default function PricingComparison() {
             Compare every package side-by-side and choose the level of support
             that best suits your business.
           </p>
-        </div>
+        </Reveal>
 
         <div className="overflow-x-auto rounded-3xl bg-white shadow-xl">
           <table className="min-w-225 w-full border-collapse">

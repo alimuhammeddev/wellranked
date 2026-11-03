@@ -1,7 +1,5 @@
-"use client";
-
 import { Search, ClipboardCheck, Rocket, BarChart3 } from "lucide-react";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 const steps = [
   {
@@ -39,27 +37,9 @@ export default function GrowthProcess() {
     <section className="relative overflow-hidden bg-white md:py-24 py-10">
       <div className="relative mx-auto max-w-5xl px-5 lg:px-0">
         {/* Heading */}
-        <motion.div
+        <Reveal
           className="mx-auto max-w-3xl text-center"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          delay={0.15}
         >
           <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 font-semibold text-[#145EEE] text-sm tracking-[0.18em]">
             Our Process
@@ -75,7 +55,7 @@ export default function GrowthProcess() {
             ongoing optimisation, every step is focused on helping your business
             attract more customers and grow with confidence.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Roadmap */}
         <div className="relative mt-16 md:mt-24">
@@ -91,25 +71,10 @@ export default function GrowthProcess() {
               const isEven = index % 2 === 0;
 
               return (
-                <motion.div
+                <Reveal
                   key={step.number}
                   className="relative md:flex md:items-center"
-                  initial={{
-                    opacity: 0,
-                    x: isEven ? -40 : 40,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.4,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeOut",
-                  }}
+                  delay={index * 0.08}
                 >
                   {/* Node on the spine */}
                   <div className="absolute left-6 top-8 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-[#145EEE] ring-4 ring-[#f5f5f5] md:left-1/2 md:top-1/2 md:-translate-y-1/2">
@@ -140,7 +105,7 @@ export default function GrowthProcess() {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </Reveal>
               );
             })}
           </div>

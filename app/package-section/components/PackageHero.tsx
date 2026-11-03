@@ -1,18 +1,6 @@
-"use client";
-
-import {
-  ArrowRight,
-  BadgeCheck,
-  BadgePoundSterling,
-  TrendingUp,
-  ChartNoAxesCombined,
-  Wallet,
-  Gem,
-  ShieldCheck,
-  Rocket,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 export default function PackagesHero() {
   return (
@@ -28,10 +16,8 @@ export default function PackagesHero() {
           opacity: 1,
         }}
       />
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0 }}
+      <Reveal
+        duration={0.5}
         className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5"
       >
         <div>
@@ -72,7 +58,7 @@ export default function PackagesHero() {
             </Link>
           </div>
         </div>
-      </motion.div>
+      </Reveal>
     </section>
   );
 }

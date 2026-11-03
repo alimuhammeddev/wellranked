@@ -1,5 +1,6 @@
 import { BadgeCheck, Mail, Phone, Globe } from "lucide-react";
 import LeadConnectorForm from "./LeadConnectorForm";
+import Reveal from "../../components/Reveal";
 
 export default function ContactHero() {
   return (
@@ -18,7 +19,7 @@ export default function ContactHero() {
 
       <div className="relative mx-auto grid max-w-7xl md:gap-16 gap-10 px-5 pb-24 pt-40 lg:grid-cols-2 lg:px-0">
         {/* Left */}
-        <div>
+        <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full tracking-[0.18em] border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             <Mail size={16} />
             Contact Wellranked
@@ -80,14 +81,14 @@ export default function ContactHero() {
               </div>
             </div>
           </div>
-        </div>
+          </Reveal>
 
         {/* Right — Form */}
-        <div className="rounded-3xl border border-gray-200 bg-white ">
+        <Reveal className="rounded-3xl border border-gray-200 bg-white " delay={0.1}>
           <div className="mt-6">
             <LeadConnectorForm />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,5 +1,3 @@
-"use client";
-
 import {
   BarChart3,
   Building2,
@@ -7,7 +5,7 @@ import {
   Layers3,
   TrendingUp,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 const features = [
   {
@@ -63,27 +61,9 @@ export default function WhyWellrankedGrid() {
     <section id="why-grid" className="bg-white md:py-32 md:mb-0 py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         {/* Heading */}
-        <motion.div
+        <Reveal
           className="mx-auto max-w-3xl text-center"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          delay={0.15}
         >
           <span className="rounded-full border border-[#145EEE] text-sm tracking-[0.18em] bg-blue-50 px-4 py-2 font-semibold text-[#145EEE]">
             Why Businesses Trust Us
@@ -98,32 +78,14 @@ export default function WhyWellrankedGrid() {
             your business, making sure every part of your online presence works
             together to generate more enquiries.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Featured Card */}
         {featured && (
           <div className="mt-10">
-            <motion.div
+            <Reveal
+              delay={0.15}
               className="group relative overflow-hidden rounded-[26px] bg-[#145EEE]"
-              initial={{
-                opacity: 0,
-                y: 40,
-                scale: 0.95,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.25,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.15,
-                ease: "easeOut",
-              }}
             >
               <featured.icon
                 aria-hidden
@@ -156,35 +118,17 @@ export default function WhyWellrankedGrid() {
                   {featured.description}
                 </p>
               </div>
-            </motion.div>
+            </Reveal>
           </div>
         )}
 
         {/* Remaining Cards */}
         <div className="mt-7 grid gap-6 sm:grid-cols-2">
           {others.map(({ title, description, icon: Icon }, i) => (
-            <motion.div
+            <Reveal
               key={title}
               className="group relative overflow-hidden rounded-[22px] bg-[#145EEE] transition-all duration-300 hover:-translate-y-1"
-              initial={{
-                opacity: 0,
-                y: 40,
-                scale: 0.95,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.25,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.15,
-                ease: "easeOut",
-              }}
+              delay={i * 0.1}
             >
               <Icon
                 aria-hidden
@@ -217,7 +161,7 @@ export default function WhyWellrankedGrid() {
                   {description}
                 </p>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
       </div>

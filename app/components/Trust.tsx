@@ -1,5 +1,3 @@
-"use client";
-
 import {
   PoundSterling,
   Headphones,
@@ -9,7 +7,7 @@ import {
   Building2,
   LucideIcon,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 
 interface TrustItem {
   title: string;
@@ -68,12 +66,9 @@ function TrustCard({ item, index }: { item: TrustItem; index: number }) {
   const Icon = item.icon;
 
   return (
-    <motion.div
+    <Reveal
       className="group relative"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.55, delay: index * 0.08, ease: "easeOut" }}
+      delay={index * 0.08}
     >
       {/* hairline gradient border */}
       <div
@@ -112,7 +107,7 @@ function TrustCard({ item, index }: { item: TrustItem; index: number }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -121,12 +116,8 @@ export default function TrustSection() {
     <section className="relative overflow-hidden bg-white px-5 py-16 md:px-8 md:py-28">
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
-        <motion.div
+        <Reveal
           className="mx-auto max-w-2xl text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
             Why Businesses Choose Wellranked
@@ -142,7 +133,7 @@ export default function TrustSection() {
             not complicated agency language every package is built to be
             clear, affordable and useful from day one.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Card grid */}
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:mt-20 md:gap-6">

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Reveal from "../../components/Reveal";
 
 const faqs = [
   {
@@ -62,12 +63,8 @@ export default function GrowthFAQ() {
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl lg:px-0 md:px-5 px-5">
-        <motion.div
+        <Reveal
           className="mx-auto max-w-2xl text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold text-sm tracking-[0.18em] text-[#145EEE]">
             Frequently Asked Questions
@@ -82,19 +79,16 @@ export default function GrowthFAQ() {
             Here are answers to the questions we receive most often about our
             Growth Support service.
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="mt-14 grid items-start gap-5 lg:grid-cols-2">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <motion.div
+              <Reveal
                 key={faq.question}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: (index % 2) * 0.06 }}
+                delay={(index % 2) * 0.06}
                 className={`overflow-hidden rounded-3xl border bg-white transition-shadow ${
                   isOpen
                     ? "border-[#145EEE]/30 shadow-[0_12px_30px_-12px_rgba(20,94,238,0.25)]"
@@ -150,7 +144,7 @@ export default function GrowthFAQ() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>

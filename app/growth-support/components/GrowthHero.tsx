@@ -1,43 +1,6 @@
-"use client";
-
-import {
-  ArrowRight,
-  BadgeCheck,
-  BadgePoundSterling,
-  MessageCircle,
-  CalendarDays,
-  ClipboardList,
-  RefreshCcw,
-  Database,
-  Headphones,
-  FileText,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-
-// Orbit items
-const orbitItems = [
-  { text: "£295", icon: <BadgePoundSterling size={16} /> },
-  { text: "Replies", icon: <MessageCircle size={16} /> },
-  { text: "Bookings", icon: <CalendarDays size={16} /> },
-  { text: "Orders", icon: <ClipboardList size={16} /> },
-  { text: "Follow-up", icon: <RefreshCcw size={16} /> },
-  { text: "CRM", icon: <Database size={16} /> },
-  { text: "Support", icon: <Headphones size={16} /> },
-  { text: "Reports", icon: <FileText size={16} /> },
-].map((item, i, arr) => {
-  const angle = (i / arr.length) * 2 * Math.PI - Math.PI / 2;
-  const radius = 42;
-
-  const x = 50 + radius * Math.cos(angle);
-  const y = 50 + radius * Math.sin(angle) * 0.92;
-
-  return {
-    ...item,
-    x,
-    y,
-  };
-});
+import Reveal from "../../components/Reveal";
 
 export default function GrowthSupportHero() {
   return (
@@ -54,11 +17,7 @@ export default function GrowthSupportHero() {
         }}
       />
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <Reveal duration={0.6}>
           <div className="flex justify-center">
             <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
               Growth Support Package
@@ -96,7 +55,7 @@ export default function GrowthSupportHero() {
               View Support Packages
             </Link>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

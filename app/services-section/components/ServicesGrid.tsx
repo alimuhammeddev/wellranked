@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import {
   ArrowRight,
@@ -13,7 +11,7 @@ import {
   BriefcaseBusiness,
   LucideIcon,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 interface Service {
   title: string;
@@ -117,12 +115,9 @@ function ServiceTicket({
   const Icon = service.icon;
 
   return (
-    <motion.div
+    <Reveal
       className={`group relative w-full ${rotate} transition-transform duration-500 hover:rotate-0 hover:-translate-y-2`}
-      initial={{ opacity: 0, y: 40, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+      delay={index * 0.1}
     >
       <div
         className="relative flex h-full flex-col overflow-visible rounded-[22px]"
@@ -163,7 +158,7 @@ function ServiceTicket({
           </Link>
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -184,27 +179,9 @@ export default function ServicesGrid() {
     <section id="services" className="relative overflow-hidden bg-white">
       <div className="relative mx-auto max-w-7xl px-5 lg:px-0 md:mt-20 mt-10 md:pb-24 pb-10">
         {/* Heading */}
-        <motion.div
+        <Reveal
           className="mx-auto max-w-3xl text-center"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          delay={0.15}
         >
           <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
             Our Services
@@ -220,7 +197,7 @@ export default function ServicesGrid() {
             support, our services work together to help your business get found,
             build trust and generate more enquiries.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Services */}
         <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-2">

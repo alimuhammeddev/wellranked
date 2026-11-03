@@ -1,8 +1,6 @@
-"use client";
-
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 
 const trustPoints = [
   "Website Performance Review",
@@ -25,12 +23,8 @@ export default function FinalCTA() {
         }}
       />
 
-      <motion.div
+      <Reveal
         className="relative mx-auto md:max-w-7xl rounded-3xl md:px-14 py-14 text-center md:py-16"
-        initial={{ opacity: 0, y: 40, scale: 0.96 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <h2 className="text-2xl font-bold leading-tight text-[#145EEE] md:text-3xl lg:text-4xl">
           Want to know what's stopping your business from getting more
@@ -75,7 +69,7 @@ export default function FinalCTA() {
         <p className="mt-6 text-sm font-medium text-white/70">
           No pressure. No jargon. Just clear advice to help your business grow.
         </p>
-      </motion.div>
+      </Reveal>
     </section>
   );
 };

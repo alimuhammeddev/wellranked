@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Check,
   BriefcaseBusiness,
@@ -7,7 +5,7 @@ import {
   Crown,
   LucideIcon,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 interface Package {
   title: string;
@@ -110,12 +108,9 @@ function BoardingPassCard({
   const checkStroke = pkg.color === "navy" ? "#102A56" : "#145EEE";
 
   return (
-    <motion.div
+    <Reveal
       className={`relative group ${pkg.rotation} hover:rotate-0 transition-transform duration-500`}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
+      delay={index * 0.12}
     >
       {/* Featured Badge */}
       {pkg.featured && (
@@ -188,7 +183,7 @@ function BoardingPassCard({
           </div>
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -197,12 +192,8 @@ export default function PackageBreakdown() {
     <section className="relative overflow-hidden px-5 py-16 md:px-8 md:py-28 bg-white">
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
-        <motion.div
+        <Reveal
           className="mx-auto max-w-2xl text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold text-sm tracking-[0.18em] text-[#145EEE]">
             Find Your Perfect Fit
@@ -214,7 +205,7 @@ export default function PackageBreakdown() {
               to grow with your business.
             </span>
           </h2>
-        </motion.div>
+        </Reveal>
 
         {/* Cards */}
         <div className="space-y-10 md:space-y-12">

@@ -1,10 +1,6 @@
-"use client";
-
-import {
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 export default function ServicesHero() {
   return (
@@ -21,11 +17,7 @@ export default function ServicesHero() {
         }}
       />
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <Reveal duration={0.5}>
           <div className="flex justify-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold tracking-[0.18em]">
               Digital Growth Services
@@ -62,7 +54,7 @@ export default function ServicesHero() {
               See What We Can Improve
             </Link>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

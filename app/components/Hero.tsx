@@ -1,10 +1,8 @@
-"use client";
-
 import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
@@ -22,12 +20,7 @@ export default function Hero() {
       />
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
+          <Reveal duration={0.7}>
             {/* Badge */}
             <div className="inline-flex items-center mx-auto gap-2.5 rounded-full border border-[#145EEE]/30 bg-white px-4 py-2 mb-8">
               <span className="relative flex h-2 w-2">
@@ -60,9 +53,7 @@ export default function Hero() {
             {/* Buttons */}
 
             <div className="mt-8 flex flex-col mx-auto justify-center gap-4 sm:flex-row">
-              <motion.div
-                className="rounded-full bg-[#145EEE]"
-              >
+              <div className="rounded-full bg-[#145EEE]">
                 <Link
                   href="/growth-audit"
                   className="flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white rounded-full"
@@ -70,19 +61,18 @@ export default function Hero() {
                   Book Your Free Growth Audit
                   <ArrowRight size={18} />
                 </Link>
-              </motion.div>
+              </div>
 
-              <motion.div
-              >
+              <div>
                 <Link
                   href="/package-section"
                   className="flex items-center justify-center rounded-full border bg-white px-8 py-4 text-center font-semibold transition border-[#145EEE] text-[#145EEE]"
                 >
                   View Packages
                 </Link>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>

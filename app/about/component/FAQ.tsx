@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown, MessageCircleQuestion, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import Reveal from "../../components/Reveal";
 
 const faqs = [
   {
@@ -55,27 +56,9 @@ export default function FAQSection() {
     <section className="relative overflow-hidden py-14 md:py-24 bg-white">
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-0">
         {/* LEFT */}
-        <motion.div
+        <Reveal
           className="h-fit lg:sticky lg:top-24"
-          initial={{
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          delay={0.15}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-[0.18em] text-[#145EEE]">
             <MessageCircleQuestion size={16} />
@@ -115,7 +98,7 @@ export default function FAQSection() {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </Reveal>
 
         {/* RIGHT — Q&A conversation thread */}
         <div className="space-y-4">
@@ -123,12 +106,9 @@ export default function FAQSection() {
             const isOpen = openIndex === index;
 
             return (
-              <motion.div
+              <Reveal
                 key={faq.question}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: (index % 4) * 0.06 }}
+                delay={(index % 4) * 0.06}
                 className={`overflow-hidden rounded-3xl border bg-white transition-shadow ${
                   isOpen
                     ? "border-[#145EEE]/30 shadow-[0_12px_30px_-12px_rgba(20,94,238,0.25)]"
@@ -184,7 +164,7 @@ export default function FAQSection() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>

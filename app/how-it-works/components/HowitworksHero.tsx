@@ -1,10 +1,6 @@
-"use client";
-
-import {
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "../../components/Reveal";
 
 export default function HowItWorksHero() {
   return (
@@ -21,12 +17,7 @@ export default function HowItWorksHero() {
         }}
       />
       <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+        <Reveal duration={0.5}>
           <div className="flex justify-center">
             <span className="inline-flex rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm tracking-[0.18em] font-semibold text-[#145EEE]">
               How It Works
@@ -41,9 +32,9 @@ export default function HowItWorksHero() {
           </h1>
 
           <p className="mt-3 md:text-2xl text-center leading-8 text-gray-600">
-            We've designed our process to make marketing straight forward. From
-            your free Growth Audit to ongoing monthly support, every step is
-            focused on helping your business grow without adding more work to
+            We have designed our process to make marketing straight forward.
+            From your free Growth Audit to ongoing monthly support, every step
+            is focused on helping your business grow without adding more work to
             your day.
           </p>
 
@@ -64,7 +55,7 @@ export default function HowItWorksHero() {
               See The Process
             </Link>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,8 +1,6 @@
-"use client";
-
 import { Megaphone, Package, Calendar, HelpCircle } from "iconoir-react";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import Reveal from "../../components/Reveal";
 
 interface Note {
   icon: typeof Megaphone;
@@ -113,12 +111,9 @@ export default function PricingNote() {
     <section className="relative overflow-hidden px-5 py-20 md:px-8 md:py-28 bg-white">
       <div className="relative mx-auto max-w-6xl">
         {/* Heading */}
-        <motion.div
+        <Reveal
           className="mx-auto mb-16 max-w-2xl text-center"
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+          delay={0.15}
         >
           <span className="inline-flex items-center rounded-full border border-[#145EEE] bg-blue-50 px-4 py-1.5 font-bold text-sm tracking-[0.18em] text-[#145EEE]">
             Before You Choose
@@ -132,32 +127,18 @@ export default function PricingNote() {
             We believe in clear pricing with no surprises. Here's what you
             should know before selecting your package.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Cards */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {notes.map(
             ({ icon: Icon, title, description, tag, theme }, index) => (
-              <motion.div
+              <Reveal
                 key={title}
-                className={`group relative overflow-hidden rounded-3xl border ${theme.border} bg-white p-6 md:p-7 transition-all duration-500 hover:-translate-y-2`}
+                delay={index * 0.12}
+                className={`group relative overflow-hidden rounded-3xl border ${theme.border} bg-white p-6 md:p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(16,42,86,0.2)]`}
                 style={{
                   boxShadow: "0 8px 30px -12px rgba(16,42,86,0.08)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = `0 20px 50px -12px ${theme.shadow.replace("shadow-", "").replace("/20", "40")}`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow =
-                    "0 8px 30px -12px rgba(16,42,86,0.08)";
-                }}
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.12,
-                  ease: "easeOut",
                 }}
               >
                 {/* Top accent bar */}
@@ -203,21 +184,18 @@ export default function PricingNote() {
                     {tag}
                   </div>
                 </div>
-              </motion.div>
+              </Reveal>
             ),
           )}
         </div>
 
         {/* Bottom Notice */}
-        <motion.div
+        <Reveal
           className="relative mt-10 overflow-hidden rounded-3xl border border-[#102A56]/10 bg-[#145EEE] p-8 md:p-10 text-center transition-all duration-500 hover:-translate-y-1"
+          delay={0.15}
           style={{
             boxShadow: "0 8px 30px -12px rgba(16,42,86,0.2)",
           }}
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
         >
           <span
             aria-hidden
@@ -266,7 +244,7 @@ export default function PricingNote() {
               </svg>
             </Link>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );
