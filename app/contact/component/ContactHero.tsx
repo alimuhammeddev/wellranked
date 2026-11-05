@@ -22,11 +22,11 @@ export default function ContactHero() {
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full tracking-[0.18em] border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE]">
             <Mail size={16} />
-            Contact Wellranked
+            Contact WellRanked
           </span>
 
           <h1 className="mt-5 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
-            Talk to <span className="text-[#145EEE]">Wellranked</span>
+            Talk to <span className="text-[#145EEE]">WellRanked</span>
           </h1>
 
           <p className="mt-3 max-w-xl md:text-lg leading-8 text-gray-600">

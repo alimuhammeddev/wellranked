@@ -24,13 +24,13 @@ export default function IndustriesHero() {
             </span>
           </div>
 
-          <h1 className="mt-5 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
+          <h1 className="mt-5 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-6xl md:text-5xl">
             Built for Service Businesses That Depend on{" "}
             <span className="text-[#145EEE]">Trust & Local Enquiries.</span>
           </h1>
 
           <p className="mt-3 md:text-2xl text-center leading-8 text-gray-600">
-            Wellranked helps UK SMEs improve their visibility, build customer
+            WellRanked helps UK SMEs improve their visibility, build customer
             trust and generate more enquiries through websites, SEO, Google
             Business optimisation and digital marketing.
           </p>

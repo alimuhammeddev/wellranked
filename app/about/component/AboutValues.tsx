@@ -60,7 +60,7 @@ export default function AboutValues() {
           </h2>
 
           <p className="mt-3 leading-8 text-gray-600 md:text-lg">
-            Wellranked exists to make digital marketing simpler, more affordable
+            WellRanked exists to make digital marketing simpler, more affordable
             and more effective for small businesses. These principles shape
             every recommendation we make and every service we deliver.
           </p>

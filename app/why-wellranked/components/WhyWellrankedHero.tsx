@@ -57,18 +57,18 @@ export default function WhyWellrankedHero() {
         <Reveal duration={0.5}>
           <div className="flex justify-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] bg-blue-50 px-4 py-2 text-sm tracking-[0.18em] font-semibold text-[#145EEE]">
-              Why Wellranked
+              Why WellRanked
             </span>
           </div>
 
-          <h1 className="mt-4 text-3xl font-extrabold text-center leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
+          <h1 className="mt-4 text-3xl font-extrabold text-center leading-tight text-[#102A56] lg:text-6xl md:text-5xl">
             Because Small Businesses Need{" "}
             <span className="text-[#145EEE]">More Than Another Agency.</span>
           </h1>
 
           <p className="mt-3 md:text-2xl text-center leading-8 text-gray-600">
             Traditional agencies often sell individual services, while
-            freelancers usually solve one problem at a time. Wellranked gives
+            freelancers usually solve one problem at a time. WellRanked gives
             you one joined-up marketing team that keeps your business visible,
             trusted and consistently active online.
           </p>

@@ -120,7 +120,7 @@ export default function TrustSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-[#145EEE] tracking-[0.18em]">
-            Why Businesses Choose Wellranked
+            Why Businesses Choose WellRanked
           </span>
 
           <h2 className="mt-6 text-2xl lg:text-4xl md:text-3xl font-bold leading-tight text-[#102A56]">

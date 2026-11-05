@@ -19,24 +19,24 @@ export default function AboutHero() {
         <div className="relative max-w-7xl mx-auto py-24 md:mt-16 mt-10 lg:px-0 md:px-5 px-5">
         <Reveal duration={0.6} className="mx-auto text-center lg:mx-0 lg:text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-[#145EEE] text-[#145EEE] bg-blue-50 px-4 py-2 text-sm tracking-[0.18em] font-semibold">
-            About Wellranked
+            About WellRanked
           </span>
 
-          <h1 className="mt-5 text-3xl font-extrabold leading-tight text-[#102A56] lg:text-5xl md:text-7xl">
-            We Built Wellranked for Business Owners Who Are{" "}
+          <h1 className="mt-5 text-3xl font-extrabold leading-tight text-[#102A56] lg:text-6xl md:text-5xl">
+            We Built WellRanked for Business Owners Who Are{" "}
             <span className="text-[#145EEE]">
               Tired of Doing Everything Themselves.
             </span>
           </h1>
 
-          <p className="mt-3 md:text-lg leading-8 text-center text-gray-600">
-            Wellranked was created to give UK small businesses access to the
+          <p className="mt-3 md:text-2xl leading-8 text-center text-gray-600">
+            WellRanked was created to give UK small businesses access to the
             kind of joined-up marketing support that is usually only available to
             larger companies. We help businesses stay visible, trusted and
             active online, without the stress of managing everything yourself.
           </p>
 
-          <p className="mt-3 md:text-lg leading-8 text-gray-600">
+          <p className="mt-3 md:text-2xl leading-8 text-gray-600">
             Think of us as your outsourced marketing department. While you focus
             on serving your customers, we look after your website, local SEO,
             Google Business Profile, reviews, content and digital marketing to

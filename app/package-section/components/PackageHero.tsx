@@ -26,7 +26,7 @@ export default function PackagesHero() {
               Packages & Pricing
             </span>
           </div>
-          <h1 className="mt-3 text-3xl font-extrabold text-center leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
+          <h1 className="mt-3 text-3xl font-extrabold text-center leading-tight text-[#102A56] lg:text-6xl md:text-5xl">
             Simple marketing packages{" "}
             <span className="text-[#145EEE]">
               built for busy business owners.

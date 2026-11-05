@@ -28,9 +28,9 @@ const faqs = [
       "We'll clearly explain your package terms during onboarding. We recommend a minimum commitment period to give your marketing strategy enough time to deliver meaningful results for your business.",
   },
   {
-    question: "Who is Wellranked best for?",
+    question: "Who is WellRanked best for?",
     answer:
-      "Wellranked is built for UK small businesses, sole traders and independent companies looking for help with website management, Google visibility, reviews, graphics, social media content and lead generation.",
+      "WellRanked is built for UK small businesses, sole traders and independent companies looking for help with website management, Google visibility, reviews, graphics, social media content and lead generation.",
   },
   {
     question: "Will I need to provide all the content?",
@@ -71,8 +71,8 @@ export default function FAQSection() {
           </h2>
 
           <p className="mt-2 md:text-lg leading-8 text-slate-600">
-            We've answered the questions we're asked most often by business
-            owners. If you can't find what you're looking for, our team is
+            We have answered the questions we are asked most often by business
+            owners. If you cannot find what you are looking for, our team is
             always happy to help.
           </p>
 
@@ -85,7 +85,7 @@ export default function FAQSection() {
               </h3>
 
               <p className="mt-2 leading-8 text-white">
-                We'd be happy to discuss your business, recommend the right
+                We will be happy to discuss your business, recommend the right
                 package and answer any questions before you get started.
               </p>
 

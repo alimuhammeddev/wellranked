@@ -25,7 +25,7 @@ export default function Navbar() {
     { name: "Growth Packages", href: "/package-section" },
     { name: "Support Packages", href: "/growth-support" },
     { name: "Services", href: "/services-section" },
-    { name: "Why Wellranked", href: "/why-wellranked" },
+    { name: "Why WellRanked", href: "/why-wellranked" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -49,7 +49,7 @@ export default function Navbar() {
           <Link href="/" aria-label="Go to homepage">
             <Image
               src={logo}
-              alt="Wellranked Logo"
+              alt="WellRanked Logo"
               width={200}
               height={67}
               priority

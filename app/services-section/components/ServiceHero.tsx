@@ -24,14 +24,14 @@ export default function ServicesHero() {
             </span>
           </div>
 
-          <h1 className="mt-3 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
+          <h1 className="mt-3 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-6xl md:text-5xl">
             Everything Your Business Needs{" "}
             <span className="text-[#145EEE]">To Grow Online.</span>
           </h1>
 
           <p className="mt-2 text-center md:text-2xl leading-8 text-gray-600">
             Whether you need a better website, stronger Google rankings, more
-            customer enquiries or ongoing marketing support, Wellranked provides
+            customer enquiries or ongoing marketing support, WellRanked provides
             practical digital marketing services that help UK businesses grow
             with confidence.
           </p>

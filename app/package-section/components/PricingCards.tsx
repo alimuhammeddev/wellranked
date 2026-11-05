@@ -22,7 +22,7 @@ interface Package {
 
 const packages: Package[] = [
   {
-    name: "Wellranked Essential",
+    name: "WellRanked Essential",
     tagline: "Professional Online Presence",
     price: "£395",
     icon: BriefcaseBusiness,

@@ -44,7 +44,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 md:text-2xl text-gray-600 leading-8">
-              Wellranked helps UK small businesses get found, trusted and chosen
+              WellRanked helps UK small businesses get found, trusted and chosen
               by managing your website, Google visibility, reviews, content,
               graphics, social posts and lead generation all under one simple
               monthly package.

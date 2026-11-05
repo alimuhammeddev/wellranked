@@ -9,7 +9,7 @@ const links = [
   { label: "Services", href: "/services-section" },
   { label: "Industries", href: "/industries" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Bottom */}
 
         <div className="mt-5 flex flex-col items-center gap-4 border-t border-gray-200 pt-6 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Wellranked. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} WellRanked. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
             <Link href="#" className="hover:text-[#145EEE]">

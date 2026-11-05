@@ -32,7 +32,7 @@ export default function FinalCTA() {
         </h2>
 
         <p className="mx-auto mt-4 md:max-w-2xl text-base leading-7 text-[#145EEE] md:text-lg">
-          Book a free Wellranked Growth Audit and we'll show you the biggest
+          Book a free WellRanked Growth Audit and we'll show you the biggest
           improvements you can make across your website, Google visibility,
           reviews and lead generation.
         </p>

@@ -21,7 +21,7 @@ interface Package {
 
 const packages: Package[] = [
   {
-    title: "Wellranked Essential",
+    title: "WellRanked Essential",
     subtitle: "Professional Online Presence",
     description:
       "For businesses that need a credible website and online foundation without managing everything themselves.",
@@ -42,7 +42,7 @@ const packages: Package[] = [
     ],
   },
   {
-    title: "Wellranked Growth Partner",
+    title: "WellRanked Growth Partner",
     subtitle: "Your Outsourced Marketing Department",
     description:
       "Our most popular package for businesses that want their website, Google visibility, reviews, graphics and social content handled properly every month.",
@@ -68,7 +68,7 @@ const packages: Package[] = [
     ],
   },
   {
-    title: "Wellranked Accelerator",
+    title: "WellRanked Accelerator",
     subtitle: "More Visibility. More Leads. More Growth.",
     description:
       "Generate more enquiries through paid campaigns, email marketing and stronger conversion systems.",

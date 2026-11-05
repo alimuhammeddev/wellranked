@@ -94,7 +94,7 @@ export default function SolutionSection() {
             Instead of hiring a developer, SEO specialist, designer, social
             manager and ads expert separately,{" "}
             <span className="font-semibold text-[#145EEE]">
-              Wellranked runs it all as one connected team
+              WellRanked runs it all as one connected team
             </span>{" "}
             every piece working off the same plan.
           </p>

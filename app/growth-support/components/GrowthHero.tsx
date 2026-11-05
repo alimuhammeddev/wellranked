@@ -24,7 +24,7 @@ export default function GrowthSupportHero() {
             </span>
           </div>
 
-          <h1 className="mt-3 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
+          <h1 className="mt-3 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-6xl md:text-5xl">
             Keep up with customer enquiries{" "}
             <span className="text-[#145EEE]">
               without hiring another full-time employee.

@@ -116,7 +116,7 @@ export default function WhyChooseUs() {
           delay={0.15}
         >
           <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 font-semibold text-[#145EEE] text-sm tracking-[0.18em]">
-            Why Choose Wellranked
+            Why Choose WellRanked
           </span>
 
           <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#102A56] lg:text-4xl md:text-3xl">
@@ -148,7 +148,7 @@ export default function WhyChooseUs() {
             href="/contact"
             className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#145EEE] px-8 py-4 font-semibold text-white"
           >
-            Talk To Wellranked
+            Talk To WellRanked
             <ArrowRight size={18} />
           </Link>
         </Reveal>

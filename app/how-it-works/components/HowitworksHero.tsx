@@ -24,7 +24,7 @@ export default function HowItWorksHero() {
             </span>
           </div>
 
-          <h1 className="mt-5 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-7xl md:text-5xl">
+          <h1 className="mt-5 text-3xl text-center font-extrabold leading-tight text-[#102A56] lg:text-6xl md:text-5xl">
             A Simple Process{" "}
             <span className="text-[#145EEE]">
               Built for Busy Business Owners.

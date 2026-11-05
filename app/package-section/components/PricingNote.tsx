@@ -124,7 +124,7 @@ export default function PricingNote() {
           </h2>
 
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            We believe in clear pricing with no surprises. Here's what you
+            We believe in clear pricing with no surprises. Here is what you
             should know before selecting your package.
           </p>
         </Reveal>
@@ -217,7 +217,7 @@ export default function PricingNote() {
             </h3>
 
             <p className="relative mx-auto mt-4 max-w-2xl text-white leading-8 text-[15px]">
-              That's exactly why we offer a free Growth Audit. We'll review your
+              That is exactly why we offer a free Growth Audit. We will review your
               website, Google visibility, reviews and online presence, then
               recommend the package that will deliver the biggest impact for
               your business—without any pressure or obligation.
