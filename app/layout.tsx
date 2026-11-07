@@ -18,12 +18,12 @@ const firaSans = Fira_Sans({
 
 export const metadata: Metadata = {
   ...createPageMetadata(
-    "Wellranked | SEO & Digital Marketing Agency UK",
+    "Wellranked Marketing | SEO & Digital Marketing Agency UK",
     "Grow your online visibility with SEO and digital marketing services from Wellranked. Improve search rankings, attract relevant traffic and generate more leads.",
     "/",
   ),
   title: {
-    default: "Wellranked | SEO & Digital Marketing Agency UK",
+    default: "Wellranked Marketing | SEO & Digital Marketing Agency UK",
     template: "%s",
   },
   metadataBase: new URL("https://wellranked.co.uk"),

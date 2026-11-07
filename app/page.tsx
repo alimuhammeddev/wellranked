@@ -8,7 +8,7 @@ import FinalCTA from "./components/CTA";
 import { createPageMetadata } from "./seo";
 
 export const metadata = createPageMetadata(
-  "Wellranked | SEO & Digital Marketing Agency UK",
+  "Wellranked Marketing | SEO & Digital Marketing Agency UK",
   "Grow your online visibility with SEO and digital marketing services from Wellranked. Improve search rankings, attract relevant traffic and generate more leads.",
   "/",
 );
