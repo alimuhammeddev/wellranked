@@ -1,5 +1,6 @@
 import BlogHero from "./component/BlogHero";
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata(
   "Small Business Marketing Advice & Guides | Wellranked",
@@ -10,6 +11,7 @@ export const metadata = createPageMetadata(
 export default function Blog() {
   return (
     <section>
+      <JsonLd data={createBreadcrumbSchema("Blog", "/blog")} />
       <div>
         <BlogHero />
       </div>

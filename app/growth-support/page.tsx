@@ -4,7 +4,8 @@ import GrowthSupportHero from "./components/GrowthHero";
 import GrowthPricing from "./components/GrowthPricing";
 import GrowthServices from "./components/GrowthServices";
 import ProblemsSection from "./components/ProblemSection";
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata(
   "Growth Support Services for Businesses | Wellranked",
@@ -15,6 +16,9 @@ export const metadata = createPageMetadata(
 export default function GrwothSupport() {
   return (
     <section>
+      <JsonLd
+        data={createBreadcrumbSchema("Growth Support", "/growth-support")}
+      />
       <div>
         <GrowthSupportHero />
       </div>

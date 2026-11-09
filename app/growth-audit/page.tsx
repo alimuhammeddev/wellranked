@@ -1,4 +1,5 @@
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 import GrowthAuditHero from "./component/GrowthAudit";
 
 export const metadata = createPageMetadata(
@@ -10,6 +11,7 @@ export const metadata = createPageMetadata(
 export default function GrowthAudit() {
   return (
     <section>
+      <JsonLd data={createBreadcrumbSchema("Growth Audit", "/growth-audit")} />
       <div>
         <GrowthAuditHero />
       </div>

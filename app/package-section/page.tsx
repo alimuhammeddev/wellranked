@@ -2,7 +2,8 @@ import PackagesHero from "./components/PackageHero";
 import PricingCards from "./components/PricingCards";
 import PricingComparison from "./components/PricingComparison";
 import PricingNote from "./components/PricingNote";
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata(
   "SEO Packages & Digital Marketing Services | Wellranked",
@@ -13,6 +14,9 @@ export const metadata = createPageMetadata(
 export default function Packages() {
   return (
     <section>
+      <JsonLd
+        data={createBreadcrumbSchema("Growth Packages", "/package-section")}
+      />
       <div>
         <PackagesHero />
       </div>

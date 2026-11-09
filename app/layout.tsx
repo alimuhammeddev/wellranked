@@ -8,7 +8,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LayoutWrapper from "./components/LayoutWrapper";
 import ChatBase from "./components/ChatBase";
-import { createPageMetadata } from "./seo";
+import JsonLd from "./components/JsonLd";
+import { createPageMetadata, organizationSchema, SITE_URL } from "./seo";
 
 const firaSans = Fira_Sans({
   weight: "400",
@@ -18,15 +19,15 @@ const firaSans = Fira_Sans({
 
 export const metadata: Metadata = {
   ...createPageMetadata(
-    "Wellranked Marketing | SEO & Digital Marketing Agency UK",
-    "Grow your online visibility with SEO and digital marketing services from Wellranked. Improve search rankings, attract relevant traffic and generate more leads.",
+    "Outsourced Marketing for UK Small Businesses | Wellranked",
+    "Your outsourced marketing department. Expert SEO, content and social media for UK small businesses, without the cost of an in-house team.",
     "/",
   ),
   title: {
-    default: "Wellranked Marketing | SEO & Digital Marketing Agency UK",
+    default: "Outsourced Marketing for UK Small Businesses | Wellranked",
     template: "%s",
   },
-  metadataBase: new URL("https://wellranked.co.uk"),
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: "/icon.png",
   },
@@ -38,37 +39,18 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://wellranked.co.uk/#organization",
-    name: "Wellranked",
-    url: "https://wellranked.co.uk/",
-    logo: "https://wellranked.co.uk/icon.png",
-    sameAs: [
-      "https://www.linkedin.com/company/wellranked-marketing-agency/",
-      "https://www.instagram.com/wellrankedmarketing/",
-    ],
-  };
-
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${firaSans.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
-          }}
-        />
+        <JsonLd data={organizationSchema} />
 
         {/* Google Analytics 4 */}
         <Script

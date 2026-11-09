@@ -1,4 +1,5 @@
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 import HowItWorksHero from "./components/HowitworksHero";
 import HowItWorksTimeline from "./components/HowitworksTimeline";
 
@@ -11,6 +12,9 @@ export const metadata = createPageMetadata(
 export default function Works() {
   return (
     <section>
+      <JsonLd
+        data={createBreadcrumbSchema("How It Works", "/how-it-works")}
+      />
       <div>
         <HowItWorksHero />
       </div>

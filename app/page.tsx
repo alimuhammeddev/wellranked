@@ -5,17 +5,23 @@ import SolutionSection from "./components/Solution";
 import PackagesPreview from "./components/Packages";
 import TrustSection from "./components/Trust";
 import FinalCTA from "./components/CTA";
-import { createPageMetadata } from "./seo";
+import JsonLd from "./components/JsonLd";
+import { createHomePageSchema, createPageMetadata } from "./seo";
+
+const homeTitle = "Outsourced Marketing for UK Small Businesses | Wellranked";
+const homeDescription =
+  "Your outsourced marketing department. Expert SEO, content and social media for UK small businesses, without the cost of an in-house team.";
 
 export const metadata = createPageMetadata(
-  "Wellranked Marketing | SEO & Digital Marketing Agency UK",
-  "Grow your online visibility with SEO and digital marketing services from Wellranked. Improve search rankings, attract relevant traffic and generate more leads.",
+  homeTitle,
+  homeDescription,
   "/",
 );
 
 export default function Home() {
   return (
     <section>
+      <JsonLd data={createHomePageSchema(homeTitle, homeDescription)} />
       <div>
         <Hero />
       </div>

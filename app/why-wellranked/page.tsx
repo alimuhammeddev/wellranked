@@ -2,7 +2,8 @@
 import WhyWellrankedGrid from "./components/WhyWellrankedGrid";
 import WhyWellrankedHero from "./components/WhyWellrankedHero";
 import CTA from "../components/CTA";
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata(
   "Why Choose Wellranked? | SEO & Digital Marketing",
@@ -13,6 +14,9 @@ export const metadata = createPageMetadata(
 export default function WhywellRanked() {
   return (
     <section>
+      <JsonLd
+        data={createBreadcrumbSchema("Why Wellranked", "/why-wellranked")}
+      />
       <div>
         <WhyWellrankedHero />
       </div>

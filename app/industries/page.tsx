@@ -1,7 +1,8 @@
-import { createPageMetadata } from "../seo";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 import IndustriesGrid from "./components/IndustriesGrid";
 import IndustriesHero from "./components/IndustriesHero";
 import CTA from "../components/CTA";
+import JsonLd from "../components/JsonLd";
 
 export const metadata = createPageMetadata(
   "Industries We Help Grow | Wellranked",
@@ -12,6 +13,7 @@ export const metadata = createPageMetadata(
 export default function Industries() {
   return (
     <section>
+      <JsonLd data={createBreadcrumbSchema("Industries", "/industries")} />
       <div>
         <IndustriesHero />
       </div>

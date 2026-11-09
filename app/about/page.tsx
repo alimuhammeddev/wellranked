@@ -2,7 +2,8 @@
 import AboutHero from "./component/AboutHero";
 import AboutValues from "./component/AboutValues";
 import FAQSection from "./component/FAQ";
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata(
   "About Wellranked | SEO & Digital Marketing Experts",
@@ -13,6 +14,7 @@ export const metadata = createPageMetadata(
 export default function About() {
   return (
     <section>
+      <JsonLd data={createBreadcrumbSchema("About", "/about")} />
       <div>
         <AboutHero />
       </div>

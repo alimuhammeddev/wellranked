@@ -3,7 +3,8 @@ import WhyChooseUs from "./components/ChooseUs";
 import GrowthProcess from "./components/GrowthProcess";
 import ServiceHero from "./components/ServiceHero";
 import ServicesGrid from "./components/ServicesGrid";
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import { createBreadcrumbSchema, createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata(
   "SEO Services & Digital Marketing Agency | Wellranked",
@@ -14,6 +15,7 @@ export const metadata = createPageMetadata(
 export default function ServicesSection() {
   return (
     <section>
+      <JsonLd data={createBreadcrumbSchema("Services", "/services-section")} />
       <div>
         <ServiceHero />
       </div>

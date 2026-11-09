@@ -1,6 +1,11 @@
 
 import ContactHero from "./component/ContactHero";
-import { createPageMetadata } from "../seo";
+import JsonLd from "../components/JsonLd";
+import {
+  createBreadcrumbSchema,
+  createLocalBusinessSchema,
+  createPageMetadata,
+} from "../seo";
 
 export const metadata = createPageMetadata(
   "Contact Wellranked | SEO & Digital Marketing Agency",
@@ -11,6 +16,13 @@ export const metadata = createPageMetadata(
 export default function ContactUs() {
   return (
     <section>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          ...createLocalBusinessSchema(),
+        }}
+      />
+      <JsonLd data={createBreadcrumbSchema("Contact", "/contact")} />
       <div>
         <ContactHero />
       </div>
