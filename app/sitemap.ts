@@ -13,6 +13,7 @@ const routes = [
   "/how-it-works",
   "/industries",
   "/package-section",
+  "/privacy-policy",
   "/services-section",
   "/why-wellranked",
 ];

@@ -82,7 +82,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} WellRanked. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-[#145EEE]">
+            <Link href="/privacy-policy" className="hover:text-[#145EEE]">
               Privacy Policy
             </Link>
 
