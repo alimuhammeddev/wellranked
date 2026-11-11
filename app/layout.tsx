@@ -7,7 +7,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LayoutWrapper from "./components/LayoutWrapper";
-import ChatBase from "./components/ChatBase";
+import LeadConnectorChat from "./components/LeadConnectorChat";
 import JsonLd from "./components/JsonLd";
 import { createPageMetadata, organizationSchema, SITE_URL } from "./seo";
 
@@ -91,7 +91,7 @@ export default function RootLayout({
           </div>
         </LayoutWrapper>
 
-        <ChatBase />
+        <LeadConnectorChat />
       </body>
     </html>
   );
